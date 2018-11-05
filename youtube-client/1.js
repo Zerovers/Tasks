@@ -17,6 +17,7 @@ function videoRequest(searchTerm) {
    	console.log(xhr); 
 	}
 
+		//Request video parametrs
 	let allid = [];
 	let allphoto = [];
 	let allName = [];
@@ -47,8 +48,7 @@ function videoRequest(searchTerm) {
 		}
 
 
-	console.log('video',JSON.parse(xhr.response));
-	console.log([allid,allphoto,allName,alltime,alldiscription,alltitle]);
+	// console.log('video',JSON.parse(xhr.response));
 	return [allid,allphoto,allName,alltime,alldiscription,alltitle];
 }
 
@@ -69,7 +69,7 @@ function statisticRequest(video) {
   } else {
    	console.log(xhr); 
 	}
-	console.log('statistics\n',JSON.parse(xhr.response));
+	// console.log('statistics\n',JSON.parse(xhr.response));
 
 	let allviewers = [];
 	let item = JSON.parse(xhr.response);
@@ -77,34 +77,23 @@ function statisticRequest(video) {
 	for(let i = 0; i < item.items.length; i += 1) {
 		allviewers.push(item.items[i].statistics.viewCount);
 	}
-	console.log(allviewers);
+
 	return allviewers;
 
 }
 
 function create(c) {
-
+			//Create elements in desctop
 		for(let i = 0; i < c[1].length; i += 1) {
 		let content = document.querySelector('.content');
-		let div = document.createElement('div');
-		let img = document.createElement('img');
-		let name = document.createElement('p');
-		let time = document.createElement('p');
-		let viewer = document.createElement('p')
-		let discription = document.createElement('div');
-		let title = document.createElement('div');
-		let link = document.createElement('a');
-
-		div.className = 'test';
-		img.src = c[1][i];
-		name.innerHTML = c[2][i];
-		time.innerHTML = c[3][i];
-		viewer.innerHTML = c[6][i];
-		discription.innerHTML = c[4][i];
-		discription.className = 'discription';
-		link.innerHTML = c[5][i];
-		link.href = 'https://www.youtube.com/watch?v='+c[0][i];
-		title.className = 'title';
+		let div = element('div',{className: 'test'});
+		let img = element('img',{src: c[1][i]});
+		let name = element('p',{innerHTML: c[2][i], className: 'chanel'});
+		let time = element('p',{innerHTML: c[3][i], className: 'time'});
+		let viewer = element('p', {innerHTML: c[6][i], className: 'count'});
+		let discription = element('div',{innerHTML: c[4][i], className: 'discription'});
+		let title = element('div',{className: 'title'});
+		let link = element('a',{innerHTML: c[5][i], href: 'https://www.youtube.com/watch?v='+c[0][i] });
 
 		content.appendChild(div);
 		div.appendChild(img);
@@ -112,8 +101,9 @@ function create(c) {
 		div.appendChild(time);
 		div.appendChild(viewer);
 		div.appendChild(discription);
-		title.appendChild(link);
 		div.appendChild(title);
+		title.appendChild(link);
+		
 	}
 }
 
@@ -124,20 +114,26 @@ let result = e.target.value;
 let a = videoRequest(result);
 let b = statisticRequest(a);
 a.push(b);
-console.log(result);
-console.log(a);
 
 let divcontent = document.querySelector('.content');
 let divtest = document.querySelector('.test');
 
 if(divcontent.contains(divtest)) {
 	divcontent.remove();
-	let newcontent = document.createElement('div');
+	let newcontent = element('div',{className: 'content'});
 	let body = document.querySelector('.body');
-	newcontent.className = 'content';
 	body.appendChild(newcontent);
 	create(a);
 	} else {
 	create(a);
 	}
 });	
+
+function element(name, obj) {
+	let a = document.createElement(name);
+	for(let key in obj) {
+		a[key] = obj[key];
+	}
+	return a;
+}
+

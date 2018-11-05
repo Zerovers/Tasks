@@ -47,7 +47,7 @@ body {
 
 .title {
   position: absolute;
-  top: 20px;
+  top: 35px;
   background-color: rgba(5, 97, 5, 0.8);
   width: 100%;
   min-height: 36px;
@@ -58,6 +58,52 @@ body {
 .title a {
   color: white;
 }
+
+p.chanel {
+  font-weight: bold;
+  text-align: center;
+}
+
+p.chanel::before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900; 
+  content: "\f183";
+  color: rgba(126, 117, 117, 0.842);
+  position: absolute;
+  left: 25px;
+}
+
+p.time {
+  font-weight: bold;
+  text-align: center;
+}
+
+p.time:before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 400; 
+  content: "\f073";
+  font-weight: normal;
+  color: rgba(126, 117, 117, 0.842);
+  position: absolute;
+  left: 21px;
+}
+
+p.count {
+  font-weight: bold;
+  text-align: center;
+}
+
+p.count:before {
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 400; 
+  content: "\f06e";
+  font-weight: normal;
+  color: rgba(126, 117, 117, 0.842);
+  position: absolute;
+  left: 19px;
+}
+
+
 
 
 
