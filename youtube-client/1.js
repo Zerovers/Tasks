@@ -1,3 +1,4 @@
+	//Request video parametrs
 function videoRequest(searchTerm) {
   let url = 'https://www.googleapis.com/youtube/v3/search?';
   let params = {
@@ -5,7 +6,7 @@ function videoRequest(searchTerm) {
     key: 'key=AIzaSyD3cMxUk1qFHsOty7ISsuUcTkx84yfs4Vs&',
 		q: 'q='+searchTerm,
 		type: 'type=video&',
-		maxResults: 'maxResults=4&'
+		maxResults: 'maxResults=15&'
   };
   
   let xhr = new XMLHttpRequest();
@@ -17,39 +18,23 @@ function videoRequest(searchTerm) {
    	console.log(xhr); 
 	}
 
-		//Request video parametrs
-	let allid = [];
-	let allphoto = [];
-	let allName = [];
-	let alltime = [];
-	let alldiscription = [];
-	let alltitle = [];
 	let item = JSON.parse(xhr.response);
-
-		for(let i = 0; i < item.items.length; i += 1) {
-			allid.push(item.items[i].id.videoId);
-		}
-		for(let i = 0; i < item.items.length; i += 1) {
-			allphoto.push(item.items[i].snippet.thumbnails.medium.url);
-		}
-		for(let i = 0; i < item.items.length; i += 1) {
-			allName.push(item.items[i].snippet.channelTitle);
-		}
-		for(let i = 0; i < item.items.length; i += 1) {
-			let time = item.items[i].snippet.publishedAt;
+	let map = item.items.map(a => {
+			let time = a.snippet.publishedAt;
 			time = time.split('T');
-			alltime.push(time[0]);
-		}
-		for(let i = 0; i < item.items.length; i += 1) {
-			alldiscription.push(item.items[i].snippet.description);
-		}
-		for(let i = 0; i < item.items.length; i += 1) {
-			alltitle.push(item.items[i].snippet.title);
-		}
-
-
+			return {
+				id: a.id.videoId,
+				photo: a.snippet.thumbnails.medium.url,
+				Name: a.snippet.channelTitle,
+				time: time[0],
+				discription: a.snippet.description,
+				title: a.snippet.title,
+			}
+	});
+	statisticRequest(map);
+	console.log('map', map);
 	// console.log('video',JSON.parse(xhr.response));
-	return [allid,allphoto,allName,alltime,alldiscription,alltitle];
+	return map;
 }
 
 function statisticRequest(video) {
@@ -57,7 +42,7 @@ function statisticRequest(video) {
   let params = {
     part: 'part=snippet,statistics',
     key: 'key=AIzaSyD3cMxUk1qFHsOty7ISsuUcTkx84yfs4Vs&',
-		id: 'id='+video[0].join(',')+'&'
+		id: 'id='+video.map(e => e.id).join(',')+'&'
 	};
 
 	let xhr = new XMLHttpRequest();
@@ -69,66 +54,55 @@ function statisticRequest(video) {
   } else {
    	console.log(xhr); 
 	}
-	// console.log('statistics\n',JSON.parse(xhr.response));
+	//  console.log('statistics\n',JSON.parse(xhr.response));
 
-	let allviewers = [];
 	let item = JSON.parse(xhr.response);
-
-	for(let i = 0; i < item.items.length; i += 1) {
-		allviewers.push(item.items[i].statistics.viewCount);
-	}
-
-	return allviewers;
-
+	item.items.forEach((e,i) => 
+	video[i].viewers = e.statistics.viewCount
+	);
 }
-
-function create(c) {
-			//Create elements in desctop
-		for(let i = 0; i < c[1].length; i += 1) {
-		let content = document.querySelector('.content');
-		let div = element('div',{className: 'test'});
-		let img = element('img',{src: c[1][i]});
-		let name = element('p',{innerHTML: c[2][i], className: 'chanel'});
-		let time = element('p',{innerHTML: c[3][i], className: 'time'});
-		let viewer = element('p', {innerHTML: c[6][i], className: 'count'});
-		let discription = element('div',{innerHTML: c[4][i], className: 'discription'});
-		let title = element('div',{className: 'title'});
-		let link = element('a',{innerHTML: c[5][i], href: 'https://www.youtube.com/watch?v='+c[0][i] });
-
-		content.appendChild(div);
-		div.appendChild(img);
-		div.appendChild(name);
-		div.appendChild(time);
-		div.appendChild(viewer);
-		div.appendChild(discription);
-		div.appendChild(title);
-		title.appendChild(link);
-		
-	}
-}
-
-
+	// Event find content in input
 let search = document.querySelector('.search');
 search.addEventListener('change', e => {
-let result = e.target.value;	
-let a = videoRequest(result);
-let b = statisticRequest(a);
-a.push(b);
+	let currentPage = 0;
+	let result = e.target.value;	
+	let info = videoRequest(result);
+	let	body = document.querySelector('.body');
+	let butt = element('div', {className: 'button'});
+	let left = element('div', {className: 'left'});
+	let right = element('div', {className: 'right'});
+	let pageCount = element('div', {innerHTML: currentPage+1,className: 'page-count'});
+	butt.appendChild(left);
+	butt.appendChild(pageCount);
+	butt.appendChild(right);
+	body.appendChild(butt);
+	renderPage(info,currentPage);
 
-let divcontent = document.querySelector('.content');
-let divtest = document.querySelector('.test');
+	right.addEventListener('click', e => {
+		// let unvisible =  document.querySelector('.visible');
+		// unvisible.classList.remove('visible');
+		matrix = document.querySelector('.matrix');
+		child =  document.querySelector('.visible');
+		matrix.removeChild(child)
+		currentPage += 1;
+		pageCount.innerHTML = currentPage+1;
+		renderPage(info,currentPage);
+	});	
 
-if(divcontent.contains(divtest)) {
-	divcontent.remove();
-	let newcontent = element('div',{className: 'content'});
-	let body = document.querySelector('.body');
-	body.appendChild(newcontent);
-	create(a);
-	} else {
-	create(a);
-	}
+	left.addEventListener('click', e => {
+		matrix = document.querySelector('.matrix');
+		child =  document.querySelector('.visible');
+		matrix.removeChild(child)
+		if(currentPage === 0) {
+			currentPage += 1;
+		}
+		currentPage -= 1;
+		pageCount.innerHTML = currentPage+1;
+		renderPage(info,currentPage);
+	});
 });	
 
+	//Create element
 function element(name, obj) {
 	let a = document.createElement(name);
 	for(let key in obj) {
@@ -136,4 +110,43 @@ function element(name, obj) {
 	}
 	return a;
 }
+
+function renderPage(arr,page) {
+	content = element('div', {className: 'content visible'})
+	matrix = document.querySelector('.matrix');
+	matrix.appendChild(content);
+	content.classList.add(''+page);
+	if(page>0) {
+		for(let i = page*4; i < page*4+4; i += 1) {
+			renderVideo(arr,i,content);
+		}
+	} else {
+		for(let i = page*0; i < page*4+4; i += 1) {
+			renderVideo(arr,i,content);
+		}
+	}
+	
+	
+}
+
+function renderVideo(data,count, content) {
+	let div = element('div',{className: 'test'});
+	let img = element('img',{src: data[count].photo});
+	let name = element('p',{innerHTML: data[count].Name, className: 'chanel'});
+	let time = element('p',{innerHTML: data[count].time, className: 'time'});
+	let viewer = element('p', {innerHTML: data[count].viewers, className: 'count'});
+	let discription = element('div',{innerHTML: data[count].discription, className: 'discription'});
+	let title = element('div',{className: 'title'});
+	let link = element('a',{innerHTML: data[count].title, href: 'https://www.youtube.com/watch?v='+data[count].id });
+	// let content = document.querySelector('.visible');
+	content.appendChild(div);
+	div.appendChild(img);
+	div.appendChild(name);
+	div.appendChild(time);
+	div.appendChild(viewer);
+	div.appendChild(discription);
+	div.appendChild(title);
+	title.appendChild(link);
+}
+
 
