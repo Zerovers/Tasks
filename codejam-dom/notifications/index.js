@@ -1,4 +1,4 @@
-setTimeout(a,1000);
+setTimeout(a,5000);
 function a() {
   let arr = ['111111111111111', '22222222222222222', '33333333333333',
   '4444444444444444444', '55555555555555555', '666666666666666666'];
@@ -6,7 +6,7 @@ function a() {
   let count = 0;
   let input = document.querySelector('#checkbox');
   input.addEventListener('click', e => save());
-  // document.addEventListener('DOMContentLoaded', load());
+  document.addEventListener('DOMContentLoaded', load());
   let right = document.querySelector('.right')
   right.addEventListener('click', e => {  
     rightNavigation(count,arr);
@@ -48,7 +48,6 @@ cross.addEventListener('click', e => {
       notification.style.display = 'none';
     }
   });
-
 };
 function renderComponent(arr) {
   let body = document.body;
@@ -135,7 +134,7 @@ function save(){
 }
 function load(){    
   if(localStorage.getItem('checkbox') === 'true') {
-    let notification = document.querySelector('.notification');
+      let notification = document.querySelector('.notification');
       notification.style.display = 'none';
   } 
 }
