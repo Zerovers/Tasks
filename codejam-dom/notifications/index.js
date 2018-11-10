@@ -1,65 +1,48 @@
 setTimeout(a,1000);
-
 function a() {
   let arr = ['111111111111111', '22222222222222222', '33333333333333',
   '4444444444444444444', '55555555555555555', '666666666666666666'];
   renderComponent(arr);
- 
   let count = 0;
   let input = document.querySelector('#checkbox');
-    if(input.checked) {
-
-    }
-  let localValue = localStorage.setItem('checked', input.checked)
-
-
-
+  input.addEventListener('click', e => save());
+  // document.addEventListener('DOMContentLoaded', load());
   let right = document.querySelector('.right')
-  right.addEventListener('click', e => {
-    
+  right.addEventListener('click', e => {  
     rightNavigation(count,arr);
     count += 1;
     if(count > 5) {
       count = 0;
     }
   });
-
   let left = document.querySelector('.left')
-  left.addEventListener('click', e => {
-    
+  left.addEventListener('click', e => {  
     leftNavigation(count, arr);
     count -= 1;  
     if(count < 0) {
       count = 5;
     }
   }); 
-
-  
-
 let cross = document.querySelector('.cross');
 cross.addEventListener('click', e => {
     let notification = document.querySelector('.notification');
     notification.style.display = 'none';
   });
-
   document.addEventListener('keydown', e => {
     if(e.keyCode === 39) {
-    
     rightNavigation(count,arr);
     count += 1;
     if(count > 5) {
       count = 0;
     }
     }
-    if(e.keyCode === 37) {
-      
+    if(e.keyCode === 37) {  
     leftNavigation(count, arr);
     count -= 1; 
     if(count < 0) {
       count = 5;
     }
     }
-
     if(e.keyCode === 27) {
       let notification = document.querySelector('.notification');
       notification.style.display = 'none';
@@ -67,7 +50,6 @@ cross.addEventListener('click', e => {
   });
 
 };
-
 function renderComponent(arr) {
   let body = document.body;
   let notification = element('div', {className: 'notification'});
@@ -82,8 +64,6 @@ function renderComponent(arr) {
   let left = element('div', {className: 'left'});
   let right = element('div', {className: 'right'});
   let ul = element('ul', {className: 'ul'});
-  
-  
   body.appendChild(notification);
   page.appendChild(h);
   page.appendChild(p);
@@ -106,7 +86,6 @@ function renderComponent(arr) {
   pagenation.appendChild(right);
   notification.appendChild(pagenation);
 };
-
 function element(name,obj) {
   let a = document.createElement(name);
   for(let key in obj) {
@@ -114,16 +93,12 @@ function element(name,obj) {
   }
   return a;
 };
-
-
-
 function load() {
   if(localValue === 'checked') {
     let notification = document.querySelector('.notification');
     notification.style.display = 'none';
   }
 }
-
 function rightNavigation(count,arr) {
     let page = document.querySelector('.page');
     let p = document.querySelector('.p');
@@ -153,6 +128,16 @@ function leftNavigation(count, arr) {
     len[count].classList.add('active');
     let newp = element('p', {innerHTML: arr[count], className: 'p'});
     page.appendChild(newp);  
+}
+function save(){
+  let checkbox = document.querySelector('#checkbox');
+  localStorage.setItem('checkbox', checkbox.checked);
+}
+function load(){    
+  if(localStorage.getItem('checkbox') === 'true') {
+    let notification = document.querySelector('.notification');
+      notification.style.display = 'none';
+  } 
 }
 
 
