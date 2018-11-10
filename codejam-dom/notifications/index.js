@@ -17,11 +17,15 @@ function a() {
     '4444444444444444444', '55555555555555555', '666666666666666666'];
     let page = document.querySelector('.page');
     let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
     page.removeChild(p);
+    len[pageCount].classList.remove('active');
     pageCount += 1;
     if(pageCount > 5) {
       pageCount = 0;
     }
+    len[pageCount].classList.add('active');
     let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
     page.appendChild(newp);
   });
@@ -32,11 +36,15 @@ function a() {
     '4444444444444444444', '55555555555555555', '666666666666666666'];
     let page = document.querySelector('.page');
     let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
     page.removeChild(p);
+    len[pageCount].classList.remove('active');
     pageCount -= 1;
     if(pageCount < 0) {
       pageCount = 5;
     }
+    len[pageCount].classList.add('active');
     let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
     page.appendChild(newp);  
   }); 
