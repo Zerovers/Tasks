@@ -1,7 +1,10 @@
 setTimeout(a,1000);
 
 function a() {
-  renderComponent();
+  let arr = ['111111111111111', '22222222222222222', '33333333333333',
+  '4444444444444444444', '55555555555555555', '666666666666666666'];
+  renderComponent(arr);
+ 
   let pageCount = 0;
   let ul = document.querySelector('ul');
   ul.addEventListener('click', e => {
@@ -11,10 +14,16 @@ function a() {
     }
   });
 
+  let input = document.querySelector('#checkbox');
+    if(input.checked) {
+
+    }
+  let localValue = localStorage.setItem('checked', input.checked)
+
+
+
   let right = document.querySelector('.right')
   right.addEventListener('click', e => {
-    let arr = ['111111111111111', '22222222222222222', '33333333333333',
-    '4444444444444444444', '55555555555555555', '666666666666666666'];
     let page = document.querySelector('.page');
     let p = document.querySelector('.p');
     let ul = document.querySelector('.ul');
@@ -32,8 +41,6 @@ function a() {
 
   let left = document.querySelector('.left')
   left.addEventListener('click', e => {
-    let arr = ['111111111111111', '22222222222222222', '33333333333333',
-    '4444444444444444444', '55555555555555555', '666666666666666666'];
     let page = document.querySelector('.page');
     let p = document.querySelector('.p');
     let ul = document.querySelector('.ul');
@@ -49,16 +56,54 @@ function a() {
     page.appendChild(newp);  
   }); 
 
+  
+
 let cross = document.querySelector('.cross');
 cross.addEventListener('click', e => {
     let notification = document.querySelector('.notification');
     notification.style.display = 'none';
-  })
+  });
+
+  document.addEventListener('keydown', e => {
+    if(e.keyCode === 39) {
+    let page = document.querySelector('.page');
+    let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
+    page.removeChild(p);
+    len[pageCount].classList.remove('active');
+    pageCount += 1;
+    if(pageCount > 5) {
+      pageCount = 0;
+    }
+    len[pageCount].classList.add('active');
+    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
+    page.appendChild(newp);
+    }
+    if(e.keyCode === 37) {
+    let page = document.querySelector('.page');
+    let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
+    page.removeChild(p);
+    len[pageCount].classList.remove('active');
+    pageCount -= 1;
+    if(pageCount < 0) {
+      pageCount = 5;
+    }
+    len[pageCount].classList.add('active');
+    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
+    page.appendChild(newp);  
+    }
+    if(e.keyCode === 27) {
+      let notification = document.querySelector('.notification');
+    notification.style.display = 'none';
+    }
+  });
+
 };
 
-function renderComponent() {
-  let arr = ['111111111111111', '22222222222222222', '33333333333333',
-'4444444444444444444', '55555555555555555', '666666666666666666'];
+function renderComponent(arr) {
   let body = document.body;
   let notification = element('div', {className: 'notification'});
   let page = element('div', {className: 'page'});
@@ -66,7 +111,7 @@ function renderComponent() {
   let p = element('p', {innerHTML: arr[0], className: 'p'});
   let cross = element('div', {className: 'cross'});
   let checkbox = element('div', {className: 'checkbox'});
-  let input = element('input', {type: 'checkbox', name: 'Disable Tips'});
+  let input = element('input', {type: 'checkbox', name: 'Disable Tips', id: 'checkbox'});
   let label = element('label', {for: 'Disable Tips', innerHTML: 'Disable Tips'})
   let pagenation = element('div', {className: 'pagenation'});
   let left = element('div', {className: 'left'});
@@ -105,9 +150,15 @@ function element(name,obj) {
   return a;
 };
 
-function renderInfo(arr) {
 
+
+function load() {
+  if(localValue === 'checked') {
+    let notification = document.querySelector('.notification');
+    notification.style.display = 'none';
+  }
 }
+
 
 
 
