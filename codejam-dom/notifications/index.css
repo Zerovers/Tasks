@@ -21,8 +21,64 @@ content {
   width: 10px;
   height: 10px;
   border: 1px solid black;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .page {
+  width: 390px;
+  height: 200px;
+  position: absolute;
+  border: 2px solid black;
+  left: 5px;
+  top: 5px;
+}
 
+.checkbox {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}
+
+.pagenation {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+  display: flex;
+  width: 200px;
+}
+
+.left,
+.right {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+
+.right {
+  margin-left: 25px;
+}
+
+ul {
+  justify-content: space-between;
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  margin-top: 13px;
+  margin-left: 21px;
+  width: 90px;
+}
+
+li {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  list-style-type: none;
+}
+
+.active {
+  background-color: blue;
 }
