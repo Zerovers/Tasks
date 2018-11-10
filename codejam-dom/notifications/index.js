@@ -5,15 +5,7 @@ function a() {
   '4444444444444444444', '55555555555555555', '666666666666666666'];
   renderComponent(arr);
  
-  let pageCount = 0;
-  let ul = document.querySelector('ul');
-  ul.addEventListener('click', e => {
-    if(!(e.target.classList.contains('active')) && e.target.classList.contains('li')) {
-      document.querySelector('.active').classList.remove('active');
-      e.target.classList.toggle('active');
-    }
-  });
-
+  let count = 0;
   let input = document.querySelector('#checkbox');
     if(input.checked) {
 
@@ -24,36 +16,22 @@ function a() {
 
   let right = document.querySelector('.right')
   right.addEventListener('click', e => {
-    let page = document.querySelector('.page');
-    let p = document.querySelector('.p');
-    let ul = document.querySelector('.ul');
-    let len = ul.childNodes;
-    page.removeChild(p);
-    len[pageCount].classList.remove('active');
-    pageCount += 1;
-    if(pageCount > 5) {
-      pageCount = 0;
+    
+    rightNavigation(count,arr);
+    count += 1;
+    if(count > 5) {
+      count = 0;
     }
-    len[pageCount].classList.add('active');
-    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
-    page.appendChild(newp);
   });
 
   let left = document.querySelector('.left')
   left.addEventListener('click', e => {
-    let page = document.querySelector('.page');
-    let p = document.querySelector('.p');
-    let ul = document.querySelector('.ul');
-    let len = ul.childNodes;
-    page.removeChild(p);
-    len[pageCount].classList.remove('active');
-    pageCount -= 1;
-    if(pageCount < 0) {
-      pageCount = 5;
+    
+    leftNavigation(count, arr);
+    count -= 1;  
+    if(count < 0) {
+      count = 5;
     }
-    len[pageCount].classList.add('active');
-    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
-    page.appendChild(newp);  
   }); 
 
   
@@ -66,38 +44,25 @@ cross.addEventListener('click', e => {
 
   document.addEventListener('keydown', e => {
     if(e.keyCode === 39) {
-    let page = document.querySelector('.page');
-    let p = document.querySelector('.p');
-    let ul = document.querySelector('.ul');
-    let len = ul.childNodes;
-    page.removeChild(p);
-    len[pageCount].classList.remove('active');
-    pageCount += 1;
-    if(pageCount > 5) {
-      pageCount = 0;
+    
+    rightNavigation(count,arr);
+    count += 1;
+    if(count > 5) {
+      count = 0;
     }
-    len[pageCount].classList.add('active');
-    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
-    page.appendChild(newp);
     }
     if(e.keyCode === 37) {
-    let page = document.querySelector('.page');
-    let p = document.querySelector('.p');
-    let ul = document.querySelector('.ul');
-    let len = ul.childNodes;
-    page.removeChild(p);
-    len[pageCount].classList.remove('active');
-    pageCount -= 1;
-    if(pageCount < 0) {
-      pageCount = 5;
+      
+    leftNavigation(count, arr);
+    count -= 1; 
+    if(count < 0) {
+      count = 5;
     }
-    len[pageCount].classList.add('active');
-    let newp = element('p', {innerHTML: arr[pageCount], className: 'p'});
-    page.appendChild(newp);  
     }
+
     if(e.keyCode === 27) {
       let notification = document.querySelector('.notification');
-    notification.style.display = 'none';
+      notification.style.display = 'none';
     }
   });
 
@@ -157,6 +122,37 @@ function load() {
     let notification = document.querySelector('.notification');
     notification.style.display = 'none';
   }
+}
+
+function rightNavigation(count,arr) {
+    let page = document.querySelector('.page');
+    let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
+    page.removeChild(p);
+    len[count].classList.remove('active');
+    count += 1;
+    if(count > 5) {
+      count = 0;
+    }
+    len[count].classList.add('active');
+    let newp = element('p', {innerHTML: arr[count], className: 'p'});
+    page.appendChild(newp);
+}
+function leftNavigation(count, arr) {
+    let page = document.querySelector('.page');
+    let p = document.querySelector('.p');
+    let ul = document.querySelector('.ul');
+    let len = ul.childNodes;
+    page.removeChild(p);
+    len[count].classList.remove('active');
+    count -= 1;
+    if(count < 0) {
+      count = 5;
+    }
+    len[count].classList.add('active');
+    let newp = element('p', {innerHTML: arr[count], className: 'p'});
+    page.appendChild(newp);  
 }
 
 
