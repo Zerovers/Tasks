@@ -18,12 +18,13 @@ function videoRequest(searchTerm) {
    	console.log(xhr); 
 	}
 	let item = JSON.parse(xhr.response);
+	console.log(item);
 	let map = item.items.map(a => {
 			let time = a.snippet.publishedAt;
 			time = time.split('T');
 			return {
 				id: a.id.videoId,
-				photo: a.snippet.thumbnails.medium.url,
+				photo: a.snippet.thumbnails.high.url,
 				Name: a.snippet.channelTitle,
 				time: time[0],
 				discription: a.snippet.description,
@@ -32,6 +33,7 @@ function videoRequest(searchTerm) {
 			}
 	});
 	statisticRequest(map);
+	addvideo(map);
 	return map;
 }
 
@@ -68,6 +70,7 @@ function videoRequest2(searchTerm, obj) {
 			}
 	});
 	statisticRequest(map2);
+	addvideo(map2);
 	return map2;
 }
 
@@ -127,48 +130,81 @@ search.addEventListener('change', e => {
 			info2 = videoRequest2(result,info);
 			info = info.concat(info2);
 		} 
+		console.log(info);
 		renderPage(info,currentPage);
-});	
+	});	
 
 	// Event click left button
 	left.addEventListener('click', e => {
-	matrix = document.querySelector('.matrix');
-	child =  document.querySelector('.visible');
-	matrix.removeChild(child)
-	if(currentPage === 0) {
-		currentPage += 1;
-	}
-	currentPage -= 1;
-	pageCount.innerHTML = currentPage+1;
-	renderPage(info,currentPage);
-	});
-
-	matrix.addEventListener('wheel', e => {
-	let delta = e.deltaY;
-	if(delta === 100) {
-		matrix = document.querySelector('.matrix');
-		child =  document.querySelector('.visible');
-		matrix.removeChild(child)
-		currentPage += 1;
-		pageCount.innerHTML = currentPage+1;
-			if(info.length - currentPage*4 < 8) {
-				info2 = videoRequest2(result,info);
-				info = info.concat(info2);
-			} 
-		renderPage(info,currentPage);
-	}
-	if(delta === -100) {
 		matrix = document.querySelector('.matrix');
 		child =  document.querySelector('.visible');
 		matrix.removeChild(child)
 			if(currentPage === 0) {
-			currentPage += 1;
+				currentPage += 1;
 			}
 		currentPage -= 1;
 		pageCount.innerHTML = currentPage+1;
 		renderPage(info,currentPage);
-	}
 	});
+
+	matrix.onmousedown = function (e) {
+		let coords = getCoords(matrix);
+		let shiftX = e.pageX - coords.left;
+		let down = e.pageX;
+		body = document.querySelector('.body');
+		let bodycoords = getCoords(body);
+		document.onmousemove = function(e) {
+			
+			if (e.which != 1) { // check on right click
+				return; 
+			}
+			let newcoords = e.pageX - shiftX - bodycoords.left;
+			let right = body.offsetWidth - matrix.offsetWidth;
+			if(newcoords > right ) {
+				newcoords = right;
+			}
+			matrix.style.left = newcoords + 'px';
+			if(newcoords >= 150 ) {
+				matrix = document.querySelector('.matrix');
+				child =  document.querySelector('.visible');
+			  matrix.removeChild(child)
+				currentPage += 1;
+				pageCount.innerHTML = currentPage+1;
+				if(info.length - currentPage*4 < 8) {
+					info2 = videoRequest2(result,info);
+						info = info.concat(info2);
+					} 
+				renderPage(info,currentPage);
+				matrix.style.left = 0;
+				content = document.querySelector('.content');
+				document.onmousemove = null;
+				matrix.onmouseup = null;
+			}			
+			if(newcoords <= -150) {
+				matrix = document.querySelector('.matrix');
+				child =  document.querySelector('.visible');
+				matrix.removeChild(child)
+				if(currentPage === 0) {
+					currentPage += 1;
+				}
+				currentPage -= 1;
+				pageCount.innerHTML = currentPage+1;
+				renderPage(info,currentPage);
+				matrix.style.left = 0;
+				document.onmousemove = null;
+				matrix.onmouseup = null;		
+			}
+		};
+		matrix.ondragstart = function() {
+			return false;
+		};
+		function getCoords(elem) {   
+			let box = elem.getBoundingClientRect();
+			return {
+				left: box.left + pageXOffset
+			};
+		}	
+	}
 
 });	
 
@@ -181,6 +217,7 @@ function element(name, obj) {
 }
 
 function renderPage(arr,page) {
+	console.log(arr);
 	let info2;
 	content = element('div', {className: 'content visible'})
 	matrix = document.querySelector('.matrix');
@@ -188,25 +225,24 @@ function renderPage(arr,page) {
 	content.classList.add(''+page);
 	if(page>0) {
 			for(let i = page*4; i < page*4+4; i += 1) {
-			renderVideo(arr,i,content);
+			content.appendChild(arr[i].doomelement);
 		}
 	} else {
 		for(let i = page*0; i < page*4+4; i += 1) {
-			renderVideo(arr,i,content);
+			content.appendChild(arr[i].doomelement);
 		}
 	}
 }
 
-function renderVideo(data,count, content) {
+function renderVideo(data) {
 	let div = element('div',{className: 'test'});
-	let img = element('img',{src: data[count].photo});
-	let name = element('p',{innerHTML: data[count].Name, className: 'chanel'});
-	let time = element('p',{innerHTML: data[count].time, className: 'time'});
-	let viewer = element('p', {innerHTML: data[count].viewers, className: 'count'});
-	let discription = element('div',{innerHTML: data[count].discription, className: 'discription'});
+	let img = element('img',{src: data.photo});
+	let name = element('p',{innerHTML: data.Name, className: 'chanel'});
+	let time = element('p',{innerHTML: data.time, className: 'time'});
+	let viewer = element('p', {innerHTML: data.viewers, className: 'count'});
+	let discription = element('div',{innerHTML: data.discription, className: 'discription'});
 	let title = element('div',{className: 'title'});
-	let link = element('a',{innerHTML: data[count].title, href: 'https://www.youtube.com/watch?v='+data[count].id });
-	content.appendChild(div);
+	let link = element('a',{innerHTML: data.title, href: 'https://www.youtube.com/watch?v='+data.id });
 	div.appendChild(img);
 	div.appendChild(name);
 	div.appendChild(time);
@@ -214,7 +250,14 @@ function renderVideo(data,count, content) {
 	div.appendChild(discription);
 	div.appendChild(title);
 	title.appendChild(link);
+	return div;
 }
+
+function addvideo(a) {
+	a.forEach(e => {
+		e.doomelement = renderVideo(e)
+	})
+};
 
 
 

@@ -1,57 +1,54 @@
+
 body {
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
 .wrapper {
+  margin: auto;
+  max-width: 700px;
   display: block;
-  border: 1px solid black;
+  height: 50px;
 }
 
 .matrix {
   position: relative;
-  margin: 0 auto;
-  max-width: 1000px;
-  height: 535px;
+  height: 650px;
+  margin-left: 90px;
+  margin-right: 90px;
 }
 
-/* #one,
-#two,
-#three,
-#four {
+.content {
+  width: 100%;
+  display: none;
   position: absolute;
-  
-
-} */
-
-
-
-
-
+  flex-wrap: wrap;
+  height: 700px;
+  margin-top: 10px;
+  pointer-events: none;
+}
 
 .test {
-  width: 200px;
-  height: 400px;
+  width: 300px;
+  height: 500px;
   border: 2px solid black;
   margin-top: 20px;
-  margin-left: 10px;
+  margin: auto;
   background-color: white;
   display: inline-block;
   border-radius: 10px;
   position: relative;
-  
 }
 
-.content {
-  display: none;
-  position: absolute;
-  flex-wrap: wrap;
-  border: 1px solid black;
-  width: 900px;
-  height: 500px;
-  margin-top: 10px;
-  
+.test:first-child {
+  margin-left: 0;
 }
+
+.test:last-child {
+  margin-right: 0;
+}
+
+
 
 .visible {
   display: flex;
@@ -82,8 +79,8 @@ body {
 }
 
 .test img {
-  width: 190px;
-  height: 100px;
+  width: 290px;
+  height: 200px;
   margin-left: 5px;
   margin-top: 5px;
 }
@@ -95,12 +92,12 @@ body {
 
 .title {
   position: absolute;
-  top: 35px;
+  top: 60px;
   background-color: rgba(5, 97, 5, 0.8);
   width: 100%;
   min-height: 36px;
   text-align: center;
-  
+  pointer-events: auto;
 }
 
 .title a {
