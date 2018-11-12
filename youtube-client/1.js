@@ -94,16 +94,15 @@ function statisticRequest(video) {
 	video[i].viewers = e.statistics.viewCount
 	);
 }
-	// Event find content in input
+			// Event find content in input
 let search = document.querySelector('.search');
 search.addEventListener('change', e => {
 	let currentPage = 0;
+	let cuppentPage1 = 0;
 	let result = e.target.value;	
 	let info = videoRequest(result);
 	if(document.querySelector('.visible')) {
-		matrix = document.querySelector('.matrix');
-		child =  document.querySelector('.visible');
-		matrix.removeChild(child)
+		removePage();
 	}
 	if(document.querySelector('.button')) {
 		let	body = document.querySelector('.body');
@@ -119,11 +118,10 @@ search.addEventListener('change', e => {
 	butt.appendChild(right);
 	body.appendChild(butt);
 	renderPage(info,currentPage);
-	// Event click right button
+
+			// Event click right button
 	right.addEventListener('click', e => {
-		matrix = document.querySelector('.matrix');
-		child =  document.querySelector('.visible');
-		matrix.removeChild(child)
+		removePage();
 		currentPage += 1;
 		pageCount.innerHTML = currentPage+1;
 		if(info.length - currentPage*4 < 8) {
@@ -136,75 +134,74 @@ search.addEventListener('change', e => {
 
 	// Event click left button
 	left.addEventListener('click', e => {
-		matrix = document.querySelector('.matrix');
-		child =  document.querySelector('.visible');
-		matrix.removeChild(child)
+		removePage();
 			if(currentPage === 0) {
 				currentPage += 1;
 			}
 		currentPage -= 1;
 		pageCount.innerHTML = currentPage+1;
 		renderPage(info,currentPage);
+		
 	});
 
-	matrix.onmousedown = function (e) {
-		let coords = getCoords(matrix);
-		let shiftX = e.pageX - coords.left;
-		let down = e.pageX;
-		body = document.querySelector('.body');
-		let bodycoords = getCoords(body);
-		document.onmousemove = function(e) {
+	// matrix.onmousedown = function (e) {
+	// 	let coords = getCoords(matrix);
+	// 	let shiftX = e.pageX - coords.left;
+	// 	let down = e.pageX;
+	// 	body = document.querySelector('.body');
+	// 	let bodycoords = getCoords(body);
+	// 	document.onmousemove = function(e) {
 			
-			if (e.which != 1) { // check on right click
-				return; 
-			}
-			let newcoords = e.pageX - shiftX - bodycoords.left;
-			let right = body.offsetWidth - matrix.offsetWidth;
-			if(newcoords > right ) {
-				newcoords = right;
-			}
-			matrix.style.left = newcoords + 'px';
-			if(newcoords >= 150 ) {
-				matrix = document.querySelector('.matrix');
-				child =  document.querySelector('.visible');
-			  matrix.removeChild(child)
-				currentPage += 1;
-				pageCount.innerHTML = currentPage+1;
-				if(info.length - currentPage*4 < 8) {
-					info2 = videoRequest2(result,info);
-						info = info.concat(info2);
-					} 
-				renderPage(info,currentPage);
-				matrix.style.left = 0;
-				content = document.querySelector('.content');
-				document.onmousemove = null;
-				matrix.onmouseup = null;
-			}			
-			if(newcoords <= -150) {
-				matrix = document.querySelector('.matrix');
-				child =  document.querySelector('.visible');
-				matrix.removeChild(child)
-				if(currentPage === 0) {
-					currentPage += 1;
-				}
-				currentPage -= 1;
-				pageCount.innerHTML = currentPage+1;
-				renderPage(info,currentPage);
-				matrix.style.left = 0;
-				document.onmousemove = null;
-				matrix.onmouseup = null;		
-			}
-		};
-		matrix.ondragstart = function() {
-			return false;
-		};
-		function getCoords(elem) {   
-			let box = elem.getBoundingClientRect();
-			return {
-				left: box.left + pageXOffset
-			};
-		}	
-	}
+	// 		if (e.which != 1) { // check on right click
+	// 			return; 
+	// 		}
+	// 		let newcoords = e.pageX - shiftX - bodycoords.left;
+	// 		let right = body.offsetWidth - matrix.offsetWidth;
+	// 		if(newcoords > right ) {
+	// 			newcoords = right;
+	// 		}
+	// 		matrix.style.left = newcoords + 'px';
+	// 		if(newcoords >= 150 ) {
+	// 			matrix = document.querySelector('.matrix');
+	// 			child =  document.querySelector('.visible');
+	// 		  matrix.removeChild(child)
+	// 			currentPage += 1;
+	// 			pageCount.innerHTML = currentPage+1;
+	// 			if(info.length - currentPage*4 < 8) {
+	// 				info2 = videoRequest2(result,info);
+	// 					info = info.concat(info2);
+	// 				} 
+	// 			renderPage(info,currentPage);
+	// 			matrix.style.left = 0;
+	// 			content = document.querySelector('.content');
+	// 			document.onmousemove = null;
+	// 			matrix.onmouseup = null;
+	// 		}			
+	// 		if(newcoords <= -150) {
+	// 			matrix = document.querySelector('.matrix');
+	// 			child =  document.querySelector('.visible');
+	// 			matrix.removeChild(child)
+	// 			if(currentPage === 0) {
+	// 				currentPage += 1;
+	// 			}
+	// 			currentPage -= 1;
+	// 			pageCount.innerHTML = currentPage+1;
+	// 			renderPage(info,currentPage);
+	// 			matrix.style.left = 0;
+	// 			document.onmousemove = null;
+	// 			matrix.onmouseup = null;		
+	// 		}
+	// 	};
+	// 	matrix.ondragstart = function() {
+	// 		return false;
+	// 	};
+	// 	function getCoords(elem) {   
+	// 		let box = elem.getBoundingClientRect();
+	// 		return {
+	// 			left: box.left + pageXOffset
+	// 		};
+	// 	}	
+	// }
 
 });	
 
@@ -217,21 +214,58 @@ function element(name, obj) {
 }
 
 function renderPage(arr,page) {
-	console.log(arr);
-	let info2;
-	content = element('div', {className: 'content visible'})
+	content4 = element('div', {className: 'content4 visible'})
 	matrix = document.querySelector('.matrix');
-	matrix.appendChild(content);
-	content.classList.add(''+page);
-	if(page>0) {
-			for(let i = page*4; i < page*4+4; i += 1) {
-			content.appendChild(arr[i].doomelement);
+	matrix.appendChild(content4);
+	content3 = element('div', {className: 'content3 visible'})
+	matrix.appendChild(content3);
+	content2 = element('div', {className: 'content2 visible'})
+	matrix.appendChild(content2);
+	content1 = element('div', {className: 'content1 visible'})
+	matrix.appendChild(content1);
+
+	if (page > 0) {
+		for (let i = page * 4; i < page * 4 + 4; i += 1) {
+			let element = (arr[i].doomelement).cloneNode(true);
+			content4.appendChild(element);
 		}
 	} else {
-		for(let i = page*0; i < page*4+4; i += 1) {
-			content.appendChild(arr[i].doomelement);
+		for (let i = page * 0; i < page * 4 + 4; i += 1) {
+			let element = (arr[i].doomelement).cloneNode(true);
+			content4.appendChild(element);
 		}
 	}
+	if (page > 0) {
+		for (let i = page * 3; i < page * 3 + 3; i += 1) {
+			content3.appendChild((arr[i].doomelement).cloneNode(true));
+		}
+	} else {
+		for (let i = page * 0; i < page * 3 + 3; i += 1) {
+			let element = (arr[i].doomelement).cloneNode(true);
+			content3.appendChild(element);
+		}
+	}
+	if (page > 0) {
+		for (let i = page * 2; i < page * 2 + 2; i += 1) {
+			content2.appendChild((arr[i].doomelement).cloneNode(true));
+		}
+	} else {
+		for (let i = page * 0; i < page * 2 + 2; i += 1) {
+			let element = (arr[i].doomelement).cloneNode(true);
+			content2.appendChild(element);
+		}
+	}
+	if (page > 0) {
+		for (let i = page * 1; i < page * 1 + 1; i += 1) {
+			content1.appendChild((arr[i].doomelement).cloneNode(true));
+		}
+	} else {
+		for (let i = page * 0; i < page * 1 + 1; i += 1) {
+			let element = (arr[i].doomelement).cloneNode(true);
+			content1.appendChild(element);
+		}
+	}
+
 }
 
 function renderVideo(data) {
@@ -258,6 +292,20 @@ function addvideo(a) {
 		e.doomelement = renderVideo(e)
 	})
 };
+
+function removePage() {
+	matrix = document.querySelector('.matrix');
+	child4 =  document.querySelector('.content4');
+	child3 =  document.querySelector('.content3');
+	child2 =  document.querySelector('.content2');
+	child1 =  document.querySelector('.content1');
+	matrix.removeChild(child4)
+	matrix.removeChild(child3)
+	matrix.removeChild(child2)
+	matrix.removeChild(child1)
+}
+
+
 
 
 
