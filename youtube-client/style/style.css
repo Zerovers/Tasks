@@ -20,6 +20,15 @@
   .button4 {
     display: flex;
   }
+
+  .tooltip1,
+  .tooltip2,
+  .tooltip3 {
+    display: none;
+  }
+   .tooltip4 {
+    display: flex;
+  }
 }
 
 @media all and (max-width: 1430px) {
@@ -42,6 +51,15 @@
   }
 
   .button3 {
+    display: flex;
+  }
+
+  .tooltip1,
+  .tooltip2,
+  .tooltip4 {
+    display: none;
+  }
+   .tooltip3 {
     display: flex;
   }
 
@@ -71,6 +89,15 @@
   }
 
   .button2 {
+    display: flex;
+  }
+
+  .tooltip1,
+  .tooltip3,
+  .tooltip4 {
+    display: none;
+  }
+   .tooltip2 {
     display: flex;
   }
 }
@@ -109,11 +136,21 @@
   .button1 {
     display: flex;
   }
+
+  .tooltip2,
+  .tooltip3,
+  .tooltip4 {
+    display: none;
+  }
+   .tooltip1 {
+    display: flex;
+  }
 }
 
 body {
   margin: 0 auto;
   background-color: rgb(95, 91, 91);
+  position: relative;
 }
 
 .wrapper {
@@ -360,15 +397,14 @@ p.count:before {
   left: 19px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.tooltip1,
+.tooltip2,
+.tooltip3,
+.tooltip4 {
+  position: fixed;
+  min-width: 25px; 
+  height: 18px;
+  background-color: white;
+  border: 1px solid black;
+  justify-content: center;
+}
