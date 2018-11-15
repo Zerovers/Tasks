@@ -18,6 +18,7 @@ function videoRequest(searchTerm) {
    	console.log(xhr); 
 	}
 	let item = JSON.parse(xhr.response);
+	console.log(item);
 	let map = item.items.map(a => {
 			let time = a.snippet.publishedAt;
 			time = time.split('T');
@@ -89,6 +90,7 @@ function statisticRequest(video) {
    	console.log(xhr); 
 	}
 	let item = JSON.parse(xhr.response);
+	console.log(item);
 	item.items.forEach((e,i) => 
 	video[i].viewers = e.statistics.viewCount
 	);
@@ -170,27 +172,10 @@ search.addEventListener('change', e => {
 	}));
 
 
-	document.onmouseup = e => {
-		let alltool = document.querySelectorAll('.live');
-		if(alltool.length > 0) {
-		body = document.querySelector('.body');
-		tooltip1 = document.querySelector('.tooltip1');
-		tooltip2 = document.querySelector('.tooltip2');
-		tooltip3 = document.querySelector('.tooltip3');
-		tooltip4 = document.querySelector('.tooltip4');
-		body.removeChild(tooltip1);
-		body.removeChild(tooltip2);
-		body.removeChild(tooltip3);
-		body.removeChild(tooltip4);
-		}
-	}
-
-	let matrix = document.querySelector('.matrix');
-	matrix.onmousedown = e => {
+	document.onmousedown = e => {
+		if (e.target !== document.querySelector('.search')) {
 			let down = e.pageX;
-			let top = e.pageY;
-			renderTooltip(currentPage,down,top);
-			console.log('down');
+			console.log(down);
 			document.onmousemove = e => {
 				if (e.which != 1) {   // check on right click
 					return;
@@ -204,6 +189,7 @@ search.addEventListener('change', e => {
 					document.querySelector('.content2.visible').classList.add('transition');
 					document.querySelector('.content3.visible').classList.add('transition');
 					document.querySelector('.content4.visible').classList.add('transition');
+					// removePage();
 					setTimeout(removePage,1000);
 					if (content4 == 'flex') {
 						currentPage += 3;
@@ -227,6 +213,7 @@ search.addEventListener('change', e => {
 						info2 = videoRequest2(result, info);
 						info = info.concat(info2);
 					}
+					// renderPage(info, currentPage);
 					setTimeout(renderPage,1000,info,currentPage);
 					document.onmousemove = null;
 				}
@@ -273,6 +260,7 @@ search.addEventListener('change', e => {
 				};
 			}
 		}
+	}
 
 });	
 
@@ -389,28 +377,30 @@ function renderButton(name,count,id) {
 	body.appendChild(butt);
 }
 
-function renderTooltip(currentPage, down, top) {
-	body = document.querySelector('.body');
-			let tooltip1 = renderElement('p', {className: 'tooltip1 live'});
-			let tooltip2 = renderElement('p', {className: 'tooltip2 live'});
-			let tooltip3 = renderElement('p', {className: 'tooltip3 live'});
-			let tooltip4 = renderElement('p', {className: 'tooltip4 live'});
-			tooltip1.innerHTML = currentPage+1;
-			tooltip2.innerHTML = Math.ceil((currentPage+1)/2);
-			tooltip3.innerHTML = Math.ceil((currentPage+1)/3);
-			tooltip4.innerHTML = Math.ceil((currentPage+1)/4);
-			body.appendChild(tooltip1);
-			body.appendChild(tooltip2);
-			body.appendChild(tooltip3);
-			body.appendChild(tooltip4);
-			tooltip1.style.left = down+'px';
-			tooltip1.style.top = top-25+'px';
-			tooltip2.style.left = down+'px';
-			tooltip2.style.top = top-25+'px';
-			tooltip3.style.left = down+'px';
-			tooltip3.style.top = top-25+'px';
-			tooltip4.style.left = down+'px';
-			tooltip4.style.top = top-25+'px';
+function eventRight(result,info,currentPage,e) {
+	removePage();
+	if(e.target == right[3]) {
+		currentPage += 4;
+	} if(e.target == right[2]) {
+		currentPage += 3;
+	} if(e.target == right[1]) {
+		currentPage += 2;
+	} else {
+		currentPage += 1;
+	}
+	pageCount1 = document.querySelector('.button1-count');
+	pageCount2 = document.querySelector('.button2-count');
+	pageCount3 = document.querySelector('.button3-count');
+	pageCount4 = document.querySelector('.button4-count');
+	pageCount1.innerHTML = currentPage+1;
+	pageCount2.innerHTML = Math.ceil((currentPage+1)/2);
+	pageCount3.innerHTML = Math.ceil((currentPage+1)/3);
+	pageCount4.innerHTML = Math.ceil((currentPage+1)/4);	
+	if(info.length - currentPage < 6) {
+		info2 = videoRequest2(result,info);
+		info = info.concat(info2);
+	}
+	renderPage(info,currentPage);
 }
 
 
