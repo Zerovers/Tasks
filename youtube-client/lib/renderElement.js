@@ -1,10 +1,8 @@
 export default function renderElement(name, obj) {
   const a = document.createElement(name);
-  for (const key in obj) {
-    if ({}.hasOwnProperty.call(obj, key)) {
-      a[key] = obj[key];
-    }
-  }
+  Object.getOwnPropertyNames(obj).forEach((e) => {
+    a[e] = obj[e];
+  });
   return a;
 }
 
@@ -126,7 +124,7 @@ export function renderPage(arr, page) {
 export function startPage() {
   const wrapper = renderElement('div', { className: 'wrapper' });
   const form = renderElement('div', { className: 'blocks' });
-  const p = renderElement('p');
+  const p = renderElement('p', { className: 'input' });
   const i = renderElement('i', { className: 'fas fa-search' });
   const input = renderElement('input', { className: 'search', type: 'text' });
   const matrix = renderElement('div', { className: 'matrix' });
