@@ -159,7 +159,10 @@ body {
   width: 700px;
   display: block;
   height: 37px;
-  
+}
+
+.blocks {
+  position: relative;
 }
 
 p {

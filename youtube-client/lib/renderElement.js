@@ -125,7 +125,7 @@ export function renderPage(arr, page) {
 }
 export function startPage() {
   const wrapper = renderElement('div', { className: 'wrapper' });
-  const form = renderElement('form', { className: 'blocks' });
+  const form = renderElement('div', { className: 'blocks' });
   const p = renderElement('p');
   const i = renderElement('i', { className: 'fas fa-search' });
   const input = renderElement('input', { className: 'search', type: 'text' });
