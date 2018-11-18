@@ -21,11 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
       removePage();
     }
     if (document.querySelector('.target')) {
-      const body = document.querySelector('.body');
       const allbutton = document.querySelectorAll('.target');
-      for (let i = 0; i < allbutton.length; i += 1) {
-        body.removeChild(allbutton[i]);
-      }
+      allbutton.forEach((element) => { element.remove(); });
     }
     renderButton('button1', currentPage);
     renderButton('button2', currentPage);
@@ -86,15 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.onmouseup = () => {
       const alltool = document.querySelectorAll('.live');
       if (alltool.length > 0) {
-        const body = document.querySelector('.body');
-        const tooltip1 = document.querySelector('.tooltip1');
-        const tooltip2 = document.querySelector('.tooltip2');
-        const tooltip3 = document.querySelector('.tooltip3');
-        const tooltip4 = document.querySelector('.tooltip4');
-        body.removeChild(tooltip1);
-        body.removeChild(tooltip2);
-        body.removeChild(tooltip3);
-        body.removeChild(tooltip4);
+        alltool.forEach((element) => { element.remove(); });
       }
     };
     const matrix = document.querySelector('.matrix');

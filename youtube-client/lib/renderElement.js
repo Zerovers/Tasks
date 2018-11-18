@@ -25,18 +25,10 @@ export function renderVideo(data) {
   return div;
 }
 export function removePage() {
-  const matrix = document.querySelector('.matrix');
-  const child4 = document.querySelector('.content4');
-  const child3 = document.querySelector('.content3');
-  const child2 = document.querySelector('.content2');
-  const child1 = document.querySelector('.content1');
-  matrix.removeChild(child4);
-  matrix.removeChild(child3);
-  matrix.removeChild(child2);
-  matrix.removeChild(child1);
+  const childMatrix = document.querySelectorAll('.visible');
+  childMatrix.forEach((e) => { e.remove(); });
 }
 export function renderButton(name, count) {
-  const body = document.querySelector('.body');
   const butt = renderElement('div', { className: `${name} target` });
   const left = renderElement('i', { className: 'left fas fa-caret-left' });
   const right = renderElement('i', { className: 'right fas fa-caret-right' });
@@ -44,10 +36,9 @@ export function renderButton(name, count) {
   butt.appendChild(left);
   butt.appendChild(pageCount);
   butt.appendChild(right);
-  body.appendChild(butt);
+  document.body.appendChild(butt);
 }
 export function renderTooltip(currentPage, down, top) {
-  const body = document.querySelector('.body');
   const tooltip1 = renderElement('p', { className: 'tooltip1 live' });
   const tooltip2 = renderElement('p', { className: 'tooltip2 live' });
   const tooltip3 = renderElement('p', { className: 'tooltip3 live' });
@@ -56,10 +47,10 @@ export function renderTooltip(currentPage, down, top) {
   tooltip2.innerHTML = Math.ceil((currentPage + 1) / 2);
   tooltip3.innerHTML = Math.ceil((currentPage + 1) / 3);
   tooltip4.innerHTML = Math.ceil((currentPage + 1) / 4);
-  body.appendChild(tooltip1);
-  body.appendChild(tooltip2);
-  body.appendChild(tooltip3);
-  body.appendChild(tooltip4);
+  document.body.appendChild(tooltip1);
+  document.body.appendChild(tooltip2);
+  document.body.appendChild(tooltip3);
+  document.body.appendChild(tooltip4);
   tooltip1.style.left = `${down}px`;
   tooltip1.style.top = `${top - 25}px`;
   tooltip2.style.left = `${down}px`;
@@ -128,11 +119,10 @@ export function startPage() {
   const i = renderElement('i', { className: 'fas fa-search' });
   const input = renderElement('input', { className: 'search', type: 'text' });
   const matrix = renderElement('div', { className: 'matrix' });
-  const body = document.querySelector('.body');
   p.appendChild(i);
   p.appendChild(input);
   form.appendChild(p);
   wrapper.appendChild(form);
-  body.appendChild(wrapper);
-  body.appendChild(matrix);
+  document.body.appendChild(wrapper);
+  document.body.appendChild(matrix);
 }
