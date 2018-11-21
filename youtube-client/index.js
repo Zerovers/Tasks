@@ -1,6 +1,5 @@
 import {
   videoRequest,
-  videoRequest2,
 } from './lib/XMLHttpRequest';
 import {
   removePage,
@@ -9,6 +8,14 @@ import {
   renderPage,
   startPage,
 } from './lib/renderElement';
+import {
+  eventButtonRight,
+  eventButtonLeft,
+  eventMouseRight,
+  eventMouseLeft,
+  eventTouchRight,
+  eventTouchLeft,
+} from './lib/controller';
 
 document.addEventListener('DOMContentLoaded', () => {
   startPage();
@@ -32,62 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightButton = document.querySelectorAll('.right');
     rightButton.forEach(el => el.addEventListener('click', (event) => {
       removePage();
-      if (event.target === rightButton[3]) {
-        currentPage += 3;
-      } if (event.target === rightButton[2]) {
-        currentPage += 2;
-      } if (event.target === rightButton[1]) {
-        currentPage += 2;
-      } else {
-        currentPage += 1;
-      }
-      const pageCount1 = document.querySelector('.button1-count');
-      const pageCount2 = document.querySelector('.button2-count');
-      const pageCount3 = document.querySelector('.button3-count');
-      const pageCount4 = document.querySelector('.button4-count');
-      pageCount1.innerHTML = currentPage + 1;
-      pageCount2.innerHTML = Math.ceil((currentPage + 1) / 2);
-      pageCount3.innerHTML = Math.ceil((currentPage + 1) / 3);
-      pageCount4.innerHTML = Math.ceil((currentPage + 1) / 4);
-      if (info.length - currentPage < 6) {
-        const info2 = videoRequest2(result, info);
-        info = info.concat(info2);
-      }
-      renderPage(info, currentPage);
+      const newdata = eventButtonRight({
+        event, currentPage, info, result, rightButton,
+      });
+      currentPage = newdata.newpage;
+      info = newdata.newinfo;
     }));
     const leftButton = document.querySelectorAll('.left');
     leftButton.forEach(el => el.addEventListener('click', (event) => {
       removePage();
-      if (event.target === leftButton[3]) {
-        currentPage -= 3;
-      } if (event.target === leftButton[2]) {
-        currentPage -= 2;
-      } if (event.target === leftButton[1]) {
-        currentPage -= 2;
-      } else {
-        currentPage -= 1;
-      }
-      if (currentPage < 0) {
-        currentPage = 0;
-      }
-      const pageCount1 = document.querySelector('.button1-count');
-      const pageCount2 = document.querySelector('.button2-count');
-      const pageCount3 = document.querySelector('.button3-count');
-      const pageCount4 = document.querySelector('.button4-count');
-      pageCount1.innerHTML = currentPage + 1;
-      pageCount2.innerHTML = Math.ceil((currentPage + 1) / 2);
-      pageCount3.innerHTML = Math.ceil((currentPage + 1) / 3);
-      pageCount4.innerHTML = Math.ceil((currentPage + 1) / 4);
-      renderPage(info, currentPage);
+      currentPage = eventButtonLeft({
+        event, info, currentPage, leftButton,
+      });
     }));
-    document.onmouseup = () => {
+    document.addEventListener('mouseup', () => {
       const alltool = document.querySelectorAll('.live');
       if (alltool.length > 0) {
         alltool.forEach((element) => { element.remove(); });
       }
-    };
+    });
     const matrix = document.querySelector('.matrix');
-    matrix.onmousedown = (event) => {
+    matrix.addEventListener('mousedown', (event) => {
       const down = event.pageX;
       const top = event.pageY;
       renderTooltip(currentPage, down, top);
@@ -96,72 +68,37 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
         if (down + 150 < ev.pageX) {
-          const content4 = getComputedStyle(document.querySelector('.content4')).display;
-          const content3 = getComputedStyle(document.querySelector('.content3')).display;
-          const content2 = getComputedStyle(document.querySelector('.content2')).display;
-          document.querySelector('.content1.visible').classList.add('transition');
-          document.querySelector('.content2.visible').classList.add('transition');
-          document.querySelector('.content3.visible').classList.add('transition');
-          document.querySelector('.content4.visible').classList.add('transition');
-          setTimeout(removePage, 1000);
-          if (content4 === 'flex') {
-            currentPage += 3;
-          } if (content3 === 'flex') {
-            currentPage += 2;
-          } if (content2 === 'flex') {
-            currentPage += 2;
-          } else {
-            currentPage += 1;
-          }
-          const pageCount1 = document.querySelector('.button1-count');
-          const pageCount2 = document.querySelector('.button2-count');
-          const pageCount3 = document.querySelector('.button3-count');
-          const pageCount4 = document.querySelector('.button4-count');
-          pageCount1.innerHTML = currentPage + 1;
-          pageCount2.innerHTML = Math.ceil((currentPage + 1) / 2);
-          pageCount3.innerHTML = Math.ceil((currentPage + 1) / 3);
-          pageCount4.innerHTML = Math.ceil((currentPage + 1) / 4);
-          if (info.length - currentPage < 6) {
-            const info2 = videoRequest2(result, info);
-            info = info.concat(info2);
-          }
-          setTimeout(renderPage, 1000, info, currentPage);
-          document.onmousemove = null;
+          const newdata = eventMouseRight({
+            currentPage, result, info,
+          });
+          currentPage = newdata.newpage;
+          info = newdata.newinfo;
         }
         if (down - 150 > ev.pageX) {
-          const content4 = getComputedStyle(document.querySelector('.content4')).display;
-          const content3 = getComputedStyle(document.querySelector('.content3')).display;
-          const content2 = getComputedStyle(document.querySelector('.content2')).display;
-          document.querySelector('.content1.visible').classList.add('transition');
-          document.querySelector('.content2.visible').classList.add('transition');
-          document.querySelector('.content3.visible').classList.add('transition');
-          document.querySelector('.content4.visible').classList.add('transition');
-          setTimeout(removePage, 1000);
-          if (content4 === 'flex') {
-            currentPage -= 3;
-          } if (content3 === 'flex') {
-            currentPage -= 2;
-          } if (content2 === 'flex') {
-            currentPage -= 2;
-          } else {
-            currentPage -= 1;
-          }
-          if (currentPage < 1) {
-            currentPage = 0;
-          }
-          const pageCount1 = document.querySelector('.button1-count');
-          const pageCount2 = document.querySelector('.button2-count');
-          const pageCount3 = document.querySelector('.button3-count');
-          const pageCount4 = document.querySelector('.button4-count');
-          pageCount1.innerHTML = currentPage + 1;
-          pageCount2.innerHTML = Math.ceil((currentPage + 1) / 2);
-          pageCount3.innerHTML = Math.ceil((currentPage + 1) / 3);
-          pageCount4.innerHTML = Math.ceil((currentPage + 1) / 4);
-          setTimeout(renderPage, 1000, info, currentPage);
-          document.onmousemove = null;
+          currentPage = eventMouseLeft({
+            currentPage, info,
+          });
         }
       };
       document.ondragstart = () => false;
-    };
+    });
+    const touchMatrix = document.querySelector('.matrix');
+    touchMatrix.addEventListener('touchstart', (event) => {
+      const down = event.changedTouches[0].clientX;
+      document.ontouchmove = (ev) => {
+        if (down + 100 < ev.changedTouches[0].clientX) {
+          const newdata = eventTouchRight({
+            currentPage, result, info,
+          });
+          currentPage = newdata.newpage;
+          info = newdata.newinfo;
+        }
+        if (down - 100 > ev.changedTouches[0].clientX) {
+          currentPage = eventTouchLeft({
+            currentPage, info,
+          });
+        }
+      };
+    });
   });
 });

@@ -14,7 +14,7 @@ export function renderVideo(data) {
   const viewer = renderElement('p', { innerHTML: data.viewers, className: 'count' });
   const discription = renderElement('div', { innerHTML: data.discription, className: 'discription' });
   const title = renderElement('div', { className: 'title' });
-  const link = renderElement('a', { innerHTML: data.title, href: `https://www.youtube.com/watch?v= ${data.id}` });
+  const link = renderElement('a', { innerHTML: data.title, href: `https://www.youtube.com/watch?v=${data.id}` });
   div.appendChild(img);
   div.appendChild(name);
   div.appendChild(time);
