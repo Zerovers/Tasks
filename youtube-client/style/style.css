@@ -107,7 +107,7 @@
   .matrix {
     width: 306px;
     margin: auto;
-    animation: vision 1s linear;
+    /* animation: vision 1s linear; */
   }
 
   .wrapper {
@@ -219,11 +219,6 @@ input:focus {
   font-size: 20px;
 }
 
-@keyframes vision {
-  from {opacity: 1;}
-  to {opacity: 0;}
-}
-
 .matrix {
   position: relative;
   height: 505px;
@@ -274,7 +269,7 @@ input:focus {
 .content2.visible.transition,
 .content3.visible.transition,
 .content4.visible.transition {
-  animation: transform 1s;
+  animation: transform 0.5s;
 } 
 
 .button1,

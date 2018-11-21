@@ -65,7 +65,7 @@ export function eventMouseRight(obj) {
   document.querySelector('.content2.visible').classList.add('transition');
   document.querySelector('.content3.visible').classList.add('transition');
   document.querySelector('.content4.visible').classList.add('transition');
-  setTimeout(removePage, 1000);
+  setTimeout(removePage, 500);
   if (content4 === 'flex') {
     newpage += 3;
   } if (content3 === 'flex') {
@@ -87,7 +87,7 @@ export function eventMouseRight(obj) {
     const info2 = videoRequest2(obj.result, newinfo);
     newinfo = newinfo.concat(info2);
   }
-  setTimeout(renderPage, 1000, newinfo, newpage);
+  setTimeout(renderPage, 500, newinfo, newpage);
   document.onmousemove = null;
   const object = { newpage, newinfo };
   return object;
@@ -102,7 +102,7 @@ export function eventMouseLeft(obj) {
   document.querySelector('.content2.visible').classList.add('transition');
   document.querySelector('.content3.visible').classList.add('transition');
   document.querySelector('.content4.visible').classList.add('transition');
-  setTimeout(removePage, 1000);
+  setTimeout(removePage, 500);
   if (content4 === 'flex') {
     newpage -= 3;
   } if (content3 === 'flex') {
@@ -123,7 +123,7 @@ export function eventMouseLeft(obj) {
   pageCount2.innerHTML = Math.ceil((newpage + 1) / 2);
   pageCount3.innerHTML = Math.ceil((newpage + 1) / 3);
   pageCount4.innerHTML = Math.ceil((newpage + 1) / 4);
-  setTimeout(renderPage, 1000, newinfo, newpage);
+  setTimeout(renderPage, 500, newinfo, newpage);
   document.onmousemove = null;
   return newpage;
 }
@@ -137,7 +137,7 @@ export function eventTouchRight(obj) {
   document.querySelector('.content2.visible').classList.add('transition');
   document.querySelector('.content3.visible').classList.add('transition');
   document.querySelector('.content4.visible').classList.add('transition');
-  setTimeout(removePage, 1000);
+  setTimeout(removePage, 500);
   if (content4 === 'flex') {
     newpage += 3;
   } if (content3 === 'flex') {
@@ -159,7 +159,7 @@ export function eventTouchRight(obj) {
     const info2 = videoRequest2(obj.result, newinfo);
     newinfo = newinfo.concat(info2);
   }
-  setTimeout(renderPage, 1000, newinfo, newpage);
+  setTimeout(renderPage, 500, newinfo, newpage);
   document.ontouchmove = null;
   const object = { newpage, newinfo };
   return object;
@@ -174,7 +174,7 @@ export function eventTouchLeft(obj) {
   document.querySelector('.content2.visible').classList.add('transition');
   document.querySelector('.content3.visible').classList.add('transition');
   document.querySelector('.content4.visible').classList.add('transition');
-  setTimeout(removePage, 1000);
+  setTimeout(removePage, 500);
   if (content4 === 'flex') {
     newpage -= 3;
   } if (content3 === 'flex') {
@@ -195,7 +195,7 @@ export function eventTouchLeft(obj) {
   pageCount2.innerHTML = Math.ceil((newpage + 1) / 2);
   pageCount3.innerHTML = Math.ceil((newpage + 1) / 3);
   pageCount4.innerHTML = Math.ceil((newpage + 1) / 4);
-  setTimeout(renderPage, 1000, newinfo, newpage);
+  setTimeout(renderPage, 500, newinfo, newpage);
   document.ontouchmove = null;
   return newpage;
 }

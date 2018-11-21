@@ -82,8 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       document.ondragstart = () => false;
     });
-    const touchMatrix = document.querySelector('.matrix');
-    touchMatrix.addEventListener('touchstart', (event) => {
+    document.addEventListener('touchstart', (event) => {
       const down = event.changedTouches[0].clientX;
       document.ontouchmove = (ev) => {
         if (down + 100 < ev.changedTouches[0].clientX) {
