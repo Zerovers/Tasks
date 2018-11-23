@@ -1,6 +1,35 @@
 import { renderPage, removePage } from './renderElement';
 import { makeRequestPageToken } from './XMLHttpRequest';
 
+export function mathPageToLeft(obj) {
+  let newpage = obj.currentPage;
+  if (obj.event.target === obj.leftButton[3]) {
+    newpage -= 3;
+  } if (obj.event.target === obj.leftButton[2]) {
+    newpage -= 2;
+  } if (obj.event.target === obj.leftButton[1]) {
+    newpage -= 2;
+  } if (obj.event.target === obj.leftButton[0]) {
+    newpage -= 1;
+  }
+  if (newpage < 0) {
+    newpage = 0;
+  }
+  return newpage;
+}
+export function mathPageToRight(obj) {
+  let newpage = obj.currentPage;
+  if (obj.event.target === obj.rightButton[3]) {
+    newpage += 3;
+  } if (obj.event.target === obj.rightButton[2]) {
+    newpage += 2;
+  } if (obj.event.target === obj.rightButton[1]) {
+    newpage += 2;
+  } if (obj.event.target === obj.rightButton[0]) {
+    newpage += 1;
+  }
+  return newpage;
+}
 export function eventButtonRight(obj) {
   let newinfo = obj.info;
   const newpage = mathPageToRight(obj);
@@ -175,34 +204,5 @@ export function eventTouchLeft(obj) {
   pageCount4.innerHTML = Math.ceil((newpage + 1) / 4);
   setTimeout(renderPage, 500, newinfo, newpage);
   document.ontouchmove = null;
-  return newpage;
-}
-export function mathPageToLeft(obj) {
-  let newpage = obj.currentPage;
-  if (obj.event.target === obj.leftButton[3]) {
-    newpage -= 3;
-  } if (obj.event.target === obj.leftButton[2]) {
-    newpage -= 2;
-  } if (obj.event.target === obj.leftButton[1]) {
-    newpage -= 2;
-  } if (obj.event.target === obj.leftButton[0]) {
-    newpage -= 1;
-  }
-  if (newpage < 0) {
-    newpage = 0;
-  }
-  return newpage;
-}
-export function mathPageToRight(obj) {
-  let newpage = obj.currentPage;
-  if (obj.event.target === obj.rightButton[3]) {
-    newpage += 3;
-  } if (obj.event.target === obj.rightButton[2]) {
-    newpage += 2;
-  } if (obj.event.target === obj.rightButton[1]) {
-    newpage += 2;
-  } if (obj.event.target === obj.rightButton[0]) {
-    newpage += 1;
-  }
   return newpage;
 }
