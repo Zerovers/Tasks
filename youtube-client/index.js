@@ -1,5 +1,5 @@
 import {
-  videoRequest,
+  makeVideoRequest,
 } from './lib/XMLHttpRequest';
 import {
   removePage,
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   search.addEventListener('change', (e) => {
     let currentPage = 0;
     const result = e.target.value;
-    let info = videoRequest(result);
+    let info = makeVideoRequest(result);
     if (document.querySelector('.visible')) {
       removePage();
     }
@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const allbutton = document.querySelectorAll('.target');
       allbutton.forEach((element) => { element.remove(); });
     }
-    renderButton('button1', currentPage);
-    renderButton('button2', currentPage);
-    renderButton('button3', currentPage);
-    renderButton('button4', currentPage);
+    renderButton('button-one-video', currentPage);
+    renderButton('button-two-video', currentPage);
+    renderButton('button-three-video', currentPage);
+    renderButton('button-four-video', currentPage);
     renderPage(info, currentPage);
     const rightButton = document.querySelectorAll('.right');
     rightButton.forEach(el => el.addEventListener('click', (event) => {

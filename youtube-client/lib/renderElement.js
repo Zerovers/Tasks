@@ -1,11 +1,10 @@
-export default function renderElement(name, obj) {
-  const a = document.createElement(name);
+export function renderElement(name, obj) {
+  const element = document.createElement(name);
   Object.getOwnPropertyNames(obj).forEach((e) => {
-    a[e] = obj[e];
+    element[e] = obj[e];
   });
-  return a;
+  return element;
 }
-
 export function renderVideo(data) {
   const div = renderElement('div', { className: 'test' });
   const img = renderElement('img', { src: data.photo });
@@ -60,7 +59,7 @@ export function renderTooltip(currentPage, down, top) {
   tooltip4.style.left = `${down}px`;
   tooltip4.style.top = `${top - 25}px`;
 }
-export function renderPage(arr, page) {
+export function renderPage(arr, pageNumber) {
   const content4 = renderElement('div', { className: 'content4 visible' });
   const matrix = document.querySelector('.matrix');
   matrix.appendChild(content4);
@@ -70,46 +69,30 @@ export function renderPage(arr, page) {
   matrix.appendChild(content2);
   const content1 = renderElement('div', { className: 'content1 visible' });
   matrix.appendChild(content1);
-  if (page > 3) {
-    for (let i = page; i < page + 4; i += 1) {
-      const element = (arr[i].doomelement).cloneNode(true);
-      content4.appendChild(element);
-    }
+  let start;
+  let finish;
+  if (pageNumber > 0) {
+    start = pageNumber;
+    finish = pageNumber;
   } else {
-    for (let i = page * 0; i < page * 0 + 4; i += 1) {
-      const element = (arr[i].doomelement).cloneNode(true);
-      content4.appendChild(element);
-    }
+    start = 0;
+    finish = 0;
   }
-  if (page > 2) {
-    for (let i = page; i < page + 3; i += 1) {
-      content3.appendChild((arr[i].doomelement).cloneNode(true));
-    }
-  } else {
-    for (let i = page * 0; i < page * 0 + 3; i += 1) {
-      const element = (arr[i].doomelement).cloneNode(true);
-      content3.appendChild(element);
-    }
+  for (let i = start; i < finish + 4; i += 1) {
+    const element = (arr[i].doomelement).cloneNode(true);
+    content4.appendChild(element);
   }
-  if (page > 1) {
-    for (let i = page; i < page + 2; i += 1) {
-      content2.appendChild((arr[i].doomelement).cloneNode(true));
-    }
-  } else {
-    for (let i = page * 0; i < page * 0 + 2; i += 1) {
-      const element = (arr[i].doomelement).cloneNode(true);
-      content2.appendChild(element);
-    }
+  for (let i = start; i < finish + 3; i += 1) {
+    const element = (arr[i].doomelement).cloneNode(true);
+    content3.appendChild(element);
   }
-  if (page > 0) {
-    for (let i = page; i < page + 1; i += 1) {
-      content1.appendChild((arr[i].doomelement).cloneNode(true));
-    }
-  } else {
-    for (let i = page * 0; i < page * 1 + 1; i += 1) {
-      const element = (arr[i].doomelement).cloneNode(true);
-      content1.appendChild(element);
-    }
+  for (let i = start; i < finish + 2; i += 1) {
+    const element = (arr[i].doomelement).cloneNode(true);
+    content2.appendChild(element);
+  }
+  for (let i = start; i < finish + 1; i += 1) {
+    const element = (arr[i].doomelement).cloneNode(true);
+    content1.appendChild(element);
   }
 }
 export function startPage() {

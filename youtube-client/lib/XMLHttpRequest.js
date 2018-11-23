@@ -14,10 +14,10 @@ function statisticRequest(video) {
   const item = JSON.parse(xhr.response);
   item.items.forEach((e, i) => { videos[i].viewers = e.statistics.viewCount; });
 }
-function addvideo(a) {
+function addVideo(a) {
   a.forEach((e) => { e.doomelement = renderVideo(e); });
 }
-export function videoRequest(searchTerm) {
+export function makeVideoRequest(searchTerm) {
   const url = 'https://www.googleapis.com/youtube/v3/search?';
   const params = {
     part: 'part=snippet&',
@@ -44,10 +44,10 @@ export function videoRequest(searchTerm) {
     };
   });
   statisticRequest(map);
-  addvideo(map);
+  addVideo(map);
   return map;
 }
-export function videoRequest2(searchTerm, obj) {
+export function makeRequestPageToken(searchTerm, obj) {
   const url = 'https://www.googleapis.com/youtube/v3/search?';
   const params = {
     part: 'part=snippet&',
@@ -75,6 +75,6 @@ export function videoRequest2(searchTerm, obj) {
     };
   });
   statisticRequest(map2);
-  addvideo(map2);
+  addVideo(map2);
   return map2;
 }

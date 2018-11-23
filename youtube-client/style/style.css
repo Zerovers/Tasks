@@ -11,13 +11,13 @@
     margin-right: 90px;
   }
 
-  .button1,
-  .button2,
-  .button3 {
+  .button-one-video,
+  .button-two-video,
+  .button-three-video {
     display: none;
   }
 
-  .button4 {
+  .button-four-video {
     display: flex;
   }
 
@@ -44,13 +44,13 @@
     margin-right: 120px;
   } 
 
-  .button1,
-  .button2,
-  .button4 {
+  .button-one-video,
+  .button-two-video,
+  .button-four-video {
     display: none;
   }
 
-  .button3 {
+  .button-three-video {
     display: flex;
   }
 
@@ -82,13 +82,13 @@
     width: 640px;
   } 
 
-  .button1,
-  .button3,
-  .button4 {
+  .button-one-video,
+  .button-three-video,
+  .button-four-video {
     display: none;
   }
 
-  .button2 {
+  .button-two-video {
     display: flex;
   }
 
@@ -107,7 +107,6 @@
   .matrix {
     width: 306px;
     margin: auto;
-    /* animation: vision 1s linear; */
   }
 
   .wrapper {
@@ -128,13 +127,13 @@
     display: flex;
   } 
 
-  .button2,
-  .button3,
-  .button4 {
+  .button-two-video,
+  .button-three-video,
+  .button-four-video {
     display: none;
   }
 
-  .button1 {
+  .button-one-video {
     display: flex;
   }
 
@@ -272,10 +271,10 @@ input:focus {
   animation: transform 0.5s;
 } 
 
-.button1,
-.button2,
-.button3,
-.button4,
+.button-one-video,
+.button-two-video,
+.button-three-video,
+.button-four-video,
 .button {
   width: 102px;
   height: 31px;
@@ -297,10 +296,10 @@ div.target i.right {
   margin-left: 5px;
 }
 
-.button1-count,
-.button2-count,
-.button3-count,
-.button4-count {
+.button-one-video-count,
+.button-two-video-count,
+.button-three-video-count,
+.button-four-video-count {
   border-radius: 50%;
   border: 3px solid rgb(255,255,255);
   width: 25px;
