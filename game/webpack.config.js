@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './index.js',
@@ -6,6 +7,11 @@ module.exports = {
     path: path.join(__dirname, './dist'),
     filename: 'app.bundle.js',
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+    })
+  ],
   module: {
     rules: [
       {

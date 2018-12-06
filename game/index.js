@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import { sortable } from './jquery-ui/jquery-ui.min'
 
 const names = ['Хлебушек', 'Батон', 'Головяшка', 'Данунахер'];
 
@@ -84,7 +84,7 @@ startbattle.addEventListener('click', (e) => {
     getPazzleEvent({ player, enemy, names });
     getSpeechEvent({ player, enemy, names });
     // getLogicEvent({ player, enemy, names });
-    // getSortEvent({ player, enemy, names });
+    getSortEvent({ player, enemy, names });
   }
 })
 
@@ -100,21 +100,18 @@ function renderElement(name, obj) {
 function dmgEnemy(object, input) {
   object.enemy.getDamage();
   object.enemy.indicationHp();
-  // input.parentElement.remove();
   input.closest('div').remove();
 }
 
 function dmgPlayer(object, input) {
   object.player.getDamage();
   object.player.indicationHp();
-  // input.parentElement.remove();
   input.closest('div').remove();
 }
 
 function healPlayer(object, input) {
   object.player.getHeal();
   object.player.indicationHp();
-  // input.parentElement.remove();
   input.closest('div').remove();
 }
 
@@ -235,7 +232,7 @@ function getComparisonEvent(object) {
     if (e.target) {
       const spellmenu = document.querySelector('.context-menu');
       spellmenu.remove();
-      let result = renderComparisonContent().sign;
+      const result = renderComparisonContent().sign;
       const input = document.querySelector('#input-comparison');
       input.addEventListener('change', (event) => {
         if (event.target.value === result + '') {
@@ -311,7 +308,7 @@ function getTranslateEvent(object) {
     if (e.target) {
       const spellmenu = document.querySelector('.context-menu');
       spellmenu.remove();
-      result = renderTranslateContent();
+      const result = renderTranslateContent();
       const input = document.querySelector('#input-translate');
       input.addEventListener('change', (event) => {
         let count = 0;
@@ -352,7 +349,7 @@ function getSequenceEvent(object) {
     if (e.target) {
       const spellmenu = document.querySelector('.context-menu');
       spellmenu.remove();
-      result = renderSequenceContent();
+      const result = renderSequenceContent();
       const input = document.querySelector('#input-sequence');
       input.addEventListener('change', (event) => {
         if (event.target.value === result.rndNumber + result.rndDiff*3 + '') {
@@ -379,9 +376,9 @@ function renderPazzleContent() {
   const div = renderElement('div', { className: 'pazzle' });
   const p = renderElement('p', { className: 'pazzle-content', innerHTML: `Отгадайте загадку \n ${ map.rndKeys}` });
   const input = renderElement('input', { type: 'text', id: 'input-pazzle' });
-  div.appendChild(p);
-  div.appendChild(input);
-  document.body.appendChild(div);
+  div.append(p);
+  div.append(input);
+  document.body.append(div);
   return map.list.get(map.rndKeys);
 }
 
@@ -440,7 +437,7 @@ function getSpeechEvent(object) {
     if (e.target) {
       const spellmenu = document.querySelector('.context-menu');
       spellmenu.remove();
-      result = renderSpeechContent(speechList);
+      const result = renderSpeechContent(speechList);
       speech(result);
       const input = document.querySelector('#input-speech');
       input.addEventListener('change', (event) => {
@@ -458,19 +455,28 @@ function getSpeechEvent(object) {
   })
 }
 
-// function renderSortContent() {
-//   $( "#sortable" ).sortable();
-//   $( "#sortable" ).disableSelection();
-// }
+function renderSortContent() {
+  $( "#sortable" ).sortable();
+  $( "#sortable" ).disableSelection();
+}
 
-// function getSortEvent(object) {
-//   const spellSort = document.querySelector('.spell-sort');
-//   spellSort.addEventListener('click', (e) => {
-//     if (e.target) {
-//       const spellmenu = document.querySelector('.context-menu');
-//       spellmenu.remove();
-//       renderSortContent();
-//     }
-//   })
-// }
+function getSortEvent(object) {
+  const spellSort = $('.spell-sort');
+  spellSort.on('click', (e) => {
+    if (e.target) {
+      const spellmenu = $('.context-menu');
+      spellmenu.remove();
+      const result = 'pdr';
+      const ul = renderElement('ul', { id: 'sortable' });
+      const li1 = renderElement('li', { id: 'ui-state-default' });
+      const li2 = renderElement('li', { id: 'ui-state-default' });
+      $('body').append(`<div class="ololo">${result}</div>`);
+      li1.append('wow');
+      ul.append(li1);
+      ul.append(li2);
+      document.body.append(ul);
+      renderSortContent();
+    }
+  })
+}
 
