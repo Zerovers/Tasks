@@ -1,0 +1,21 @@
+.spell-logic {
+  width: 198px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+
+.logic {
+  width: 400px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input-logic {
+  width: 100%;
+  height: 50%;
+}

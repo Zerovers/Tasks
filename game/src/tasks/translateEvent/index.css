@@ -1,0 +1,21 @@
+.spell-translate {
+  width: 198px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 1px;
+  margin-top: 1px;
+}
+
+.translate {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input-translate {
+  width: 100%;
+  height: 50%;
+}

@@ -1,0 +1,27 @@
+.spell-math {
+  width: 198px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 1px;
+}
+
+.math-operations {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.math {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input-math {
+  width: 100%;
+  height: 50%;
+}
