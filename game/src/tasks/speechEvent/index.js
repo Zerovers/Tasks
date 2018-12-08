@@ -12,10 +12,7 @@ let voices = speechSynthesis.getVoices();
 const html = $(htmlSpeech);
 function renderSpeechContent() {
   const rnd = getRandom(0, speechList.list.length-1);
-  html.find('#input-speech').val('');
-  html.find('.speech-content').html('Впишите слово которое услышали');
-  $('body').append(html);
-  html.find('#input-speech').focus();
+  
   return speechList.list[rnd];
 }
 function speech(message) {
@@ -32,6 +29,10 @@ export function getSpeechEvent(object) {
     if (e.target) {
       const spellmenu = $('.context-menu');
       spellmenu.remove();
+      html.find('#input-speech').val('');
+      html.find('.speech-content').html('Впишите слово которое услышали');
+      $('body').append(html);
+      html.find('#input-speech').focus();
       const result = renderSpeechContent();
       speech(result);
       const input = $('#input-speech');

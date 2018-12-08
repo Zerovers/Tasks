@@ -1,63 +1,64 @@
-import {
-  dmgEnemy,
-  dmgPlayer,
-  createNewEnemy,
-  getRandom,
-} from 'render';
 import css from './index.css';
 import htmlMath from './index.html';
+import mathContent from 'src/tasksContent';
+import { monster, player, Enemy, names } from 'index';
 
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
 const html = $(htmlMath);
-function renderMathContent() {
-  const sign = ['+', '-', '*', '/'];
-  let firstNumber = getRandom(0, 10);
-  let secondNumber = getRandom(0, 10);
-  html.find('#input-math').val('');
-  html.find('.math-operations').html(`${firstNumber} ${sign[getRandom(0, sign.length-1)]} ${secondNumber} = `);
-  $('body').append(html);
-  html.find('#input-math').focus();
-  return { firstNumber, secondNumber };
-}
-
-function getMathOperation(obj) {
-  let operation = $('.math-operations').html().split(' ')[1];
-  let result = 0;
-  switch (operation) {
-    case '-':
-      result = obj.firstNumber - obj.secondNumber;
-      break;
-    case '+':
-      result = obj.firstNumber + obj.secondNumber;
-      break;
-    case '*':
-      result = obj.firstNumber * obj.secondNumber;
-      break;
-    case '/':
-      result = Math.round((obj.firstNumber / obj.secondNumber) * 10) / 10;
-      break;
+class mathTask {
+  render(content) {
+    const spellmenu = $('.context-menu');
+    spellmenu.remove();
+    html.find('#input-math').val('');
+    html.find('.math-operations').html(`${content.firstNumber} ${content.outsign} ${content.secondNumber} = `);
+    $('body').append(html);
+    html.find('#input-math').focus();
+    html.find('#input-math').on('change', (event) => this.answerMathTask(content));
   }
-  return result;
+  getMathOperation(content) {
+    let operation = content.outsign;
+    let result = 0;
+    switch (operation) {
+      case '-':
+        result = content.firstNumber - content.secondNumber;
+        break;
+      case '+':
+        result = content.firstNumber + content.secondNumber;
+        break;
+      case '*':
+        result = content.firstNumber * content.secondNumber;
+        break;
+      case '/':
+        result = Math.round((content.firstNumber / content.secondNumber) * 10) / 10;
+        break;
+    }
+    return result;
+  }
+  deleteTask() {
+    html.find('#input-math').closest('div').remove();
+  }
+  answerMathTask(content) {
+    const result = this.getMathOperation(content);
+    if (event.target.value === result + '') {
+      monster.getDamage();
+      this.deleteTask();
+    } else {
+      player.getDamage();
+      this.deleteTask();
+    }
+    // if (monster.hp === 0) {
+    //   const rnd = getRandom(0, names.length);
+    //   let newenemy = new Enemy(names[rnd], 100);
+    //   newenemy.indicationHp();
+    //   player.killMonsters();
+    //   console.log(newenemy.name);
+    // }
+  }
 }
 
-export function getMathEvent(object) {
-  const spellMath = $('.spell-math');
-  spellMath.on('click', (e) => {
-    if (e.target) {
-      const spellmenu = $('.context-menu');
-      spellmenu.remove();
-      let mathNumbers = renderMathContent();
-      const input = $('#input-math');
-      input.on('change', (event) => {
-        const result = getMathOperation(mathNumbers);
-        if (event.target.value === result + '') {
-          dmgEnemy(object, input);
-        } else {
-          dmgPlayer(object, input);
-        }
-        if (object.enemy.hp === 0) {
-        createNewEnemy(object);
-        }
-      })
-    }
-  })
-}
+let mathEvent = new mathTask();
+export default mathEvent;
+
+

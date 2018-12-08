@@ -26,7 +26,14 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: [ 
+          MiniCssExtractPlugin.loader,
+          { 
+            loader: 'css-loader', 
+            options: { 
+              url: false, 
+              sourceMap: true }
+          } ]
       },
       {
         test: /\.js$/,

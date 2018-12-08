@@ -1,15 +1,4 @@
-import { sortable } from './jquery-ui/jquery-ui.min'
-import {
-  getMathEvent,
-  getComparisonEvent,
-  getGrammaticEvent,
-  getTranslateEvent,
-  getSequenceEvent,
-  getPazzleEvent,
-  getSpeechEvent,
-  getLogicEvent,
-  getSortEvent,
-} from './src/tasks/';
+import { sortable } from './src/tasks/sortEvent/jquery-ui/jquery-ui.min'
 import {
   renderElement,
   dmgEnemy,
@@ -18,8 +7,9 @@ import {
   getRandom,
 } from './render'
 import css from './index.css';
+import spellList from './src/spellComponent'
 
-const names = ['Хлебушек', 'Батон', 'Головяшка', 'Данунахер'];
+export const names = ['Хлебушек', 'Батон', 'Головяшка', 'Данунахер'];
 
 class Player {
   constructor(name, hp, countMonsters) {
@@ -36,10 +26,8 @@ class Player {
   }
   getDamage() {
     this.hp -= 20;
-  }
-  indicationHp() {
-    let hp = document.querySelector('.player-hp');
-    hp.innerHTML = this.hp;
+    let hpBar = $('.player-hp');
+    hpBar.html(this.hp);
   }
   getHeal() {
     this.hp += 20;
@@ -59,58 +47,30 @@ export default class Enemy {
   }
   getDamage() {
     this.hp -= 50;
+    console.log(this.hp);
+    let hpBar = $('.enemy-hp');
+    hpBar.html(this.hp);
   }
   indicationHp() {
-    let hp = document.querySelector('.enemy-hp');
-    hp.innerHTML = this.hp;
+    let hpBar = $('.enemy-hp');
+    hpBar.html(this.hp);
   }
 }
 
-let player = new Player('Алеша', 100, 0);
-player.sayHi();
-let enemy = new Enemy('Хлебушек', 100);
-enemy.sayHi();
+const player = new Player('Алеша', 100, 0);
+let monster = new Enemy('Хлебушек', 100);
 
-const startbattle = document.querySelector('.button');
-startbattle.addEventListener('click', (e) => {
+export { monster, player, Enemy };
+
+
+
+
+monster.sayHi();
+player.sayHi();
+
+const startbattle = $('.button');
+startbattle.on('click', (e) => {
   if (e.target) {
-    renderContextMenu();
-    getMathEvent({ player, enemy, names });
-    getComparisonEvent({ player, enemy, names });
-    getGrammaticEvent({ player, enemy, names });
-    getTranslateEvent({ player, enemy, names });
-    getSequenceEvent({ player, enemy, names });
-    getPazzleEvent({ player, enemy, names });
-    getSpeechEvent({ player, enemy, names });
-    getLogicEvent({ player, enemy, names });
-    getSortEvent({ player, enemy, names });
+    spellList.render();
   }
 })
-
-function renderContextMenu() {
-  const contextMenu = renderElement('div', { className: 'context-menu' });
-  const spellMath = renderElement('div', { className: 'spell-math', innerHTML: 'Math' });
-  const spellComparison = renderElement('div', { className: 'spell-comparison', innerHTML: 'comparison'});
-  const spellGrammatic = renderElement('div', { className: 'spell-grammatic', innerHTML: 'Grammatic' });
-  const spellTranslate = renderElement('div', { className: 'spell-translate', innerHTML: 'Translate'});
-  const spellSequence = renderElement('div', { className: 'spell-sequence', innerHTML: 'sequence' });
-  const spellPazzle = renderElement('div', { className: 'spell-pazzle', innerHTML: 'pazzle' });
-  const spellSpeech = renderElement('div', { className: 'spell-speech', innerHTML: 'speech' });
-  const spellSort = renderElement('div', { className: 'spell-sort', innerHTML: 'sort' });
-  const spellLogic = renderElement('div', { className: 'spell-logic', innerHTML: 'logic '});
-  contextMenu.appendChild(spellMath);
-  contextMenu.appendChild(spellComparison);
-  contextMenu.appendChild(spellGrammatic);
-  contextMenu.appendChild(spellTranslate);
-  contextMenu.appendChild(spellSequence);
-  contextMenu.appendChild(spellPazzle);
-  contextMenu.appendChild(spellSpeech);
-  contextMenu.appendChild(spellSort);
-  contextMenu.appendChild(spellLogic);
-  document.body.appendChild(contextMenu);
-}
-
-
-
-
-
