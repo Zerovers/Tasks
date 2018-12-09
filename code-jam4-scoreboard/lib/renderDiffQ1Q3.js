@@ -77,9 +77,9 @@ export function renderDiffTabl(allPuzzleName) {
         const tdDiff = renderElement('td', { className: '13' });
         tdQ3.innerHTML = `${sumQ3}`;
         trQ1.appendChild(tdQ3);
-        if (sum > sumQ3) {
+        if (sum < sumQ3) {
           tdDiff.innerHTML = 'Медленее';
-        } else if (sum < sumQ3) {
+        } else if (sum > sumQ3) {
           tdDiff.innerHTML = 'Быстрее';
         } else {
           tdDiff.innerHTML = 'Так же';
