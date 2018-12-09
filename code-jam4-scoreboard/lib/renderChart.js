@@ -49,6 +49,9 @@ export function renderChart(checkbox, button, allPuzzleName, allCheckName, allCh
     }
     const chart = new Chart(ctx, chartConfig);
     const addUser = (config, setName, chartdata) => {
+      if (chartdata.length > 10) {
+        chartdata.length = 10;
+      }
       for (let i = 0; i < chartdata.length; i += 1) {
         let name = setName[i];
         let data = chartdata[i];
