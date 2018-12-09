@@ -5,9 +5,15 @@ import users from '../src/users.json';
 export function renderMainTable(allPuzzleName) {
   const demobutton = document.querySelector('#rsschool-demo');
   demobutton.checked = false;
-  const demoTable = document.querySelector('.demo');
+  const rsschoolBeforeRadio = document.querySelector('#rsschool-before');
+  rsschoolBeforeRadio.checked = false;
+  let demoTable = document.querySelector('.demo');
   if (demoTable) {
     demoTable.remove();
+  }
+  let tableBefore = document.querySelector('.before');
+  if (tableBefore) {
+    tableBefore.remove();
   }
   const table = renderElement('table', { className: 'main' });
   const tbody = renderElement('tbody', { className: 'rsschool' });
@@ -27,7 +33,6 @@ export function renderMainTable(allPuzzleName) {
     } else {
       td = renderElement('td', { className: `header ${i}`, innerHTML: `${session.puzzles[i].name}` });
       allPuzzleName.push(session.puzzles[i].name);
-      // .substr(0,5)
     }
     head.appendChild(td);
   }
@@ -47,8 +52,7 @@ export function renderMainTable(allPuzzleName) {
         td.innerHTML = `${sum}`;
         tr[i].appendChild(td);
         
-      } else {
-        if (typeof session.rounds[j].solutions[users[i].uid] === 'undefined' || session.rounds[j].solutions[users[i].uid].correct === 'Incorrect') {
+      } else if (typeof session.rounds[j].solutions[users[i].uid] === 'undefined' || session.rounds[j].solutions[users[i].uid].correct === 'Incorrect') {
           td.innerHTML = 150;
           sum += 150;
           atr.push(150);
@@ -62,6 +66,6 @@ export function renderMainTable(allPuzzleName) {
         tr[i].setAttribute('info', atr)
       }
     }
-  }
+  
   return allPuzzleName;
 }

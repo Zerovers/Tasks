@@ -9,9 +9,17 @@ export function renderDemoTable(allCheckName, allCheckData) {
     document.querySelector('#chart').remove();
   }
   const mainTable = document.querySelector('.main');
-  mainTable.remove();
-  const mainbutton = document.querySelector('#rsschool');
-  mainbutton.checked = false;
+  if (mainTable) {
+    mainTable.remove();
+  }
+  const tableBefore = document.querySelector('.before');
+  if (tableBefore) {
+    tableBefore.remove();
+  }
+  let rsschool = document.querySelector('#rsschool');
+  rsschool.checked = false;
+  const rsschoolBefore = document.querySelector('#rsschool-before');
+  rsschoolBefore.checked = false;
   const table = renderElement('table', { className: 'demo' });
   const tbody = renderElement('tbody', { className: 'rsschool-demo' });
   let head = renderElement('tr', { id: 'head' });

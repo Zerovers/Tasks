@@ -6,7 +6,7 @@ import { renderMainTable } from './lib/renderMainTable';
 import { renderTooltip, renderElement } from './lib/renderAssist';
 import { activeToolTip, removeToolTip } from './lib/renderToolTip';
 import { renderChart } from './lib/renderChart';
-
+import { renderDiffTabl } from './lib/renderDiffQ1Q3';
 
 let allCheckName = [];
 let allCheckData = [];
@@ -14,15 +14,15 @@ let allPuzzleName = [];
 // Create table with info 
 const ckeckboxfull = document.querySelector('#rsschool');
 ckeckboxfull.addEventListener('change', (event) => {
-    allPuzzleName = renderMainTable(allPuzzleName);
-    //Create column with checkox
-    let tr = document.querySelectorAll('.name');
-    for (let i = 0; i < users.length; i += 1) {
-      let td = renderElement('td', { className: `checkbox ${i}` });
-      let checkbox = renderElement('input', { type: 'checkbox' });
-      td.appendChild(checkbox);
-      tr[i].appendChild(td);
-    }
+  allPuzzleName = renderMainTable(allPuzzleName);
+  //Create column with checkox
+  let tr = document.querySelectorAll('.name');
+  for (let i = 0; i < users.length; i += 1) {
+    let td = renderElement('td', { className: `checkbox ${i}` });
+    let checkbox = renderElement('input', { type: 'checkbox' });
+    td.appendChild(checkbox);
+    tr[i].appendChild(td);
+  }
   // Create tooltipe with setTimeout
   let setTimeoutConst, setTimeoutConst2;
   let tableCell = document.querySelectorAll('.name');
@@ -46,29 +46,12 @@ ckeckboxfull.addEventListener('change', (event) => {
 //Create table with demo-info
 const checkboxdemo = document.querySelector('#rsschool-demo');
 checkboxdemo.addEventListener('change', (event) => {
-  if(event.target) {
+  if (event.target) {
     renderDemoTable(allCheckName, allCheckData);
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Create table with difference info
+const checkboxbefore = document.querySelector('#rsschool-before');
+checkboxbefore.addEventListener('change', (event) => {
+  renderDiffTabl(allPuzzleName);
+})
