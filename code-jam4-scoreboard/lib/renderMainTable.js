@@ -47,20 +47,20 @@ export function renderMainTable(allPuzzleName) {
     let sum = 0;
     let atr = [];
     for (let j = 0; j <= 10; j += 1) {
-      let td = renderElement('td', { className: `${j}` });
+      let td = renderElement('td', { className: `tooltip ${j}` });
       if (j == 10) {
         td.innerHTML = `${sum}`;
         tr[i].appendChild(td);
-        
       } else if (typeof session.rounds[j].solutions[users[i].uid] === 'undefined' || session.rounds[j].solutions[users[i].uid].correct === 'Incorrect') {
           td.innerHTML = 150;
           sum += 150;
           atr.push(150);
+          td.classList.remove('tooltip');
         } else {
           td.innerHTML = `${session.rounds[j].solutions[users[i].uid].time.$numberLong}`;
-          td.setAttribute('code', session.rounds[j].solutions[users[i].uid].code);
           sum += parseInt(session.rounds[j].solutions[users[i].uid].time.$numberLong);
           atr.push(parseInt(session.rounds[j].solutions[users[i].uid].time.$numberLong));
+          td.setAttribute('data-tooltip', session.rounds[j].solutions[users[i].uid].code);
         }
         tr[i].appendChild(td);
         tr[i].setAttribute('info', atr)
