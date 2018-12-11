@@ -50,6 +50,7 @@ export function renderMainTable(allPuzzleName) {
       let td = renderElement('td', { className: `tooltip ${j}` });
       if (j == 10) {
         td.innerHTML = `${sum}`;
+        td.classList.remove('tooltip');
         tr[i].appendChild(td);
       } else if (typeof session.rounds[j].solutions[users[i].uid] === 'undefined' || session.rounds[j].solutions[users[i].uid].correct === 'Incorrect') {
           td.innerHTML = 150;
