@@ -1,0 +1,28 @@
+.spell-comparison {
+  width: 198px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 1px;
+  margin-top: 1px;
+} 
+
+.comparison-operations {
+  width: 200px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.comparison {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input-comparison {
+  width: 100%;
+  height: 50%;
+}

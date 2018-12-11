@@ -1,0 +1,22 @@
+.spell-delete-word {
+  width: 198px;
+  height: 50px;
+  border: 1px solid black;
+  margin-left: 1px;
+  margin-top: 1px;
+} 
+
+.delete-word {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#input-delete-word {
+  width: 100%;
+  height: 50%;
+}
+
