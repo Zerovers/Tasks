@@ -15,7 +15,7 @@ class mathTask {
     html.find('.math-operations').html(`${content.firstNumber} ${content.outsign} ${content.secondNumber} = `);
     $('body').append(html);
     html.find('#input-math').focus();
-    html.find('#input-math').on('change', (event) => this.answerMathTask(content));
+    html.find('#input-math').on('change', (event) => this.getAnswerTask(content));
   }
   getMathOperation(content) {
     let operation = content.outsign;
@@ -37,9 +37,9 @@ class mathTask {
     return result;
   }
   deleteTask() {
-    html.find('#input-math').closest('div').remove();
+    html.remove();
   }
-  answerMathTask(content) {
+  getAnswerTask(content) {
     const result = this.getMathOperation(content);
     if (event.target.value === result + '') {
       monster.getDamage();
@@ -58,7 +58,7 @@ class mathTask {
   }
 }
 
-let mathEvent = new mathTask();
-export default mathEvent;
+let mathematics = new mathTask();
+export default mathematics;
 
 

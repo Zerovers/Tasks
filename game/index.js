@@ -1,4 +1,4 @@
-import { sortable } from './src/tasks/sortEvent/jquery-ui/jquery-ui.min'
+import { sortable } from './src/tasks/sort/jquery-ui/jquery-ui.min'
 import {
   renderElement,
   dmgEnemy,
@@ -7,7 +7,8 @@ import {
   getRandom,
 } from './render'
 import css from './index.css';
-import spellList from './src/spellComponent'
+import spellList from './src/spellComponent';
+let _ = require('lodash');
 
 export const names = ['Хлебушек', 'Батон', 'Головяшка', 'Данунахер'];
 
