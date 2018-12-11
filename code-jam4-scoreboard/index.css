@@ -8,15 +8,6 @@ td, tr {
   z-index: 1;
 }
 
-/* .tooltip {
-position: fixed;
-min-width: 100px; 
-height: 20px;
-background-color: white;
-border: 1px solid black;
-justify-content: center;
-} */
-
 .tooltip::after {
   border: 1px solid black;
   background-color: white;
@@ -24,7 +15,7 @@ justify-content: center;
   height: 20px;
 	content: attr(data-tooltip); 
 	opacity: 0; 
-  position: fixed;
+  position: absolute;
   margin-top: -20px;
 	visibility: hidden; 
   transition: all 0.8s;
