@@ -6,13 +6,12 @@ import names from '../../../screens/battle/name.json';
 const html = $(htmlMath);
 class mathTask {
   render(content) {
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.attack-spells-list').remove();
     html.find('#input-math').val('');
-    html.find('.math-operations').html(`${content.firstNumber} ${content.outsign} ${content.secondNumber} = `);
+    html.find('.math-operations').html(`${content.firstNumber} ${content.outsign} ${content.secondNumber} = <span>?</span>`);
     $('body').append(html);
     html.find('#input-math').focus();
-    html.find('#input-math').on('change', (event) => this.getAnswerTask(content));
+    html.find('#input-math').on('change', (event) => { this.getAnswerTask(content);  });
   }
   getMathOperation(content) {
     let operation = content.outsign;
@@ -36,11 +35,13 @@ class mathTask {
   deleteTask() {
     html.remove();
   }
-  getAnswerTask(content) {
+  async getAnswerTask(content) {
     const result = this.getMathOperation(content);
     if (event.target.value === result + '') {
-      monster.getDamage();
       this.deleteTask();
+      player.addAnimation();
+      await pause(1000);
+      monster.getDamage();
     } else {
       player.getDamage();
       this.deleteTask();
@@ -52,6 +53,7 @@ class mathTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }
@@ -59,4 +61,10 @@ class mathTask {
 let mathematics = new mathTask();
 export default mathematics;
 
-
+const pause = (time) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}

@@ -8,10 +8,9 @@ const html = $(htmlLogic);
 class logicTask {
   render(content) {
     const map = content;
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.heal-spells-list').remove();
     html.find('#input-logic').val('');
-    html.find('.logic-content').html(`Ответье на вопрос ${map.rndKeys}`);
+    html.find('.logic-content').html(`Ответье на вопрос:<br> ${map.rndKeys}`);
     $('body').append(html);
     html.find('#input-logic').focus();
     html.find('#input-logic').on('change', (event) => { this.getAnswerTask(content)})
@@ -42,6 +41,7 @@ class logicTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

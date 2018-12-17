@@ -8,10 +8,9 @@ const html = $(htmlTranslate);
 class translateTask {
   render(content) {
     let map = content;
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.attack-spells-list').remove();
     html.find('#input-translate').val('');
-    html.find('.translate-word').html(`Переведите ${map.rndKeys}`);
+    html.find('.translate-word').html(`Переведите <span>${map.rndKeys}</span>`);
     $('body').append(html);
     html.find('#input-translate').focus();
     html.find('#input-translate').on('change', (event) => { this.getAsnwerTask(content) });
@@ -39,9 +38,9 @@ class translateTask {
       monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
       ${names.secondName[_.random(0,names.secondName.length - 1)]} 
       ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
-      console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

@@ -1,4 +1,5 @@
 import css from './index.css';
+import icon from './icon.min.css';
 import htmlSpeech from './index.html';
 import speechList from './speechList.json';
 import { player, monster } from '../../../screens/battle';
@@ -8,9 +9,7 @@ let voices = speechSynthesis.getVoices();
 const html = $(htmlSpeech);
 class speechTask {
   render(content) {
-    console.log(content);
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.heal-spells-list').remove();
     html.find('#input-speech').val('');
     html.find('.speech-content').html('Впишите слово которое услышали');
     this.setSpeech(content);
@@ -48,6 +47,7 @@ class speechTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

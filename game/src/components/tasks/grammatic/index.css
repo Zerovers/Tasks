@@ -1,16 +1,32 @@
 .spell-grammatic {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .grammatic {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
-  margin-top: 10px;
-  /* display: flex; */
-  flex-wrap: wrap;
+  margin: -500px auto;
+  position: relative;
+  background-color: white;
+}
+
+.grammatic-word {
+  text-align: center;
+  font-size: 28px;
+}
+
+.grammatic-word > span {
+  color: green;
+}
+
+#grammatic-button {
+  margin: 20px 192px;
+  font-size: 25px;
 }

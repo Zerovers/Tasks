@@ -1,28 +1,54 @@
 .spell-comparison {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 } 
 
 .comparison-operations {
-  width: 200px;
+  width: 85%;
   margin: 0 auto;
   margin-bottom: 5px;
   text-align: center;
+  font-size: 46px;
+  border-bottom: 1px solid black;
 }
 
 .comparison {
-  width: 200px;
-  height: 50px;
+  width: 700px;
+  height: 300px;
   border: 1px solid black;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  margin: -510px auto;
+  background-color: white;
+}
+
+.comparison .text {
+  width: 65%;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  margin: 10px auto;
+}
+
+.comparison .text > span {
+  color: green;
+  font-size: 36px;
 }
 
 #input-comparison {
-  width: 100%;
-  height: 50%;
+  width: 50%;
+  height: 20%;
+  margin-left: 169px;
+  margin-top: 35px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#input-comparison::-webkit-input-placeholder {
+  font-size: 24px;
 }

@@ -8,11 +8,10 @@ const html = $(htmlGrammatic);
 class grammaticTask {
   render() {
     const list = grammaticList.map;
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.attack-spells-list').remove();
     const rndList = list[_.random(0, list.length)];
     $('body').append(html);
-    html.find('.grammatic-word').html(`Произнесите ${rndList}`);
+    html.find('.grammatic-word').html(`Произнесите <span>${rndList}</span>`);
     html.find('#grammatic-button').on('click', (e) => this.getAnswerTask(rndList));
   }
   deleteTask() {
@@ -41,6 +40,7 @@ class grammaticTask {
         console.log(monster.name);
         monster.hp = 100;
         monster.indicationHp();
+        monster.renderBody();
         player.killMonsters();
       }
     }

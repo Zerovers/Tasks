@@ -6,10 +6,9 @@ import names from '../../../screens/battle/name.json';
 const html = $(htmlCompasion)
 class comparisonTask {
   render(content) {
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.attack-spells-list').remove();
     html.find('#input-comparison').val('');
-    html.find('.comparison-operations').html(`${content.firstNumber} ? ${content.secondNumber}`);
+    html.find('.comparison-operations').html(`${content.firstNumber} <span style="color: red">?</span> ${content.secondNumber}`);
     $('body').append(html);
     html.find('#input-comparison').focus();
     html.find('#input-comparison').on('change', (event) => this.getAnswerTask(content));
@@ -33,6 +32,7 @@ class comparisonTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

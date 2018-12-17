@@ -7,10 +7,9 @@ const html = $(htmlDeleteWord);
 class deleteWordTask {
   render(content) {
     const map = content;
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.heal-spells-list').remove();
     html.find('#input-delete-word').val('');
-    html.find('.delete-word-content').html(`${map.rndKeys}`);
+    html.find('.delete-word_content').html(`${map.rndKeys}`);
     $('body').append(html);
     html.find('#input-delete-word').focus();
     html.find('#input-delete-word').on('change', (event) => this.getAnswerTask(content));
@@ -41,6 +40,7 @@ class deleteWordTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

@@ -1,0 +1,134 @@
+@keyframes activeHead {
+  from {
+    margin-top: -157px;
+  }
+
+  to {
+    margin-top: -150px;
+  }
+}
+
+@keyframes activeHeadOrc {
+  from {
+    margin-top: -199px;
+  }
+
+  to {
+    margin-top: -191px;
+  }
+}
+
+.enemy-head {
+  animation: activeHead 1s linear infinite alternate;
+  transform: scaleX(-1);
+  height: 171px;
+  margin-top: -157px;
+  z-index: 10;
+}
+
+.enemy-body {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -196px;
+  margin-top: -135px;
+  z-index: 9;
+}
+
+.enemy-rightHand {
+  transform: scaleX(-1);
+  height: 182px;
+  margin-left: -453px;
+  margin-top: -31px;
+  z-index: 8
+}
+
+.enemy-leftHand {
+  transform: scaleX(-1);
+  height: 240px;
+  margin-left: 102px;
+  margin-top: -54px;
+  z-index: 10;
+}
+
+.enemy-rightLeg {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 114px;
+  margin-left: -243px;
+}
+
+.enemy-leftLeg {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 114px;
+  margin-left: -18px;
+}
+
+.enemy-head-orc {
+  animation: activeHeadOrc 1s linear infinite alternate;
+  transform: scaleX(-1);
+  height: 190px;
+  margin-top: -199px;
+  z-index: 10;
+}
+
+.enemy-body-orc {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -212px;
+  margin-top: -134px;
+  z-index: 9;
+}
+
+.enemy-rightHand-orc {
+  transform: scaleX(-1);
+  height: 220px;
+  margin-left: -328px;
+  margin-top: -53px;
+  z-index: 8;
+}
+
+.enemy-leftHand-orc {
+  transform: scaleX(-1);
+  height: 240px;
+  margin-left: 93px;
+  margin-top: -53px;
+  z-index: 10;
+}
+
+.enemy-rightLeg-orc {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 113px;
+  margin-left: -243px;
+}
+
+.enemy-leftLeg-orc {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 117px;
+  margin-left: -18px;
+}
+
+.enemy-weapon-orc {
+  transform: scaleX(-1);
+  height: 165px;
+  margin-left: -405px;
+  margin-top: 1px;
+  z-index: 10;
+}
+
+.enemy-body-troll {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -173px;
+  margin-top: -128px;
+  z-index: 9;
+}
+
+.enemy-rightHand-troll {
+  transform: scaleX(-1);
+  height: 182px;
+  margin-left: -390px;
+  z-index: 8;
+}

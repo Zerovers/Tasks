@@ -1,184 +1,460 @@
+@keyframes shake {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  } 
+
+  10%, 30% {
+    transform: rotate(-7deg);
+  }
+
+  20%, 40% {
+    transform: rotate(7deg);
+  }
+}
+
 .button {
   width: 200px;
   height: 50px;
   border: 1px solid black;
   text-align: center;
   font-size: 36px;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.hpBars {
+  display: flex;
+}
+
+.placeModel {
+  display: flex;
+  margin-top: 50px;
+}
+
+.player-Model {
+  display: flex;
+  width: 50%;
+  height: 500px;
+}
+
+.player-Model > .conteiner {
+  display: flex;
+  width: 175px;
+  height: 188px;
+  margin: 267px auto 0 auto;
+}
+
+.player {
+  margin: auto;
+}
+
+.player-name {
+  margin-bottom: 0;
+  text-align: center;
+  
 }
 
 .player-hp {
-  width: 50px;
+  width: 500px;
   height: 20px;
-  border: 1px solid black;
+  border: 4px solid rgb(214, 198, 38);
+  border-radius: 50px;
   margin-top: 10px;
+}
+
+.player-hp > span {
+  width: 500px;
+  transition: width 1s;
+  display: block;
+  height: 100%;
+  background-color: red;
+  border-radius: 50px;
+  position: relative;
+}
+
+.enemy-Model {
+  width: 50%;
+  height: 500px;
+  display: flex;
+}
+
+.enemy-Model .conteiner {
+  display: flex;
+  width: 175px;
+  height: 188px;
+  margin: 267px auto 0 auto;
+}
+
+.enemy {
+  margin: auto;
+}
+
+.enemy-name {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 .enemy-hp {
-  width: 50px;
+  width: 500px;
   height: 20px;
-  border: 1px solid black;
+  border: 4px solid rgb(214, 198, 38);
+  border-radius: 50px;
   margin-top: 10px;
-  margin-left: 10px;
 }
+
+.enemy-hp > span {
+  width: 500px;
+  transition: width 1s;
+  display: block;
+  height: 100%;
+  background-color: red;
+  border-radius: 50px;
+  position: relative;
+}
+
+
 
 
 .context-menu {
-  width: 440px;
-  height: 400px;
+  width: 450px;
+  height: 270px;
+  background-color: white;
   border: 1px solid black;
   display: flex;
-  margin-top: 20px;
+  flex-direction: column;
+  position: relative;
+  margin: -510px auto;
+}
+
+.context-menu_group {
+  display: flex;
+  margin-top: 30px;
+}
+
+.context-menu_text {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.attack-spells {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  background-color: white;
+}
+
+.attack-spells > p {
+  width: 70px;
+  margin: 16px auto;
+}
+
+.attack-spells-list {
+  width: 500px;
+  height: 380px;
+  display: flex;
+  position: relative;
   flex-wrap: wrap;
+  margin: auto;
+  margin-top: -550px;
+  background-color: white;
+}
+
+.heal-spells {
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  background-color: white;
+}
+
+.heal-spells > p {
+  width: 160px;
+  margin: 16px auto;
+}
+
+.heal-spells-list {
+  width: 500px;
+  height: 380px;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: -550px;
+  background-color: white;
 }
 
 .spell-math {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
-.spell-comparison {
-  width: 198px;
-  height: 50px;
-  border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
-}
 .math-operations {
   width: 200px;
-  margin: 0 auto;
-  margin-bottom: 5px;
+  margin: 35px auto;
   text-align: center;
+  font-size: 30px;
+}
+
+.math-operations > span {
+  color: green;
 }
 
 .math {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 300px;
   border: 1px solid black;
   margin-top: 10px;
-  display: flex;
   flex-wrap: wrap;
+  margin: -500px auto;
+  background-color: white;
+  position: relative;
 }
 
 #input-math {
-  width: 100%;
-  height: 50%;
+  width: 100px;
+  height: 70px;
+  margin: 20px 198px;
+  font-size: 25px;
+  text-align: center;
 }
+.spell-comparison {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+} 
+
 .comparison-operations {
-  width: 200px;
+  width: 85%;
   margin: 0 auto;
   margin-bottom: 5px;
   text-align: center;
+  font-size: 46px;
+  border-bottom: 1px solid black;
 }
 
 .comparison {
-  width: 200px;
-  height: 50px;
+  width: 700px;
+  height: 300px;
   border: 1px solid black;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  margin: -510px auto;
+  background-color: white;
+}
+
+.comparison .text {
+  width: 65%;
+  text-align: center;
+  font-size: 24px;
+  border-bottom: 1px solid black;
+  margin: 10px auto;
+}
+
+.comparison .text > span {
+  color: green;
+  font-size: 36px;
 }
 
 #input-comparison {
-  width: 100%;
-  height: 50%;
+  width: 50%;
+  height: 20%;
+  margin-left: 169px;
+  margin-top: 35px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#input-comparison::-webkit-input-placeholder {
+  font-size: 24px;
 }
 .spell-grammatic {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .grammatic {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
-  margin-top: 10px;
-  /* display: flex; */
-  flex-wrap: wrap;
+  margin: -500px auto;
+  position: relative;
+  background-color: white;
+}
+
+.grammatic-word {
+  text-align: center;
+  font-size: 28px;
+}
+
+.grammatic-word > span {
+  color: green;
+}
+
+#grammatic-button {
+  margin: 20px 192px;
+  font-size: 25px;
 }
 .spell-logic {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .logic {
-  width: 400px;
-  height: 50px;
+  width: 500px;
+  height: 300px;
   border: 1px solid black;
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  margin: -510px auto;
+  background-color: white;
+}
+
+.logic-content {
+  font-size: 21px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 80%;
+  margin: 25px auto;
+  padding-bottom: 20px;
 }
 
 #input-logic {
-  width: 100%;
-  height: 50%;
+  width: 140px;
+  height: 38px;
+  margin: 20px 178px;
+  text-align: center;
+  font-size: 15px;
 }
 .spell-pazzle {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .pazzle {
-  width: 400px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
-  margin-top: 10px;
+  margin: -500px auto;
+  position: relative;
+  background-color: white;
+}
+
+.pazzle-content {
+  font-size: 21px;
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  width: 80%;
   display: flex;
-  flex-wrap: wrap;
+  margin: 26px auto;
+  justify-content: center;
 }
 
 #input-pazzle {
-  width: 100%;
-  height: 50%;
+  display: flex;
+  margin: 10px auto;
+  width: 50%;
+  height: 25px;
+  text-align: center;
 }
 .spell-sequence {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .sequence {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  margin: -500px auto;
+  position: relative;
+  background-color: white;
+}
+
+.sequence-number {
+  width: 80%;
+  margin-left: 51px;
+  text-align: center;
+  font-size: 21px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.sequence-number > span {
+  color: green;
+}
+
+.sequence-number > span:last-child {
+  color: red;
 }
 
 #input-sequence {
-  width: 100%;
-  height: 50%;
+  width: 120px;
+  height: 50px;
+  display: flex;
+  margin: 31px auto;
+  font-size: 34px;
+  text-align: center;
 }
 .spell-sort {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .sort {
-  width: 400px;
-  height: 150px;
+  width: 500px;
+  height: 250px;
   border: 1px solid black;
-  margin-top: 10px;
+  position: relative;
+  background-color: white;
+  margin: -510px auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.sort-content {
+  width: 100%;
+  height: 39px;
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 0;
+
 }
 
 #ui-state-default {
@@ -186,60 +462,503 @@
 }
 
 #sortable {
+  display: flex;
   list-style-type: none;
-  margin: 0; 
-  padding: 0; 
-  width: 450px;
+  height: 60px;
+  padding: 0;
+  margin: 30px auto;
 }
 
 #sortable li { 
-  margin: 3px 3px 3px 0; 
-  padding: 1px; 
-  float: left; 
-  width: 50px; 
-  height: 50px; 
-  font-size: 2em; 
+  margin: 3px 3px 3px 0;
+  padding: 1px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
   text-align: center;
+  background-color: aliceblue;
+}
+
+#sort-button {
+  width: 165px;
+  height: 40px;
+  margin: 0 167px;
+  margin-bottom: 16px;
 }
 .spell-speech {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .speech {
-  width: 400px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
-  margin-top: 10px;
+  position: relative;
+  margin: -500px auto;
+  background-color: white;
   display: flex;
   flex-wrap: wrap;
+}
+
+.speech-content {
+  text-align: center;
+  font-size: 26px;
+  width: 90%;
+}
+
+#speech-button {
+  width: 30px;
+  height: 21px;
+  margin: auto 10px;
+  color: darkgoldenrod;
 }
 
 #input-speech {
-  width: 100%;
-  height: 50%;
+  display: block;
+  height: 40px;
+  width: 200px;
+  margin: 35px auto;
+  text-align: center;
+  font-size: 20px;
 }
+
 .spell-translate {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .translate {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  background-color: white;
+  margin: -500px auto;
+}
+
+.translate-word {
+  text-align: center;
+  font-size: 25px;
+  border-bottom: 1px solid black;
+  width: 85%;
+  margin: 30px auto;
+  padding-bottom: 20px;
+}
+
+.translate-word > span {
+  color: green;
 }
 
 #input-translate {
-  width: 100%;
-  height: 50%;
+  width: 200px;
+  height: 30px;
+  margin: 10px 148px;
+  text-align: center;
+}
+.spell-delete-word {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+} 
+
+.delete-word {
+  width: 500px;
+  height: 300px;
+  border: 1px solid black;
+  position: relative;
+  margin: -510px auto;
+  background-color: white;
+}
+
+.delete-word > p {
+  font-size: 22px;
+  text-align: center;
+  border-bottom: 1px solid black;
+  width: 80%;
+  margin: 25px auto;
+  padding-bottom: 15px;
+}
+
+.delete-word > p > span {
+  color: green;
+}
+
+.delete-word > .delete-word_content { 
+  font-size: 21px;
+  text-align: center;
+
+}
+
+#input-delete-word {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 18px;;
+}
+
+
+@keyframes activeHeadPlayer {
+  from {
+    margin-top: -103px;
+  }
+
+  to {
+    margin-top: -97px;
+  }
+}
+
+@keyframes playerAttack_Head {
+  from {
+    height: 176px;
+    margin-left: -151px;
+    margin-top: -103px;
+    z-index: 12;
+  }
+  
+  to {
+    height: 176px;
+    margin-left: -151px;
+    margin-top: -103px;
+    z-index: 12;
+    transform: rotate(-6deg);
+  }
+} 
+
+@keyframes playerAttack_Body {
+  from {
+    width: 175px;
+    height: 188px;
+    z-index: 10;
+  }
+
+  to {
+    width: 175px;
+    height: 188px;
+    z-index: 10;
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes playerAttack_LeftHand {
+  from {
+    height: 120px;
+    margin-left: 17px;
+    margin-top: 46px;
+    z-index: 2;
+  }
+
+  to {
+    height: 120px;
+    margin-left: 42px;
+    margin-top: 3px;
+    z-index: 2;
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes playerAttack_LeftFinger {
+  from {
+    height: 69px;
+    margin-top: 99px;
+    margin-left: -38px;
+    z-index: 4;
+  }
+  
+  to {
+    height: 66px;
+    margin-top: 4px;
+    margin-left: -32px;
+    z-index: 4;
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes playerAttack_leftLeg {
+  from {
+    height: 77px;
+    margin-top: 156px;
+    margin-left: -130px;
+    z-index: 5;
+  }
+
+  to {
+    height: 77px;
+    margin-top: 156px;
+    margin-left: -130px;
+    z-index: 5;
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes playerAttack_Weapon {
+  from {
+    height: 210px;
+    margin-left: -59px;
+    margin-top: -15px;
+    z-index: 3;
+  }
+
+  to {
+    height: 210px;
+    margin-left: -113px;
+    margin-top: -111px;
+    z-index: 3;
+    transform: rotate(-60deg);
+  }
+}
+
+.mage-body {
+  width: 175px;
+  height: 188px;
+  z-index: 10;
+}
+
+.mage-head {
+  animation: activeHeadPlayer 0.8s linear infinite alternate;
+  height: 176px;
+  margin-left: -151px;
+  margin-top: -103px;
+  z-index: 12;
+}
+
+.mage-leftLeg {
+  height: 77px;
+  margin-top: 156px;
+  margin-left: -130px;
+  z-index: 5;
+}
+
+.mage-RightLeg {
+  height: 75px;
+  margin-top: 150px;
+  margin-left: -26px;
+  z-index: 4;
+}
+
+.mage-leftHand {
+  height: 120px;
+  margin-left: 17px;
+  margin-top: 46px;
+  z-index: 2;
+}
+
+.mage-rightHand {
+  height: 130px;
+  margin-left: -159px;
+  margin-top: 54px;
+  z-index: 11;
+}
+
+.mage-leftFinger {
+  height: 69px;
+  margin-top: 99px;
+  margin-left: -38px;
+  z-index: 4;
+}
+
+.mage-weapon {
+  height: 210px;
+  margin-left: -59px;
+  margin-top: -15px;
+  z-index: 3;
+}
+
+.mage-body_active  {
+  animation: playerAttack_Body 1s linear;
+  width: 175px;
+  height: 188px;
+  z-index: 10;
+}
+
+.mage-head_active {
+  animation: playerAttack_Head 1s linear;
+  height: 176px;
+  margin-left: -151px;
+  margin-top: -103px;
+  z-index: 12;
+}
+
+.mage-leftLeg_active {
+  animation: playerAttack_leftLeg 1s linear;
+  height: 77px;
+  margin-top: 156px;
+  margin-left: -130px;
+  z-index: 5;
+}
+
+.mage-leftHand_active {
+  animation: playerAttack_LeftHand 1s linear;
+  height: 120px;
+  margin-left: 17px;
+  margin-top: 46px;
+  z-index: 2;
+}
+
+.mage-leftFinger_active {
+  animation: playerAttack_LeftFinger 1s linear;
+  height: 69px;
+  margin-top: 99px;
+  margin-left: -38px;
+  z-index: 4;
+}
+
+.mage-weapon_active {
+  animation: playerAttack_Weapon 1s linear;
+  height: 210px;
+  margin-left: -59px;
+  margin-top: -15px;
+  z-index: 3;
+}
+@keyframes activeHead {
+  from {
+    margin-top: -157px;
+  }
+
+  to {
+    margin-top: -150px;
+  }
+}
+
+@keyframes activeHeadOrc {
+  from {
+    margin-top: -199px;
+  }
+
+  to {
+    margin-top: -191px;
+  }
+}
+
+.enemy-head {
+  animation: activeHead 1s linear infinite alternate;
+  transform: scaleX(-1);
+  height: 171px;
+  margin-top: -157px;
+  z-index: 10;
+}
+
+.enemy-body {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -196px;
+  margin-top: -135px;
+  z-index: 9;
+}
+
+.enemy-rightHand {
+  transform: scaleX(-1);
+  height: 182px;
+  margin-left: -453px;
+  margin-top: -31px;
+  z-index: 8
+}
+
+.enemy-leftHand {
+  transform: scaleX(-1);
+  height: 240px;
+  margin-left: 102px;
+  margin-top: -54px;
+  z-index: 10;
+}
+
+.enemy-rightLeg {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 114px;
+  margin-left: -243px;
+}
+
+.enemy-leftLeg {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 114px;
+  margin-left: -18px;
+}
+
+.enemy-head-orc {
+  animation: activeHeadOrc 1s linear infinite alternate;
+  transform: scaleX(-1);
+  height: 190px;
+  margin-top: -199px;
+  z-index: 10;
+}
+
+.enemy-body-orc {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -212px;
+  margin-top: -134px;
+  z-index: 9;
+}
+
+.enemy-rightHand-orc {
+  transform: scaleX(-1);
+  height: 220px;
+  margin-left: -328px;
+  margin-top: -53px;
+  z-index: 8;
+}
+
+.enemy-leftHand-orc {
+  transform: scaleX(-1);
+  height: 240px;
+  margin-left: 93px;
+  margin-top: -53px;
+  z-index: 10;
+}
+
+.enemy-rightLeg-orc {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 113px;
+  margin-left: -243px;
+}
+
+.enemy-leftLeg-orc {
+  transform: scaleX(-1);
+  height: 120px;
+  margin-top: 117px;
+  margin-left: -18px;
+}
+
+.enemy-weapon-orc {
+  transform: scaleX(-1);
+  height: 165px;
+  margin-left: -405px;
+  margin-top: 1px;
+  z-index: 10;
+}
+
+.enemy-body-troll {
+  transform: scaleX(-1);
+  height: 308px;
+  margin-left: -173px;
+  margin-top: -128px;
+  z-index: 9;
+}
+
+.enemy-rightHand-troll {
+  transform: scaleX(-1);
+  height: 182px;
+  margin-left: -390px;
+  z-index: 8;
 }

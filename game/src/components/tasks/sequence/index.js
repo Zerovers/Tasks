@@ -6,10 +6,11 @@ import names from '../../../screens/battle/name.json';
 const html = $(htmlSequence);
 class sequenceTask {
   render(content) {
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.attack-spells-list').remove();
     html.find('#input-sequence').val('');
-    html.find('.sequence-number').html(`Продолжите последовательность цифр\n ${content.rndNumber} ${content.rndNumber + content.rndDiff} ${content.rndNumber + content.rndDiff * 2} ?`);
+    html.find('.sequence-number').html(`Продолжите последовательность цифр<br> <span>${content.rndNumber}</span>
+    <span>${content.rndNumber + content.rndDiff}</span>
+    <span>${content.rndNumber + content.rndDiff * 2}</span> <span>?</span>`);
     $('body').append(html);
     html.find('#input-sequence').focus();
     html.find('#input-sequence').on('change', (event) => { this.getAnswerTask(content) });
@@ -33,6 +34,7 @@ class sequenceTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

@@ -16,13 +16,23 @@ class battleArena {
     monster = new Enemy(`${names.firstName[_.random(0,names.firstName.length - 1)]} 
     ${names.secondName[_.random(0,names.secondName.length - 1)]} 
     ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`, 100);
-    $('.button').on('click', (e) => {
-      player.sayHi();
-      monster.sayHi();
-      spellList.render();
+    player.renderBody();
+    monster.renderBody();
+    $('.button').on('click', async () => {
+      player.removeAnimation();
+      spellList.renderChoice();
     });
   }
 }
 const battles = new battleArena();
 export default battles;
 export { monster, player };
+
+const pause = (time) => {
+  return new Promise((resolve) => {
+    console.log('wow');
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}

@@ -1,21 +1,39 @@
 .spell-translate {
-  width: 198px;
+  width: 270px;
   height: 50px;
   border: 1px solid black;
-  margin-left: 1px;
-  margin-top: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
 }
 
 .translate {
-  width: 200px;
-  height: 50px;
+  width: 500px;
+  height: 200px;
   border: 1px solid black;
   margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  position: relative;
+  background-color: white;
+  margin: -500px auto;
+}
+
+.translate-word {
+  text-align: center;
+  font-size: 25px;
+  border-bottom: 1px solid black;
+  width: 85%;
+  margin: 30px auto;
+  padding-bottom: 20px;
+}
+
+.translate-word > span {
+  color: green;
 }
 
 #input-translate {
-  width: 100%;
-  height: 50%;
+  width: 200px;
+  height: 30px;
+  margin: 10px 148px;
+  text-align: center;
 }

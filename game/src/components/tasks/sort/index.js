@@ -7,10 +7,10 @@ import names from '../../../screens/battle/name.json';
 const html = $(htmlSort);
 class sortTask {
   render(content) {
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.heal-spells-list').remove();
     const map = content;
     $('body').append(html);
+    $('#sortable').html('');
     $("#sortable").sortable();
     $("#sortable").disableSelection();
     html.find('.sort-content').html('Составте правильное слово');
@@ -45,6 +45,7 @@ class sortTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }

@@ -1,0 +1,212 @@
+@keyframes activeHeadPlayer {
+  from {
+    margin-top: -103px;
+  }
+
+  to {
+    margin-top: -97px;
+  }
+}
+
+@keyframes playerAttack_Head {
+  from {
+    height: 176px;
+    margin-left: -151px;
+    margin-top: -103px;
+    z-index: 12;
+  }
+  
+  to {
+    height: 176px;
+    margin-left: -151px;
+    margin-top: -103px;
+    z-index: 12;
+    transform: rotate(-6deg);
+  }
+} 
+
+@keyframes playerAttack_Body {
+  from {
+    width: 175px;
+    height: 188px;
+    z-index: 10;
+  }
+
+  to {
+    width: 175px;
+    height: 188px;
+    z-index: 10;
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes playerAttack_LeftHand {
+  from {
+    height: 120px;
+    margin-left: 17px;
+    margin-top: 46px;
+    z-index: 2;
+  }
+
+  to {
+    height: 120px;
+    margin-left: 42px;
+    margin-top: 3px;
+    z-index: 2;
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes playerAttack_LeftFinger {
+  from {
+    height: 69px;
+    margin-top: 99px;
+    margin-left: -38px;
+    z-index: 4;
+  }
+  
+  to {
+    height: 66px;
+    margin-top: 4px;
+    margin-left: -32px;
+    z-index: 4;
+    transform: rotate(-60deg);
+  }
+}
+
+@keyframes playerAttack_leftLeg {
+  from {
+    height: 77px;
+    margin-top: 156px;
+    margin-left: -130px;
+    z-index: 5;
+  }
+
+  to {
+    height: 77px;
+    margin-top: 156px;
+    margin-left: -130px;
+    z-index: 5;
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes playerAttack_Weapon {
+  from {
+    height: 210px;
+    margin-left: -59px;
+    margin-top: -15px;
+    z-index: 3;
+  }
+
+  to {
+    height: 210px;
+    margin-left: -113px;
+    margin-top: -111px;
+    z-index: 3;
+    transform: rotate(-60deg);
+  }
+}
+
+.mage-body {
+  width: 175px;
+  height: 188px;
+  z-index: 10;
+}
+
+.mage-head {
+  animation: activeHeadPlayer 0.8s linear infinite alternate;
+  height: 176px;
+  margin-left: -151px;
+  margin-top: -103px;
+  z-index: 12;
+}
+
+.mage-leftLeg {
+  height: 77px;
+  margin-top: 156px;
+  margin-left: -130px;
+  z-index: 5;
+}
+
+.mage-RightLeg {
+  height: 75px;
+  margin-top: 150px;
+  margin-left: -26px;
+  z-index: 4;
+}
+
+.mage-leftHand {
+  height: 120px;
+  margin-left: 17px;
+  margin-top: 46px;
+  z-index: 2;
+}
+
+.mage-rightHand {
+  height: 130px;
+  margin-left: -159px;
+  margin-top: 54px;
+  z-index: 11;
+}
+
+.mage-leftFinger {
+  height: 69px;
+  margin-top: 99px;
+  margin-left: -38px;
+  z-index: 4;
+}
+
+.mage-weapon {
+  height: 210px;
+  margin-left: -59px;
+  margin-top: -15px;
+  z-index: 3;
+}
+
+.mage-body_active  {
+  animation: playerAttack_Body 1s linear;
+  width: 175px;
+  height: 188px;
+  z-index: 10;
+}
+
+.mage-head_active {
+  animation: playerAttack_Head 1s linear;
+  height: 176px;
+  margin-left: -151px;
+  margin-top: -103px;
+  z-index: 12;
+}
+
+.mage-leftLeg_active {
+  animation: playerAttack_leftLeg 1s linear;
+  height: 77px;
+  margin-top: 156px;
+  margin-left: -130px;
+  z-index: 5;
+}
+
+.mage-leftHand_active {
+  animation: playerAttack_LeftHand 1s linear;
+  height: 120px;
+  margin-left: 17px;
+  margin-top: 46px;
+  z-index: 2;
+}
+
+.mage-leftFinger_active {
+  animation: playerAttack_LeftFinger 1s linear;
+  height: 69px;
+  margin-top: 99px;
+  margin-left: -38px;
+  z-index: 4;
+}
+
+.mage-weapon_active {
+  animation: playerAttack_Weapon 1s linear;
+  height: 210px;
+  margin-left: -59px;
+  margin-top: -15px;
+  z-index: 3;
+}

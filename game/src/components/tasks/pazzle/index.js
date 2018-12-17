@@ -8,10 +8,9 @@ const html = $(htmlPazzle);
 class pazzleTask {
   render(content) {
     const map = content;
-    const spellmenu = $('.context-menu');
-    spellmenu.remove();
+    $('.heal-spells-list').remove();
     html.find('#input-pazzle').val('');
-    html.find('.pazzle-content').html(`Отгадайте загадку \n ${map.rndKeys}`);
+    html.find('.pazzle-content').html(`Отгадайте загадку:<br> ${map.rndKeys}`);
     $('body').append(html);
     html.find('#input-pazzle').focus();
     html.find('#input-pazzle').on('change', (event) => { this.getAnswerTask(content) });
@@ -42,6 +41,7 @@ class pazzleTask {
       console.log(monster.name);
       monster.hp = 100;
       monster.indicationHp();
+      monster.renderBody();
       player.killMonsters();
     }
   }
