@@ -18,7 +18,7 @@ class pazzleTask {
   deleteTask() {
     html.remove();
   }
-  getAnswerTask(content) {
+  async getAnswerTask(content) {
     let count = 0;
     const result = content.answer;
     const pazzleAnswer = event.target.value.toLowerCase();
@@ -28,23 +28,27 @@ class pazzleTask {
       }
     }
     if (count > 0) {
-      monster.getDamage();
       this.deleteTask();
+      player.addAnimationHealing();
+      await pause(1000);
+      player.getHeal();    
     } else {
-      player.getDamage();
       this.deleteTask();
+      monster.addAnimationAttack();
+      await pause(1500);
+      player.getDamage();
     }
-    if (monster.hp === 0) {
-      monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
-      ${names.secondName[_.random(0,names.secondName.length - 1)]} 
-      ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
-      console.log(monster.name);
-      monster.hp = 100;
-      monster.indicationHp();
-      monster.renderBody();
-      player.killMonsters();
+    if (player.hp === 0) {
     }
   }
 }
 const pazzles = new pazzleTask();
 export default pazzles;
+
+const pause = (time) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+}

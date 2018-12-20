@@ -42,6 +42,7 @@
   width: 175px;
   height: 188px;
   margin: 267px auto 0 auto;
+  position: relative;
 }
 
 .player {
@@ -83,6 +84,7 @@
   width: 175px;
   height: 188px;
   margin: 267px auto 0 auto;
+  position: relative;
 }
 
 .enemy {

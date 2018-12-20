@@ -19,7 +19,8 @@ class battleArena {
     player.renderBody();
     monster.renderBody();
     $('.button').on('click', async () => {
-      player.removeAnimation();
+      player.removeAnimations();
+      monster.removeAnimationTakeDamage();
       spellList.renderChoice();
     });
   }

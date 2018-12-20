@@ -38,7 +38,6 @@ class tasksContent {
     const rnd = _.random(0, list.length - 1);
     const rndKeys = list[rnd];
     const answer = pazzleList[rndKeys];
-    console.log(answer);
     return { rndKeys, answer };
   }
   createSequenceContent() {

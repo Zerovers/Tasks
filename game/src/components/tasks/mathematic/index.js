@@ -39,12 +39,14 @@ class mathTask {
     const result = this.getMathOperation(content);
     if (event.target.value === result + '') {
       this.deleteTask();
-      player.addAnimation();
-      await pause(1000);
+      player.addAnimationAttack('frostbolt');
+      await pause(1500);
       monster.getDamage();
     } else {
-      player.getDamage();
       this.deleteTask();
+      monster.addAnimationAttack();
+      await pause(1500);
+      player.getDamage();    
     }
     if (monster.hp === 0) {
       monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
@@ -52,6 +54,7 @@ class mathTask {
       ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
       console.log(monster.name);
       monster.hp = 100;
+      await pause(1000);
       monster.indicationHp();
       monster.renderBody();
       player.killMonsters();
