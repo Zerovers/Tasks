@@ -1,23 +1,14 @@
-.spell-logic {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.logic {
+.logic__content {
   width: 500px;
   height: 300px;
   border: 1px solid black;
   position: relative;
   margin: -510px auto;
   background-color: white;
+  z-index: 110;
 }
 
-.logic-content {
+.logic__content__text {
   font-size: 21px;
   text-align: center;
   border-bottom: 1px solid black;
@@ -26,10 +17,32 @@
   padding-bottom: 20px;
 }
 
-#input-logic {
+#logic__input {
   width: 140px;
   height: 38px;
   margin: 20px 178px;
   text-align: center;
   font-size: 15px;
+}
+
+#logic__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#logic__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#logic__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

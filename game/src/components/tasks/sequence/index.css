@@ -1,44 +1,58 @@
-.spell-sequence {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.sequence {
+.sequence__content {
   width: 500px;
-  height: 200px;
-  border: 1px solid black;
+  height: 260px;
+  border-radius: 20px;
   margin: -500px auto;
   position: relative;
   background-color: white;
+  z-index: 110;
 }
 
-.sequence-number {
+.sequence__content__number {
   width: 80%;
   margin-left: 51px;
   text-align: center;
   font-size: 21px;
   border-bottom: 1px solid black;
   padding-bottom: 10px;
+  padding-top: 20px;
 }
 
-.sequence-number > span {
+.sequence__content__number > span {
   color: green;
 }
 
-.sequence-number > span:last-child {
+.sequence__content__number > span:last-child {
   color: red;
 }
 
-#input-sequence {
+#sequence__input {
   width: 120px;
   height: 50px;
   display: flex;
   margin: 31px auto;
   font-size: 34px;
   text-align: center;
+}
+
+#sequence__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#sequence__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#sequence__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

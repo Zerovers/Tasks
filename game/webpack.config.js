@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const fs = require("fs");
 
 module.exports = {
   entry: './src/screens/login/index.js',
@@ -17,22 +18,23 @@ module.exports = {
       template: './src/screens/login/index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: "./src/screens/login/index.css",
- 
+      filename: "./index.css",
+
     })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [ 
+        use: [
           MiniCssExtractPlugin.loader,
-          { 
-            loader: 'css-loader', 
-            options: { 
-              url: false, 
-              sourceMap: true }
-          } ]
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: true
+            }
+          }]
       },
       {
         test: /\.js$/,
@@ -44,17 +46,35 @@ module.exports = {
         use: {
           loader: 'html-loader',
         }
-      }
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: './images/[name].[ext]'
+          },
+        }],
+      },
+      {
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: './sounds/[name].[ext]'
+          },
+        }],
+    }
     ],
   },
   resolve: {
     modules: [path.resolve(__dirname, './'), 'node_modules']
   },
-  devServer: { 
-    contentBase: path.join(__dirname, './'), 
-    compress: true, 
-    port: 9000 
-    },
+  devServer: {
+    contentBase: path.join(__dirname, './'),
+    compress: true,
+    port: 9000
+  },
 
   mode: 'development',
 };

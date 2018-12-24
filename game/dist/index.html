@@ -2,8 +2,47 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link href="./src/screens/login/index.css" rel="stylesheet"></head>
+<link href="./index.css" rel="stylesheet"></head>
 <body>
-  <p class='log'>Введение имя</p>
-  <input type='text' id='input-login'>
+  <h1>название игры</h1>
+  <div class='login'>
+  <header>Начните путешествие!</header>
+  <form class='login__content'>
+    <label for='nickname'>Your nickname</label>
+    <input type='text' id='login__content__input' placeholder='Введите свой никнейм' required autocomplete="off">
+    <button id='login__content__button'>Play</button>
+  </form>
+  </div>
+  <div class='game-description'>
+    <div class='game-description__feature'>
+      <p>
+        <h4>Особенности</h4>
+        Присуствует 2 типа заклинаний: Наносящих урон и востанавливающие здоровье. Задачи представленны различными
+        математическими и логическими заданиями.
+      </p>
+    </div>
+    <div class='game-description__rule'>
+      <p>
+        <h4>Правила</h4>
+        1. У игрока и монстра 100 хп. </br>
+        2. Угрок ходит первым и выбирайте действие. </br>
+        3. Если игрок отвечает правильно, то наносит урон, иначе монстр отвечает ударом </br>
+        4. Когда монстр умирает появляется следующий монст с большим уроном </br>
+        5. После поражения отображается статистика. </br>
+      </p>
+    </div>
+    <div class='game-description__controll'>
+      <p >
+        <h4>Управление</h4>
+        1. Мышкой </br>
+        - Выбирайте нужное действие </br>
+        - Вписывайте ответ</br>
+        - Отправляйте ответ!</br>
+        2. Клавиатурой</br>
+        - Переключайтесь между элементами клавишей TAB </br>
+        - Выбирайте дейсвтие клавишей SPACE </br>
+        - вписывайте ответ и отвечайте клавишей ENTER
+      </p>
+    </div>
+  </div>
 <script type="text/javascript" src="app.bundle.js"></script></body>

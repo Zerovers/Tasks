@@ -1,32 +1,40 @@
-.spell-grammatic {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.grammatic {
+.grammatic__content {
   width: 500px;
   height: 200px;
   border: 1px solid black;
   margin: -500px auto;
   position: relative;
   background-color: white;
+  z-index: 110;
 }
 
-.grammatic-word {
+.grammatic__content__word {
   text-align: center;
   font-size: 28px;
 }
 
-.grammatic-word > span {
+.grammatic__content__word > span {
   color: green;
 }
 
-#grammatic-button {
-  margin: 20px 192px;
-  font-size: 25px;
+#grammatic__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#grammatic__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#grammatic__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

@@ -1,19 +1,25 @@
 import css from './index.css';
 import htmlPazzle from './index.html';
-import pazzleList from './pazzleList.json';
 import { player, monster } from '../../../screens/battle';
-import names from '../../../screens/battle/name.json';
+import pause from '../../utils/index';
 
+let eventValue;
 const html = $(htmlPazzle);
 class pazzleTask {
   render(content) {
     const map = content;
     $('.heal-spells-list').remove();
-    html.find('#input-pazzle').val('');
-    html.find('.pazzle-content').html(`Отгадайте загадку:<br> ${map.rndKeys}`);
+    html.find('#pazzle__input').val('');
+    html.find('.pazzle__content__text').html(`Отгадайте загадку:<br> ${map.rndKeys}`);
     $('body').append(html);
-    html.find('#input-pazzle').focus();
-    html.find('#input-pazzle').on('change', (event) => { this.getAnswerTask(content) });
+    html.find('#pazzle__input').focus();
+    html.find('#pazzle').submit(() => {
+      eventValue = $('#pazzle__input').val();
+      this.getAnswerTask(content);
+      $('.shadow').css('display', 'none');
+      $('.button__start-fight').prop('disabled', false);
+      return false;
+    });
   }
   deleteTask() {
     html.remove();
@@ -21,7 +27,7 @@ class pazzleTask {
   async getAnswerTask(content) {
     let count = 0;
     const result = content.answer;
-    const pazzleAnswer = event.target.value.toLowerCase();
+    const pazzleAnswer = eventValue.toLowerCase();
     for (let i = 0; i < result.length; i += 1) {
       if (pazzleAnswer === result[i]) {
         count += 1;
@@ -35,7 +41,7 @@ class pazzleTask {
     } else {
       this.deleteTask();
       monster.addAnimationAttack();
-      await pause(1500);
+      await pause(1000);
       player.getDamage();
     }
     if (player.hp === 0) {
@@ -44,11 +50,3 @@ class pazzleTask {
 }
 const pazzles = new pazzleTask();
 export default pazzles;
-
-const pause = (time) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
-}

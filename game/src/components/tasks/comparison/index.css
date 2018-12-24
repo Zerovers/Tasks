@@ -1,14 +1,15 @@
-.spell-comparison {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-} 
+.comparison__content {
+  width: 700px;
+  height: 300px;
+  border-radius: 20px;
+  margin-top: 10px;
+  position: relative;
+  margin: -510px auto;
+  background-color: white;
+  z-index: 110;
+}
 
-.comparison-operations {
+.comparison__content__operations {
   width: 85%;
   margin: 0 auto;
   margin-bottom: 5px;
@@ -17,17 +18,7 @@
   border-bottom: 1px solid black;
 }
 
-.comparison {
-  width: 700px;
-  height: 300px;
-  border: 1px solid black;
-  margin-top: 10px;
-  position: relative;
-  margin: -510px auto;
-  background-color: white;
-}
-
-.comparison .text {
+.comparison__content__text {
   width: 65%;
   text-align: center;
   font-size: 24px;
@@ -35,12 +26,12 @@
   margin: 10px auto;
 }
 
-.comparison .text > span {
+.comparison__content__text > span {
   color: green;
   font-size: 36px;
 }
 
-#input-comparison {
+#comparison__input {
   width: 50%;
   height: 20%;
   margin-left: 169px;
@@ -49,6 +40,28 @@
   text-align: center;
 }
 
-#input-comparison::-webkit-input-placeholder {
+#comparison__inputn::-webkit-input-placeholder {
   font-size: 24px;
+}
+
+#comparison__button {
+  width: 25%;
+  height: 40px;
+  margin: 30px auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#comparison__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#comparison__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

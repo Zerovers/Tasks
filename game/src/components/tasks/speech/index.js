@@ -1,22 +1,20 @@
 import css from './index.css';
-import icon from './icon.min.css';
 import htmlSpeech from './index.html';
-import speechList from './speechList.json';
 import { player, monster } from '../../../screens/battle';
-import names from '../../../screens/battle/name.json';
+import pause from '../../utils/index';
 
 let voices = speechSynthesis.getVoices();
 const html = $(htmlSpeech);
 class speechTask {
   render(content) {
     $('.heal-spells-list').remove();
-    html.find('#input-speech').val('');
-    html.find('.speech-content').html('Впишите слово которое услышали');
+    html.find('#speech__input').val('');
+    html.find('.speech__content__text').html('Впишите слово которое услышали');
     this.setSpeech(content);
     $('body').append(html);
-    html.find('#input-speech').focus();
-    html.find('#speech-button').on('click', (event) => { this.setSpeech(content) });
-    html.find('#input-speech').on('change', (event) => { this.getAnswerTask(content) });
+    html.find('#speech__input').focus();
+    html.find('#speech__button').on('click', (event) => { this.setSpeech(content) });
+    html.find('#speech__input').on('change', (event) => { this.getAnswerTask(content); $('.shadow').css('display', 'none'); $('.button__start-fight').prop('disabled', false); });
   }
   setSpeech(content) {
     const message = content;
@@ -30,25 +28,21 @@ class speechTask {
   deleteTask() {
     html.remove();
   }
-  getAnswerTask(content) {
+  async getAnswerTask(content) {
     const result = content;
     const speechAnswer = event.target.value.toLowerCase();
     if (speechAnswer === result) {
-      monster.getDamage();
       this.deleteTask();
+      player.addAnimationHealing();
+      await pause(1000);
+      player.getHeal();    
     } else {
-      player.getDamage();
       this.deleteTask();
+      monster.addAnimationAttack();
+      await pause(1000);
+      player.getDamage();
     }
-    if (monster.hp === 0) {
-      monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
-      ${names.secondName[_.random(0,names.secondName.length - 1)]} 
-      ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
-      console.log(monster.name);
-      monster.hp = 100;
-      monster.indicationHp();
-      monster.renderBody();
-      player.killMonsters();
+    if (player.hp === 0) {
     }
   }
 }

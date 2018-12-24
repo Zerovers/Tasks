@@ -1,37 +1,51 @@
 .context-menu {
   width: 450px;
   height: 270px;
-  background-color: white;
-  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
   position: relative;
   margin: -510px auto;
+  z-index: 110;
 }
 
-.context-menu_group {
+.spell {
   display: flex;
   margin-top: 30px;
 }
 
-.context-menu_text {
+.context-menu__text {
   width: 100%;
   height: 50px;
   text-align: center;
   font-size: 25px;
+  font-weight: 600;
 }
 
-.attack-spells {
+.spell__attack {
   width: 200px;
   height: 50px;
-  border: 1px solid black;
+  border-radius: 8px;
+  border: 2px solid rgb(86,69,75);
   margin: auto;
-  background-color: white;
+  background-color: rgb(91, 112, 183);
+  display: flex;
 }
 
-.attack-spells > p {
-  width: 70px;
-  margin: 16px auto;
+.spell__attack:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #253a7c 10%, #5b70b7 69%, #253a7c);
+}
+
+.spell__attack:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
+}
+
+.spell__attack > p {
+  font-size: 25px;
+  margin: auto;
 }
 
 .attack-spells-list {
@@ -43,19 +57,33 @@
   margin: auto;
   margin-top: -550px;
   background-color: white;
+  z-index: 110;
+  border-radius: 30px;
 }
 
-.heal-spells {
+.spell__heal {
   width: 200px;
   height: 50px;
-  border: 1px solid black;
+  border-radius: 8px;
+  border: 2px solid rgb(86,69,75);
   margin: auto;
-  background-color: white;
+  background-color: rgb(142, 223, 76);
+  display: flex;
 }
 
-.heal-spells > p {
+.spell__heal:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #8edf4c 10%, #a7c78d 69%, #8edf4c);
+}
+
+.spell__heal:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #8edf4c 10%, #a7c78d 69%, #8edf4c);
+}
+
+.spell__heal > p {
   width: 160px;
-  margin: 16px auto;
+  margin: auto;
 }
 
 .heal-spells-list {
@@ -67,4 +95,328 @@
   margin: auto;
   margin-top: -550px;
   background-color: white;
+  z-index: 110;
+  border-radius: 30px;
 }
+
+.spell-sort {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none
+}
+
+.spell-sort:hover {
+  border: 2px solid red;
+}
+
+.spell-sort:focus {
+  border: 2px solid red;
+}
+
+.spell-sort:focus::before, .spell-sort:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-math {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-math:hover {
+  border: 2px solid red;
+}
+
+.spell-math:focus {
+  border: 2px solid red;
+}
+
+.spell-math:focus::before, .spell-math:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-comparison {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-comparison:hover {
+  border: 2px solid red;
+}
+
+.spell-comparison:focus {
+  border: 2px solid red;
+}
+
+.spell-comparison:focus::before, .spell-comparison:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-sequence {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-sequence:hover {
+  border: 2px solid red;
+}
+
+.spell-sequence:focus {
+  border: 2px solid red;
+}
+
+.spell-sequence:focus::before, .spell-sequence:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+
+.spell-translate {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-translate:hover {
+  border: 2px solid red;
+}
+
+.spell-translate:focus {
+  border: 2px solid red;
+}
+
+.spell-translate:focus::before, .spell-translate:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-delete-word {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(138, 243, 128);
+  position: relative;
+  outline: none;
+}
+
+.spell-delete-word:hover {
+  border: 2px solid red;
+}
+
+.spell-delete-word:focus {
+  border: 2px solid red;
+}
+
+.spell-delete-word:focus::before, .spell-delete-word:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(24, 67, 185, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-grammatic {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(138, 243, 128);
+  position: relative;
+  outline: none;
+}
+
+.spell-grammatic:hover {
+  border: 2px solid red;
+}
+
+.spell-grammatic:focus {
+  border: 2px solid red;
+}
+
+.spell-grammatic:focus::before, .spell-grammatic:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(24, 67, 185, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-logic {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(138, 243, 128);
+  position: relative;
+  outline: none;
+}
+
+.spell-logic:hover {
+  border: 2px solid red;
+}
+
+.spell-logic:focus {
+  border: 2px solid red;
+}
+
+.spell-logic:focus::before, .spell-logic:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(24, 67, 185, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-pazzle {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(138, 243, 128);
+  position: relative;
+  outline: none;
+}
+
+.spell-pazzle:hover {
+  border: 2px solid red;
+}
+
+.spell-pazzle:focus {
+  border: 2px solid red;
+}
+
+.spell-pazzle:focus::before, .spell-pazzle:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(24, 67, 185, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-speech {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(138, 243, 128);
+  position: relative;
+  outline: none;
+}
+
+.spell-speech:hover {
+  border: 2px solid red;
+}
+
+.spell-speech:focus {
+  border: 2px solid red;
+}
+
+.spell-speech:focus::before, .spell-speech:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(24, 67, 185, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+

@@ -296,7 +296,55 @@
   visibility: hidden;
 }
 
-.spell.heal {
+.spell.fireball {
+  width: 71px;
+  height: 71px;
+  transform: rotate(132deg);
+  z-index: 15;
+  transition: left 500ms;
+  left: 305px;
+  top: -25px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.spell.arcaneblast {
+  width: 71px;
+  height: 72px;
+  transform: rotate(132deg);
+  z-index: 15;
+  transition: left 500ms;
+  left: 305px;
+  top: -25px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.spell.arcanemissile {
+  width: 70px;
+  height: 74px;
+  transform: rotate(228deg);
+  z-index: 15;
+  transition: left 500ms;
+  left: 305px;
+  top: -25px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.spell.shadowbolt {
+  width: 85px;
+  height: 93px;
+  transform: rotate(132deg);
+  z-index: 15;
+  transition: left 500ms;
+  left: 305px;
+  top: -25px;
+  position: absolute;
+  visibility: hidden;
+}
+
+.heal {
   z-index: 1;
   position: absolute;
   top: 171px;

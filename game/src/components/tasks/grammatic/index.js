@@ -2,17 +2,17 @@ import css from './index.css';
 import htmlGrammatic from './index.html';
 import grammaticList from './grammaticList';
 import { player, monster } from '../../../screens/battle';
-import names from '../../../screens/battle/name.json';
+import pause from '../../utils/index';
 
 const html = $(htmlGrammatic);
 class grammaticTask {
   render() {
     const list = grammaticList.map;
-    $('.attack-spells-list').remove();
+    $('.heal-spells-list').remove();
     const rndList = list[_.random(0, list.length)];
     $('body').append(html);
-    html.find('.grammatic-word').html(`Произнесите <span>${rndList}</span>`);
-    html.find('#grammatic-button').on('click', (e) => this.getAnswerTask(rndList));
+    html.find('.grammatic__content__word').html(`Произнесите <span>${rndList}</span>`);
+    html.find('#grammatic__button').on('click', () => { this.getAnswerTask(rndList); $('.shadow').css('display', 'none'); $('.button__start-fight').prop('disabled', false); });
   }
   deleteTask() {
     html.remove();
@@ -24,24 +24,20 @@ class grammaticTask {
     recognizer.maxAlternatives = 1;
     recognizer.lang = 'en-US';
     recognizer.start();
-    recognizer.onresult = (event) => {
+    recognizer.onresult = async (event) => {
       let result = event.results[0][0].transcript;
       if (word === result) {
-        monster.getDamage();
         this.deleteTask();
+        player.addAnimationHealing();
+        await pause(1000);
+        player.getHeal();    
       } else {
-        player.getDamage();
         this.deleteTask();
+        monster.addAnimationAttack();
+        await pause(1500);
+        player.getDamage();
       }
-      if (monster.hp === 0) {
-        monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
-        ${names.secondName[_.random(0,names.secondName.length - 1)]} 
-        ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
-        console.log(monster.name);
-        monster.hp = 100;
-        monster.indicationHp();
-        monster.renderBody();
-        player.killMonsters();
+      if (player.hp === 0) {
       }
     }
   }

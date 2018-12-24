@@ -1,39 +1,55 @@
-.spell-math {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.math-operations {
-  width: 200px;
-  margin: 35px auto;
-  text-align: center;
-  font-size: 30px;
-}
-
-.math-operations > span {
-  color: green;
-}
-
 .math {
   width: 500px;
   height: 300px;
-  border: 1px solid black;
+  display: flex;
   margin-top: 10px;
   flex-wrap: wrap;
   margin: -500px auto;
   background-color: white;
+  border-radius: 35px;
   position: relative;
+  z-index: 110;
 }
 
-#input-math {
+.math__operations {
+  width: 200px;
+  margin: 25px auto 0;
+  text-align: center;
+  font-size: 30px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.math__operations > span {
+  color: green;
+}
+
+#math__input {
   width: 100px;
   height: 70px;
-  margin: 20px 198px;
+  margin: 35px 198px;
   font-size: 25px;
   text-align: center;
+}
+
+#math__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#math__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#math__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

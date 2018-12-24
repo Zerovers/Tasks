@@ -1,25 +1,45 @@
 import css from './index.css';
+import playerHead from './image/player_head.png';
+import playerBody from './image/player_body.png';
+import playerRightHand from './image/player_rightHand.png';
+import playerLeftHand from './image/player_leftHand.png';
+import playerLeftFinger from './image/player_leftFinger.png';
+import playerRightLeg from './image/player_rightLeg.png';
+import playerLeftLeg from './image/player_leftLeg.png';
+import playerWeapon from './image/player_weapon.png';
+
+import playerSpellFrostbolt from './image/spells/spell_frostbolt.png';
+import playerSpellFireball from './image/spells/spell_fireball.png';
+import playerSpellArcaneblast from './image/spells/spell_arcaneblast.png';
+import playerSpellArcaneMissile from './image/spells/spell_arcanemissle.png';
+import playerSpellShadowbolt from './image/spells/spell_shadowbolt.png';
+import playerSpellHealAura from './image/spells/spell_heal_aura.png';
+
+import spellSoundFrostbolt from './sounds/frostbolt.wav';
+import spellSoundFireball from './sounds/fireball.wav';
+import spellSoundArcaneBlast from './sounds/arcaneblast.wav';
+import spellSoundArcaneMissile from './sounds/arcanemissile.wav';
+import spellSoundShadowbolt from './sounds/shadowbolt.wav';
+import spellSoundPlayerTakeDamage from './sounds/player_take_damage.wav';
+import spellSoundHeal from './sounds/heal.wav';
+
+import pause from '../utils/index';
 
 export default class Player {
   constructor(name, hp, countMonsters) {
     this.name = name;
     this.hp = hp;
     this.countMonsters = countMonsters;
+    this.damage = 20;
     $('.player > p.player-name').html(name);
-  }
-  sayHi() {
-    console.log(`Меня зовут ${this.name} я имею ${this.hp} жизней`);
   }
   killMonsters() {
     this.countMonsters += 1;
-    console.log(this.countMonsters);
   }
   getDamage() {
-    this.hp -= 20;
+    this.hp -= this.damage;
     $('.player-hp > span').css('width', `${this.hp*5}px`);
     $('.player-hp').css('animation', 'shake 1s linear');
-    $('.spell').css('visibility', 'hidden');
-    $('.spell').css('left', 305);
     this.addAnimationTakeDamage();
   }
   getHeal() {
@@ -31,16 +51,20 @@ export default class Player {
     $('.heal').css('visibility', 'hidden');
   }
   renderBody() {
-    $('.conteiner').append('<img src="./src/components/Player/image/body.png" alt="mageBody" class="mage-body">');
-    $('.conteiner').append('<img src="./src/components/Player/image/head.png" alt="mageBody" class="mage-head activeHead">');
-    $('.conteiner').append('<img src="./src/components/Player/image/leftLeg.png" alt="mageBody" class="mage-leftLeg">');
-    $('.conteiner').append('<img src="./src/components/Player/image/RightLeg.png" alt="mageBody" class="mage-RightLeg">');
-    $('.conteiner').append('<img src="./src/components/Player/image/RightHand.png" alt="mageBody" class="mage-rightHand">');
-    $('.conteiner').append('<img src="./src/components/Player/image/leftHand.png" alt="mageBody" class="mage-leftHand">');
-    $('.conteiner').append('<img src="./src/components/Player/image/leftFinger.png" alt="mageBody" class="mage-leftFinger">');
-    $('.conteiner').append('<img src="./src/components/Player/image/weapon.png" alt="mageBody" class="mage-weapon">');
-    $('.player-Model .conteiner ').append('<img src="./src/components/Player/image/spells/frostbolt1.png" alt="spell_frostbolt" class="spell frostbolt">');
-    $('.player-Model .conteiner ').append('<img src="./src/components/Player/image/spells/heal.png" alt="spell_heal" class="spell heal">');
+    $('.conteiner').append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`);
+    $('.conteiner').append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`);
+    $('.conteiner').append(`<img src="${playerLeftLeg}" alt="mageBody" class="mage-leftLeg">`);
+    $('.conteiner').append(`<img src="${playerRightLeg}" alt="mageBody" class="mage-RightLeg">`);
+    $('.conteiner').append(`<img src="${playerRightHand}" alt="mageBody" class="mage-rightHand">`);
+    $('.conteiner').append(`<img src="${playerLeftHand}" alt="mageBody" class="mage-leftHand">`);
+    $('.conteiner').append(`<img src="${playerLeftFinger}" alt="mageBody" class="mage-leftFinger">`);
+    $('.conteiner').append(`<img src="${playerWeapon}" alt="mageBody" class="mage-weapon">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellFrostbolt}" alt="spell_frostbolt" class="spell frostbolt">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellFireball}" alt="spell_fireball" class="spell fireball">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellArcaneblast}" alt="spell_arcaneblast" class="spell arcaneblast">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellArcaneMissile}" alt="spell_arcanemissle" class="spell arcanemissile">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`);
+    $('.player-Model .conteiner ').append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
   }
   async addAnimationAttack(name) {
     $('.placeModel').css('opacity', 1);
@@ -50,21 +74,52 @@ export default class Player {
     $('.mage-leftFinger').addClass('mage-leftFinger_active');
     $('.mage-leftLeg').addClass('mage-leftLeg_active');
     $('.mage-weapon').addClass('mage-weapon_active');
-    this.addVoiceLine('frostbolt');
+    this.addSound(name);
     await pause(1000);
     switch(name) {
       case 'frostbolt':
-      $('.frostbolt').css('visibility', 'visible');
+      $('.spell.frostbolt').css('visibility', 'visible');
       break;
+      case 'fireball':
+      $('.spell.fireball').css('visibility', 'visible');
+      break;
+      case 'arcaneblast':
+      $('.spell.arcaneblast').css('visibility', 'visible');
+      break;
+      case 'arcanemissile':
+      $('.spell.arcanemissile').css('visibility', 'visible');
+      break;
+      case 'shadowbolt':
+      $('.spell.shadowbolt').css('visibility', 'visible');
+      break;
+
     }
     await pause(100);
     const position = $('.enemy-Model .conteiner').position().left;
-    $('.frostbolt').css('left', position-20);
+    $('.spell').css('left', position-20);
   }
-  removeAnimations() {
-    this.removeAnimationAttack();
-    this.removeAnimationHealing();
-    this.removeAnimationTakeDamage();
+  async addAnimationTakeDamage() {
+    $('.mage-head').removeClass('activeHead');
+    $('.mage-head').addClass('mage-take-damage_head');
+    $('.mage-body').addClass('mage-take-damage_body');
+    $('.mage-leftHand').addClass('mage-take-damage_leftHand');
+    $('.mage-rightHand').addClass('mage-take-damage_rightHand');
+    $('.mage-leftFinger').addClass('mage-take-damage_leftFinger');
+    $('.mage-leftLeg').addClass('mage-take-damage_rightLeg');
+    $('.mage-leftLeg').addClass('mage-take-damage_leftLeg');
+    $('.mage-weapon').addClass('mage-take-damage_weapon');
+    this.addSound('takeDamage');
+    await pause(500);
+    $('.mage-head').addClass('activeHead');
+  }
+  addAnimationHealing() {
+    $('.placeModel').css('opacity', 1);
+    $('.mage-leftHand').addClass('mage-take-heal_leftHand');
+    $('.mage-rightHand').addClass('mage-take-heal_rightHand');
+    $('.mage-leftFinger').addClass('mage-take-heal_leftFinger');
+    $('.mage-weapon').addClass('mage-take-heal_weapon');
+    $('.heal').css('visibility', 'visible');
+    this.addSound('heal');
   }
   removeAnimationAttack() {
     $('.mage-body').removeClass('mage-body_active');
@@ -90,47 +145,44 @@ export default class Player {
     $('.mage-leftFinger').removeClass('mage-take-heal_leftFinger');
     $('.mage-weapon').removeClass('mage-take-heal_weapon');
   }
-  async addAnimationTakeDamage() {
-    $('.mage-head').removeClass('activeHead');
-    $('.mage-head').addClass('mage-take-damage_head');
-    $('.mage-body').addClass('mage-take-damage_body');
-    $('.mage-leftHand').addClass('mage-take-damage_leftHand');
-    $('.mage-rightHand').addClass('mage-take-damage_rightHand');
-    $('.mage-leftFinger').addClass('mage-take-damage_leftFinger');
-    $('.mage-leftLeg').addClass('mage-take-damage_rightLeg');
-    $('.mage-leftLeg').addClass('mage-take-damage_leftLeg');
-    $('.mage-weapon').addClass('mage-take-damage_weapon');
-    this.addVoiceLine('takeDamage');
-    await pause(500);
-    $('.mage-head').addClass('activeHead');
+  removeAnimations() {
+    this.removeAnimationAttack();
+    this.removeAnimationHealing();
+    this.removeAnimationTakeDamage();
   }
-  addAnimationHealing() {
-    $('.placeModel').css('opacity', 1);
-    $('.mage-leftHand').addClass('mage-take-heal_leftHand');
-    $('.mage-rightHand').addClass('mage-take-heal_rightHand');
-    $('.mage-leftFinger').addClass('mage-take-heal_leftFinger');
-    $('.mage-weapon').addClass('mage-take-heal_weapon');
-    $('.heal').css('visibility', 'visible');
-  }
-  addVoiceLine(name) {
+  addSound(name) {
     switch(name) {
       case 'takeDamage':
-      const takeDamage = new Audio('./src/components/Player/sounds/player_take_damage.wav');
+      const takeDamage = new Audio(`${spellSoundPlayerTakeDamage}`);
       takeDamage.play();
       break;
       case 'frostbolt':
-      const frostbolt = new Audio('./src/components/Player/sounds/frostbolt.wav');
+      const frostbolt = new Audio(`${spellSoundFrostbolt}`);
       frostbolt.volume = 0.2;
       frostbolt.play();
+      break;
+      case 'fireball':
+      const fireball = new Audio(`${spellSoundFireball}`);
+      fireball.volume = 0.2;
+      fireball.play();
+      break;
+      case 'arcaneblast':
+      const arcaneblast = new Audio(`${spellSoundArcaneBlast}`);
+      arcaneblast.volume = 0.2;
+      arcaneblast.play();
+      break;
+      case 'arcanemissile':
+      const arcanemissle = new Audio(`${spellSoundArcaneMissile}`);
+      arcanemissle.volume = 0.2;
+      arcanemissle.play();
+      case 'shadowbolt':
+      const shadowbolt = new Audio(`${spellSoundShadowbolt}`);
+      shadowbolt.volume = 0.2;
+      shadowbolt.play();
+      case 'heal':
+      const heal = new Audio(`${spellSoundHeal}`);
+      heal.play();
       break;
     }
   }
 };
-
-const pause = (time) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, time);
-  });
-}

@@ -1,23 +1,14 @@
-.spell-delete-word {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-} 
-
-.delete-word {
+.delete-word__content {
   width: 500px;
   height: 300px;
   border: 1px solid black;
   position: relative;
   margin: -510px auto;
   background-color: white;
+  z-index: 110;
 }
 
-.delete-word > p {
+.delete-word__content > p {
   font-size: 22px;
   text-align: center;
   border-bottom: 1px solid black;
@@ -26,17 +17,17 @@
   padding-bottom: 15px;
 }
 
-.delete-word > p > span {
+.delete-word__content > p > span {
   color: green;
 }
 
-.delete-word > .delete-word_content { 
+.delete-word__content__content { 
   font-size: 21px;
   text-align: center;
 
 }
 
-#input-delete-word {
+#delete-word__input {
   width: 200px;
   height: 50px;
   display: flex;
@@ -45,3 +36,24 @@
   font-size: 18px;;
 }
 
+#delete-word__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#delete-word__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#delete-word__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}

@@ -1,39 +1,53 @@
-.spell-translate {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.translate {
+.translate__content {
   width: 500px;
-  height: 200px;
-  border: 1px solid black;
+  height: 260px;
+  border-radius: 15px;
   margin-top: 10px;
   position: relative;
   background-color: white;
   margin: -500px auto;
+  z-index: 110;
 }
 
-.translate-word {
+.translate__content__word {
   text-align: center;
   font-size: 25px;
   border-bottom: 1px solid black;
   width: 85%;
-  margin: 30px auto;
+  margin: 0 auto;
   padding-bottom: 20px;
+  padding-top: 20px;
 }
 
-.translate-word > span {
+.translate__content__word  > span {
   color: green;
 }
 
-#input-translate {
+#translate__input {
   width: 200px;
   height: 30px;
-  margin: 10px 148px;
+  margin: 48px 148px;
   text-align: center;
+}
+
+#translate__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#translate__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#translate__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

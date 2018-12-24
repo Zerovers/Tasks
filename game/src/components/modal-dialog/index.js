@@ -64,19 +64,18 @@ class spellComponent {
   }
   renderChoice() {
     $('body').append(html);
-    $('.placeModel').css('opacity', 0.3);
-    html.find('.attack-spells').on('click', (e) => { this.renderAttackSpells() });
-    html.find('.heal-spells').on('click', (e) => { this.renderHealSpells() });
+    html.find('.spell__attack').on('click', (e) => { this.renderAttackSpells() });
+    html.find('.spell__heal').on('click', (e) => { this.renderHealSpells() });   
   }
   renderAttackSpells() {
     html.remove();
     $('body').append(attackHtml);
     attackHtml.find('.spell-math').html('<span>Математика</span>');
-    attackHtml.find('.spell-math').on('click', (e) => { this.createTask('mathTask') });
+    attackHtml.find('.spell-math').on('click', () => { this.createTask('mathTask') })
     attackHtml.find('.spell-comparison').html('<span>Сравнение</span>');
     attackHtml.find('.spell-comparison').on('click', (e) => { this.createTask('comparisonTask') });
-    attackHtml.find('.spell-grammatic').html('<span>Грамматика</span>');
-    attackHtml.find('.spell-grammatic').on('click', (e) => { this.createTask('grammaticTask') });
+    attackHtml.find('.spell-sort').html('<span>Собрать</span>');
+    attackHtml.find('.spell-sort').on('click', (e) => { this.createTask('sortTask') });
     attackHtml.find('.spell-translate').html('<span>Перевод</span>');
     attackHtml.find('.spell-translate').on('click', (e) => { this.createTask('translateTask') });
     attackHtml.find('.spell-sequence').html('<span>Продолжите ряд</span>');
@@ -87,15 +86,16 @@ class spellComponent {
     $('body').append(healHtml);
     healHtml.find('.spell-pazzle').html('<span>Загадка</span>');
     healHtml.find('.spell-pazzle').on('click', (e) => { this.createTask('pazzleTask') });
-    healHtml.find('.spell-speech').html('speech');
+    healHtml.find('.spell-speech').html('<span>Произношение</span>');
     healHtml.find('.spell-speech').on('click', (e) => { this.createTask('speechTask') });
-    healHtml.find('.spell-sort').html('sort');
-    healHtml.find('.spell-sort').on('click', (e) => { this.createTask('sortTask') });
-    healHtml.find('.spell-logic').html('logic');
+    healHtml.find('.spell-grammatic').html('<span>Грамматика</span>');
+    healHtml.find('.spell-grammatic').on('click', (e) => { this.createTask('grammaticTask') });
+    healHtml.find('.spell-logic').html('<span>Логика</span>');
     healHtml.find('.spell-logic').on('click', (e) => { this.createTask('logicTask') });
     healHtml.find('.spell-delete-word').html('4 лишний');
     healHtml.find('.spell-delete-word').on('click', (e) => { this.createTask('deleteWordTask') });
   }
+
 }
 let spellList = new spellComponent();
 export default spellList;

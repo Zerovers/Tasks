@@ -1,11 +1,10 @@
-import { sortable } from '../../components/tasks/sort/jquery-ui/jquery-ui.min';
-import battles from '../battle'
-let _ = require('lodash');
-import player from '../battle/';
-import { resolve } from 'url';
+import background from './background_loginscreen.png'
+import battles from '../battle';
+import css from './index.css';
 
-$('#input-login').on('change', async (event) => {
-  const name = event.target.value;
-  await battles.render(name);
- });
-
+$('body').css('background-image', `url("${background}"`);
+$('.login__content').submit(() => {
+  const name = $('#login__content__input').val();
+  battles.render(name);
+  return false;
+})

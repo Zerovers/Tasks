@@ -1,14 +1,4 @@
-.spell-speech {
-  width: 270px;
-  height: 50px;
-  border: 1px solid black;
-  margin: auto;
-  text-align: center;
-  line-height: 50px;
-  font-size: 22px;
-}
-
-.speech {
+.speech__content {
   width: 500px;
   height: 200px;
   border: 1px solid black;
@@ -17,22 +7,23 @@
   background-color: white;
   display: flex;
   flex-wrap: wrap;
+  z-index: 110;
 }
 
-.speech-content {
+.speech__content__text {
   text-align: center;
   font-size: 26px;
   width: 90%;
 }
 
-#speech-button {
+#speech__button {
   width: 30px;
   height: 21px;
   margin: auto 10px;
   color: darkgoldenrod;
 }
 
-#input-speech {
+#speech__input {
   display: block;
   height: 40px;
   width: 200px;
