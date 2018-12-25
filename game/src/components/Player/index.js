@@ -30,14 +30,17 @@ export default class Player {
     this.name = name;
     this.hp = hp;
     this.countMonsters = countMonsters;
-    this.damage = 20;
+    this.getDmg = 20;
     $('.player > p.player-name').html(name);
+  }
+  indicationHp() {
+    $('.player-hp span').css('width', `${this.hp * 5}px`);
   }
   killMonsters() {
     this.countMonsters += 1;
   }
   getDamage() {
-    this.hp -= this.damage;
+    this.hp -= this.getDmg;
     $('.player-hp > span').css('width', `${this.hp*5}px`);
     $('.player-hp').css('animation', 'shake 1s linear');
     this.addAnimationTakeDamage();
@@ -49,6 +52,12 @@ export default class Player {
     }
     $('.player-hp > span').css('width', `${this.hp*5}px`);
     $('.heal').css('visibility', 'hidden');
+  }
+  reset() {
+    this.hp = 100;
+    this.getDmg = 20;
+    this.countMonsters = 0;
+    this.indicationHp();
   }
   renderBody() {
     $('.conteiner').append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`);

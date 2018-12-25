@@ -3,6 +3,7 @@ import htmlGrammatic from './index.html';
 import grammaticList from './grammaticList';
 import { player, monster } from '../../../screens/battle';
 import pause from '../../utils/index';
+import tablesScore from '../../../screens/score/index';
 
 const html = $(htmlGrammatic);
 class grammaticTask {
@@ -37,7 +38,11 @@ class grammaticTask {
         await pause(1500);
         player.getDamage();
       }
-      if (player.hp === 0) {
+      if (player.hp <= 0) {
+        let username = player.name;
+        let countMonster = player.countMonsters;
+        const data = { username, countMonster };
+        tablesScore.render(data);
       }
     }
   }

@@ -2,6 +2,7 @@ import css from './index.css';
 import htmlSpeech from './index.html';
 import { player, monster } from '../../../screens/battle';
 import pause from '../../utils/index';
+import tablesScore from '../../../screens/score/index';
 
 let voices = speechSynthesis.getVoices();
 const html = $(htmlSpeech);
@@ -42,7 +43,11 @@ class speechTask {
       await pause(1000);
       player.getDamage();
     }
-    if (player.hp === 0) {
+    if (player.hp <= 0) {
+      let username = player.name;
+      let countMonster = player.countMonsters;
+      const data = { username, countMonster };
+      tablesScore.render(data);
     }
   }
 }

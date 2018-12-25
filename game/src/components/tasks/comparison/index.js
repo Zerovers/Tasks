@@ -3,6 +3,7 @@ import htmlCompasion from './index.html';
 import { player, monster } from '../../../screens/battle';
 import names from '../../../screens/battle/name.json';
 import pause from '../../utils/index';
+import tablesScore from '../../../screens/score/index';
 
 let inputValue;
 const html = $(htmlCompasion)
@@ -37,6 +38,12 @@ class comparisonTask {
       await pause(1000);
       player.getDamage();    
     }
+    if (player.hp <= 0) {
+      let username = player.name;
+      let countMonster = player.countMonsters;
+      const data = { username, countMonster };
+      tablesScore.render(data);
+    }
     if (monster.hp === 0) {
       monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
       ${names.secondName[_.random(0,names.secondName.length - 1)]} 
@@ -47,7 +54,7 @@ class comparisonTask {
       monster.indicationHp();
       monster.renderBody();
       player.killMonsters();
-      player.damage = player.damage + 5;
+      player.getDmg = player.getDmg + 5;
     }
   }
 }

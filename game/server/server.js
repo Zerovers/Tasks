@@ -18,36 +18,20 @@ app.use((req, res, next) => {
 
 let collection;
 app.get('/', (req, res) => {
-  console.log(req.query);
-  MongoClient.connect(url, { useNewUrlParser: true }, function (err, client) {
+  MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) {
       console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
     }
     collection = client.db(dbName).collection("test");
-    collection.find({}).toArray((error, data) => {
+    collection.insertOne(req.query);
+    collection.find({}).sort( { countMonster: -1 } ).toArray((error, data) => {
       if (error) {
         console.log(error);
         return res.sendStatus(500);
       }
-      console.log(data);
       res.send(data);
       client.close();
     });
   });
- 
-  
 });
-
 app.listen(3000, () => console.log('Work'));
-
-// MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
-//   if (err) {
-//     console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
-//   }
-//   console.log('Работает');
-//   const collection = db.db("mydb").collection("test");
-//   collection.find().toArray((err, item) => {
-//     console.log(item);
-//   });
-//   db.close();
-// });

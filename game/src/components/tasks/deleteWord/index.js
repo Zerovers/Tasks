@@ -3,6 +3,7 @@ import htmlDeleteWord from './index.html';
 import { player, monster } from '../../../screens/battle';
 import names from '../../../screens/battle/name.json';
 import pause from '../../utils/index';
+import tablesScore from '../../../screens/score/index';
 
 let inputValue;
 const html = $(htmlDeleteWord);
@@ -45,7 +46,11 @@ class deleteWordTask {
       await pause(1000);
       player.getDamage();
     }
-    if (player.hp === 0) {
+    if (player.hp <= 0) {
+      let username = player.name;
+      let countMonster = player.countMonsters;
+      const data = { username, countMonster };
+      tablesScore.render(data);
     }
   }
 }
