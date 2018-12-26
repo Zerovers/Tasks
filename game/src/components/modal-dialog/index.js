@@ -95,7 +95,6 @@ class spellComponent {
     healHtml.find('.spell-delete-word').html('4 лишний');
     healHtml.find('.spell-delete-word').on('click', (e) => { this.createTask('deleteWordTask') });
   }
-
 }
 let spellList = new spellComponent();
 export default spellList;

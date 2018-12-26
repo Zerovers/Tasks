@@ -5,14 +5,13 @@ import Player from '../../components/Player';
 import Enemy from '../../components/Enemy';
 import names from './name.json';
 import background from './image/background_battleZone.png';
-import pause from '../../components/utils/index';
 import tablesScore from '../score/index'
 
 
 const html = $(htmlbattle);
 let player;
 let monster;
-class battleArena {
+class BattleArena {
   render(content) {
     $('body').html('');
     $('body').append(html);
@@ -30,15 +29,8 @@ class battleArena {
       $('.shadow').css('display', 'flex')
       $('.button__start-fight').prop('disabled', true);
     });
-    const username = player.name;
-    const countMonster = player.countMonsters;
-    const data = { username, countMonster};
-      $('.test').click( async () => {
-      tablesScore.render(data);
-      console.log('wow');
-    })
   }
 }
-const battles = new battleArena();
+const battles = new BattleArena();
 export default battles;
 export { monster, player };

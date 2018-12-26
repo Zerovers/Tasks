@@ -101,7 +101,6 @@ export default class Player {
       case 'shadowbolt':
       $('.spell.shadowbolt').css('visibility', 'visible');
       break;
-
     }
     await pause(100);
     const position = $('.enemy-Model .conteiner').position().left;
