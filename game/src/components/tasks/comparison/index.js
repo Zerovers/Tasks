@@ -1,62 +1,37 @@
-import css from './index.css';
+import './index.css';
 import htmlCompasion from './index.html';
-import { player, monster } from '../../../screens/battle';
-import names from '../../../screens/battle/name.json';
-import pause from '../../utils/index';
-import tablesScore from '../../../screens/score/index';
+import BattleArena from '../../../screens/battle';
 
-let inputValue;
-const html = $(htmlCompasion)
-class comparisonTask {
-  render(content) {
+const html = $(htmlCompasion);
+export default class ComparisonTask {
+  static render(data) {
+    const [firstNumber, secondNumber] = [data.firstNumber, data.secondNumber];
+    const result = data.sign;
     $('.attack-spells-list').remove();
     html.find('#comparison__input').val('');
-    html.find('.comparison__content__operations').html(`${content.firstNumber} <span style="color: red">?</span> ${content.secondNumber}`);
+    html.find('.comparison__content__operations').html(`${firstNumber} <span style="color: red">?</span> ${secondNumber}`);
     $('body').append(html);
     html.find('#comparison__input').focus();
-    html.find('#comparison').submit(() => { 
-      inputValue = $('#comparison__input').val();
-      this.getAnswerTask(content);
-      $('.shadow').css('display', 'none');
-      $('.button__start-fight').prop('disabled', false);
+    html.find('#comparison').submit(() => {
+      this.getAnswerTask(result);
       return false;
     });
   }
-  deleteTask() {
+
+  static deleteTask() {
     html.remove();
   }
-  async getAnswerTask(content) {
-    const result = content.sign
-    if (inputValue === result + '') {
-      this.deleteTask();
-      player.addAnimationAttack('fireball');
-      await pause(1500);
-      monster.getDamage();
+
+  static async getAnswerTask(result) {
+    const inputValue = $('#comparison__input').val();
+    $('.shadow').css('display', 'none');
+    $('.button__start-fight').prop('disabled', false);
+    if (inputValue === `${result}`) {
+      ComparisonTask.deleteTask();
+      BattleArena.startFight('attack', 'true', 'fireball');
     } else {
-      this.deleteTask();
-      monster.addAnimationAttack();
-      await pause(1000);
-      player.getDamage();    
-    }
-    if (player.hp <= 0) {
-      let username = player.name;
-      let countMonster = player.countMonsters;
-      const data = { username, countMonster };
-      tablesScore.render(data);
-    }
-    if (monster.hp === 0) {
-      monster.name = `${names.firstName[_.random(0,names.firstName.length - 1)]} 
-      ${names.secondName[_.random(0,names.secondName.length - 1)]} 
-      ${names.thirdName[_.random(0,names.thirdName.length - 1)]}`;
-      await pause(1000);
-      monster.hp = 100;
-      monster.newMonster = _.random(1,3);
-      monster.indicationHp();
-      monster.renderBody();
-      player.killMonsters();
-      player.getDmg = player.getDmg + 5;
+      ComparisonTask.deleteTask();
+      BattleArena.startFight('attack', 'false');
     }
   }
 }
-const comparisons = new comparisonTask();
-export default comparisons;

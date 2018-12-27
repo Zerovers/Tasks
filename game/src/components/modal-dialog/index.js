@@ -1,100 +1,101 @@
+import './index.css';
 import htmlContextMenu from './index.html';
 import htmlAttackMenu from './attack.html';
 import htmlHealMenu from './heal.html';
-import css from './index.css';
-import taskContent from '../tasksContent/index';
-import mathematics from '../tasks/mathematic';
-import comparisons from '../tasks/comparison';
-import grammatics from '../tasks/grammatic';
-import logics from '../tasks/logic';
-import pazzles from '../tasks/pazzle';
-import sequences from '../tasks/sequence';
-import sorts from '../tasks/sort';
-import speechs from '../tasks/speech';
-import translates from '../tasks/translate';
-import deleteWords from '../tasks/deleteWord';
-
+import MathTask from '../tasks/mathematic';
+import ComparisonTask from '../tasks/comparison';
+import SortTask from '../tasks/sort';
+import TranslateTask from '../tasks/translate';
+import SequenceTask from '../tasks/sequence';
+import PazzleTask from '../tasks/pazzle';
+import SpeechTask from '../tasks/speech';
+import GrammaticTask from '../tasks/grammatic';
+import LogicTask from '../tasks/logic';
+import DeleteWordTask from '../tasks/deleteWord';
+import TasksData from '../tasksContent';
 
 const html = $(htmlContextMenu);
 const attackHtml = $(htmlAttackMenu);
 const healHtml = $(htmlHealMenu);
-class spellComponent {
-  createTask(name) {
-    switch(name) {
+export default class SpellFactory {
+  static createTask(name) {
+    const mathData = TasksData.createMathData();
+    const comparisonData = TasksData.createComparisonData();
+    const logicData = TasksData.createLogicData();
+    const pazzleData = TasksData.createPazzleData();
+    const sequenceData = TasksData.createSequenceData();
+    const sortData = TasksData.createSortData();
+    const speechData = TasksData.createSpeechData();
+    const translateData = TasksData.createTranslateData();
+    const deleteWordData = TasksData.createDeleteWordData();
+    switch (name) {
       case 'mathTask':
-      let mathContent = taskContent.createMathContent();
-      mathematics.render(mathContent);
-      break;
+        MathTask.render(mathData);
+        break;
       case 'comparisonTask':
-      let comparisonContent = taskContent.createComparisonContent();
-      comparisons.render(comparisonContent);
-      break;
-      case 'grammaticTask':
-      grammatics.render();
-      break;
-      case 'logicTask':
-      let logicContent = taskContent.createLogicContent();
-      logics.render(logicContent);
-      break;
-      case 'pazzleTask':
-      let pazzleContent = taskContent.createPazzleContent();
-      pazzles.render(pazzleContent);
-      break;
-      case 'sequenceTask':
-      let sequenceContent = taskContent.createSequenceContent();
-      sequences.render(sequenceContent);
-      break;
+        ComparisonTask.render(comparisonData);
+        break;
       case 'sortTask':
-      let sortContent = taskContent.createSortContent();
-      sorts.render(sortContent);
-      break;
-      case 'speechTask':
-      let speechContent = taskContent.createSpeechContent();
-      speechs.render(speechContent);
-      break;
+        SortTask.render(sortData);
+        break;
       case 'translateTask':
-      let translateContent = taskContent.createTranslateContent();
-      translates.render(translateContent); 
-      break;
+        TranslateTask.render(translateData);
+        break;
+      case 'sequenceTask':
+        SequenceTask.render(sequenceData);
+        break;
+      case 'pazzleTask':
+        PazzleTask.render(pazzleData);
+        break;
+      case 'speechTask':
+        SpeechTask.render(speechData);
+        break;
+      case 'grammaticTask':
+        GrammaticTask.render();
+        break;
+      case 'logicTask':
+        LogicTask.render(logicData);
+        break;
       case 'deleteWordTask':
-      let deleteWordContent = taskContent.createDeleteWordContent();
-      deleteWords.render(deleteWordContent);
-      break;
+        DeleteWordTask.render(deleteWordData);
+        break;
+      default:
     }
   }
-  renderChoice() {
+
+  static renderChoice() {
     $('body').append(html);
-    html.find('.spell__attack').on('click', (e) => { this.renderAttackSpells() });
-    html.find('.spell__heal').on('click', (e) => { this.renderHealSpells() });   
+    html.find('.spell__attack').on('click', () => { SpellFactory.renderAttackSpells(); });
+    html.find('.spell__heal').on('click', () => { SpellFactory.renderHealSpells(); });
   }
-  renderAttackSpells() {
+
+  static renderAttackSpells() {
     html.remove();
     $('body').append(attackHtml);
     attackHtml.find('.spell-math').html('<span>Математика</span>');
-    attackHtml.find('.spell-math').on('click', () => { this.createTask('mathTask') })
+    attackHtml.find('.spell-math').on('click', () => { SpellFactory.createTask('mathTask'); });
     attackHtml.find('.spell-comparison').html('<span>Сравнение</span>');
-    attackHtml.find('.spell-comparison').on('click', (e) => { this.createTask('comparisonTask') });
+    attackHtml.find('.spell-comparison').on('click', () => { SpellFactory.createTask('comparisonTask'); });
     attackHtml.find('.spell-sort').html('<span>Собрать</span>');
-    attackHtml.find('.spell-sort').on('click', (e) => { this.createTask('sortTask') });
+    attackHtml.find('.spell-sort').on('click', () => { SpellFactory.createTask('sortTask'); });
     attackHtml.find('.spell-translate').html('<span>Перевод</span>');
-    attackHtml.find('.spell-translate').on('click', (e) => { this.createTask('translateTask') });
+    attackHtml.find('.spell-translate').on('click', () => { SpellFactory.createTask('translateTask'); });
     attackHtml.find('.spell-sequence').html('<span>Продолжите ряд</span>');
-    attackHtml.find('.spell-sequence').on('click', (e) => { this.createTask('sequenceTask') });
+    attackHtml.find('.spell-sequence').on('click', () => { SpellFactory.createTask('sequenceTask'); });
   }
-  renderHealSpells() {
+
+  static renderHealSpells() {
     html.remove();
     $('body').append(healHtml);
     healHtml.find('.spell-pazzle').html('<span>Загадка</span>');
-    healHtml.find('.spell-pazzle').on('click', (e) => { this.createTask('pazzleTask') });
+    healHtml.find('.spell-pazzle').on('click', () => { SpellFactory.createTask('pazzleTask'); });
     healHtml.find('.spell-speech').html('<span>Произношение</span>');
-    healHtml.find('.spell-speech').on('click', (e) => { this.createTask('speechTask') });
+    healHtml.find('.spell-speech').on('click', () => { SpellFactory.createTask('speechTask'); });
     healHtml.find('.spell-grammatic').html('<span>Грамматика</span>');
-    healHtml.find('.spell-grammatic').on('click', (e) => { this.createTask('grammaticTask') });
+    healHtml.find('.spell-grammatic').on('click', () => { SpellFactory.createTask('grammaticTask'); });
     healHtml.find('.spell-logic').html('<span>Логика</span>');
-    healHtml.find('.spell-logic').on('click', (e) => { this.createTask('logicTask') });
+    healHtml.find('.spell-logic').on('click', () => { SpellFactory.createTask('logicTask'); });
     healHtml.find('.spell-delete-word').html('4 лишний');
-    healHtml.find('.spell-delete-word').on('click', (e) => { this.createTask('deleteWordTask') });
+    healHtml.find('.spell-delete-word').on('click', () => { SpellFactory.createTask('deleteWordTask'); });
   }
 }
-let spellList = new spellComponent();
-export default spellList;

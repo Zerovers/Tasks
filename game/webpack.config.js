@@ -20,7 +20,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./index.css",
 
-    })
+    }),
   ],
   module: {
     rules: [
@@ -32,9 +32,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: false,
-              sourceMap: true
-            }
-          }]
+              sourceMap: true,
+            },
+          }],
       },
       {
         test: /\.js$/,
@@ -52,7 +52,7 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: './images/[name].[ext]'
+            name: './images/[name].[ext]',
           },
         }],
       },
@@ -61,10 +61,10 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: './sounds/[name].[ext]'
+            name: './sounds/[name].[ext]',
           },
         }],
-    }
+      },
     ],
   },
   resolve: {

@@ -1,33 +1,30 @@
-import css from './index.css';
+import './index.css';
 import htmlDeleteWord from './index.html';
-import { player, monster } from '../../../screens/battle';
-import names from '../../../screens/battle/name.json';
-import pause from '../../utils/index';
-import tablesScore from '../../../screens/score/index';
+import BattleArena from '../../../screens/battle';
 
-let inputValue;
 const html = $(htmlDeleteWord);
-class deleteWordTask {
-  render(content) {
-    const map = content;
+export default class DeleteWordTask {
+  static render(data) {
+    const [rndKeys, result] = [data.rndKeys, data.answer];
     $('.heal-spells-list').remove();
     html.find('#delete-word__input').val('');
-    html.find('.delete-word__content__content').html(`${map.rndKeys}`);
+    html.find('.delete-word__content__content').html(`${rndKeys}`);
     $('body').append(html);
     html.find('#delete-word__input').focus();
     html.find('#delete-word').submit(() => {
-      inputValue = $('#delete-word__input').val();
-      this.getAnswerTask(content);
-      $('.shadow').css('display', 'none');
-      $('.button__start-fight').prop('disabled', false);
+      DeleteWordTask.getAnswerTask(result);
       return false;
     });
   }
-  deleteTask() {
+
+  static deleteTask() {
     html.remove();
   }
-  async getAnswerTask(content) {
-    const result = content.answer;
+
+  static async getAnswerTask(result) {
+    const inputValue = $('#delete-word__input').val();
+    $('.shadow').css('display', 'none');
+    $('.button__start-fight').prop('disabled', false);
     let count = 0;
     const answer = inputValue.toLowerCase();
     for (let i = 0; i < result.length; i += 1) {
@@ -36,24 +33,11 @@ class deleteWordTask {
       }
     }
     if (count > 0) {
-      this.deleteTask();
-      player.addAnimationHealing();
-      await pause(1000);
-      player.getHeal();    
+      DeleteWordTask.deleteTask();
+      BattleArena.startFight('heal', 'true');
     } else {
-      this.deleteTask();
-      monster.addAnimationAttack();
-      await pause(1000);
-      player.getDamage();
-    }
-    if (player.hp <= 0) {
-      let username = player.name;
-      let countMonster = player.countMonsters;
-      const data = { username, countMonster };
-      tablesScore.render(data);
+      DeleteWordTask.deleteTask();
+      BattleArena.startFight('heal', 'false');
     }
   }
 }
-let deleteWords = new deleteWordTask();
-export default deleteWords;
-

@@ -1,4 +1,3 @@
-import css from './index.css';
 import playerHead from './image/player_head.png';
 import playerBody from './image/player_body.png';
 import playerRightHand from './image/player_rightHand.png';
@@ -24,6 +23,7 @@ import spellSoundPlayerTakeDamage from './sounds/player_take_damage.wav';
 import spellSoundHeal from './sounds/heal.wav';
 
 import pause from '../utils/index';
+import './index.css';
 
 export default class Player {
   constructor(name, hp, countMonsters) {
@@ -33,33 +33,39 @@ export default class Player {
     this.getDmg = 20;
     $('.player > p.player-name').html(name);
   }
+
   indicationHp() {
     $('.player-hp span').css('width', `${this.hp * 5}px`);
   }
+
   killMonsters() {
     this.countMonsters += 1;
   }
+
   getDamage() {
     this.hp -= this.getDmg;
-    $('.player-hp > span').css('width', `${this.hp*5}px`);
+    $('.player-hp > span').css('width', `${this.hp * 5}px`);
     $('.player-hp').css('animation', 'shake 1s linear');
-    this.addAnimationTakeDamage();
+    Player.addAnimationTakeDamage();
   }
+
   getHeal() {
     this.hp += 20;
     if (this.hp >= 100) {
       this.hp = 100;
     }
-    $('.player-hp > span').css('width', `${this.hp*5}px`);
+    $('.player-hp > span').css('width', `${this.hp * 5}px`);
     $('.heal').css('visibility', 'hidden');
   }
+
   reset() {
     this.hp = 100;
     this.getDmg = 20;
     this.countMonsters = 0;
     this.indicationHp();
   }
-  renderBody() {
+
+  static renderBody() {
     $('.conteiner').append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`);
     $('.conteiner').append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`);
     $('.conteiner').append(`<img src="${playerLeftLeg}" alt="mageBody" class="mage-leftLeg">`);
@@ -75,7 +81,8 @@ export default class Player {
     $('.player-Model .conteiner ').append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`);
     $('.player-Model .conteiner ').append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
   }
-  async addAnimationAttack(name) {
+
+  static async addAnimationAttack(name) {
     $('.placeModel').css('opacity', 1);
     $('.mage-body').addClass('mage-body_active');
     $('.mage-leftHand').addClass('mage-leftHand_active');
@@ -83,30 +90,32 @@ export default class Player {
     $('.mage-leftFinger').addClass('mage-leftFinger_active');
     $('.mage-leftLeg').addClass('mage-leftLeg_active');
     $('.mage-weapon').addClass('mage-weapon_active');
-    this.addSound(name);
+    Player.addSound(name);
     await pause(1000);
-    switch(name) {
+    switch (name) {
       case 'frostbolt':
-      $('.spell.frostbolt').css('visibility', 'visible');
-      break;
+        $('.spell.frostbolt').css('visibility', 'visible');
+        break;
       case 'fireball':
-      $('.spell.fireball').css('visibility', 'visible');
-      break;
+        $('.spell.fireball').css('visibility', 'visible');
+        break;
       case 'arcaneblast':
-      $('.spell.arcaneblast').css('visibility', 'visible');
-      break;
+        $('.spell.arcaneblast').css('visibility', 'visible');
+        break;
       case 'arcanemissile':
-      $('.spell.arcanemissile').css('visibility', 'visible');
-      break;
+        $('.spell.arcanemissile').css('visibility', 'visible');
+        break;
       case 'shadowbolt':
-      $('.spell.shadowbolt').css('visibility', 'visible');
-      break;
+        $('.spell.shadowbolt').css('visibility', 'visible');
+        break;
+      default:
     }
     await pause(100);
     const position = $('.enemy-Model .conteiner').position().left;
-    $('.spell').css('left', position-20);
+    $('.spell').css('left', position - 20);
   }
-  async addAnimationTakeDamage() {
+
+  static async addAnimationTakeDamage() {
     $('.mage-head').removeClass('activeHead');
     $('.mage-head').addClass('mage-take-damage_head');
     $('.mage-body').addClass('mage-take-damage_body');
@@ -116,20 +125,22 @@ export default class Player {
     $('.mage-leftLeg').addClass('mage-take-damage_rightLeg');
     $('.mage-leftLeg').addClass('mage-take-damage_leftLeg');
     $('.mage-weapon').addClass('mage-take-damage_weapon');
-    this.addSound('takeDamage');
+    Player.addSound('takeDamage');
     await pause(500);
     $('.mage-head').addClass('activeHead');
   }
-  addAnimationHealing() {
+
+  static addAnimationHealing() {
     $('.placeModel').css('opacity', 1);
     $('.mage-leftHand').addClass('mage-take-heal_leftHand');
     $('.mage-rightHand').addClass('mage-take-heal_rightHand');
     $('.mage-leftFinger').addClass('mage-take-heal_leftFinger');
     $('.mage-weapon').addClass('mage-take-heal_weapon');
     $('.heal').css('visibility', 'visible');
-    this.addSound('heal');
+    Player.addSound('heal');
   }
-  removeAnimationAttack() {
+
+  static removeAnimationAttack() {
     $('.mage-body').removeClass('mage-body_active');
     $('.mage-leftHand').removeClass('mage-leftHand_active');
     $('.mage-rightHand').removeClass('mage-rightHand_active');
@@ -137,7 +148,8 @@ export default class Player {
     $('.mage-leftLeg').removeClass('mage-leftLeg_active');
     $('.mage-weapon').removeClass('mage-weapon_active');
   }
-  removeAnimationTakeDamage() {
+
+  static removeAnimationTakeDamage() {
     $('.mage-head').removeClass('mage-take-damage_head');
     $('.mage-body').removeClass('mage-take-damage_body');
     $('.mage-leftHand').removeClass('mage-take-damage_leftHand');
@@ -147,50 +159,56 @@ export default class Player {
     $('.mage-leftLeg').removeClass('mage-take-damage_leftLeg');
     $('.mage-weapon').removeClass('mage-take-damage_weapon');
   }
-  removeAnimationHealing() {
+
+  static removeAnimationHealing() {
     $('.mage-leftHand').removeClass('mage-take-heal_leftHand');
     $('.mage-rightHand').removeClass('mage-take-heal_rightHand');
     $('.mage-leftFinger').removeClass('mage-take-heal_leftFinger');
     $('.mage-weapon').removeClass('mage-take-heal_weapon');
   }
-  removeAnimations() {
-    this.removeAnimationAttack();
-    this.removeAnimationHealing();
-    this.removeAnimationTakeDamage();
+
+  static removeAnimations() {
+    Player.removeAnimationAttack();
+    Player.removeAnimationHealing();
+    Player.removeAnimationTakeDamage();
   }
-  addSound(name) {
-    switch(name) {
+
+  static addSound(name) {
+    const takeDamage = new Audio(`${spellSoundPlayerTakeDamage}`);
+    const frostbolt = new Audio(`${spellSoundFrostbolt}`);
+    const fireball = new Audio(`${spellSoundFireball}`);
+    const arcaneblast = new Audio(`${spellSoundArcaneBlast}`);
+    const arcanemissle = new Audio(`${spellSoundArcaneMissile}`);
+    const shadowbolt = new Audio(`${spellSoundShadowbolt}`);
+    const heal = new Audio(`${spellSoundHeal}`);
+    switch (name) {
       case 'takeDamage':
-      const takeDamage = new Audio(`${spellSoundPlayerTakeDamage}`);
-      takeDamage.play();
-      break;
+        takeDamage.play();
+        break;
       case 'frostbolt':
-      const frostbolt = new Audio(`${spellSoundFrostbolt}`);
-      frostbolt.volume = 0.2;
-      frostbolt.play();
-      break;
+        frostbolt.volume = 0.2;
+        frostbolt.play();
+        break;
       case 'fireball':
-      const fireball = new Audio(`${spellSoundFireball}`);
-      fireball.volume = 0.2;
-      fireball.play();
-      break;
+        fireball.volume = 0.2;
+        fireball.play();
+        break;
       case 'arcaneblast':
-      const arcaneblast = new Audio(`${spellSoundArcaneBlast}`);
-      arcaneblast.volume = 0.2;
-      arcaneblast.play();
-      break;
+        arcaneblast.volume = 0.2;
+        arcaneblast.play();
+        break;
       case 'arcanemissile':
-      const arcanemissle = new Audio(`${spellSoundArcaneMissile}`);
-      arcanemissle.volume = 0.2;
-      arcanemissle.play();
+        arcanemissle.volume = 0.2;
+        arcanemissle.play();
+        break;
       case 'shadowbolt':
-      const shadowbolt = new Audio(`${spellSoundShadowbolt}`);
-      shadowbolt.volume = 0.2;
-      shadowbolt.play();
+        shadowbolt.volume = 0.2;
+        shadowbolt.play();
+        break;
       case 'heal':
-      const heal = new Audio(`${spellSoundHeal}`);
-      heal.play();
-      break;
+        heal.play();
+        break;
+      default:
     }
   }
-};
+}

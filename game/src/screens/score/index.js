@@ -1,14 +1,15 @@
-import css from './index.css';
+import './index.css';
 import table from './index.html';
-import pause from '../../components/utils/index';
 import { monster, player } from '../battle/index';
 import names from '../battle/name.json';
 
+const _ = require('lodash');
+
 const htmlScore = $(table);
-class tableScore {
-  async render(data) {
+export default class TableScore {
+  static async render(data) {
     $('body').append(htmlScore);
-    htmlScore.find('#score__button').click((e) => {
+    htmlScore.find('#score__button').click(() => {
       htmlScore.remove();
       monster.name = `${names.firstName[_.random(0, names.firstName.length - 1)]} 
       ${names.secondName[_.random(0, names.secondName.length - 1)]} 
@@ -19,20 +20,15 @@ class tableScore {
       monster.hp = 100;
       player.reset();
     });
-    let info;
     fetch(`http:/localhost:3000/?username=${data.username}&countMonster=${data.countMonster}`)
       .then(res => res.text())
-      .then((result) => {
-        info = JSON.parse(result);
+      .then((result) => { const info = JSON.parse(result); return info; })
+      .then((info) => {
+        for (let i = 0; i < info.length; i += 1) {
+          $('tr')[i + 1].childNodes[0].innerHTML = `${i + 1}`;
+          $('tr')[i + 1].childNodes[1].innerHTML = `${info[i].username}`;
+          $('tr')[i + 1].childNodes[2].innerHTML = `${info[i].countMonster}`;
+        }
       });
-    await pause(1000);
-    for (let i = 0; i < info.length; i += 1) {
-      $('tr')[i + 1].childNodes[0].innerHTML = `${i + 1}`;
-      $('tr')[i + 1].childNodes[1].innerHTML = `${info[i].username}`;
-      $('tr')[i + 1].childNodes[2].innerHTML = `${info[i].countMonster}`;
-    }
   }
 }
-
-let tablesScore = new tableScore();
-export default tablesScore;
