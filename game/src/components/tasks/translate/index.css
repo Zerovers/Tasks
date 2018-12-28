@@ -1,4 +1,4 @@
-.translate__content {
+.translate-content {
   width: 500px;
   height: 260px;
   border-radius: 15px;
@@ -9,7 +9,7 @@
   z-index: 110;
 }
 
-.translate__content__word {
+.translate-content__text {
   text-align: center;
   font-size: 25px;
   border-bottom: 1px solid black;
@@ -19,18 +19,18 @@
   padding-top: 20px;
 }
 
-.translate__content__word  > span {
+.translate-content__text  > span {
   color: green;
 }
 
-#translate__input {
+#translate-form__input {
   width: 200px;
   height: 30px;
   margin: 48px 148px;
   text-align: center;
 }
 
-#translate__button {
+#translate-form__button {
   width: 25%;
   height: 40px;
   margin: auto;

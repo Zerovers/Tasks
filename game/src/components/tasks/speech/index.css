@@ -1,4 +1,4 @@
-.speech__content {
+.speech-content {
   width: 500px;
   height: 200px;
   border: 1px solid black;
@@ -10,7 +10,7 @@
   z-index: 110;
 }
 
-.speech__content__text {
+.speech-content__text {
   text-align: center;
   font-size: 26px;
   width: 90%;

@@ -1,3 +1,248 @@
+h1, header, label, .game-description {
+  color: white;
+  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
+}
+
+h1 {
+  margin: 150px auto;
+  width: 40%;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  font-size: 35px;
+}
+
+label {
+  font-size: 20px;
+  margin-left: 38px;
+}
+
+.login {
+  width: 35%;
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login__content {
+  margin-top: 30px;
+  display: inline-block;
+  margin: 25px auto;
+}
+
+#login__content__input {
+  width: 100%;
+  height: 28px;
+  display: block;
+  padding-left: 15px;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#login__content__button {
+  width: 108%;
+  margin: 15px auto;
+  height: 35px;
+  border-radius: 8px;
+  border: 2px solid rgb(86,69,75);
+  background-color: rgb(113,10,3);
+  color: rgb(192,150,14);
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 1px, #000 0 -1px 0px;
+}
+
+#login__content__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
+}
+
+#login__content__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
+}
+
+.game-description {
+ display: flex;
+ font-size: 18px;
+}
+
+.game-description__controll {
+  width: 33%;
+  margin-left: 40px;
+}
+
+.game-description__rule {
+  width: 33%;
+  margin-left: 40px;
+}
+
+.game-description__feature {
+  width: 33%;
+  margin-left: 40px;
+}
+@keyframes shake {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  } 
+
+  10%, 30% {
+    transform: rotate(-7deg);
+  }
+
+  20%, 40% {
+    transform: rotate(7deg);
+  }
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  position: relative;
+}
+
+.shadow {
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: none;
+}
+
+.button__start-fight {
+  display: flex;
+  width: 300px;
+  height: 50px;
+  justify-content: center;
+  font-size: 30px;
+  margin: auto;
+  margin-top: 120px;
+  border: 2px solid rgb(86,69,75);
+  background-color: rgb(113,10,3);
+  color: rgb(192,150,14);
+  border-radius: 5px;
+  font-weight: 600;
+  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 1px, #000 0 -1px 0px;
+}
+
+.button__start-fight:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
+}
+
+.button__start-fight:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
+}
+
+.hpBars {
+  display: flex;
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
+}
+
+.placeModel {
+  display: flex;
+  margin-top: 50px;
+}
+
+.player-Model {
+  display: flex;
+  width: 50%;
+  height: 500px;
+}
+
+.player-Model > .conteiner {
+  display: flex;
+  width: 175px;
+  height: 188px;
+  margin: 267px auto 0 auto;
+  position: relative;
+}
+
+.player {
+  margin: auto;
+}
+
+.player-name {
+  margin-bottom: 0;
+  text-align: center;
+  
+}
+
+.player-hp {
+  width: 500px;
+  height: 20px;
+  border: 2px solid rgb(236, 229, 156);
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.player-hp > span {
+  width: 500px;
+  transition: width 1s;
+  display: block;
+  height: 100%;
+  background-color: rgb(19, 179, 52);
+  border-radius: 50px;
+  position: relative;
+}
+
+.enemy-Model {
+  width: 50%;
+  height: 500px;
+  display: flex;
+}
+
+.enemy-Model .conteiner {
+  display: flex;
+  width: 175px;
+  height: 188px;
+  margin: 267px auto 0 auto;
+  position: relative;
+}
+
+.enemy {
+  margin: auto;
+}
+
+.enemy-name {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.enemy-hp {
+  width: 500px;
+  height: 20px;
+  border: 2px solid rgb(236, 229, 156);
+  border-radius: 50px;
+  margin-top: 10px
+}
+
+.enemy-hp > span {
+  width: 500px;
+  transition: width 1s;
+  display: block;
+  height: 100%;
+  background-color: rgb(19, 179, 52);
+  border-radius: 50px;
+  position: relative;
+}
+
+
+
+
 .context-menu {
   width: 450px;
   height: 270px;
@@ -2428,13 +2673,13 @@ tr:nth-child(2n) {
   backgound-color: rgb(131, 128, 128);
 }
 
-#score__button {
+#score__button__resetGame {
   display: flex;
   width: 13%;
   justify-content: center;
   margin: 0px auto;
   height: 35px;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   border: 2px solid rgb(86,69,75);
   background-color: rgb(113,10,3);
   color: rgb(192,150,14);
@@ -2451,249 +2696,4 @@ tr:nth-child(2n) {
 #score__button:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
-}
-@keyframes shake {
-  0%, 50%, 100% {
-    transform: rotate(0deg);
-  } 
-
-  10%, 30% {
-    transform: rotate(-7deg);
-  }
-
-  20%, 40% {
-    transform: rotate(7deg);
-  }
-}
-
-body {
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  position: relative;
-}
-
-.shadow {
-  opacity: 0.4;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: black;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  display: none;
-}
-
-.button__start-fight {
-  display: flex;
-  width: 300px;
-  height: 50px;
-  justify-content: center;
-  font-size: 30px;
-  margin: auto;
-  margin-top: 120px;
-  border: 2px solid rgb(86,69,75);
-  background-color: rgb(113,10,3);
-  color: rgb(192,150,14);
-  border-radius: 5px;
-  font-weight: 600;
-  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 1px, #000 0 -1px 0px;
-}
-
-.button__start-fight:hover {
-  color: rgb(255,255,255);
-  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
-}
-
-.button__start-fight:focus {
-  color: rgb(255,255,255);
-  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
-}
-
-.hpBars {
-  display: flex;
-  color: white;
-  font-size: 27px;
-  font-weight: 800;
-  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
-}
-
-.placeModel {
-  display: flex;
-  margin-top: 50px;
-}
-
-.player-Model {
-  display: flex;
-  width: 50%;
-  height: 500px;
-}
-
-.player-Model > .conteiner {
-  display: flex;
-  width: 175px;
-  height: 188px;
-  margin: 267px auto 0 auto;
-  position: relative;
-}
-
-.player {
-  margin: auto;
-}
-
-.player-name {
-  margin-bottom: 0;
-  text-align: center;
-  
-}
-
-.player-hp {
-  width: 500px;
-  height: 20px;
-  border: 2px solid rgb(236, 229, 156);
-  border-radius: 50px;
-  margin-top: 10px;
-}
-
-.player-hp > span {
-  width: 500px;
-  transition: width 1s;
-  display: block;
-  height: 100%;
-  background-color: rgb(19, 179, 52);
-  border-radius: 50px;
-  position: relative;
-}
-
-.enemy-Model {
-  width: 50%;
-  height: 500px;
-  display: flex;
-}
-
-.enemy-Model .conteiner {
-  display: flex;
-  width: 175px;
-  height: 188px;
-  margin: 267px auto 0 auto;
-  position: relative;
-}
-
-.enemy {
-  margin: auto;
-}
-
-.enemy-name {
-  margin-bottom: 0;
-  text-align: center;
-}
-
-.enemy-hp {
-  width: 500px;
-  height: 20px;
-  border: 2px solid rgb(236, 229, 156);
-  border-radius: 50px;
-  margin-top: 10px
-}
-
-.enemy-hp > span {
-  width: 500px;
-  transition: width 1s;
-  display: block;
-  height: 100%;
-  background-color: rgb(19, 179, 52);
-  border-radius: 50px;
-  position: relative;
-}
-
-
-
-
-h1, header, label, .game-description {
-  color: white;
-  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
-}
-
-h1 {
-  margin: 150px auto;
-  width: 40%;
-  text-align: center;
-}
-
-header {
-  width: 100%;
-  text-align: center;
-  font-size: 35px;
-}
-
-label {
-  font-size: 20px;
-  margin-left: 38px;
-}
-
-.login {
-  width: 35%;
-  margin: 100px auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.login__content {
-  margin-top: 30px;
-  display: inline-block;
-  margin: 25px auto;
-}
-
-#login__content__input {
-  width: 100%;
-  height: 28px;
-  display: block;
-  padding-left: 15px;
-  margin-top: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-
-#login__content__button {
-  width: 108%;
-  margin: 15px auto;
-  height: 35px;
-  border-radius: 8px;
-  border: 2px solid rgb(86,69,75);
-  background-color: rgb(113,10,3);
-  color: rgb(192,150,14);
-  font-size: 20px;
-  font-weight: 600;
-  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 1px, #000 0 -1px 0px;
-}
-
-#login__content__button:hover {
-  color: rgb(255,255,255);
-  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
-}
-
-#login__content__button:focus {
-  color: rgb(255,255,255);
-  background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
-}
-
-.game-description {
- display: flex;
- font-size: 18px;
-}
-
-.game-description__controll {
-  width: 33%;
-  margin-left: 40px;
-}
-
-.game-description__rule {
-  width: 33%;
-  margin-left: 40px;
-}
-
-.game-description__feature {
-  width: 33%;
-  margin-left: 40px;
 }

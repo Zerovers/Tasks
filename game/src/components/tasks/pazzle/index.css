@@ -1,4 +1,4 @@
-.pazzle__content {
+.pazzle-content {
   width: 500px;
   height: 200px;
   border: 1px solid black;
@@ -8,7 +8,7 @@
   z-index: 110;
 }
 
-.pazzle__content__text {
+.pazzle-content__text {
   font-size: 21px;
   text-align: center;
   padding-bottom: 10px;
@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-#pazzle__input {
+#pazzle-form__input {
   display: flex;
   margin: 10px auto;
   width: 50%;
@@ -27,7 +27,7 @@
   text-align: center;
 }
 
-#pazzle__button {
+#pazzle-form__button {
   width: 25%;
   height: 40px;
   margin: auto;
@@ -39,12 +39,12 @@
   font-size: 18px;
 }
 
-#pazzle__button:hover {
+#pazzle-form__button:hover {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }
 
-#pazzle__button:focus {
+#pazzle-form__button:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

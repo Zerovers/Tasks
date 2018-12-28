@@ -1,4 +1,4 @@
-.math {
+.math-content {
   width: 500px;
   height: 300px;
   display: flex;
@@ -11,7 +11,7 @@
   z-index: 110;
 }
 
-.math__operations {
+.math-content__operations {
   width: 200px;
   margin: 25px auto 0;
   text-align: center;
@@ -20,11 +20,11 @@
   padding-bottom: 10px;
 }
 
-.math__operations > span {
+.math-content__operations > span {
   color: green;
 }
 
-#math__input {
+#math-form__input {
   width: 100px;
   height: 70px;
   margin: 35px 198px;
@@ -32,7 +32,7 @@
   text-align: center;
 }
 
-#math__button {
+#math-form__button {
   width: 25%;
   height: 40px;
   margin: auto;
@@ -44,12 +44,12 @@
   font-size: 18px;
 }
 
-#math__button:hover {
+#math-form__button:hover {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }
 
-#math__button:focus {
+#math-form__button:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

@@ -1,38 +1,44 @@
+import './index.css';
 import htmlbattle from './index.html';
 import SpellFactory from '../../components/modal-dialog';
 import Player from '../../components/Player';
 import Enemy from '../../components/Enemy';
-import names from './name.json';
+import names from '../../components/Enemy/name.json';
 import background from './image/background_battleZone.png';
-import pause from '../../components/utils';
+import pause from '../../utility/pause';
 import TableScore from '../score';
-import './index.css';
+import {
+  BUTTON_START_FIGHT,
+  SHADOW_FRAME,
+  MAIN_BODY,
+  TABLE_SCORE,
+} from '../../constant';
 
 const _ = require('lodash');
 
-let player;
-let monster;
+let player; // eslint-disable-line import/no-mutable-exports
+let monster; // eslint-disable-line import/no-mutable-exports
 const html = $(htmlbattle);
 export default class BattleArena {
   static render(content) {
-    $('body').html('');
-    $('body').append(html);
-    $('body').css('background-image', `url(${background})`);
+    $(MAIN_BODY).html('');
+    $(MAIN_BODY).append(html);
+    $(MAIN_BODY).css('background-image', `url(${background})`);
     player = new Player(content, 100, 0);
     monster = new Enemy(`${names.firstName[_.random(0, names.firstName.length - 1)]} 
     ${names.secondName[_.random(0, names.secondName.length - 1)]} 
     ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`, 100);
     Player.renderBody();
     monster.renderBody();
-    $('.button__start-fight').on('click', async () => { BattleArena.takeAction(); });
+    $(BUTTON_START_FIGHT).on('click', async () => { BattleArena.takeAction(); });
   }
 
   static takeAction() {
     Player.removeAnimations();
     Enemy.removeAnimations();
     SpellFactory.renderChoice();
-    $('.shadow').css('display', 'flex');
-    $('.button__start-fight').prop('disabled', true);
+    $(SHADOW_FRAME).css('display', 'flex');
+    $(BUTTON_START_FIGHT).prop('disabled', true);
   }
 
   static async startFight(action, result, spellName) {
@@ -44,14 +50,8 @@ export default class BattleArena {
             await pause(1500);
             monster.getDamage();
             if (monster.hp === 0) {
-              monster.name = `${names.firstName[_.random(0, names.firstName.length - 1)]} 
-            ${names.secondName[_.random(0, names.secondName.length - 1)]} 
-            ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`;
               await pause(1000);
-              monster.hp = 100;
-              monster.newMonster = _.random(1, 3);
-              monster.indicationHp();
-              monster.renderBody();
+              monster.resetParametrs();
               player.killMonsters();
               player.getDmg += 5;
             }
@@ -93,6 +93,18 @@ export default class BattleArena {
         break;
       default:
     }
+  }
+
+  static resetGame() {
+    $(TABLE_SCORE).remove();
+    monster.name = `${names.firstName[_.random(0, names.firstName.length - 1)]} 
+    ${names.secondName[_.random(0, names.secondName.length - 1)]} 
+    ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`;
+    monster.newMonster = _.random(1, 3);
+    monster.indicationHp();
+    monster.renderBody();
+    monster.hp = 100;
+    player.reset();
   }
 }
 export { player, monster };

@@ -1,4 +1,4 @@
-.delete-word__content {
+.delete-word-content {
   width: 500px;
   height: 300px;
   border: 1px solid black;
@@ -8,7 +8,7 @@
   z-index: 110;
 }
 
-.delete-word__content > p {
+.delete-word-content > p {
   font-size: 22px;
   text-align: center;
   border-bottom: 1px solid black;
@@ -17,17 +17,17 @@
   padding-bottom: 15px;
 }
 
-.delete-word__content > p > span {
+.delete-word-content > p > span {
   color: green;
 }
 
-.delete-word__content__content { 
+.delete-word-content__text { 
   font-size: 21px;
   text-align: center;
 
 }
 
-#delete-word__input {
+#delete-word-form__input {
   width: 200px;
   height: 50px;
   display: flex;
@@ -36,7 +36,7 @@
   font-size: 18px;;
 }
 
-#delete-word__button {
+#delete-word-form__button {
   width: 25%;
   height: 40px;
   margin: auto;
@@ -48,12 +48,12 @@
   font-size: 18px;
 }
 
-#delete-word__button:hover {
+#delete-word-form__button:hover {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }
 
-#delete-word__button:focus {
+#delete-word-form__button:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

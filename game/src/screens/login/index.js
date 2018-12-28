@@ -1,6 +1,6 @@
+import './index.css';
 import background from './background_loginscreen.png';
 import BattleArena from '../battle';
-import './index.css';
 
 $('body').css('background-image', `url("${background}"`);
 $('.login__content').submit(() => {

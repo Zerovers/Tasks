@@ -1,8 +1,9 @@
 const pause = (time) => {
+  const ms = time;
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, time);
+    }, ms);
   });
-}
+};
 export default pause;

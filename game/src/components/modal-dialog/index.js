@@ -12,7 +12,8 @@ import SpeechTask from '../tasks/speech';
 import GrammaticTask from '../tasks/grammatic';
 import LogicTask from '../tasks/logic';
 import DeleteWordTask from '../tasks/deleteWord';
-import TasksData from '../tasksContent';
+import TasksData from '../../utility/TaskData';
+import { MAIN_BODY } from '../../constant';
 
 const html = $(htmlContextMenu);
 const attackHtml = $(htmlAttackMenu);
@@ -64,14 +65,14 @@ export default class SpellFactory {
   }
 
   static renderChoice() {
-    $('body').append(html);
+    $(MAIN_BODY).append(html);
     html.find('.spell__attack').on('click', () => { SpellFactory.renderAttackSpells(); });
     html.find('.spell__heal').on('click', () => { SpellFactory.renderHealSpells(); });
   }
 
   static renderAttackSpells() {
     html.remove();
-    $('body').append(attackHtml);
+    $(MAIN_BODY).append(attackHtml);
     attackHtml.find('.spell-math').html('<span>Математика</span>');
     attackHtml.find('.spell-math').on('click', () => { SpellFactory.createTask('mathTask'); });
     attackHtml.find('.spell-comparison').html('<span>Сравнение</span>');
@@ -86,7 +87,7 @@ export default class SpellFactory {
 
   static renderHealSpells() {
     html.remove();
-    $('body').append(healHtml);
+    $(MAIN_BODY).append(healHtml);
     healHtml.find('.spell-pazzle').html('<span>Загадка</span>');
     healHtml.find('.spell-pazzle').on('click', () => { SpellFactory.createTask('pazzleTask'); });
     healHtml.find('.spell-speech').html('<span>Произношение</span>');

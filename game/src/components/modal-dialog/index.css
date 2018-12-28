@@ -48,7 +48,7 @@
   margin: auto;
 }
 
-.attack-spells-list {
+.attack__spells__list {
   width: 500px;
   height: 380px;
   display: flex;
@@ -86,7 +86,7 @@
   margin: auto;
 }
 
-.heal-spells-list {
+.heal__spells__list {
   width: 500px;
   height: 380px;
   display: flex;

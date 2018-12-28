@@ -1,4 +1,4 @@
-.grammatic__content {
+.grammatic-content {
   width: 500px;
   height: 200px;
   border: 1px solid black;
@@ -8,12 +8,12 @@
   z-index: 110;
 }
 
-.grammatic__content__word {
+.grammatic-content__text {
   text-align: center;
   font-size: 28px;
 }
 
-.grammatic__content__word > span {
+.grammatic-content__text > span {
   color: green;
 }
 

@@ -1,19 +1,25 @@
 import './index.css';
 import htmlSpeech from './index.html';
 import BattleArena from '../../../screens/battle';
+import {
+  BUTTON_START_FIGHT,
+  SHADOW_FRAME,
+  MAIN_BODY,
+  HEAL_SPELL_LIST,
+} from '../../../constant';
 
 let voices = speechSynthesis.getVoices();
 const html = $(htmlSpeech);
+const SPEECH_INPUT = '#speech__input';
 export default class SpeechTask {
   static render(data) {
-    $('.heal-spells-list').remove();
-    html.find('#speech__input').val('');
-    html.find('.speech__content__text').html('Впишите слово которое услышали');
+    $(HEAL_SPELL_LIST).remove();
+    $(MAIN_BODY).append(html);
+    html.find(SPEECH_INPUT).val('').focus();
+    html.find('.speech-content__text').html('Впишите слово которое услышали');
     this.setSpeech(data);
-    $('body').append(html);
-    html.find('#speech__input').focus();
     html.find('#speech__button').on('click', () => { SpeechTask.setSpeech(data); });
-    html.find('#speech__input').on('change', () => { SpeechTask.getAnswerTask(data); });
+    html.find(SPEECH_INPUT).on('change', () => { SpeechTask.getAnswerTask(data); });
   }
 
   static setSpeech(data) {
@@ -32,9 +38,9 @@ export default class SpeechTask {
   }
 
   static async getAnswerTask(result) {
-    $('.shadow').css('display', 'none');
-    $('.button__start-fight').prop('disabled', false);
-    const inputValue = $('#speech__input').val();
+    $(SHADOW_FRAME).css('display', 'none');
+    $(BUTTON_START_FIGHT).prop('disabled', false);
+    const inputValue = $(SPEECH_INPUT).val();
     const speechAnswer = inputValue.toLowerCase();
     if (speechAnswer === result) {
       SpeechTask.deleteTask();

@@ -19,7 +19,7 @@ body {
   position: relative;
 }
 
-.shadow {
+.shadow-frame {
   opacity: 0.4;
   position: fixed;
   top: 0;

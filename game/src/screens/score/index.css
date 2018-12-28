@@ -46,13 +46,13 @@ tr:nth-child(2n) {
   backgound-color: rgb(131, 128, 128);
 }
 
-#score__button {
+#score__button__resetGame {
   display: flex;
   width: 13%;
   justify-content: center;
   margin: 0px auto;
   height: 35px;
-  border-radius: 8px;
+  border-radius: 0 0 8px 8px;
   border: 2px solid rgb(86,69,75);
   background-color: rgb(113,10,3);
   color: rgb(192,150,14);

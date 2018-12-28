@@ -1,4 +1,4 @@
-.comparison__content {
+.comparison-content {
   width: 700px;
   height: 300px;
   border-radius: 20px;
@@ -9,7 +9,7 @@
   z-index: 110;
 }
 
-.comparison__content__operations {
+.comparison-content__operations {
   width: 85%;
   margin: 0 auto;
   margin-bottom: 5px;
@@ -18,7 +18,7 @@
   border-bottom: 1px solid black;
 }
 
-.comparison__content__text {
+.comparison-content__text {
   width: 65%;
   text-align: center;
   font-size: 24px;
@@ -26,12 +26,12 @@
   margin: 10px auto;
 }
 
-.comparison__content__text > span {
+.comparison-content__text > span {
   color: green;
   font-size: 36px;
 }
 
-#comparison__input {
+#comparison-form__input {
   width: 50%;
   height: 20%;
   margin-left: 169px;
@@ -40,11 +40,11 @@
   text-align: center;
 }
 
-#comparison__inputn::-webkit-input-placeholder {
+#comparison-form__input::-webkit-input-placeholder {
   font-size: 24px;
 }
 
-#comparison__button {
+#comparison-form__button {
   width: 25%;
   height: 40px;
   margin: 30px auto;
@@ -56,12 +56,12 @@
   font-size: 18px;
 }
 
-#comparison__button:hover {
+#comparison-form__button:hover {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }
 
-#comparison__button:focus {
+#comparison-form__button:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }

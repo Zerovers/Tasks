@@ -23,11 +23,13 @@ import enemyThreeLeftLeg from './image/monster_3/monster_3_leftLeg.png';
 
 import enemySoundAttack from './sounds/enemy_attack.wav';
 import enemySoundTakeDamage from './sounds/enemy_take_damage.wav';
-import pause from '../utils/index';
+import pause from '../../utility/pause';
+import names from './name.json';
 
 const _ = require('lodash');
 
 const newMonster = _.random(1, 3);
+const PLACE_ENEMY_IN_BATTLE_ARENA = '.enemy-Model .conteiner';
 export default class Enemy {
   constructor(name, hp) {
     this.name = name;
@@ -50,40 +52,52 @@ export default class Enemy {
     $('.enemy-hp span').css('width', `${this.hp * 5}px`);
   }
 
+  resetParametrs() {
+    this.name = `${names.firstName[_.random(0, names.firstName.length - 1)]} 
+    ${names.secondName[_.random(0, names.secondName.length - 1)]} 
+    ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`;
+    this.hp = 100;
+    this.newMonster = _.random(1, 3);
+    this.indicationHp();
+    this.renderBody();
+  }
+
   renderBody() {
-    $('.enemy-Model .conteiner').html('');
+    $(PLACE_ENEMY_IN_BATTLE_ARENA).html('');
     switch (this.newMonster) {
       case 1:
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneHead}" alt="enemyBody" class="enemy-head activeHead">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneRightHand}" alt="enemyBody" class="enemy-rightHand">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneLeftHand}" alt="enemyBody" class="enemy-leftHand">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneRightLeg}" alt="enemyBody" class="enemy-rightLeg">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyOneLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
+        $(PLACE_ENEMY_IN_BATTLE_ARENA)
+          .append(`<img src="${enemyOneHead}" alt="enemyBody" class="enemy-head activeHead">`)
+          .append(`<img src="${enemyOneBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
+          .append(`<img src="${enemyOneRightHand}" alt="enemyBody" class="enemy-rightHand">`)
+          .append(`<img src="${enemyOneLeftHand}" alt="enemyBody" class="enemy-leftHand">`)
+          .append(`<img src="${enemyOneRightLeg}" alt="enemyBody" class="enemy-rightLeg">`)
+          .append(`<img src="${enemyOneLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
         break;
       case 2:
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoHead}" alt="enemyBody" class="enemy-head activeHead">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoRightHand}" alt="enemyBody" class="enemy-rightHand orc">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoLeftHand}" alt="enemyBody" class="enemy-leftHand orc">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoRightLeg}" alt="enemyBody" class="enemy-rightLeg orc">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoLeftLeg}" alt="enemyBody" class="enemy-leftLeg orc">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyTwoWeapon}" alt="enemyBody" class="enemy-weapon orc">`);
+        $(PLACE_ENEMY_IN_BATTLE_ARENA)
+          .append(`<img src="${enemyTwoHead}" alt="enemyBody" class="enemy-head activeHead">`)
+          .append(`<img src="${enemyTwoBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
+          .append(`<img src="${enemyTwoRightHand}" alt="enemyBody" class="enemy-rightHand orc">`)
+          .append(`<img src="${enemyTwoLeftHand}" alt="enemyBody" class="enemy-leftHand orc">`)
+          .append(`<img src="${enemyTwoRightLeg}" alt="enemyBody" class="enemy-rightLeg orc">`)
+          .append(`<img src="${enemyTwoLeftLeg}" alt="enemyBody" class="enemy-leftLeg orc">`)
+          .append(`<img src="${enemyTwoWeapon}" alt="enemyBody" class="enemy-weapon orc">`);
         break;
       case 3:
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeHead}" alt="enemyBody" class="enemy-head troll activeHead">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeRightHand}" alt="enemyBody" class="enemy-rightHand troll">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeLeftHand}" alt="enemyBody" class="enemy-leftHand troll">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeRightLeg}" alt="enemyBody" class="enemy-rightLeg">`);
-        $('.enemy-Model .conteiner').append(`<img src="${enemyThreeLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
+        $(PLACE_ENEMY_IN_BATTLE_ARENA)
+          .append(`<img src="${enemyThreeHead}" alt="enemyBody" class="enemy-head troll activeHead">`)
+          .append(`<img src="${enemyThreeBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
+          .append(`<img src="${enemyThreeRightHand}" alt="enemyBody" class="enemy-rightHand troll">`)
+          .append(`<img src="${enemyThreeLeftHand}" alt="enemyBody" class="enemy-leftHand troll">`)
+          .append(`<img src="${enemyThreeRightLeg}" alt="enemyBody" class="enemy-rightLeg">`)
+          .append(`<img src="${enemyThreeLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
         break;
       default:
     }
   }
 
   addAnimationAttack() {
-    $('.placeModel').css('opacity', 1);
     switch (this.newMonster) {
       case 1:
         $('.enemy-rightHand').addClass('enemy-attack_rightHand');

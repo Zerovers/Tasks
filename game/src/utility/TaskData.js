@@ -1,9 +1,9 @@
-import logicList from '../tasks/logic/logicList.json';
-import pazzleList from '../tasks/pazzle/pazzleList.json';
-import sortList from '../tasks/sort/sortList.json';
-import speechList from '../tasks/speech/speechList.json';
-import translateList from '../tasks/translate/translateList.json';
-import deleteWordList from '../tasks/deleteWord/deleteWordList.json';
+import logicList from '../components/tasks/logic/logicList.json';
+import pazzleList from '../components/tasks/pazzle/pazzleList.json';
+import sortList from '../components/tasks/sort/sortList.json';
+import speechList from '../components/tasks/speech/speechList.json';
+import translateList from '../components/tasks/translate/translateList.json';
+import deleteWordList from '../components/tasks/deleteWord/deleteWordList.json';
 
 const _ = require('lodash');
 

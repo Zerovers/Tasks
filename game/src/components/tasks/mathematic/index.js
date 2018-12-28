@@ -1,20 +1,28 @@
 import './index.css';
 import htmlMath from './index.html';
 import BattleArena from '../../../screens/battle';
+import {
+  BUTTON_START_FIGHT,
+  SHADOW_FRAME,
+  MAIN_BODY,
+  ATTACK_SPELL_LIST,
+} from '../../../constant';
 
 let inputValue;
 const html = $(htmlMath);
+const INPUT_MATH = '#math-form__input';
 export default class MathTask {
   static render(data) {
-    const [firstNumber, secondNumber] = [data.firstNumber, data.secondNumber];
-    const [outSign] = [data.outsign];
-    $('.attack-spells-list').remove();
-    $('body').append(html);
-    html.find('#math__input').val('');
-    html.find('.math__operations').html(`${firstNumber} ${outSign} ${secondNumber} = <span>?</span>`);
-    html.find('#math__input').focus();
+    const [
+      firstNumber,
+      secondNumber,
+      outSign] = [data.firstNumber, data.secondNumber, data.outsign];
+    $(ATTACK_SPELL_LIST).remove();
+    $(MAIN_BODY).append(html);
+    html.find(INPUT_MATH).val('').focus();
+    html.find('.math-content__operations').html(`${firstNumber} ${outSign} ${secondNumber} = <span>?</span>`);
     const result = MathTask.getMathOperation(firstNumber, secondNumber, outSign);
-    html.find('#form__math').submit(() => {
+    html.find('.math-form').submit(() => {
       MathTask.getAnswerTask(result);
       return false;
     });
@@ -34,7 +42,7 @@ export default class MathTask {
         result = firstNumber * secondNumber;
         break;
       case '/':
-        result = Math.round((firstNumber / secondNumber) * 10) / 10;
+        result = Math.round(firstNumber / secondNumber);
         break;
       default:
     }
@@ -46,9 +54,9 @@ export default class MathTask {
   }
 
   static async getAnswerTask(result) {
-    inputValue = $('#math__input').val();
-    $('.shadow').css('display', 'none');
-    $('.button__start-fight').prop('disabled', false);
+    inputValue = $(INPUT_MATH).val();
+    $(SHADOW_FRAME).css('display', 'none');
+    $(BUTTON_START_FIGHT).prop('disabled', false);
     if (inputValue === `${result}`) {
       MathTask.deleteTask();
       BattleArena.startFight('attack', 'true', 'frostbolt');

@@ -1,19 +1,26 @@
 import './index.css';
 import htmlSequence from './index.html';
 import BattleArena from '../../../screens/battle';
+import {
+  BUTTON_START_FIGHT,
+  SHADOW_FRAME,
+  MAIN_BODY,
+  ATTACK_SPELL_LIST,
+} from '../../../constant';
 
 const html = $(htmlSequence);
+const SEQUENCE_INPUT = '#sequence-form__input';
 export default class SequenceTask {
   static render(data) {
     const [rndNumber, rndDiff] = [data.rndNumber, data.rndDiff];
-    $('.attack-spells-list').remove();
-    html.find('#sequence__input').val('');
-    html.find('.sequence__content__number').html(`Продолжите последовательность цифр<br> <span>${rndNumber}</span>
+    $(ATTACK_SPELL_LIST).remove();
+    $(MAIN_BODY).append(html);
+    html.find(SEQUENCE_INPUT).val('').focus();
+    html.find('.sequence-content__number').html(`Продолжите последовательность цифр<br> <span>${rndNumber}</span>
     <span>${rndNumber + rndDiff}</span>
     <span>${rndNumber + rndDiff * 2}</span> <span>?</span>`);
-    $('body').append(html);
-    html.find('#sequence__input').focus();
-    html.find('#sequence').submit(() => {
+    html.find(SEQUENCE_INPUT).focus();
+    html.find('#sequence-form').submit(() => {
       SequenceTask.getAnswerTask(rndNumber, rndDiff);
       return false;
     });
@@ -24,9 +31,9 @@ export default class SequenceTask {
   }
 
   static async getAnswerTask(rndNumber, rndDiff) {
-    const inputValue = $('#sequence__input').val();
-    $('.shadow').css('display', 'none');
-    $('.button__start-fight').prop('disabled', false);
+    const inputValue = $(SEQUENCE_INPUT).val();
+    $(SHADOW_FRAME).css('display', 'none');
+    $(BUTTON_START_FIGHT).prop('disabled', false);
     if (inputValue === `${rndNumber + rndDiff * 3}`) {
       SequenceTask.deleteTask();
       BattleArena.startFight('attack', 'true', 'arcanemissile');

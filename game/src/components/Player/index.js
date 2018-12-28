@@ -1,3 +1,6 @@
+import './index.css';
+import pause from '../../utility/pause';
+
 import playerHead from './image/player_head.png';
 import playerBody from './image/player_body.png';
 import playerRightHand from './image/player_rightHand.png';
@@ -22,9 +25,8 @@ import spellSoundShadowbolt from './sounds/shadowbolt.wav';
 import spellSoundPlayerTakeDamage from './sounds/player_take_damage.wav';
 import spellSoundHeal from './sounds/heal.wav';
 
-import pause from '../utils/index';
-import './index.css';
-
+const PLACE_PLAYER_IN_BATTLE_ARENA = '.conteiner';
+const PLACE_PLAYER_SPELL_IN_BATTLE_ARENA = '.player-Model .conteiner ';
 export default class Player {
   constructor(name, hp, countMonsters) {
     this.name = name;
@@ -66,24 +68,25 @@ export default class Player {
   }
 
   static renderBody() {
-    $('.conteiner').append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`);
-    $('.conteiner').append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`);
-    $('.conteiner').append(`<img src="${playerLeftLeg}" alt="mageBody" class="mage-leftLeg">`);
-    $('.conteiner').append(`<img src="${playerRightLeg}" alt="mageBody" class="mage-RightLeg">`);
-    $('.conteiner').append(`<img src="${playerRightHand}" alt="mageBody" class="mage-rightHand">`);
-    $('.conteiner').append(`<img src="${playerLeftHand}" alt="mageBody" class="mage-leftHand">`);
-    $('.conteiner').append(`<img src="${playerLeftFinger}" alt="mageBody" class="mage-leftFinger">`);
-    $('.conteiner').append(`<img src="${playerWeapon}" alt="mageBody" class="mage-weapon">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellFrostbolt}" alt="spell_frostbolt" class="spell frostbolt">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellFireball}" alt="spell_fireball" class="spell fireball">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellArcaneblast}" alt="spell_arcaneblast" class="spell arcaneblast">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellArcaneMissile}" alt="spell_arcanemissle" class="spell arcanemissile">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`);
-    $('.player-Model .conteiner ').append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
+    $(PLACE_PLAYER_IN_BATTLE_ARENA)
+      .append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`)
+      .append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`)
+      .append(`<img src="${playerLeftLeg}" alt="mageBody" class="mage-leftLeg">`)
+      .append(`<img src="${playerRightLeg}" alt="mageBody" class="mage-RightLeg">`)
+      .append(`<img src="${playerRightHand}" alt="mageBody" class="mage-rightHand">`)
+      .append(`<img src="${playerLeftHand}" alt="mageBody" class="mage-leftHand">`)
+      .append(`<img src="${playerLeftFinger}" alt="mageBody" class="mage-leftFinger">`)
+      .append(`<img src="${playerWeapon}" alt="mageBody" class="mage-weapon">`);
+    $(PLACE_PLAYER_SPELL_IN_BATTLE_ARENA)
+      .append(`<img src="${playerSpellFrostbolt}" alt="spell_frostbolt" class="spell frostbolt">`)
+      .append(`<img src="${playerSpellFireball}" alt="spell_fireball" class="spell fireball">`)
+      .append(`<img src="${playerSpellArcaneblast}" alt="spell_arcaneblast" class="spell arcaneblast">`)
+      .append(`<img src="${playerSpellArcaneMissile}" alt="spell_arcanemissle" class="spell arcanemissile">`)
+      .append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`)
+      .append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
   }
 
   static async addAnimationAttack(name) {
-    $('.placeModel').css('opacity', 1);
     $('.mage-body').addClass('mage-body_active');
     $('.mage-leftHand').addClass('mage-leftHand_active');
     $('.mage-rightHand').addClass('mage-rightHand_active');
@@ -131,7 +134,6 @@ export default class Player {
   }
 
   static addAnimationHealing() {
-    $('.placeModel').css('opacity', 1);
     $('.mage-leftHand').addClass('mage-take-heal_leftHand');
     $('.mage-rightHand').addClass('mage-take-heal_rightHand');
     $('.mage-leftFinger').addClass('mage-take-heal_leftFinger');
