@@ -40,10 +40,10 @@ export default class DeleteWordTask {
     }
     if (count > 0) {
       DeleteWordTask.deleteTask();
-      BattleArena.startFight('heal', 'true');
+      BattleArena.startBattle('heal', 'true');
     } else {
       DeleteWordTask.deleteTask();
-      BattleArena.startFight('heal', 'false');
+      BattleArena.startBattle('heal', 'false');
     }
   }
 }

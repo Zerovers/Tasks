@@ -40,10 +40,10 @@ export default class PazzleTask {
     }
     if (count > 0) {
       PazzleTask.deleteTask();
-      BattleArena.startFight('heal', 'true');
+      BattleArena.startBattle('heal', 'true');
     } else {
       PazzleTask.deleteTask();
-      BattleArena.startFight('heal', 'false');
+      BattleArena.startBattle('heal', 'false');
     }
   }
 }

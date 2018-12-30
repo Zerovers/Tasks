@@ -39,10 +39,10 @@ export default class GrammaticTask {
       const result = event.results[0][0].transcript;
       if (word === result) {
         GrammaticTask.deleteTask();
-        BattleArena.startFight('heal', 'true');
+        BattleArena.startBattle('heal', 'true');
       } else {
         GrammaticTask.deleteTask();
-        BattleArena.startFight('heal', 'false');
+        BattleArena.startBattle('heal', 'false');
       }
     };
   }

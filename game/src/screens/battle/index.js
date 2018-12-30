@@ -7,6 +7,7 @@ import names from '../../components/Enemy/name.json';
 import background from './image/background_battleZone.png';
 import pause from '../../utility/pause';
 import TableScore from '../score';
+import LOADING_GAME_SCREEN from '../loading/game';
 import {
   BUTTON_START_FIGHT,
   SHADOW_FRAME,
@@ -16,24 +17,26 @@ import {
 
 const _ = require('lodash');
 
-let player; // eslint-disable-line import/no-mutable-exports
-let monster; // eslint-disable-line import/no-mutable-exports
+let player;
+let monster;
 const html = $(htmlbattle);
 export default class BattleArena {
-  static render(content) {
+  static render(data) {
     $(MAIN_BODY).html('');
     $(MAIN_BODY).append(html);
     $(MAIN_BODY).css('background-image', `url(${background})`);
-    player = new Player(content, 100, 0);
+    $(MAIN_BODY).append(LOADING_GAME_SCREEN);
+    player = new Player(data, 100, 0);
     monster = new Enemy(`${names.firstName[_.random(0, names.firstName.length - 1)]} 
     ${names.secondName[_.random(0, names.secondName.length - 1)]} 
     ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`, 100);
     Player.renderBody();
     monster.renderBody();
-    $(BUTTON_START_FIGHT).on('click', async () => { BattleArena.takeAction(); });
+    $(document).ready(() => { $('.loading-game').remove(); });
+    $(BUTTON_START_FIGHT).on('click', async () => { BattleArena.startFight(); });
   }
 
-  static takeAction() {
+  static startFight() {
     Player.removeAnimations();
     Enemy.removeAnimations();
     SpellFactory.renderChoice();
@@ -41,7 +44,7 @@ export default class BattleArena {
     $(BUTTON_START_FIGHT).prop('disabled', true);
   }
 
-  static async startFight(action, result, spellName) {
+  static async startBattle(action, result, spellName) {
     switch (action) {
       case 'attack':
         switch (result) {
@@ -107,4 +110,3 @@ export default class BattleArena {
     player.reset();
   }
 }
-export { player, monster };

@@ -61,12 +61,12 @@ tr:nth-child(2n) {
   text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 1px, #000 0 -1px 0px;
 }
 
-#score__button:hover {
+#score__button__resetGame:hover {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
 }
 
-#score__button:focus {
+#score__button__resetGame:focus {
   color: rgb(255,255,255);
   background: linear-gradient(to right, #670402 10%, #de1101 69%, #670402);
 }

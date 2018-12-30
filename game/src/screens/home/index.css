@@ -1,0 +1,31 @@
+.landing-page header {
+  font-size: 24px;
+  background-image: url('images/background_header_home.jpg');
+  height: 1000px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page header > div {
+  background-image: url('images/background_header_nav.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-page header > div > nav {
+  width: 483px;
+  margin: 0px 200px 0 auto;
+}
+
+.landing-page header > h1 {
+
+}
+
+.landing-page ul {
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+}

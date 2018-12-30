@@ -34,10 +34,10 @@ export default class ComparisonTask {
     $(BUTTON_START_FIGHT).prop('disabled', false);
     if (inputValue === `${result}`) {
       ComparisonTask.deleteTask();
-      BattleArena.startFight('attack', 'true', 'fireball');
+      BattleArena.startBattle('attack', 'true', 'fireball');
     } else {
       ComparisonTask.deleteTask();
-      BattleArena.startFight('attack', 'false');
+      BattleArena.startBattle('attack', 'false');
     }
   }
 }

@@ -44,10 +44,10 @@ export default class SpeechTask {
     const speechAnswer = inputValue.toLowerCase();
     if (speechAnswer === result) {
       SpeechTask.deleteTask();
-      BattleArena.startFight('heal', 'true');
+      BattleArena.startBattle('heal', 'true');
     } else {
       SpeechTask.deleteTask();
-      BattleArena.startFight('heal', 'false');
+      BattleArena.startBattle('heal', 'false');
     }
   }
 }

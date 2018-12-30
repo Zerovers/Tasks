@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const fs = require("fs");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const fs = require('fs');
 
 module.exports = {
-  entry: './src/screens/login/index.js',
+  entry: './src/screens/home/index.js',
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'app.bundle.js',
@@ -15,11 +15,10 @@ module.exports = {
       $: 'jquery',
     }),
     new HtmlWebpackPlugin({
-      template: './src/screens/login/index.html'
+      template: './src/screens/home/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: "./index.css",
-
+      filename: './index.css',
     }),
   ],
   module: {
@@ -45,7 +44,7 @@ module.exports = {
         test: /\.(html)$/,
         use: {
           loader: 'html-loader',
-        }
+        },
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -68,13 +67,12 @@ module.exports = {
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, './'), 'node_modules']
+    modules: [path.resolve(__dirname, './'), 'node_modules'],
   },
   devServer: {
     contentBase: path.join(__dirname, './'),
     compress: true,
-    port: 9000
+    port: 9000,
   },
-
   mode: 'development',
 };

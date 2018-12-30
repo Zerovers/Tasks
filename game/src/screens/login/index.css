@@ -1,9 +1,9 @@
-h1, header, label, .game-description {
+h2, header, label, .game-description {
   color: white;
   text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
 }
 
-h1 {
+h2 {
   margin: 150px auto;
   width: 40%;
   text-align: center;

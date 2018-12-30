@@ -59,10 +59,10 @@ export default class MathTask {
     $(BUTTON_START_FIGHT).prop('disabled', false);
     if (inputValue === `${result}`) {
       MathTask.deleteTask();
-      BattleArena.startFight('attack', 'true', 'frostbolt');
+      BattleArena.startBattle('attack', 'true', 'frostbolt');
     } else {
       MathTask.deleteTask();
-      BattleArena.startFight('attack', 'false');
+      BattleArena.startBattle('attack', 'false');
     }
   }
 }

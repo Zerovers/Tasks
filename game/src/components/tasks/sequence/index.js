@@ -36,10 +36,10 @@ export default class SequenceTask {
     $(BUTTON_START_FIGHT).prop('disabled', false);
     if (inputValue === `${rndNumber + rndDiff * 3}`) {
       SequenceTask.deleteTask();
-      BattleArena.startFight('attack', 'true', 'arcanemissile');
+      BattleArena.startBattle('attack', 'true', 'arcanemissile');
     } else {
       SequenceTask.deleteTask();
-      BattleArena.startFight('attack', 'false');
+      BattleArena.startBattle('attack', 'false');
     }
   }
 }

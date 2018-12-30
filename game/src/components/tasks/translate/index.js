@@ -40,10 +40,10 @@ export default class TranslateTask {
     }
     if (count > 0) {
       TranslateTask.deleteTask();
-      BattleArena.startFight('attack', 'true', 'shadowbolt');
+      BattleArena.startBattle('attack', 'true', 'shadowbolt');
     } else {
       TranslateTask.deleteTask();
-      BattleArena.startFight('attack', 'false');
+      BattleArena.startBattle('attack', 'false');
     }
   }
 }

@@ -1,10 +1,20 @@
 import './index.css';
-import background from './background_loginscreen.png';
+import htmlLogin from './index.html';
 import BattleArena from '../battle';
+import { MAIN_BODY } from '../../constant';
+import background from './background_loginscreen.png';
 
-$('body').css('background-image', `url("${background}"`);
-$('.login__content').submit(() => {
-  const name = $('#login__content__input').val();
-  BattleArena.render(name);
-  return false;
-});
+const htmlTest = $(htmlLogin);
+export default class LoginScreen {
+  static render() {
+    $(MAIN_BODY)
+      .html('')
+      .css('background-image', `url("${background}"`)
+      .append(htmlTest);
+    $('.login__content').on('submit', () => {
+      const name = $('#login__content__input').val();
+      BattleArena.render(name);
+      return false;
+    });
+  }
+}

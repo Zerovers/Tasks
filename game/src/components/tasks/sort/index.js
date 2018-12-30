@@ -42,10 +42,10 @@ export default class SortTask {
     sortAnswer = sortAnswer.join('');
     if (sortAnswer === result.answer) {
       SortTask.deleteTask();
-      BattleArena.startFight('attack', 'true', 'arcaneblast');
+      BattleArena.startBattle('attack', 'true', 'arcaneblast');
     } else {
       SortTask.deleteTask();
-      BattleArena.startFight('attack', 'true');
+      BattleArena.startBattle('attack', 'true');
     }
   }
 }
