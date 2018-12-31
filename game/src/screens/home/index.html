@@ -6,21 +6,47 @@
 <body>
   <section class='landing-page'>
     <header>
-      <div>
+      <a name='Game'></a>
+      <div class='header__nav'>
         <nav>
           <ul>
-            <li>Играть</li>
-            <li>История</li>
-            <li>Скриншоты</li>
-            <li>Контакты</li>
+            <li><a href='#Game'>Играть</a></li>
+            <li><a href='#History'>История</a></li>
+            <li><a href='#Screenshoot'>Скриншоты</a></li>
+            <li><a href='#Contact'>Контакты</a></li>
+            <li class='landing-page__table-score'>Рекорды</li>
           </ul>
         </nav>
       </div>
-      <h1>Название игры</h1>
-      <button class='home'>Играть</button>
+      <div class='header__content'>
+        <h1>Битва за Торезан</h1>
+        <button id='landing-page__button'>Играть</button>
+      </div>
     </header>
-    <section class='landing-page__history'></section>
-    <section class='landing-page__screenshoots'></section>
-    <footer></footer>
+    <section class='landing-page__history'>
+        <a name='History'></a>
+      <div class='landing-page__history__text'>
+        <p>Через темный портал к нам ворвались варвары. Это оказалсь злобные и кровожадные орки. Заручившись помощью троллей мира Торезан они ринулись покорять его. </br>
+          На защиту выступил ты - истинный хранитель этого мира.
+          </p>
+      </div>
+    </section>
+    <section class='landing-page__screenshoots'>
+        <a name='Screenshoot'></a>
+      <div class='landing-page__screenshoots__content'>
+        <div class='landing-page__screenshoots__content__screenshoots'>
+          <img src='./images/screenshoot_game1.jpg' alt='Поле боя'>
+          <img src='./images/screenshoot_game2.jpg' alt='Выбор действия'>
+          <img src='./images/screenshoot_game3.jpg' alt='Выбор заклинания'>
+          <img src='./images/screenshoot_game4.jpg' alt='Решение'>
+          <img src='./images/screenshoot_game5.jpg' alt='Нанесение урона'>
+          <img src='./images/screenshoot_game6.jpg' alt='Востановление жизней'>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <a name='Contact'></a>
+      <p><a href='https://github.com/Zerovers'>by Dmitry Kravtsov <i class="fab fa-github"></i></a></p>
+    </footer>
   </section>
 </body>

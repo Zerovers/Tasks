@@ -2,7 +2,7 @@ import './index.css';
 import htmlLogin from './index.html';
 import BattleArena from '../battle';
 import { MAIN_BODY } from '../../constant';
-import background from './background_loginscreen.png';
+import background from './background_loginscreen.jpg';
 
 const htmlTest = $(htmlLogin);
 export default class LoginScreen {

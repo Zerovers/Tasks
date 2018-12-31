@@ -4,10 +4,10 @@ import SpellFactory from '../../components/modal-dialog';
 import Player from '../../components/Player';
 import Enemy from '../../components/Enemy';
 import names from '../../components/Enemy/name.json';
-import background from './image/background_battleZone.png';
+import background from './image/background_battleZone.jpg';
 import pause from '../../utility/pause';
 import TableScore from '../score';
-import LOADING_GAME_SCREEN from '../loading/game';
+import { LOADING_GAME_SCREEN } from '../loading/game';
 import {
   BUTTON_START_FIGHT,
   SHADOW_FRAME,

@@ -7,6 +7,20 @@
   width: 100%;
 }
 
+.score__content__wrapper {
+  position: absolute;
+  top: -13px;
+  width: 75%;
+  display: flex;
+}
+
+.score__content__close {
+  cursor: pointer;
+  font-size: 45px;
+  color: rgb(206, 29, 29);
+  margin: 0 0 0 auto;
+}
+
 table {
   margin: auto;
   width: 50%;
@@ -40,10 +54,6 @@ td,tr {
 
 tr:nth-child(2n+1) {
   background-color: rgb(202, 200, 200);
-}
-
-tr:nth-child(2n) {
-  backgound-color: rgb(131, 128, 128);
 }
 
 #score__button__resetGame {
