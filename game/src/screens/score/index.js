@@ -9,8 +9,10 @@ export default class TableScore {
   static async render(data) {
     $(MAIN_BODY).append(htmlScore);
     $(MAIN_BODY).append(LoadScreenTableScore);
+    htmlScore.find('#score__button__resetGame').css('visibility', 'visible');
+    htmlScore.find('.score__content__close').css('visibility', 'hidden');
     htmlScore.find('#score__button__resetGame').click(() => { BattleArena.resetGame(); });
-    fetch(`https://safe-scrubland-87155.herokuapp.com/?username=${data.username}&countMonster=${data.countMonster}`)
+    fetch(` https://battlefortorezan.herokuapp.com/?username=${data.username}&countMonster=${data.countMonster}`)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {
@@ -26,9 +28,10 @@ export default class TableScore {
   static renderOnMainPage() {
     $(MAIN_BODY).append(htmlScore);
     $(MAIN_BODY).append(LoadScreenTableScore);
-    htmlScore.find('#score__button__resetGame').remove();
+    htmlScore.find('#score__button__resetGame').css('visibility', 'hidden');
+    htmlScore.find('.score__content__close').css('visibility', 'visible');
     htmlScore.find('.score__content__close').on('click', () => { htmlScore.remove(); });
-    fetch('https://safe-scrubland-87155.herokuapp.com/mainPage/?')
+    fetch(' https://battlefortorezan.herokuapp.com/mainPage/?')
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {

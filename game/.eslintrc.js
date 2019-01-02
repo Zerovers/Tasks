@@ -6,8 +6,9 @@ module.exports = {
         "browser": true,
         "node": true,
         "jquery": true,
+        "jest": true,
     },
     "rules": {
         "import/no-cycle": "off",
-    }
+    },
 };

@@ -35,6 +35,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  width: 100%;
+  text-align: center;
 }
 
 .landing-page header > .header__nav {

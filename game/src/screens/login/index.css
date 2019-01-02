@@ -5,14 +5,16 @@ h2, header, label, .game-description {
 
 h2 {
   margin: 150px auto;
-  width: 40%;
+  width: 41%;
   text-align: center;
+  font-size: 46px;
 }
 
-header {
+.login > header {
   width: 100%;
   text-align: center;
   font-size: 35px;
+  margin-left: 23px;
 }
 
 label {

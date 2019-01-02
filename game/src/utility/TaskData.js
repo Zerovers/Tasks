@@ -67,7 +67,7 @@ export default class TasksData {
 
   static createTranslateData() {
     const list = Object.keys(translateList);
-    const rnd = _.random(0, list.length);
+    const rnd = _.random(0, list.length - 1);
     const rndKeys = list[rnd];
     const answer = translateList[rndKeys];
     return { rndKeys, answer };

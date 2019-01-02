@@ -39,7 +39,7 @@ export default class Enemy {
   }
 
   getDamage() {
-    this.hp -= 50;
+    this.hp -= 20;
     $('.enemy-hp span').css('width', `${this.hp * 5}px`);
     $('.enemy-hp').css('animation', 'shake 1s linear');
     $('.spell').css('visibility', 'hidden');
