@@ -14,6 +14,7 @@ import LogicTask from '../tasks/logic';
 import DeleteWordTask from '../tasks/deleteWord';
 import TasksData from '../../utility/TaskData';
 import { MAIN_BODY } from '../../constant';
+import getMathСalculation from '../../utility/MathValue';
 
 const html = $(htmlContextMenu);
 const attackHtml = $(htmlAttackMenu);
@@ -21,6 +22,7 @@ const healHtml = $(htmlHealMenu);
 export default class SpellFactory {
   static createTask(name) {
     const mathData = TasksData.createMathData();
+    const mathResult = getMathСalculation(mathData);
     const comparisonData = TasksData.createComparisonData();
     const logicData = TasksData.createLogicData();
     const pazzleData = TasksData.createPazzleData();
@@ -31,7 +33,7 @@ export default class SpellFactory {
     const deleteWordData = TasksData.createDeleteWordData();
     switch (name) {
       case 'mathTask':
-        MathTask.render(mathData);
+        MathTask.render({ mathData, mathResult });
         break;
       case 'comparisonTask':
         ComparisonTask.render(comparisonData);

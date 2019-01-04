@@ -16,12 +16,18 @@ export default class MathTask {
     const [
       firstNumber,
       secondNumber,
-      outSign] = [data.firstNumber, data.secondNumber, data.outsign];
+      outSign,
+      result,
+    ] = [
+      data.mathData.firstNumber,
+      data.mathData.secondNumber,
+      data.mathData.outsign,
+      data.mathResult,
+    ];
     $(ATTACK_SPELL_LIST).remove();
     $(MAIN_BODY).append(html);
     html.find(INPUT_MATH).val('').focus();
     html.find('.math-content__operations').html(`${firstNumber} ${outSign} ${secondNumber} = <span>?</span>`);
-    const result = MathTask.getMathOperation(firstNumber, secondNumber, outSign);
     html.find('.math-form').submit(() => {
       MathTask.getAnswerTask(result);
       return false;
