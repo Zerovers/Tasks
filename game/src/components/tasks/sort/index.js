@@ -40,12 +40,14 @@ export default class SortTask {
       sortAnswer.push(children[i].innerHTML);
     }
     sortAnswer = sortAnswer.join('');
+    console.log(sortAnswer);
+    console.log(result.answer);
     if (sortAnswer === result.answer) {
       SortTask.deleteTask();
       BattleArena.startBattle('attack', 'true', 'arcaneblast');
     } else {
       SortTask.deleteTask();
-      BattleArena.startBattle('attack', 'true');
+      BattleArena.startBattle('attack', 'false');
     }
   }
 }
