@@ -1199,7 +1199,7 @@ body {
 }
 .speech-content {
   width: 500px;
-  height: 200px;
+  height: 250px;
   border: 1px solid black;
   position: relative;
   margin: -500px auto;
@@ -1213,6 +1213,10 @@ body {
   text-align: center;
   font-size: 26px;
   width: 90%;
+}
+
+.speech-form {
+  width: 100%;
 }
 
 #speech__button {
@@ -1229,6 +1233,28 @@ body {
   margin: 35px auto;
   text-align: center;
   font-size: 20px;
+}
+
+#speech-form__button {
+  width: 25%;
+  height: 40px;
+  margin: auto;
+  border: 2px solid rgb(86,69,75);
+  background-color: #488cf1;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+}
+
+#speech-form__button:hover {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
+}
+
+#speech-form__button:focus {
+  color: rgb(255,255,255);
+  background: linear-gradient(to right, #0f2f5a 10%, #488cf1 69%, #0f2f5a);
 }
 .grammatic-content {
   width: 500px;
