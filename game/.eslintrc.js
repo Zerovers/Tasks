@@ -9,6 +9,6 @@ module.exports = {
         "jest": true,
     },
     "rules": {
-        "import/no-cycle": "off",
+        "import/no-cycle": "off",        
     },
 };

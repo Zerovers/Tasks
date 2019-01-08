@@ -1,20 +1,33 @@
+/* body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  background-image: url('images/background_loginscreen.jpg');
+} */
+
+.login-background {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  background-image: url('images/background_loginscreen.jpg');
+}
+
+
 h2, header, label, .game-description {
   color: white;
   text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
 }
 
-h2 {
-  margin: 150px auto;
-  width: 41%;
-  text-align: center;
-  font-size: 46px;
+.login__game__name {
+
 }
 
 .login > header {
-  width: 100%;
+  width: 85%;
   text-align: center;
   font-size: 35px;
-  margin-left: 23px;
+  margin: 60px auto 0;
 }
 
 label {
@@ -24,9 +37,18 @@ label {
 
 .login {
   width: 35%;
-  margin: 100px auto;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.login > p {
+  margin: 170px auto 0;
+  width: 75%;
+  text-align: center;
+  font-size: 46px;
+  color: white;
+  text-shadow: #000 1px 0 0px, #000 0 1px 0px, #000 -1px 0 0px, #000 0 -1px 0px;
 }
 
 .login__content {

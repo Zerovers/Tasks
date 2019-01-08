@@ -1,35 +1,20 @@
 import './index.css';
-import htmlGrammatic from './index.html';
+import React from 'react';
 import grammaticList from './grammaticList';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  HEAL_SPELL_LIST,
-} from '../../../constant';
 
 const _ = require('lodash');
 
-const html = $(htmlGrammatic);
-export default class GrammaticTask {
-  static render() {
-    const list = grammaticList.map;
-    $(HEAL_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    const rndList = list[_.random(0, list.length)];
-    html.find('.grammatic-content__text').html(`Произнесите <span>${rndList}</span>`);
-    html.find('#grammatic__button').on('click', () => { GrammaticTask.getAnswerTask(rndList); });
+export default class GrammaticTask extends React.Component {
+  state = {
+    taskData: this.props.taskData,
+    taskAnswer: '',
   }
 
-  static deleteTask() {
-    html.remove();
+  getAsnwerWord = (word) => {
+    this.setState({ taskAnswer: word });
   }
 
-  static getAnswerTask(data) {
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    const word = data;
+  answerTask = (e) => {
     const recognizer = new webkitSpeechRecognition(); // eslint-disable-line new-cap, no-undef
     recognizer.interimResults = false;
     recognizer.maxAlternatives = 1;
@@ -37,13 +22,25 @@ export default class GrammaticTask {
     recognizer.start();
     recognizer.onresult = async (event) => {
       const result = event.results[0][0].transcript;
-      if (word === result) {
-        GrammaticTask.deleteTask();
-        BattleArena.startBattle('heal', 'true');
+      this.getAsnwerWord(result);
+      console.log(this.state.taskAnswer);
+      if (this.state.taskData === this.state.taskAnswer) {
+        this.props.resultBattle('playerHeal', '')
+        this.props.selectAction('')
       } else {
-        GrammaticTask.deleteTask();
-        BattleArena.startBattle('heal', 'false');
+        this.props.resultBattle('enemyAttack', '')
+        this.props.selectAction('')
       }
-    };
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className='grammatic-content'>
+        <p className='grammatic-content__text'>Произнесите <span>{this.state.taskData}</span></p>
+        <button id='grammatic__button' onClick={this.answerTask}>Сказать</button>
+      </div>
+    )
   }
 }

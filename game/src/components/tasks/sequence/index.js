@@ -1,45 +1,67 @@
 import './index.css';
-import htmlSequence from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  ATTACK_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlSequence);
-const SEQUENCE_INPUT = '#sequence-form__input';
-export default class SequenceTask {
-  static render(data) {
-    const [rndNumber, rndDiff] = [data.rndNumber, data.rndDiff];
-    $(ATTACK_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(SEQUENCE_INPUT).val('').focus();
-    html.find('.sequence-content__number').html(`Продолжите последовательность цифр<br> <span>${rndNumber}</span>
-    <span>${rndNumber + rndDiff}</span>
-    <span>${rndNumber + rndDiff * 2}</span> <span>?</span>`);
-    html.find(SEQUENCE_INPUT).focus();
-    html.find('#sequence-form').submit(() => {
-      SequenceTask.getAnswerTask(rndNumber, rndDiff);
-      return false;
-    });
+export default class SequenceTask extends React.Component {
+  state = {
+    inputValue: '',
+    rndNumber: this.props.taskData.rndNumber,
+    rndDiff: this.props.taskData.rndDiff,
   }
 
-  static deleteTask() {
-    html.remove();
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value,
+     });
   }
 
-  static async getAnswerTask(rndNumber, rndDiff) {
-    const inputValue = $(SEQUENCE_INPUT).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    if (inputValue === `${rndNumber + rndDiff * 3}`) {
-      SequenceTask.deleteTask();
-      BattleArena.startBattle('attack', 'true', 'arcanemissile');
-    } else {
-      SequenceTask.deleteTask();
-      BattleArena.startBattle('attack', 'false');
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
     }
+    if(this.state.inputValue + '' === this.state.rndNumber + this.state.rndDiff * 3 + '') {
+      this.props.resultBattle('playerAttack', 'arcanemissile')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  onInputSubmit = (e) => {
+    if(this.state.inputValue + '' === this.state.rndNumber + this.state.rndDiff * 3 + '') {
+      this.props.resultBattle('playerAttack', 'arcanemissile')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className='sequence-content'>
+        <p className='sequence-content__number'>Продолжите последовательность цифр <br></br>
+          <span>{this.state.rndNumber + ' '}</span>
+          <span>{this.state.rndNumber + this.state.rndDiff + ' '}</span>
+          <span>{this.state.rndNumber + this.state.rndDiff * 2 + ' '}</span>
+          <span>?</span>
+        </p>
+        <form id='sequence-form' onSubmit={this.onInputSubmit}>
+          <input
+            type='number'
+            id='sequence-form__input'
+            autoFocus
+            autoComplete='off'
+            required minLength='1'
+            value={this.state.inputValue}
+            onChange={this.onInputChange}
+            onKeyPress={this.onKeyPress}
+             />
+          <button id='sequence-form__button'>Ответить</button>
+        </form>
+      </div>
+    )
   }
 }

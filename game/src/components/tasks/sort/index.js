@@ -1,51 +1,36 @@
 import './index.css';
 import './jquery-ui/jquery-ui.min';
-import htmlSort from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  ATTACK_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlSort);
-const SORT_ITEMS = '#sortable__items';
-export default class SortTask {
-  static render(data) {
-    $(ATTACK_SPELL_LIST).remove();
-    const map = data;
-    $(MAIN_BODY).append(html);
-    $(SORT_ITEMS).html('');
-    $(SORT_ITEMS).sortable();
-    $(SORT_ITEMS).disableSelection();
-    html.find('.sort-content__text').html('Составте правильное слово');
-    for (let i = 0; i < map.rndKeys.split('').length; i += 1) {
-      html.find(SORT_ITEMS).append(`<li id='ui-state-default'>${map.rndKeys.split('')[i]}</li>`);
-    }
-    html.find('#sort__button').on('click', () => { this.getAnswerTask(data); });
+export default class SortTask extends React.Component {
+  state = {
+    taskValue: this.props.taskData.sortData.rndKeys,
+    result: this.props.taskData.sortData.answer
   }
 
-  static deleteTask() {
-    html.remove();
-  }
-
-  static async getAnswerTask(data) {
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    const result = data;
-    const children = $(SORT_ITEMS).children('li');
-    let sortAnswer = [];
-    for (let i = 0; i < result.answer.length; i += 1) {
-      sortAnswer.push(children[i].innerHTML);
-    }
-    sortAnswer = sortAnswer.join('');
-    if (sortAnswer === result.answer) {
-      SortTask.deleteTask();
-      BattleArena.startBattle('attack', 'true', 'arcaneblast');
+  onInputSubmit = (e) => {
+    if(this.state.inputValue + '' === this.state.result + '') {
+      this.props.resultBattle('playerAttack', 'frostbolt')
+      this.props.selectAction('')
     } else {
-      SortTask.deleteTask();
-      BattleArena.startBattle('attack', 'true');
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
     }
+    e.preventDefault();
+  }
+
+  render() {
+    console.log(this.state.taskValue);
+    console.log(this.state.result);
+    const listItems = this.state.taskValue.split('').map((item, index) => <li id='ui-state-default' key={index}>{item}</li>);
+    return (
+      <div className='sort-content'>
+        <p className='sort-content__text'>Составте правильное слово</p>
+        <div className='sortable'>
+          <ul id='sortable__items'>{listItems}</ul>
+        </div>
+        <button id='sort__button'>Проверить</button>
+      </div>
+    )
   }
 }

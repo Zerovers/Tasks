@@ -1,29 +1,48 @@
 import './index.css';
-import htmlSpeech from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  HEAL_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
+import pause from '../../utility/pause'
 
 let voices = speechSynthesis.getVoices();
-const html = $(htmlSpeech);
-const SPEECH_INPUT = '#speech__input';
-export default class SpeechTask {
-  static render(data) {
-    $(HEAL_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(SPEECH_INPUT).val('').focus();
-    html.find('.speech-content__text').html('Впишите слово которое услышали');
-    this.setSpeech(data);
-    html.find('#speech__button').on('click', () => { SpeechTask.setSpeech(data); });
-    html.find(SPEECH_INPUT).on('change', () => { SpeechTask.getAnswerTask(data); });
+export default class SpeechTask extends React.Component {
+  state = {
+    inputValue: '',
+    taskData: this.props.taskData,
+    firstLoad: '',
   }
 
-  static setSpeech(data) {
-    const message = data;
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value,
+     });
+  }
+
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
+    }
+    if(this.state.inputValue + '' === this.state.taskData + '') {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  onInputSubmit = (e) => {
+    if(this.state.inputValue + '' === this.state.taskData + '') {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  setSpeech = async () => {
+    const message = this.state.taskData;
     const msg = new SpeechSynthesisUtterance(message);
     msg.pitch = 1;
     msg.rate = 0.8;
@@ -31,23 +50,36 @@ export default class SpeechTask {
     const [usingVoice] = [voices[3]];
     msg.voice = usingVoice;
     speechSynthesis.speak(msg);
+    await pause(100);
+    this.firstLoad();
   }
 
-  static deleteTask() {
-    html.remove();
+  firstLoad = () => {
+    this.setState({ firstLoad: true })
   }
 
-  static async getAnswerTask(result) {
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    const inputValue = $(SPEECH_INPUT).val();
-    const speechAnswer = inputValue.toLowerCase();
-    if (speechAnswer === result) {
-      SpeechTask.deleteTask();
-      BattleArena.startBattle('heal', 'true');
-    } else {
-      SpeechTask.deleteTask();
-      BattleArena.startBattle('heal', 'false');
+  render() {
+    if (!this.state.firstLoad) {
+      this.setSpeech()
     }
+    return (
+      <div className='speech-content'>
+        <p className='speech-content__text'>Впишите слово которое услышали</p>
+        <button id='speech__button' onClick={this.setSpeech}><i className="fas fa-volume-up"></i></button>
+        <form className='speech-form' onSubmit={this.onInputSubmit}>
+          <input
+            type='text'
+            id='speech__input'
+            autoFocus
+            autoComplete='off'
+            required minLength='1'
+            value={this.state.inputValue}
+            onChange={this.onInputChange}
+            onKeyPress={this.onKeyPress}
+          />
+          <button id='speech-form__button'>Ответить</button>
+        </form>
+      </div>
+    )
   }
 }

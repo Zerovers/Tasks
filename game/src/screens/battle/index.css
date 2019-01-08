@@ -1,21 +1,9 @@
-@keyframes shake {
-  0%, 50%, 100% {
-    transform: rotate(0deg);
-  } 
-
-  10%, 30% {
-    transform: rotate(-7deg);
-  }
-
-  20%, 40% {
-    transform: rotate(7deg);
-  }
-}
-
-body {
+.battleArena-background {
+  height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
+  background-image: url('images/background_battleZone.jpg')
 }
 
 .shadow-frame {
@@ -27,7 +15,14 @@ body {
   width: 100%;
   height: 100%;
   z-index: 100;
+}
+
+.hidden{
   display: none;
+}
+
+.visibility {
+  display: flex;
 }
 
 .button__start-fight {
@@ -151,6 +146,3 @@ body {
   border-radius: 50px;
   position: relative;
 }
-
-
-

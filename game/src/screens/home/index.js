@@ -1,25 +1,67 @@
 import './index.css';
+import React from 'react';
+import { withRouter } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
+
 import './images/background_home_header.jpg';
-import './images/background_nav_header.jpg';
-import './images/background_home_history.jpg';
-import './images/background_screenshoot_home.jpg';
 import './images/background_footer_home.jpg';
+import './images/background_home_history.jpg';
+import './images/background_nav_header.jpg';
+import './images/background_screenshoot_home.jpg';
 import './images/screenshoot_game1.jpg';
 import './images/screenshoot_game2.jpg';
 import './images/screenshoot_game3.jpg';
 import './images/screenshoot_game4.jpg';
 import './images/screenshoot_game5.jpg';
 import './images/screenshoot_game6.jpg';
-import LoginScreen from '../login';
-import TableScore from '../score';
 
-$('#landing-page__button').on('click', () => {
-  LoginScreen.render();
-});
-$('#landing-page__button').on('mousedown', () => {
-  $('#landing-page__button').css('background-color', 'rgb(73, 14, 10)');
-  $('#landing-page__button').css('border-color', 'rgb(14, 39, 148)');
-});
-$('.landing-page__table-score').on('click', () => {
-  TableScore.renderOnMainPage();
-});
+
+class HomeScreen extends React.Component {
+  render() {
+    return(
+      <div className='landing-page' id='Game'>
+          <header>
+            <div className='header__nav'>
+              <nav>
+                <ul>
+                  <Link to="/BattleForTorezanReact#Game">Играть</Link>
+                  <Link to="/BattleForTorezanReact#History">История</Link>
+                  <Link to="/BattleForTorezanReact#Screenshoots">Скриншоты</Link>
+                  <Link to="/BattleForTorezanReact#Contact">Контакты</Link>
+                  <li className='landing-page__table-score'>Рекорды</li>
+                </ul>
+              </nav>
+            </div>
+            <div className='header__content'>
+              <h1>Битва за Торезан</h1>
+              <Link to='/BattleForTorezanReact/login'><button id='landing-page__button'>Играть</button></Link>
+            </div>
+          </header>
+          <div className='landing-page__history' id='History'>
+            <div className='landing-page__history__text'>
+              <p>Через темный портал к нам ворвались варвары. Это оказалсь злобные и кровожадные орки. Заручившись помощью троллей мира Торезан они ринулись покорять его. <br></br>
+              На защиту выступил ты - истинный хранитель этого мира.
+            </p>
+          </div>
+        </div>
+        <div className='landing-page__screenshoots' id='Screenshoots'>
+          <a name='Screenshoot'></a>
+          <div className='landing-page__screenshoots__content'>
+            <div className='landing-page__screenshoots__content__screenshoots'>
+              <img src='./images/screenshoot_game1.jpg' alt='Поле боя' />
+              <img src='./images/screenshoot_game2.jpg' alt='Выбор действия' />
+              <img src='./images/screenshoot_game3.jpg' alt='Выбор заклинания' />
+              <img src='./images/screenshoot_game4.jpg' alt='Решение' />
+              <img src='./images/screenshoot_game5.jpg' alt='Нанесение урона' />
+              <img src='./images/screenshoot_game6.jpg' alt='Востановление жизней' />
+            </div>
+          </div>
+        </div>
+        <footer id='Contact'>
+          <p><a href='https://github.com/Zerovers'>by Dmitry Kravtsov <i className="fab fa-github"></i></a></p>
+        </footer>
+      </div>
+    )
+  }
+}
+export default withRouter(HomeScreen);

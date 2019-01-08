@@ -1,6 +1,6 @@
 import './index.css';
-import pause from '../../utility/pause';
-import BattleArena from '../../screens/battle';
+import React from 'react';
+import pause from '../utility/pause'
 
 import playerHead from './image/player_head.png';
 import playerBody from './image/player_body.png';
@@ -26,78 +26,28 @@ import spellSoundShadowbolt from './sounds/shadowbolt.wav';
 import spellSoundPlayerTakeDamage from './sounds/player_take_damage.wav';
 import spellSoundHeal from './sounds/heal.wav';
 
-const PLACE_PLAYER_IN_BATTLE_ARENA = '.conteiner';
-const PLACE_PLAYER_SPELL_IN_BATTLE_ARENA = '.player-Model .conteiner ';
-export default class Player {
-  constructor(name, hp, countMonsters) {
-    this.name = name;
-    this.hp = hp;
-    this.countMonsters = countMonsters;
-    this.getDmg = 20;
-    $('.player > p.player-name').html(name);
-  }
-
-  indicationHp() {
-    $('.player-hp span').css('width', `${this.hp * 5}px`);
-  }
-
-  killMonsters() {
-    this.countMonsters += 1;
-  }
-
-  getDamage() {
-    this.hp -= this.getDmg;
-    $('.player-hp > span').css('width', `${this.hp * 5}px`);
-    $('.player-hp').css('animation', 'shake 1s linear');
-    Player.addAnimationTakeDamage();
-  }
-
-  getHeal() {
-    this.hp += 20;
-    if (this.hp >= 100) {
-      this.hp = 100;
-    }
-    $('.player-hp > span').css('width', `${this.hp * 5}px`);
-    $('.heal').css('visibility', 'hidden');
-  }
-
-  reset() {
-    this.hp = 100;
-    this.getDmg = 20;
-    this.countMonsters = 0;
-    this.indicationHp();
-  }
-
-  static async renderBody() {
-    $(PLACE_PLAYER_IN_BATTLE_ARENA)
-      .append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`)
-      .append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`)
-      .append(`<img src="${playerLeftLeg}" alt="mageBody" class="mage-leftLeg">`)
-      .append(`<img src="${playerRightLeg}" alt="mageBody" class="mage-RightLeg">`)
-      .append(`<img src="${playerRightHand}" alt="mageBody" class="mage-rightHand">`)
-      .append(`<img src="${playerLeftHand}" alt="mageBody" class="mage-leftHand">`)
-      .append(`<img src="${playerLeftFinger}" alt="mageBody" class="mage-leftFinger">`)
-      .append(`<img src="${playerWeapon}" alt="mageBody" class="mage-weapon">`);
-    $(PLACE_PLAYER_SPELL_IN_BATTLE_ARENA)
-      .append(`<img src="${playerSpellFrostbolt}" alt="spell_frostbolt" class="spell frostbolt">`)
-      .append(`<img src="${playerSpellFireball}" alt="spell_fireball" class="spell fireball">`)
-      .append(`<img src="${playerSpellArcaneblast}" alt="spell_arcaneblast" class="spell arcaneblast">`)
-      .append(`<img src="${playerSpellArcaneMissile}" alt="spell_arcanemissle" class="spell arcanemissile">`)
-      .append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`)
-      .append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
-    BattleArena.checkLoader();
-  }
-
-  static async addAnimationAttack(name) {
-    $('.mage-body').addClass('mage-body_active');
-    $('.mage-leftHand').addClass('mage-leftHand_active');
-    $('.mage-rightHand').addClass('mage-rightHand_active');
-    $('.mage-leftFinger').addClass('mage-leftFinger_active');
-    $('.mage-leftLeg').addClass('mage-leftLeg_active');
-    $('.mage-weapon').addClass('mage-weapon_active');
-    Player.addSound(name);
+let MAGE_HEAD = 'mage-head activeHead';
+let MAGE_BODY = 'mage-body';
+let MAGE_RIGHT_LEG= 'mage-RightLeg';
+let MAGE_LEFT_LEG= 'mage-leftLeg';
+let MAGE_RIGHT_HAND= 'mage-rightHand';
+let MAGE_LEFT_HAND= 'mage-leftHand';
+let MAGE_LEFT_FINGER= 'mage-leftFinger';
+let MAGE_WEAPON = 'mage-weapon';
+export default class Player extends React.Component {
+  attackAnimation = async (spellName) => {
+    MAGE_HEAD = 'mage-head mage-head_active';
+    MAGE_BODY = 'mage-body mage-body_active';
+    MAGE_RIGHT_LEG= 'mage-RightLeg mage-RightLeg_active';
+    MAGE_LEFT_LEG= 'mage-leftLeg mage-leftLeg_active';
+    MAGE_RIGHT_HAND= 'mage-rightHand mage-rightHand_active';
+    MAGE_LEFT_HAND= 'mage-leftHand mage-leftHand_active';
+    MAGE_LEFT_FINGER= 'mage-leftFinger mage-leftFinger_active';
+    MAGE_WEAPON = 'mage-weapon mage-weapon_active';
+    this.addSound(spellName);
     await pause(1000);
-    switch (name) {
+    this.props.resetResultBattle('');
+    switch(spellName) {
       case 'frostbolt':
         $('.spell.frostbolt').css('visibility', 'visible');
         break;
@@ -115,69 +65,54 @@ export default class Player {
         break;
       default:
     }
-    await pause(100);
     const position = $('.enemy-Model .conteiner').position().left;
     $('.spell').css('left', position - 20);
-  }
-
-  static async addAnimationTakeDamage() {
-    $('.mage-head').removeClass('activeHead');
-    $('.mage-head').addClass('mage-take-damage_head');
-    $('.mage-body').addClass('mage-take-damage_body');
-    $('.mage-leftHand').addClass('mage-take-damage_leftHand');
-    $('.mage-rightHand').addClass('mage-take-damage_rightHand');
-    $('.mage-leftFinger').addClass('mage-take-damage_leftFinger');
-    $('.mage-leftLeg').addClass('mage-take-damage_rightLeg');
-    $('.mage-leftLeg').addClass('mage-take-damage_leftLeg');
-    $('.mage-weapon').addClass('mage-take-damage_weapon');
-    Player.addSound('takeDamage');
     await pause(500);
-    $('.mage-head').addClass('activeHead');
+    $('.spell').css('visibility', 'hidden');
+    $('.spell').css('left', 305);
+    this.props.enemyTakeDamage('take', 50);
   }
 
-  static addAnimationHealing() {
-    $('.mage-leftHand').addClass('mage-take-heal_leftHand');
-    $('.mage-rightHand').addClass('mage-take-heal_rightHand');
-    $('.mage-leftFinger').addClass('mage-take-heal_leftFinger');
-    $('.mage-weapon').addClass('mage-take-heal_weapon');
+  animationHealing = async () => {
+    MAGE_RIGHT_HAND= 'mage-rightHand mage-take-heal_rightHand';
+    MAGE_LEFT_HAND= 'mage-leftHand mage-take-heal_leftHand';
+    MAGE_LEFT_FINGER= 'mage-leftFinger mage-take-heal_leftFinger';
+    MAGE_WEAPON = 'mage-weapon mage-take-heal_weapon';
+    this.addSound('heal');
     $('.heal').css('visibility', 'visible');
-    Player.addSound('heal');
+    await pause(1000);
+    this.props.resetResultBattle('');
+    this.props.playerHealing();
   }
 
-  static removeAnimationAttack() {
-    $('.mage-body').removeClass('mage-body_active');
-    $('.mage-leftHand').removeClass('mage-leftHand_active');
-    $('.mage-rightHand').removeClass('mage-rightHand_active');
-    $('.mage-leftFinger').removeClass('mage-leftFinger_active');
-    $('.mage-leftLeg').removeClass('mage-leftLeg_active');
-    $('.mage-weapon').removeClass('mage-weapon_active');
+  takeDamage = async () => {
+    MAGE_HEAD = 'mage-head mage-take-damage_head';
+    MAGE_BODY = 'mage-body mage-take-damage_body';
+    MAGE_RIGHT_LEG= 'mage-RightLeg mage-take-damage_rightLeg';
+    MAGE_LEFT_LEG= 'mage-leftLeg mage-take-damage_leftLeg';
+    MAGE_RIGHT_HAND= 'mage-rightHand mage-take-damage_rightHand';
+    MAGE_LEFT_HAND= 'mage-leftHand mage-take-damage_leftHand';
+    MAGE_LEFT_FINGER= 'mage-leftFinger mage-take-damage_leftFinger';
+    MAGE_WEAPON = 'mage-weapon mage-take-damage_weapon';
+    this.addSound('takeDamage')
+    await pause(500);
+    this.props.playerTakeDamage('', 20);
+    this.props.resetResultBattle('');
   }
 
-  static removeAnimationTakeDamage() {
-    $('.mage-head').removeClass('mage-take-damage_head');
-    $('.mage-body').removeClass('mage-take-damage_body');
-    $('.mage-leftHand').removeClass('mage-take-damage_leftHand');
-    $('.mage-rightHand').removeClass('mage-take-damage_rightHand');
-    $('.mage-leftFinger').removeClass('mage-take-damage_leftFinger');
-    $('.mage-leftLeg').removeClass('mage-take-damage_rightLeg');
-    $('.mage-leftLeg').removeClass('mage-take-damage_leftLeg');
-    $('.mage-weapon').removeClass('mage-take-damage_weapon');
+
+  resetAnimation = () => {
+    MAGE_HEAD = 'mage-head activeHead';
+    MAGE_BODY = 'mage-body';
+    MAGE_RIGHT_LEG= 'mage-RightLeg';
+    MAGE_LEFT_LEG= 'mage-leftLeg';
+    MAGE_RIGHT_HAND= 'mage-rightHand';
+    MAGE_LEFT_HAND= 'mage-leftHand';
+    MAGE_LEFT_FINGER= 'mage-leftFinger';
+    MAGE_WEAPON = 'mage-weapon'; 
   }
 
-  static removeAnimationHealing() {
-    $('.mage-leftHand').removeClass('mage-take-heal_leftHand');
-    $('.mage-rightHand').removeClass('mage-take-heal_rightHand');
-    $('.mage-leftFinger').removeClass('mage-take-heal_leftFinger');
-    $('.mage-weapon').removeClass('mage-take-heal_weapon');
-  }
-
-  static removeAnimations() {
-    Player.removeAnimationAttack();
-    Player.removeAnimationHealing();
-    Player.removeAnimationTakeDamage();
-  }
-
-  static addSound(name) {
+  addSound = (name) => {
     const takeDamage = new Audio(`${spellSoundPlayerTakeDamage}`);
     const frostbolt = new Audio(`${spellSoundFrostbolt}`);
     const fireball = new Audio(`${spellSoundFireball}`);
@@ -214,5 +149,39 @@ export default class Player {
         break;
       default:
     }
+  }
+
+  render() {
+    if (this.props.resultBattle === 'playerAttack') {
+      this.attackAnimation(this.props.spellName);
+    } else if (this.props.resultBattle === 'playerHeal') {
+      this.animationHealing()
+    } else if (this.props.playerTakeDamageState === 'playerTakeDamage') {
+      this.takeDamage();
+    } else {
+      this.resetAnimation();
+    }
+    return (
+      <>
+        <div className='player-Model'>
+          <div className='conteiner'>
+            <img src={playerBody} alt="mageBody" className={MAGE_BODY} />
+            <img src={playerHead} alt="mageBody" className={MAGE_HEAD} />
+            <img src={playerLeftLeg} alt="mageBody" className={MAGE_LEFT_LEG} />
+            <img src={playerRightLeg} alt="mageBody" className={MAGE_RIGHT_LEG} />
+            <img src={playerRightHand} alt="mageBody" className={MAGE_RIGHT_HAND} />
+            <img src={playerLeftHand} alt="mageBody" className={MAGE_LEFT_HAND} />
+            <img src={playerLeftFinger} alt="mageBody" className={MAGE_LEFT_FINGER} />
+            <img src={playerWeapon} alt="mageBody" className={MAGE_WEAPON} />
+            <img src={playerSpellFrostbolt} alt="spell_frostbolt" className="spell frostbolt" />
+            <img src={playerSpellFireball} alt="spell_fireball" className="spell fireball" />
+            <img src={playerSpellArcaneblast} alt="spell_arcaneblast" className="spell arcaneblast" />
+            <img src={playerSpellArcaneMissile} alt="spell_arcanemissle" className="spell arcanemissile" />
+            <img src={playerSpellShadowbolt} alt="spell_shadowbolt" className="spell shadowbolt" />
+            <img src={playerSpellHealAura} alt="spell_heal" className="heal" />
+          </div>
+        </div>
+      </>
+    )
   }
 }

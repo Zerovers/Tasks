@@ -1,49 +1,76 @@
 import './index.css';
-import htmlDeleteWord from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  HEAL_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlDeleteWord);
-const DELETE_WORD_INPUT = '#delete-word-form__input';
-export default class DeleteWordTask {
-  static render(data) {
-    const [rndKeys, result] = [data.rndKeys, data.answer];
-    $(HEAL_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(DELETE_WORD_INPUT).val('').focus();
-    html.find('.delete-word-content__text').html(`${rndKeys}`);
-    html.find('.delete-word-form').submit(() => {
-      DeleteWordTask.getAnswerTask(result);
-      return false;
-    });
+export default class DeleteWordTask extends React.Component {
+  state = {
+    inputValue: '',
+    taskData: this.props.taskData.rndKeys,
+    taskAnswer: this.props.taskData.answer,
   }
 
-  static deleteTask() {
-    html.remove();
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value.toLowerCase(),
+     });
   }
 
-  static async getAnswerTask(result) {
-    const inputValue = $(DELETE_WORD_INPUT).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
+    }
     let count = 0;
-    const answer = inputValue.toLowerCase();
-    for (let i = 0; i < result.length; i += 1) {
-      if (answer === result[i]) {
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
         count += 1;
       }
     }
-    if (count > 0) {
-      DeleteWordTask.deleteTask();
-      BattleArena.startBattle('heal', 'true');
+    if(count > 0) {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
     } else {
-      DeleteWordTask.deleteTask();
-      BattleArena.startBattle('heal', 'false');
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
     }
+    e.preventDefault();
   }
+
+  onInputSubmit = (e) => {
+    let count = 0;
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
+        count += 1;
+      }
+    }
+    if(count > 0) {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className='delete-word-content'>
+        <p>Какое слово <span>лишнее</span>?</p>
+        <p className='delete-word-content__text'>{this.state.taskData}</p>
+        <form className='delete-word-form'>
+          <input 
+            type='text'
+            id='delete-word-form__input'
+            autoFocus
+            autoComplete='off'
+            required minLength='1'
+            value={this.state.inputValue}
+            onChange={this.onInputChange}
+            onKeyPress={this.onKeyPress}
+          />
+          <button id='delete-word-form__button'>Ответить</button>
+        </form>
+      </div>
+    )
+  }
+
 }

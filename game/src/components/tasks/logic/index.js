@@ -1,49 +1,74 @@
 import './index.css';
-import htmlLogic from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  HEAL_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlLogic);
-const LOGIC_INPUT = '#logic-form__input';
-export default class LogicTask {
-  static render(data) {
-    const [rndKeys, result] = [data.rndKeys, data.answer];
-    $(HEAL_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(LOGIC_INPUT).val('').focus();
-    html.find('.logic-content__text').html(`Ответье на вопрос:<br> ${rndKeys}`);
-    html.find('.logic-form').submit(() => {
-      LogicTask.getAnswerTask(result);
-      return false;
-    });
+export default class LogicTask extends React.Component {
+  state = { 
+    inputValue: '',
+    taskData: this.props.taskData.rndKeys,
+    taskAnswer: this.props.taskData.answer
   }
 
-  static deleteTask() {
-    html.remove();
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value.toLowerCase(),
+     });
   }
 
-  static async getAnswerTask(result) {
-    const inputValue = $(LOGIC_INPUT).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
+    }
     let count = 0;
-    const translateAnswer = inputValue.toLowerCase();
-    for (let i = 0; i < result.length; i += 1) {
-      if (translateAnswer === `${result[i]}`) {
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
         count += 1;
       }
     }
-    if (count > 0) {
-      LogicTask.deleteTask();
-      BattleArena.startBattle('heal', 'true');
+    if(count > 0) {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
     } else {
-      LogicTask.deleteTask();
-      BattleArena.startBattle('heal', 'false');
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
     }
+    e.preventDefault();
+  }
+
+  onInputSubmit = (e) => {
+    let count = 0;
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
+        count += 1;
+      }
+    }
+    if(count > 0) {
+      this.props.resultBattle('playerHeal', '')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className='logic-content'>
+        <p className='logic-content__text'>Ответьте на вопрос: <br></br> {this.state.taskData}</p>
+        <form className='logic-form' onSubmit={this.onInputSubmit}>
+          <input 
+            type='text'
+            id='logic-form__input' 
+            autoFocus
+            autoComplete='off'
+            required minLength='1'
+            value={this.state.inputValue}
+            onChange={this.onInputChange}
+            onKeyPress={this.onKeyPress}
+            />
+          <button id='logic-form__button'>Ответить</button>
+        </form>
+      </div>
+    )
   }
 }

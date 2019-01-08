@@ -1,5 +1,9 @@
 import './index.css';
-import BattleArena from '../../screens/battle';
+import React from 'react';
+import pause from '../utility/pause'
+import enemySoundAttack from './sounds/enemy_attack.wav';
+import enemySoundTakeDamage from './sounds/enemy_take_damage.wav';
+
 import enemyOneHead from './image/monster_1/monster_1_head.png';
 import enemyOneBody from './image/monster_1/monster_1_body.png';
 import enemyOneRightHand from './image/monster_1/monster_1_rightHand.png';
@@ -22,161 +26,114 @@ import enemyThreeLeftHand from './image/monster_3/monster_3_leftHand.png';
 import enemyThreeRightLeg from './image/monster_3/monster_3_rightLeg.png';
 import enemyThreeLeftLeg from './image/monster_3/monster_3_leftLeg.png';
 
-import enemySoundAttack from './sounds/enemy_attack.wav';
-import enemySoundTakeDamage from './sounds/enemy_take_damage.wav';
-import pause from '../../utility/pause';
-import names from './name.json';
-
 const _ = require('lodash');
 
-const newMonster = _.random(1, 3);
-const PLACE_ENEMY_IN_BATTLE_ARENA = '.enemy-Model .conteiner';
-export default class Enemy {
-  constructor(name, hp) {
-    this.name = name;
-    this.hp = hp;
-    this.newMonster = newMonster;
-    $('.enemy-name').html(this.name);
-  }
+let ENEMY_ANIMATED_HEAD = '';
+let ENEMY_ACTIVE_HEAD = ' activeHead';
+let ENEMY_ANIMATED_BODY = '';
+let ENEMY_ANIMATED_RIGHT_HAND = '';
+let ENEMY_ANIMATED_LEFT_HAND = '' ;
+let ENEMY_ANIMATED_RIGHT_LEG = '' ;
+let ENEMY_ANIMATED_LEFT_LEG = '';
+let ENEMY_ORC_ANIMATED_WEAPON = 'enemy-weapon orc';
+export default class Enemy extends React.Component {
 
-  getDamage() {
-    this.hp -= 20;
-    $('.enemy-hp span').css('width', `${this.hp * 5}px`);
-    $('.enemy-hp').css('animation', 'shake 1s linear');
-    $('.spell').css('visibility', 'hidden');
-    $('.spell').css('left', 305);
-    this.addAnimationTakeDamage();
-  }
-
-  indicationHp() {
-    $('.enemy-name').html(this.name);
-    $('.enemy-hp span').css('width', `${this.hp * 5}px`);
-  }
-
-  resetParametrs() {
-    this.name = `${names.firstName[_.random(0, names.firstName.length - 1)]} 
-    ${names.secondName[_.random(0, names.secondName.length - 1)]} 
-    ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`;
-    this.hp = 100;
-    this.newMonster = _.random(1, 3);
-    this.indicationHp();
-    this.renderBody();
-  }
-
-  renderBody() {
-    $(PLACE_ENEMY_IN_BATTLE_ARENA).html('');
-    switch (this.newMonster) {
+  attackAnimation = async () => {
+    switch (this.props.enemyMonsterBody) {
       case 1:
-        $(PLACE_ENEMY_IN_BATTLE_ARENA)
-          .append(`<img src="${enemyOneHead}" alt="enemyBody" class="enemy-head activeHead">`)
-          .append(`<img src="${enemyOneBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
-          .append(`<img src="${enemyOneRightHand}" alt="enemyBody" class="enemy-rightHand">`)
-          .append(`<img src="${enemyOneLeftHand}" alt="enemyBody" class="enemy-leftHand">`)
-          .append(`<img src="${enemyOneRightLeg}" alt="enemyBody" class="enemy-rightLeg">`)
-          .append(`<img src="${enemyOneLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
-        break;
+      ENEMY_ANIMATED_RIGHT_HAND = ' enemy-attack_rightHand';
+      ENEMY_ANIMATED_LEFT_HAND = ' enemy-attack_leftHand';
+      break;
       case 2:
-        $(PLACE_ENEMY_IN_BATTLE_ARENA)
-          .append(`<img src="${enemyTwoHead}" alt="enemyBody" class="enemy-head activeHead">`)
-          .append(`<img src="${enemyTwoBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
-          .append(`<img src="${enemyTwoRightHand}" alt="enemyBody" class="enemy-rightHand orc">`)
-          .append(`<img src="${enemyTwoLeftHand}" alt="enemyBody" class="enemy-leftHand orc">`)
-          .append(`<img src="${enemyTwoRightLeg}" alt="enemyBody" class="enemy-rightLeg orc">`)
-          .append(`<img src="${enemyTwoLeftLeg}" alt="enemyBody" class="enemy-leftLeg orc">`)
-          .append(`<img src="${enemyTwoWeapon}" alt="enemyBody" class="enemy-weapon orc">`);
-        break;
-      case 3:
-        $(PLACE_ENEMY_IN_BATTLE_ARENA)
-          .append(`<img src="${enemyThreeHead}" alt="enemyBody" class="enemy-head troll activeHead">`)
-          .append(`<img src="${enemyThreeBody}" alt="enemyBody" class="enemy-body" id="enemy-body">`)
-          .append(`<img src="${enemyThreeRightHand}" alt="enemyBody" class="enemy-rightHand troll">`)
-          .append(`<img src="${enemyThreeLeftHand}" alt="enemyBody" class="enemy-leftHand troll">`)
-          .append(`<img src="${enemyThreeRightLeg}" alt="enemyBody" class="enemy-rightLeg">`)
-          .append(`<img src="${enemyThreeLeftLeg}" alt="enemyBody" class="enemy-leftLeg">`);
-        break;
+      ENEMY_ANIMATED_RIGHT_HAND = ' enemy-attack-rightHand-orc';
+      ENEMY_ANIMATED_LEFT_HAND = ' enemy-attack-leftHand-orc';
+      ENEMY_ORC_ANIMATED_WEAPON = ' enemy-attack-weapon-orc'
+      break;
+      case 3: 
+      ENEMY_ANIMATED_RIGHT_HAND = ' enemy-attack_rightHand-troll';
+      ENEMY_ANIMATED_LEFT_HAND = ' enemy-attack_leftHand-troll';
+      break;
       default:
     }
-    BattleArena.checkLoader();
+    this.addSound('attack');
+    await pause(1000)
+    this.props.resetResultBattle('');
+    this.props.playerTakeDamage('playerTakeDamage', 0)
   }
 
-  addAnimationAttack() {
-    switch (this.newMonster) {
+  takeDamageAnimation = async () => {
+    switch (this.props.enemyMonsterBody) {
       case 1:
-        $('.enemy-rightHand').addClass('enemy-attack_rightHand');
-        $('.enemy-leftHand').addClass('enemy-attack_leftHand');
-        break;
+        ENEMY_ANIMATED_HEAD = ' take-damage_head';
+        ENEMY_ACTIVE_HEAD = '';
+        ENEMY_ANIMATED_BODY = ' take-damage_body';
+        ENEMY_ANIMATED_RIGHT_HAND = ' take-damage_rightHand';
+        ENEMY_ANIMATED_LEFT_HAND = ' take-damage_leftHand';
+        ENEMY_ANIMATED_RIGHT_LEG = ' take-damage_rightLeg';
+        ENEMY_ANIMATED_LEFT_LEG = ' take-damage_leftLeg';
+      break;
       case 2:
-        $('.enemy-rightHand').addClass('enemy-attack-rightHand-orc');
-        $('.enemy-leftHand').addClass('enemy-attack-leftHand-orc');
-        $('.enemy-weapon').addClass('enemy-attack-weapon-orc');
-        break;
+        ENEMY_ANIMATED_HEAD = ' take-damage_head';
+        ENEMY_ACTIVE_HEAD = '';
+        ENEMY_ANIMATED_BODY = ' take-damage_body';
+        ENEMY_ANIMATED_RIGHT_HAND = ' take-damage_rightHand-orc';
+        ENEMY_ANIMATED_LEFT_HAND = ' take-damage_leftHand';
+        ENEMY_ANIMATED_RIGHT_LEG = ' take-damage_rightLeg';
+        ENEMY_ANIMATED_LEFT_LEG = ' take-damage_leftLeg';
+        ENEMY_ORC_ANIMATED_WEAPON = ' take-damage-weapon-orc'
+      break;
       case 3:
-        $('.enemy-rightHand').addClass('enemy-attack_rightHand-troll');
-        $('.enemy-leftHand').addClass('enemy-attack_leftHand-troll');
-        break;
+        ENEMY_ANIMATED_HEAD = ' take-damage_head-troll';
+        ENEMY_ACTIVE_HEAD = '';
+        ENEMY_ANIMATED_BODY = ' take-damage_body';
+        ENEMY_ANIMATED_RIGHT_HAND = ' take-damage-rightHand-troll';
+        ENEMY_ANIMATED_LEFT_HAND = ' take-damage-leftHand-troll';
+        ENEMY_ANIMATED_RIGHT_LEG = ' take-damage_rightLeg';
+        ENEMY_ANIMATED_LEFT_LEG = ' take-damage_leftLeg';
+      break;
       default:
     }
-    Enemy.addSound('attack');
-  }
-
-  async addAnimationTakeDamage() {
-    $('.enemy-head').removeClass('activeHead');
-    $('.enemy-body').addClass('take-damage_body');
-    $('.enemy-rightLeg').addClass('take-damage_rightLeg');
-    $('.enemy-leftLeg').addClass('take-damage_leftLeg');
-    switch (this.newMonster) {
-      case 1:
-        $('.enemy-head').addClass('take-damage_head');
-        $('.enemy-rightHand').addClass('take-damage_rightHand');
-        $('.enemy-leftHand').addClass('take-damage_leftHand');
-        break;
-      case 2:
-        $('.enemy-head').addClass('take-damage_head');
-        $('.enemy-rightHand').addClass('take-damage_rightHand-orc');
-        $('.enemy-leftHand').addClass('take-damage_leftHand');
-        $('.enemy-weapon').addClass('take-damage-weapon-orc');
-        break;
-      case 3:
-        $('.enemy-head').addClass('take-damage_head-troll');
-        $('.enemy-rightHand').addClass('take-damage-rightHand-troll');
-        $('.enemy-leftHand').addClass('take-damage-leftHand-troll');
-        break;
-      default:
-    }
-    Enemy.addSound('takeDamage');
+    this.addSound('takeDamage');
     await pause(500);
-    $('.enemy-head').addClass('activeHead');
+    this.props.enemyTakeDamage('', 0);
+    this.props.resetResultBattle('')
   }
 
-  static removeAnimationTakeDamage() {
-    $('.enemy-body').removeClass('take-damage_body');
-    $('.enemy-rightLeg').removeClass('take-damage_rightLeg');
-    $('.enemy-leftLeg').removeClass('take-damage_leftLeg');
-    $('.enemy-rightHand').removeClass('take-damage_rightHand');
-    $('.enemy-leftHand').removeClass('take-damage_leftHand');
-    $('.enemy-rightHand').removeClass('take-damage_rightHand-orc');
-    $('.enemy-leftHand').removeClass('take-damage_leftHand');
-    $('.enemy-weapon').removeClass('take-damage-weapon-orc');
-    $('.enemy-rightHand').removeClass('take-damage-rightHand-troll');
-    $('.enemy-leftHand').removeClass('take-damage-leftHand-troll');
+  resetAnimation = () => {
+    switch (this.props.enemyMonsterBody) {
+      case 1:
+        ENEMY_ANIMATED_HEAD = '';
+        ENEMY_ACTIVE_HEAD = ' activeHead';
+        ENEMY_ANIMATED_BODY = '';
+        ENEMY_ANIMATED_RIGHT_HAND = '';
+        ENEMY_ANIMATED_LEFT_HAND = '' ;
+        ENEMY_ANIMATED_RIGHT_LEG = '' ;
+        ENEMY_ANIMATED_LEFT_LEG = '';
+      break; 
+      case 2:
+        ENEMY_ANIMATED_HEAD = '';
+        ENEMY_ACTIVE_HEAD = ' activeHead';
+        ENEMY_ANIMATED_BODY = '';
+        ENEMY_ANIMATED_RIGHT_HAND = '';
+        ENEMY_ANIMATED_LEFT_HAND = '' ;
+        ENEMY_ANIMATED_RIGHT_LEG = '' ;
+        ENEMY_ANIMATED_LEFT_LEG = '';
+        ENEMY_ORC_ANIMATED_WEAPON = '';
+      break;
+      case 3:
+        ENEMY_ANIMATED_HEAD = '';
+        ENEMY_ACTIVE_HEAD = ' activeHead';
+        ENEMY_ANIMATED_BODY = '';
+        ENEMY_ANIMATED_RIGHT_HAND = '';
+        ENEMY_ANIMATED_LEFT_HAND = '' ;
+        ENEMY_ANIMATED_RIGHT_LEG = '' ;
+        ENEMY_ANIMATED_LEFT_LEG = '';
+     break; 
+      default:
+    }
   }
 
-  static removeAnimationAttack() {
-    $('.enemy-rightHand').removeClass('enemy-attack_rightHand');
-    $('.enemy-leftHand').removeClass('enemy-attack_leftHand');
-    $('.enemy-rightHand').removeClass('enemy-attack-rightHand-orc');
-    $('.enemy-leftHand').removeClass('enemy-attack-leftHand-orc');
-    $('.enemy-weapon').removeClass('enemy-attack-weapon-orc');
-    $('.enemy-rightHand').removeClass('enemy-attack_rightHand-troll');
-    $('.enemy-leftHand').removeClass('enemy-attack_leftHand-troll');
-  }
-
-  static removeAnimations() {
-    Enemy.removeAnimationAttack();
-    Enemy.removeAnimationTakeDamage();
-  }
-
-  static addSound(name) {
+  addSound = (name) => {
     const attack = new Audio(`${enemySoundAttack}`);
     const takeDamage = new Audio(`${enemySoundTakeDamage}`);
     switch (name) {
@@ -191,4 +148,57 @@ export default class Enemy {
       default:
     }
   }
+
+  chooseMonster = () => {
+    switch (this.props.enemyMonsterBody) {
+      case 1:
+        return (
+          <div className='conteiner'>
+            <img src={enemyOneHead} alt="enemyBody" className={'enemy-head' + (ENEMY_ACTIVE_HEAD) + (ENEMY_ANIMATED_HEAD)} />
+            <img src={enemyOneBody} alt="enemyBody" className={'enemy-body' + (ENEMY_ANIMATED_BODY)} />
+            <img src={enemyOneRightHand} alt="enemyBody" className={'enemy-rightHand' + (ENEMY_ANIMATED_RIGHT_HAND)} />
+            <img src={enemyOneLeftHand} alt="enemyBody" className={'enemy-leftHand' + (ENEMY_ANIMATED_LEFT_HAND)} />
+            <img src={enemyOneRightLeg} alt="enemyBody" className={'enemy-rightLeg' + (ENEMY_ANIMATED_RIGHT_LEG)} />
+            <img src={enemyOneLeftLeg} alt="enemyBody" className={'enemy-leftLeg' + (ENEMY_ANIMATED_LEFT_LEG)} />
+          </div>
+        )
+      case 2:
+        return (
+          <div className='conteiner'>
+            <img src={enemyTwoHead} alt="enemyBody" className={'enemy-head' + (ENEMY_ACTIVE_HEAD)  + (ENEMY_ANIMATED_HEAD)} />
+            <img src={enemyTwoBody} alt="enemyBody" className={'enemy-body' + (ENEMY_ANIMATED_BODY)} />
+            <img src={enemyTwoRightHand} alt="enemyBody" className={'enemy-rightHand orc' + (ENEMY_ANIMATED_RIGHT_HAND)} />
+            <img src={enemyTwoLeftHand} alt="enemyBody"  className={'enemy-leftHand orc' + (ENEMY_ANIMATED_LEFT_HAND)} />
+            <img src={enemyTwoRightLeg} alt="enemyBody" className={'enemy-rightLeg orc' + (ENEMY_ANIMATED_RIGHT_LEG)} />
+            <img src={enemyTwoLeftLeg} alt="enemyBody" className={'enemy-leftLeg orc' + (ENEMY_ANIMATED_LEFT_LEG)} />
+            <img src={enemyTwoWeapon} alt="enemyBody" className={'enemy-weapon orc' + (ENEMY_ORC_ANIMATED_WEAPON)} />
+          </div>
+        )
+      case 3:
+      return (
+        <div className='conteiner'>
+            <img src={enemyThreeHead} alt="enemyBody" className={'enemy-head troll' + (ENEMY_ACTIVE_HEAD) + (ENEMY_ANIMATED_HEAD)} />
+            <img src={enemyThreeBody} alt="enemyBody" className={'enemy-body' + (ENEMY_ANIMATED_BODY)} />
+            <img src={enemyThreeRightHand} alt="enemyBody" className={'enemy-rightHand troll' + (ENEMY_ANIMATED_RIGHT_HAND)} />
+            <img src={enemyThreeLeftHand} alt="enemyBody" className={'enemy-leftHand troll' + (ENEMY_ANIMATED_LEFT_HAND)} />
+            <img src={enemyThreeRightLeg} alt="enemyBody" className={'enemy-rightLeg' + (ENEMY_ANIMATED_RIGHT_LEG)} />
+            <img src={enemyThreeLeftLeg} alt="enemyBody" className={'enemy-leftLeg' + (ENEMY_ANIMATED_LEFT_LEG)} />
+        </div>
+        )
+      default:
+    }
+  }
+  render() {
+    if (this.props.enemyTakeDamageState === 'take') {
+      this.takeDamageAnimation();
+    } else if (this.props.resultBattle === 'enemyAttack') {
+      this.attackAnimation();
+    } else if (this.props.resultBattle === '') {
+      this.resetAnimation();
+    }
+    return (
+      <>
+        <div className='enemy-Model'>{this.chooseMonster(1)}</div>
+      </>
+    )}
 }

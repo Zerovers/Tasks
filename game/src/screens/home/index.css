@@ -28,6 +28,15 @@
   }
 }
 
+body {
+  margin: 0;
+  height: 969px;
+}
+
+.app-root {
+  height: 100%;
+}
+
 .landing-page header {
   font-size: 24px;
   background-image: url('images/background_home_header.jpg');

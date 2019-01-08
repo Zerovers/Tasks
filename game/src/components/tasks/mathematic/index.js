@@ -1,74 +1,65 @@
 import './index.css';
-import htmlMath from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  ATTACK_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-let inputValue;
-const html = $(htmlMath);
-const INPUT_MATH = '#math-form__input';
-export default class MathTask {
-  static render(data) {
-    const [
-      firstNumber,
-      secondNumber,
-      outSign,
-      result,
-    ] = [
-      data.mathData.firstNumber,
-      data.mathData.secondNumber,
-      data.mathData.outsign,
-      data.mathResult,
-    ];
-    $(ATTACK_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(INPUT_MATH).val('').focus();
-    html.find('.math-content__operations').html(`${firstNumber} ${outSign} ${secondNumber} = <span>?</span>`);
-    html.find('.math-form').submit(() => {
-      MathTask.getAnswerTask(result);
-      return false;
-    });
+export default class MathTask extends React.Component {
+  state = {
+    inputValue: '',
+    firstNumber: this.props.taskData.mathData.firstNumber,
+    secondNumber: this.props.taskData.mathData.secondNumber,
+    outSign: this.props.taskData.mathData.outsign,
+    result: this.props.taskData.mathResult,
   }
 
-  static getMathOperation(firstNumber, secondNumber, outSign) {
-    const operation = outSign;
-    let result = 0;
-    switch (operation) {
-      case '-':
-        result = firstNumber - secondNumber;
-        break;
-      case '+':
-        result = firstNumber + secondNumber;
-        break;
-      case '*':
-        result = firstNumber * secondNumber;
-        break;
-      case '/':
-        result = Math.round(firstNumber / secondNumber);
-        break;
-      default:
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value,
+     });
+  }
+
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
     }
-    return result;
-  }
-
-  static deleteTask() {
-    html.remove();
-  }
-
-  static async getAnswerTask(result) {
-    inputValue = $(INPUT_MATH).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    if (inputValue === `${result}`) {
-      MathTask.deleteTask();
-      BattleArena.startBattle('attack', 'true', 'frostbolt');
+    if(this.state.inputValue + '' === this.state.result + '') {
+      this.props.resultBattle('playerAttack', 'frostbolt')
+      this.props.selectAction('')
     } else {
-      MathTask.deleteTask();
-      BattleArena.startBattle('attack', 'false');
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
     }
+    e.preventDefault();
   }
+
+  onInputSubmit = (e) => {
+    if(this.state.inputValue + '' === this.state.result + '') {
+      this.props.resultBattle('playerAttack', 'frostbolt')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+  
+  render() {
+    return (
+      <>
+      <div className='math-content'>
+      <p className='math-content__operations'>{this.state.firstNumber + ' ' + this.state.outSign + ' ' + this.state.secondNumber} = <span>?</span></p>
+        <form className='math-form' onSubmit={this.onInputSubmit}>
+          <input 
+          type='number'
+          id='math-form__input'
+          autoFocus
+          autoComplete='off'
+          required minLength='1'
+          value={this.state.inputValue}
+          onChange={this.onInputChange}
+          onKeyPress={this.onKeyPress}
+          />
+          <button id='math-form__button'>Ответить</button>
+        </form>
+      </div>
+      </>
+    )}
 }

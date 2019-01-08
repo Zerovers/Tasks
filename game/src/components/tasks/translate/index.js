@@ -1,49 +1,75 @@
 import './index.css';
-import htmlTranslate from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  ATTACK_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlTranslate);
-const TRANSLATE_INPUT = '#translate-form__input';
-export default class TranslateTask {
-  static render(data) {
-    const [rndKeys, result] = [data.rndKeys, data.answer];
-    $(ATTACK_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(TRANSLATE_INPUT).val('').focus();
-    html.find('.translate-content__text').html(`Переведите <span>${rndKeys}</span>`);
-    html.find('#translate-form').submit(() => {
-      TranslateTask.getAsnwerTask(result);
-      return false;
-    });
+export default class TranslateTask extends React.Component {
+  state = {
+    inputValue: '',
+    taskData: this.props.taskData.rndKeys,
+    taskAnswer: this.props.taskData.answer,
   }
 
-  static deleteTask() {
-    html.remove();
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value,
+     });
   }
 
-  static async getAsnwerTask(result) {
-    const inputValue = $(TRANSLATE_INPUT).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
+    }
     let count = 0;
-    const translateAnswer = inputValue.toLowerCase();
-    for (let i = 0; i < result.length; i += 1) {
-      if (translateAnswer === result[i]) {
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
         count += 1;
       }
     }
-    if (count > 0) {
-      TranslateTask.deleteTask();
-      BattleArena.startBattle('attack', 'true', 'shadowbolt');
+    if(count > 0) {
+      this.props.resultBattle('playerAttack', 'shadowbolt')
+      this.props.selectAction('')
     } else {
-      TranslateTask.deleteTask();
-      BattleArena.startBattle('attack', 'false');
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
     }
+    e.preventDefault();
   }
-}
+
+  onInputSubmit = (e) => {
+    let count = 0;
+    for (let i = 0; i < this.state.taskAnswer.length; i += 1) {
+      if (this.state.inputValue === this.state.taskAnswer[i]) {
+        count += 1;
+      }
+    }
+    if(count > 0) {
+      this.props.resultBattle('playerAttack', 'shadowbolt')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack', '')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+      <div className='translate-content'>
+        <p className='translate-content__text'>Переведите <span>{this.state.taskData}</span></p>
+        <form id='translate-form' onSubmit={this.onInputSubmit}>
+          <input
+          type='text'
+          id='translate-form__input'
+          autoFocus
+          autoComplete='off'
+          required minLength='1'
+          value={this.state.inputValue}
+          onChange={this.onInputChange}
+          onKeyPress={this.onKeyPress}
+          />
+          <button id='translate-form__button'>Ответить</button>
+        </form>
+      </div>
+    )
+  }
+} 
+    

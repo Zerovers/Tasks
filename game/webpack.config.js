@@ -5,17 +5,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 
 module.exports = {
-  entry: './src/screens/home/index.js',
+  entry: './src/screens/route/index.js',
   output: {
-    path: path.join(__dirname, './dist'),
-    filename: 'app.bundle.js',
+    path: path.join(__dirname, './dist/react'),
+    filename: 'react-app.bundle.js',
   },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
     }),
     new HtmlWebpackPlugin({
-      template: './src/screens/home/index.html',
+      template: './src/screens/route/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: './index.css',

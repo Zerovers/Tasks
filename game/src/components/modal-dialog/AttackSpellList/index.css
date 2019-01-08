@@ -1,0 +1,173 @@
+.attack__spells__list {
+  width: 500px;
+  height: 380px;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: -550px;
+  background-color: white;
+  z-index: 110;
+  border-radius: 30px;
+}
+
+.spell-sort {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none
+}
+
+.spell-sort:hover {
+  border: 2px solid red;
+}
+
+.spell-sort:focus {
+  border: 2px solid red;
+}
+
+.spell-sort:focus::before, .spell-sort:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-math {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-math:hover {
+  border: 2px solid red;
+}
+
+.spell-math:focus {
+  border: 2px solid red;
+}
+
+.spell-math:focus::before, .spell-math:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-comparison {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-comparison:hover {
+  border: 2px solid red;
+}
+
+.spell-comparison:focus {
+  border: 2px solid red;
+}
+
+.spell-comparison:focus::before, .spell-comparison:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+.spell-sequence {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-sequence:hover {
+  border: 2px solid red;
+}
+
+.spell-sequence:focus {
+  border: 2px solid red;
+}
+
+.spell-sequence:focus::before, .spell-sequence:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}
+
+
+.spell-translate {
+  width: 270px;
+  height: 50px;
+  border: 1px solid black;
+  margin: auto;
+  text-align: center;
+  line-height: 50px;
+  font-size: 22px;
+  background-color: rgb(144, 177, 247);
+  position: relative;
+  outline: none;
+}
+
+.spell-translate:hover {
+  border: 2px solid red;
+}
+
+.spell-translate:focus {
+  border: 2px solid red;
+}
+
+.spell-translate:focus::before, .spell-translate:hover::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F105";
+  color: rgba(214, 61, 61, 0.842);
+  position: absolute;
+  left: -28px;
+  font-size: 44px;
+  line-height: 44px;
+}

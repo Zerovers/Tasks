@@ -1,43 +1,68 @@
 import './index.css';
-import htmlCompasion from './index.html';
-import BattleArena from '../../../screens/battle';
-import {
-  BUTTON_START_FIGHT,
-  SHADOW_FRAME,
-  MAIN_BODY,
-  ATTACK_SPELL_LIST,
-} from '../../../constant';
+import React from 'react';
 
-const html = $(htmlCompasion);
-const COMPARISON_INPUT = '#comparison-form__input';
-export default class ComparisonTask {
-  static render(data) {
-    const [firstNumber, secondNumber] = [data.firstNumber, data.secondNumber];
-    const result = data.sign;
-    $(ATTACK_SPELL_LIST).remove();
-    $(MAIN_BODY).append(html);
-    html.find(COMPARISON_INPUT).val('').focus();
-    html.find('.comparison-content__operations').html(`${firstNumber} <span style="color: red">?</span> ${secondNumber}`);
-    html.find('.comparison-form').submit(() => {
-      ComparisonTask.getAnswerTask(result);
-      return false;
-    });
-  }
-
-  static deleteTask() {
-    html.remove();
-  }
-
-  static async getAnswerTask(result) {
-    const inputValue = $(COMPARISON_INPUT).val();
-    $(SHADOW_FRAME).css('display', 'none');
-    $(BUTTON_START_FIGHT).prop('disabled', false);
-    if (inputValue === `${result}`) {
-      ComparisonTask.deleteTask();
-      BattleArena.startBattle('attack', 'true', 'fireball');
-    } else {
-      ComparisonTask.deleteTask();
-      BattleArena.startBattle('attack', 'false');
-    }
-  }
+let spanStyle = {
+  color: 'red',
 }
+let sign = { first: '>', second: '<', third: '=' };
+export default class ComparisonTask extends React.Component {
+  state = {
+    inputValue: '',
+    firstNumber: this.props.taskData.comparisonData.firstNumber,
+    secondNumber: this.props.taskData.comparisonData.secondNumber,
+    result: this.props.taskData.comparisonData.sign,
+  }
+
+  onInputChange = (e) => {
+    this.setState({ 
+      inputValue: e.target.value,
+     });
+  }
+
+  onKeyPress = (e) => {
+    if(e.key !== 'Enter') {
+      return;
+    }
+    if(this.state.inputValue + '' === this.state.result + '') {
+      this.props.resultBattle('playerAttack', 'fireball')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  onInputSubmit = (e) => {
+    if(this.state.inputValue + '' === this.state.result + '') {
+      this.props.resultBattle('playerAttack', 'fireball')
+      this.props.selectAction('')
+    } else {
+      this.props.resultBattle('enemyAttack')
+      this.props.selectAction('')
+    }
+    e.preventDefault();
+  }
+
+  render() {
+    return (
+        <div className='comparison-content'>
+          <p className='comparison-content__operations'>{this.state.firstNumber + ' '}<span style={spanStyle}>?</span> {this.state.secondNumber}</p>
+          <p className='comparison-content__text'>Какой знак <span> {sign.first} </span> <span> {sign.third} </span> <span> {sign.second} </span> здесь нужен?</p>
+            <form className='comparison-form' onSubmit={this.onInputSubmit}>
+              <input 
+              type='text'
+              id='comparison-form__input'
+              placeholder='Введите ответ'
+              autoFocus
+              autoComplete='off'
+              required minLength='1'
+              value={this.state.inputValue}
+              onChange={this.onInputChange}
+              onKeyPress={this.onKeyPress}
+               />
+              <button id='comparison-form__button'>Ответить</button>
+            </form>
+        </div>
+      )}
+  }
