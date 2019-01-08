@@ -19,8 +19,16 @@ const _ = require('lodash');
 
 let player;
 let monster;
+let LOADER = 0;
 const html = $(htmlbattle);
 export default class BattleArena {
+  static checkLoader() {
+    LOADER += 1;
+    if (LOADER === 2) {
+      $('.loading-game').remove();
+    }
+  }
+
   static render(data) {
     $(MAIN_BODY).html('');
     $(MAIN_BODY).append(html);
@@ -32,7 +40,6 @@ export default class BattleArena {
     ${names.thirdName[_.random(0, names.thirdName.length - 1)]}`, 100);
     Player.renderBody();
     monster.renderBody();
-    $(document).ready(() => { $('.loading-game').remove(); });
     $(BUTTON_START_FIGHT).on('click', async () => { BattleArena.startFight(); });
   }
 

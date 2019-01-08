@@ -1,4 +1,5 @@
 import './index.css';
+import BattleArena from '../../screens/battle';
 import enemyOneHead from './image/monster_1/monster_1_head.png';
 import enemyOneBody from './image/monster_1/monster_1_body.png';
 import enemyOneRightHand from './image/monster_1/monster_1_rightHand.png';
@@ -95,6 +96,7 @@ export default class Enemy {
         break;
       default:
     }
+    BattleArena.checkLoader();
   }
 
   addAnimationAttack() {

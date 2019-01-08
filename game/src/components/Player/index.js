@@ -1,5 +1,6 @@
 import './index.css';
 import pause from '../../utility/pause';
+import BattleArena from '../../screens/battle';
 
 import playerHead from './image/player_head.png';
 import playerBody from './image/player_body.png';
@@ -67,7 +68,7 @@ export default class Player {
     this.indicationHp();
   }
 
-  static renderBody() {
+  static async renderBody() {
     $(PLACE_PLAYER_IN_BATTLE_ARENA)
       .append(`<img src="${playerBody}" alt="mageBody" class="mage-body">`)
       .append(`<img src="${playerHead}" alt="mageBody" class="mage-head activeHead">`)
@@ -84,6 +85,7 @@ export default class Player {
       .append(`<img src="${playerSpellArcaneMissile}" alt="spell_arcanemissle" class="spell arcanemissile">`)
       .append(`<img src="${playerSpellShadowbolt}" alt="spell_shadowbolt" class="spell shadowbolt">`)
       .append(`<img src="${playerSpellHealAura}" alt="spell_heal" class="heal">`);
+    BattleArena.checkLoader();
   }
 
   static async addAnimationAttack(name) {
