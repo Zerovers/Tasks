@@ -96,7 +96,7 @@ export default class Player extends React.Component {
     MAGE_WEAPON = 'mage-weapon mage-take-damage_weapon';
     this.addSound('takeDamage')
     await pause(500);
-    this.props.playerTakeDamage('', 20);
+    this.props.playerTakeDamage('', 50);
     this.props.resetResultBattle('');
   }
 

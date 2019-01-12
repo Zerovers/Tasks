@@ -2,6 +2,7 @@ import './index.css';
 import React from 'react';
 import { withRouter } from "react-router-dom";
 import { HashLink as Link } from 'react-router-hash-link';
+import TableScore from '../score/index';
 
 import './images/background_home_header.jpg';
 import './images/background_footer_home.jpg';
@@ -17,24 +18,41 @@ import './images/screenshoot_game6.jpg';
 
 
 class HomeScreen extends React.Component {
+  state = {
+    tableScore: false,
+  }
+
+  closeTableScore = () => {
+    this.setState({ tableScore: false })
+  }
+
   render() {
+    let tableScore = null;
+    if (this.state.tableScore === true) {
+      tableScore = <TableScore closeTableScore={this.closeTableScore}/>
+    }
     return(
+      <>
+      {tableScore}
       <div className='landing-page' id='Game'>
           <header>
             <div className='header__nav'>
               <nav>
                 <ul>
-                  <Link to="/BattleForTorezanReact#Game">Играть</Link>
-                  <Link to="/BattleForTorezanReact#History">История</Link>
-                  <Link to="/BattleForTorezanReact#Screenshoots">Скриншоты</Link>
-                  <Link to="/BattleForTorezanReact#Contact">Контакты</Link>
-                  <li className='landing-page__table-score'>Рекорды</li>
+                  <Link to="/#Game">Играть</Link>
+                  <Link to="/#History">История</Link>
+                  <Link to="/#Screenshoots">Скриншоты</Link>
+                  <Link to="/#Contact">Контакты</Link>
+                  <li className='landing-page__table-score' onClick={ () => {
+                    this.setState({ tableScore: true });
+                  }
+                  }>Рекорды</li>
                 </ul>
               </nav>
             </div>
             <div className='header__content'>
               <h1>Битва за Торезан</h1>
-              <Link to='/BattleForTorezanReact/login'><button id='landing-page__button'>Играть</button></Link>
+              <Link to='/login'><button id='landing-page__button'>Играть</button></Link>
             </div>
           </header>
           <div className='landing-page__history' id='History'>
@@ -61,6 +79,7 @@ class HomeScreen extends React.Component {
           <p><a href='https://github.com/Zerovers'>by Dmitry Kravtsov <i className="fab fa-github"></i></a></p>
         </footer>
       </div>
+      </>
     )
   }
 }

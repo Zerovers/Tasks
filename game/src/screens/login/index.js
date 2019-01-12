@@ -21,13 +21,13 @@ class LoginScreen extends React.Component {
     }
     e.preventDefault();
     this.props.selectPlayerName(this.state.inputValue);
-    this.props.history.push('/BattleForTorezanReact/BattleArena');
+    this.props.history.push('/BattleArena');
   }
 
   onInputSubmit = (e) => {
     e.preventDefault();
     this.props.selectPlayerName(this.state.inputValue);
-    this.props.history.push('/BattleForTorezanReact/BattleArena');
+    this.props.history.push('/BattleArena');
   }
 
 

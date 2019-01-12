@@ -6,6 +6,7 @@ import Enemy from '../../components/Enemy';
 import AttackSpellList from '../../components/modal-dialog/AttackSpellList';
 import HealSpellList from '../../components/modal-dialog/HealSpellList';
 import selectTasks from '../../components/utility/selectTasks';
+import TableScore from '../score/index';
 import pause from '../../components/utility/pause';
 import { withRouter } from "react-router-dom";
 
@@ -34,6 +35,7 @@ class BattleArena extends React.Component {
     enemyTakeDamage: '',
     countMonsters: 0,
     spellName: '',
+    playerDie: false,
   };
 
   ChoiceSpells = () => {
@@ -62,7 +64,6 @@ class BattleArena extends React.Component {
       await pause(500);
       this.renderNewMonster();
     }
-    $('.enemy-hp span').css('width', `${this.state.enemyHp * 5}px`);
   }
 
   renderNewMonster = () => {
@@ -77,7 +78,9 @@ class BattleArena extends React.Component {
 
   playerTakeDamage = (result, hp) => {
     this.setState({ playerTakeDamage: result, playerHp: this.state.playerHp - hp})
-    $('.player-hp > span').css('width', `${this.state.playerHp * 5}px`);
+    if (this.state.playerHp === 0) {
+      this.setState({ stateBattle: 'gameOver' });
+    }
   }
 
   playerHealing = () => {
@@ -85,8 +88,19 @@ class BattleArena extends React.Component {
     if (this.state.playerHp >= 100) {
       this.setState({ playerHp: 100 });
     }
-    $('.player-hp > span').css('width', `${this.state.playerHp * 5}px`);
     $('.heal').css('visibility', 'hidden');
+  }
+
+  resetGame = () => {
+    this.setState({
+      playerHp: 100,
+      enemyHp: 100,
+      enemyName: `${enemyNames.firstName[_.random(0, enemyNames.firstName.length - 1)]} 
+      ${enemyNames.secondName[_.random(0, enemyNames.secondName.length - 1)]} 
+      ${enemyNames.thirdName[_.random(0, enemyNames.thirdName.length - 1)]}`,
+      countMonsters: 0,
+      stateBattle: '',
+    });
   }
 
   render() {
@@ -103,7 +117,15 @@ class BattleArena extends React.Component {
       modal = <AttackSpellList selectAction={this.selectAction} selectTask={this.selectTask} />
     } else if (stateBattle === 'selectTask') {
       modal = selectTasks(this.state.taskName, { selectAction, resultBattle })
-    } 
+    }  else if(stateBattle === 'gameOver') {
+      modal = <TableScore 
+        playerName={this.state.playerName}
+        countMonsters={this.state.countMonsters} 
+        stateBattle={this.state.stateBattle}
+        resetResultBattle={this.resultBattle}
+        resetGame={this.resetGame}
+      />
+    }
     console.log(this.state.resultBattle);
     return (
         <div className='battleArena-background'>
@@ -112,13 +134,13 @@ class BattleArena extends React.Component {
           <div className='player'>
             <p className='player-name'>{this.state.playerName}</p>
             <div className='player-hp'>
-              <span ></span>
+              <span style={{width: (this.state.playerHp * 5) + 'px'}}></span>
             </div>
           </div>
           <div className='enemy'>
             <p className='enemy-name'>{this.state.enemyName}</p>
             <div className='enemy-hp'>
-              <span></span>
+              <span style={{width: (this.state.enemyHp * 5) + 'px'}}></span>
             </div>
           </div>
         </div>
@@ -149,4 +171,3 @@ class BattleArena extends React.Component {
   }
 }
 export default withRouter(BattleArena);
-// render(<BattleArena />, document.querySelector('.app-root'));

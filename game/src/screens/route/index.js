@@ -18,9 +18,9 @@ class App extends React.Component {
     return (  
       <Router>
         <Switch>
-          <Route exact path='/BattleForTorezanReact/login' component={() => <LoginScreen selectPlayerName={this.selectPlayerName} />} />
-          <Route exact path='/BattleForTorezanReact/BattleArena' component={() => <BattleArena playerName={this.state.playerName} />} />
-          <Route exact path='/BattleForTorezanReact' component={ () => <HomeScreen />} />
+          <Route exact path='/login' component={() => <LoginScreen selectPlayerName={this.selectPlayerName} />} />
+          <Route exact path='/BattleArena' component={() => <BattleArena playerName={this.state.playerName} />} />
+          <Route exact path='/' component={ () => <HomeScreen />} />
         </Switch>
       </Router>
     )
