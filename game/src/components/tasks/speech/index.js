@@ -1,6 +1,6 @@
 import './index.css';
 import React from 'react';
-import pause from '../../utility/pause'
+import pause from '../../../utility/pause'
 
 let voices = speechSynthesis.getVoices();
 export default class SpeechTask extends React.Component {

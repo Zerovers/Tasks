@@ -1,6 +1,6 @@
 import './index.css';
 import React from 'react';
-import pause from '../utility/pause'
+import pause from '../../utility/pause';
 
 import playerHead from './image/player_head.png';
 import playerBody from './image/player_body.png';

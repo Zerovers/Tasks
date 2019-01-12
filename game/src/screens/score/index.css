@@ -91,7 +91,7 @@ tr:nth-child(2n+1) {
 
 .state-loading {
   position: absolute;
-  top: 289px;
+  top: 70px;
   width: 100%;
   z-index: 1000;
 }

@@ -1,6 +1,6 @@
 import './index.css';
 import React from 'react';
-import pause from '../utility/pause'
+import pause from '../../utility/pause';
 import enemySoundAttack from './sounds/enemy_attack.wav';
 import enemySoundTakeDamage from './sounds/enemy_take_damage.wav';
 

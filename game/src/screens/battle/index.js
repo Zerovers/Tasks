@@ -5,9 +5,9 @@ import Player from '../../components/Player';
 import Enemy from '../../components/Enemy';
 import AttackSpellList from '../../components/modal-dialog/AttackSpellList';
 import HealSpellList from '../../components/modal-dialog/HealSpellList';
-import selectTasks from '../../components/utility/selectTasks';
+import selectTasks from '../../utility/selectTasks';
 import TableScore from '../score/index';
-import pause from '../../components/utility/pause';
+import pause from '../../utility/pause';
 import { withRouter } from "react-router-dom";
 
 import './image/background_battleZone.jpg';
