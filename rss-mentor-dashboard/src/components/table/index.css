@@ -1,0 +1,30 @@
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 75px auto 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+td,tr,th {
+  height: 21px;
+  font-size: 19px;
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid black;
+}
+
+thead th {
+  min-width: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}

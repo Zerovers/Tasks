@@ -6,12 +6,12 @@
       "taskStatus": "Checked"
     },
     {
-      "taskName": "Code Jam \"CoreJS\" ",
+      "taskName": "Code Jam \"CoreJS\"",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-corejs.md",
       "taskStatus": "Checked"
     },
     {
-      "taskName": "Code Jam \"DOM, DOM Events\" ",
+      "taskName": "Code Jam \"DOM, DOM Events\"",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-notification.md",
       "taskStatus": "Checked"
     },
@@ -21,7 +21,7 @@
       "taskStatus": "Checking"
     },
     {
-      "taskName": "RS Activist - ",
+      "taskName": "RS Activist",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/rs-school-activist.md",
       "taskStatus": "In Progress"
     },
@@ -31,7 +31,7 @@
       "taskStatus": "Checking"
     },
     {
-      "taskName": "CodeJam \"Scoreboard\"",
+      "taskName": "Code Jam \"Scoreboard\"",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-scoreboard.md",
       "taskStatus": "Checking"
     },
@@ -39,6 +39,11 @@
       "taskName": "Game",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/game.md",
       "taskStatus": "In Progress"
+    },
+    {
+      "taskName": "Presentation",
+      "taskLink": "",
+      "taskStatus": "Checking"
     },
     {
       "taskName": "Course work",
@@ -50,10 +55,9 @@
     {
       "mentorName": "Sergey Maksimuk",
       "countStudent": 10,
-      "mentorGitName": "https://github.com/maximuk",
+      "mentorGitName": "maximuk",
       "studentsList": {
         "andrei-oksentyk": {
-          "gitLink": "https://github.com/andrei-oksentyk",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -64,11 +68,9 @@
         },
         "wertybsd": {},
         "halaveika": {
-          "gitLink": "https://github.com/halaveika",
           "Code Jam \"CV\"": "check"
         },
         "liodama": {
-          "gitLink": "https://github.com/liodama",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -80,50 +82,63 @@
         },
         "alexey-1991": {},
         "fyr-fyrrr": {
-          "gitLink": "https://github.com/fyr-fyrrr",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check"
         },
         "redgektor": {
-          "gitLink": "https://github.com/redgektor",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "alexdejko": {
-          "gitLink": "https://github.com/alexdejko",
           "Code Jam \"CV\"": "check"
         },
         "alenashkr": {
-          "gitLink": "https://github.com/AlenaShkr",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check"
         },
-        "uniapi": {}
+        "uniapi": {},
+        "remziq": {
+          "Markup #1": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Code Jam \"Scoreboard\"": "check",
+          "Presentation": "check"
+        },
+        "temons": {
+          "Code Jam \"CoreJS\"": "check"
+        },
+        "sozonikoleg": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check",
+          "Presentation": "check"
+        }
       }
     },
     {
       "mentorName": "Aliaksandr Zayats",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/alex-zayats",
+      "mentorGitName": "alex-zayats",
       "studentsList": {
         "uniorunr": {
-          "gitLink": "https://github.com/uniorunr",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "alexeydavydov": {},
         "melllivoracapensis": {
-          "gitLink": "https://github.com/MelllivoraCapensis",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "soulshaker": {
-          "gitLink": "https://github.com/SoulShaker",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         }
@@ -132,12 +147,11 @@
     {
       "mentorName": "Akiaksandr Zahorski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/AliaksandrZahorski",
+      "mentorGitName": "AliaksandrZahorski",
       "studentsList": {
         "grenbork": {},
         "bananovblu": {},
         "bmvmarc": {
-          "gitLink": "https://github.com/bmvmarc",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
@@ -152,10 +166,9 @@
     {
       "mentorName": "Siarhei Prystauka",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Pristavka",
+      "mentorGitName": "Pristavka",
       "studentsList": {
         "jamadamur": {
-          "gitLink": "https://github.com/jamadamur",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -165,12 +178,18 @@
         "tsvetlanak": {},
         "alehdzmitrenka": {},
         "dzhudzhi": {
-          "gitLink": "https://github.com/dzhudzhi",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
+          "Presentation": "check"
+        },
+        "nataliasirotko": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         }
       }
@@ -178,10 +197,9 @@
     {
       "mentorName": "Dzianis Pryshchep",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/dpryshchep",
+      "mentorGitName": "dpryshchep",
       "studentsList": {
         "kira2023": {
-          "gitLink": "https://github.com/kira2023",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -189,7 +207,6 @@
           "YouTube": "check"
         },
         "vvsvintsitsky": {
-          "gitLink": "https://github.com/vvsvintsitsky",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -198,7 +215,6 @@
         },
         "molestador": {},
         "kiryllapouski": {
-          "gitLink": "https://github.com/KirylLapouski",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -209,17 +225,15 @@
     {
       "mentorName": "Aliaksandr Klimau",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/quantum-noise",
+      "mentorGitName": "quantum-noise",
       "studentsList": {
         "803142": {
-          "gitLink": "https://github.com/803142",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "YouTube": "check"
         },
         "0riac": {
-          "gitLink": "https://github.com/0riac",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -228,7 +242,6 @@
         },
         "terstuyahmaksim": {},
         "nickitasolovei": {
-          "gitLink": "https://github.com/NickitaSolovei",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -243,10 +256,9 @@
     {
       "mentorName": "Artsiom Haurylin",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/ahaurylin",
+      "mentorGitName": "ahaurylin",
       "studentsList": {
         "olgaluk": {
-          "gitLink": "https://github.com/olgaluk",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -262,10 +274,9 @@
     {
       "mentorName": "Elena Grebenchuk",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/elgrebenchuk",
+      "mentorGitName": "elgrebenchuk",
       "studentsList": {
         "andreiyasinski": {
-          "gitLink": "https://github.com/andreiyasinski",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -273,7 +284,6 @@
         },
         "duza": {},
         "anton23kirienko": {
-          "gitLink": "https://github.com/anton23kirienko",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -287,7 +297,7 @@
     {
       "mentorName": "Andrei Furs",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/yganda",
+      "mentorGitName": "yganda",
       "studentsList": {
         "ishelest": {},
         "yakgjen": {},
@@ -301,26 +311,28 @@
     {
       "mentorName": "Dzianis Bunchanka",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/DenisBun",
+      "mentorGitName": "DenisBun",
       "studentsList": {
         "kvinto1986": {
-          "gitLink": "https://github.com/Kvinto1986",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check"
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "maksimaliakhnovich": {
-          "gitLink": "https://github.com/maksimaliakhnovich",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "superorange": {},
         "yauheni23": {
-          "gitLink": "https://github.com/Yauheni23",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -332,15 +344,13 @@
     {
       "mentorName": "Rem Apasov",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/remapasov",
+      "mentorGitName": "remapasov",
       "studentsList": {
         "frol8612": {
-          "gitLink": "https://github.com/Frol8612",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "snowwe": {
-          "gitLink": "https://github.com/Snowwe",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
@@ -352,15 +362,13 @@
     {
       "mentorName": "Andrei Zhuk",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/Andrei-Zhuk",
+      "mentorGitName": "Andrei-Zhuk",
       "studentsList": {
         "torchik-slava": {
-          "gitLink": "https://github.com/torchik-slava",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "antihero": {
-          "gitLink": "https://github.com/AntiHero",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "RS Activist": "check",
@@ -369,27 +377,23 @@
         },
         "karpiyeniamv": {},
         "kirillzavorotni": {
-          "gitLink": "https://github.com/kirillzavorotni",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "makar1227": {
-          "gitLink": "https://github.com/makar1227",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "mudreuski": {
-          "gitLink": "https://github.com/Mudreuski",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "artkon": {
-          "gitLink": "https://github.com/artkon",
           "Code Jam \"CV\"": "check"
         }
       }
@@ -397,11 +401,10 @@
     {
       "mentorName": "Mikita Zhuikou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/Nikitzu",
+      "mentorGitName": "Nikitzu",
       "studentsList": {
         "felalag": {},
         "xixex": {
-          "gitLink": "https://github.com/xixex",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "YouTube": "check",
@@ -410,7 +413,6 @@
         },
         "bumble-bee83": {},
         "mikhama": {
-          "gitLink": "https://github.com/mikhama",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -421,7 +423,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "angryivan": {
-          "gitLink": "https://github.com/angryivan",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -434,10 +435,9 @@
     {
       "mentorName": "Aliaksei Zayats",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/alex-mnsk",
+      "mentorGitName": "alex-mnsk",
       "studentsList": {
         "kozyritskiy": {
-          "gitLink": "https://github.com/kozyritskiy",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -450,7 +450,6 @@
         "evamaster": {},
         "elenakhamitsevich": {},
         "nastyalo": {
-          "gitLink": "https://github.com/nastyalo",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -466,10 +465,9 @@
     {
       "mentorName": "Pavel Zaletski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/PavelZaletski",
+      "mentorGitName": "PavelZaletski",
       "studentsList": {
         "andddrews": {
-          "gitLink": "https://github.com/Andddrews",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -478,13 +476,11 @@
           "Presentation": "check"
         },
         "bref987": {
-          "gitLink": "https://github.com/bref987",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "sergey496": {
-          "gitLink": "https://github.com/sergey496",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -501,12 +497,11 @@
     {
       "mentorName": "Yana Zaitsava",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/yana95",
+      "mentorGitName": "yana95",
       "studentsList": {
         "mikhailmaniuk": {},
         "shakhnovapolina": {},
         "yana-bashtyk": {
-          "gitLink": "https://github.com/Yana-Bashtyk",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -515,7 +510,6 @@
           "Presentation": "check"
         },
         "olganaranovich": {
-          "gitLink": "https://github.com/OlgaNaranovich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -527,7 +521,7 @@
     {
       "mentorName": "Pavel Yukhnevich",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/tibmt",
+      "mentorGitName": "tibmt",
       "studentsList": {
         "kasiama": {},
         "magiccurlyhair": {},
@@ -535,20 +529,22 @@
         "ivankirsd": {},
         "argaitt": {},
         "danteboom": {
-          "gitLink": "https://github.com/DanteBoom",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
-        "passhub": {}
+        "passhub": {},
+        "abespolov": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check"
+        }
       }
     },
     {
       "mentorName": "Anton Yatskevich",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/a-yatskevich",
+      "mentorGitName": "a-yatskevich",
       "studentsList": {
         "mrdreaml": {
-          "gitLink": "https://github.com/mrDreaml",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -557,21 +553,18 @@
           "YouTube": "check"
         },
         "tsypolina": {
-          "gitLink": "https://github.com/TsyPolina",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
         "evgeniy121": {
-          "gitLink": "https://github.com/Evgeniy121",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "jadgptw": {
-          "gitLink": "https://github.com/Jadgptw",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -585,21 +578,26 @@
     {
       "mentorName": "Viktoriya Vorozhun",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/ViktoriyaVorozhun",
+      "mentorGitName": "ViktoriyaVorozhun",
       "studentsList": {
         "toxandreev": {},
         "evgeniyaverbiczkaya": {},
         "martikoscoder": {},
         "mayinmarch": {
-          "gitLink": "https://github.com/mayinmarch",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check"
         },
         "christina-ilyushonok": {
-          "gitLink": "https://github.com/Christina-Ilyushonok",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
+          "Code Jam \"CoreJS\"": "check"
+        },
+        "anna-pronovich": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Markup #1": "check",
+          "Presentation": "check",
           "Code Jam \"CoreJS\"": "check"
         }
       }
@@ -607,10 +605,9 @@
     {
       "mentorName": "Nikolai Verbitskii",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/NikolaiVerbitskii",
+      "mentorGitName": "NikolaiVerbitskii",
       "studentsList": {
         "shanhinpavel": {
-          "gitLink": "https://github.com/ShanhinPavel",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -619,7 +616,6 @@
           "Presentation": "check"
         },
         "igor82bv": {
-          "gitLink": "https://github.com/igor82bv",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -635,10 +631,9 @@
     {
       "mentorName": "Igor Tsialiuk",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/sijlver",
+      "mentorGitName": "sijlver",
       "studentsList": {
         "metre-ray": {
-          "gitLink": "https://github.com/Metre-Ray",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -654,23 +649,20 @@
     {
       "mentorName": "MIKITA TRUKHANAVETS",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/ntrukhanovets",
+      "mentorGitName": "ntrukhanovets",
       "studentsList": {
         "vanyatsar": {},
         "lordshtein": {},
         "ekoniuh": {},
         "evpodrezenko": {
-          "gitLink": "https://github.com/evpodrezenko",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "cruecer": {
-          "gitLink": "https://github.com/cruecer",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "annchapon": {
-          "gitLink": "https://github.com/annchapon",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         }
@@ -679,23 +671,20 @@
     {
       "mentorName": "Kiryl Tofan",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/KVtofan",
+      "mentorGitName": "KVtofan",
       "studentsList": {
         "thesheepman": {},
         "brokorenko": {
-          "gitLink": "https://github.com/brokorenko",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "vovakor1": {},
         "hentmire": {
-          "gitLink": "https://github.com/hentmire",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
           "Presentation": "check"
         },
         "rubahaguy": {
-          "gitLink": "https://github.com/rubahaguy",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check"
@@ -706,16 +695,14 @@
     {
       "mentorName": "Katsiaryna Tatarynovich",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/etatarinovich18",
+      "mentorGitName": "etatarinovich18",
       "studentsList": {
         "kaleniksasha": {
-          "gitLink": "https://github.com/kaleniksasha",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "ue4prog": {
-          "gitLink": "https://github.com/ue4prog",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -723,7 +710,6 @@
         },
         "sk1ngr0s": {},
         "alexshumansky": {
-          "gitLink": "https://github.com/alexshumansky",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -737,10 +723,9 @@
     {
       "mentorName": "Uladzislau Tarasenka",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/einfachvlad/",
+      "mentorGitName": "einfachvlad",
       "studentsList": {
         "aleksei-bulgak-study": {
-          "gitLink": "https://github.com/aleksei-bulgak-study",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -753,7 +738,6 @@
         "margharita": {},
         "lazovskyigor": {},
         "dyatelvudu": {
-          "gitLink": "https://github.com/dyatelvudu",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -767,12 +751,11 @@
     {
       "mentorName": "Aliaksandr Tachko",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/aliaksandrT",
+      "mentorGitName": "aliaksandrT",
       "studentsList": {
         "leshich": {},
         "tamefreak": {},
         "shutya": {
-          "gitLink": "https://github.com/Shutya",
           "Markup #1": "check"
         },
         "dgekaa": {},
@@ -783,16 +766,14 @@
     {
       "mentorName": "Dzianis Sushchenya",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/sushchenja",
+      "mentorGitName": "sushchenja",
       "studentsList": {
         "nightman20104": {
-          "gitLink": "https://github.com/nightman20104",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "irin-ka": {
-          "gitLink": "https://github.com/Irin-ka",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -802,7 +783,6 @@
           "YouTube": "check"
         },
         "daniil-loban": {
-          "gitLink": "https://github.com/daniil-loban",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
@@ -810,22 +790,27 @@
           "Presentation": "check",
           "YouTube": "check"
         },
-        "misharsweb": {}
+        "misharsweb": {},
+        "aspowerr": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Presentation": "check",
+          "YouTube": "check"
+        }
       }
     },
     {
       "mentorName": "Daniil Suleiman",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/sulemanof",
+      "mentorGitName": "sulemanof",
       "studentsList": {
         "heaveek": {
-          "gitLink": "https://github.com/heaveek",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "olegsabodash": {
-          "gitLink": "https://github.com/olegsabodash",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -836,7 +821,6 @@
         },
         "andriva": {},
         "meearlyam": {
-          "gitLink": "https://github.com/Meearlyam",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
@@ -846,29 +830,25 @@
     {
       "mentorName": "Mikita Subbot",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/nsubbot",
+      "mentorGitName": "nsubbot",
       "studentsList": {
         "eughene-cherepov": {
-          "gitLink": "https://github.com/eughene-cherepov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check"
         },
         "moraviin": {
-          "gitLink": "https://github.com/Moraviin",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check"
         },
         "petriken": {
-          "gitLink": "https://github.com/petriken",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check"
         },
         "luzko": {},
         "finnibyh": {
-          "gitLink": "https://github.com/FinniByh",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check"
@@ -880,10 +860,9 @@
     {
       "mentorName": "Anton Stsiapanau",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/stpnvntn",
+      "mentorGitName": "stpnvntn",
       "studentsList": {
         "metalhammer4": {
-          "gitLink": "https://github.com/Metalhammer4",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -891,14 +870,12 @@
         },
         "rudlevsky": {},
         "ostik266": {
-          "gitLink": "https://github.com/Ostik266",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "katekosushkina": {
-          "gitLink": "https://github.com/katekosushkina",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
@@ -911,11 +888,10 @@
     {
       "mentorName": "Alexander Spesivtsev",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/shuspes",
+      "mentorGitName": "shuspes",
       "studentsList": {
         "prudnikov888": {},
         "sergeyskakun": {
-          "gitLink": "https://github.com/SergeySkakun",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
@@ -923,7 +899,6 @@
         },
         "petersonby": {},
         "aliaksandrposakh": {
-          "gitLink": "https://github.com/AliaksandrPosakh",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Presentation": "check",
@@ -936,10 +911,9 @@
     {
       "mentorName": "Mikalai Sokarau",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/mikalai-sokarau",
+      "mentorGitName": "mikalai-sokarau",
       "studentsList": {
         "f8b23lef": {
-          "gitLink": "https://github.com/f8b23lef",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -949,7 +923,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "yrapank": {
-          "gitLink": "https://github.com/yrapank",
           "Code Jam \"CoreJS\"": "check"
         },
         "jenia-shibkova": {},
@@ -961,17 +934,15 @@
     {
       "mentorName": "Kseniya Smorshchek",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/KseniyaSmorshchek",
+      "mentorGitName": "KseniyaSmorshchek",
       "studentsList": {
         "ltcolumbo": {},
         "veterkam": {},
         "yurychajkou": {
-          "gitLink": "https://github.com/yurychajkou",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "catrieona": {
-          "gitLink": "https://github.com/Catrieona",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
@@ -980,20 +951,34 @@
           "YouTube": "check"
         },
         "ankorbay": {
-          "gitLink": "https://github.com/ankorbay",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check"
+        },
+        "alenakharytonchyk": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
+        },
+        "lesechka": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         }
       }
     },
     {
       "mentorName": "Arseni Shynkarenka",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/arhigod",
+      "mentorGitName": "arhigod",
       "studentsList": {
         "nastya-ropot": {
-          "gitLink": "https://github.com/nastya-ropot",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1002,7 +987,6 @@
           "Presentation": "check"
         },
         "mozgoen": {
-          "gitLink": "https://github.com/mozgoen",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1012,7 +996,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "hellsingi": {
-          "gitLink": "https://github.com/hellsingi",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1023,7 +1006,6 @@
         },
         "yeilya": {},
         "polotenchik": {
-          "gitLink": "https://github.com/polotenchik",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1037,22 +1019,19 @@
     {
       "mentorName": "Andrei Shyliahin",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Atzkdeff",
+      "mentorGitName": "Atzkdeff",
       "studentsList": {
         "olegkizz": {},
         "lazouskikiryl": {
-          "gitLink": "https://github.com/LazouskiKiryl",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check"
         },
         "dimabog22": {
-          "gitLink": "https://github.com/DimaBog22",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "bigshaqmnh": {
-          "gitLink": "https://github.com/bigshaqmnh",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1066,24 +1045,21 @@
     {
       "mentorName": "Dzianis Shutsikau",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/Shutya",
+      "mentorGitName": "Shutya",
       "studentsList": {
         "kirillstarlight": {},
         "waldemar999": {
-          "gitLink": "https://github.com/waldemar999",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "kushnerevich": {},
         "igarok91": {},
         "aliakseibabko": {
-          "gitLink": "https://github.com/aliakseibabko",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
         "gleb7raul": {
-          "gitLink": "https://github.com/gleb7raul",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1098,11 +1074,10 @@
     {
       "mentorName": "Klim Shuplenkou",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Klim711",
+      "mentorGitName": "Klim711",
       "studentsList": {
         "dmlaziuk": {},
         "vladqqqqoo": {
-          "gitLink": "https://github.com/Vladqqqqoo",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1115,10 +1090,9 @@
     {
       "mentorName": "Elena Shokhan",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/ElenaShokhanEPAM",
+      "mentorGitName": "ElenaShokhanEPAM",
       "studentsList": {
         "aborisenok": {
-          "gitLink": "https://github.com/aborisenok",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1128,7 +1102,6 @@
           "Presentation": "check"
         },
         "valiantsinlopan": {
-          "gitLink": "https://github.com/ValiantsinLopan",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1138,7 +1111,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "egormiwa1": {
-          "gitLink": "https://github.com/egorMiwa1",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
@@ -1152,11 +1124,10 @@
     {
       "mentorName": "Andrei Shelenhouski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/manuminsk",
+      "mentorGitName": "manuminsk",
       "studentsList": {
         "smajlichak": {},
         "zm1try": {
-          "gitLink": "https://github.com/zm1try",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1167,7 +1138,6 @@
         },
         "jstrr": {},
         "kirill82": {
-          "gitLink": "https://github.com/kirill82",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1175,16 +1145,73 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "blackcat1397": {}
+        "blackcat1397": {},
+        "victoriathebrave": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "greg1996": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check"
+        },
+        "alesya-polovets": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "goldenkit": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "cuppake": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "georgyminsk": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "kasatka660": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "warryr": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        }
       }
     },
     {
       "mentorName": "Dzianis Sheka",
       "countStudent": 8,
-      "mentorGitName": "https://github.com/davojta",
+      "mentorGitName": "davojta",
       "studentsList": {
         "pavalescoba": {
-          "gitLink": "https://github.com/PavalEscoba",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
@@ -1195,7 +1222,6 @@
         "kashapov": {},
         "michaeldaineka": {},
         "lesechka": {
-          "gitLink": "https://github.com/Lesechka",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
@@ -1204,7 +1230,6 @@
           "YouTube": "check"
         },
         "vasiliyrepin": {
-          "gitLink": "https://github.com/VasiliyRepin",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -1213,7 +1238,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "mike80by": {
-          "gitLink": "https://github.com/Mike80by",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1224,7 +1248,6 @@
         },
         "sergeyshestak": {},
         "victorbelikov": {
-          "gitLink": "https://github.com/VictorBelikov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1234,7 +1257,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "auseika": {
-          "gitLink": "https://github.com/auseika",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -1245,28 +1267,172 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "iharpadbiarezski": {
-          "gitLink": "https://github.com/IharPadbiarezski",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
+        },
+        "aleksei-bulgak-study": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "sergey496": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "horoshaya": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "RS Activist": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "gegorov": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check"
+        },
+        "tatsianacs": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "RS Activist": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "antihero": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "RS Activist": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "daniil-loban": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Markup #1": "check",
+          "RS Activist": "check",
+          "Presentation": "check",
+          "YouTube": "check"
+        },
+        "mikhama": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "YouTube": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "zerovers": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "mrstalon": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check",
+          "Presentation": "check"
+        },
+        "luffi2539": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check"
+        },
+        "dekim12": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "quiquek007": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "alexshumansky": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "simaxa7": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "RS Activist": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "liodama": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check",
+          "Presentation": "check",
+          "RS Activist": "check"
         }
       }
     },
     {
       "mentorName": "Yahor Sheinikau",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Naooki",
+      "mentorGitName": "Naooki",
       "studentsList": {
         "eveshad": {
-          "gitLink": "https://github.com/eveshad",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "mbulldozer": {
-          "gitLink": "https://github.com/mbulldozer",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1277,7 +1443,6 @@
         },
         "starkary": {},
         "olgalazarevich": {
-          "gitLink": "https://github.com/olgalazarevich",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1290,13 +1455,12 @@
     {
       "mentorName": "Tsikhan Shcharbakou",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/forkollaider",
+      "mentorGitName": "forkollaider",
       "studentsList": {
         "aalexsoloveiko": {},
         "sergeibel": {},
         "do100han": {},
         "zhecha": {
-          "gitLink": "https://github.com/Zhecha",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
@@ -1307,12 +1471,11 @@
     {
       "mentorName": "Mikalai Shchakatsikhin",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Hirurgo",
+      "mentorGitName": "Hirurgo",
       "studentsList": {
         "tanya98": {},
         "mixniuk": {},
         "xseniia": {
-          "gitLink": "https://github.com/Xseniia",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1322,9 +1485,17 @@
         },
         "nataligleb": {},
         "valeriyager": {
-          "gitLink": "https://github.com/ValeriyaGer",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "victorbelikov": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
@@ -1336,18 +1507,16 @@
     {
       "mentorName": "Anton Sharapa",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/asharapa",
+      "mentorGitName": "asharapa",
       "studentsList": {
         "mentos2805": {},
         "sergeybandar": {},
         "alexanderkononok": {
-          "gitLink": "https://github.com/AlexanderKononok",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "mrmars20": {
-          "gitLink": "https://github.com/mrmars20",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         }
@@ -1356,25 +1525,21 @@
     {
       "mentorName": "Kiryl Shaliapin",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/CyrilShalyapin",
+      "mentorGitName": "CyrilShalyapin",
       "studentsList": {
         "sergeyakzhik": {},
         "kulinar310": {
-          "gitLink": "https://github.com/kulinar310",
           "Markup #1": "check"
         },
         "cropotan": {
-          "gitLink": "https://github.com/cropotan",
           "Markup #1": "check"
         },
         "vitalydmitriev": {},
         "philipsh": {
-          "gitLink": "https://github.com/PhilipSh",
           "Markup #1": "check"
         },
         "vero-nika": {},
         "vladsemenik": {
-          "gitLink": "https://github.com/VladSemenik",
           "Markup #1": "check"
         }
       }
@@ -1382,15 +1547,13 @@
     {
       "mentorName": "Illia Sauchuk",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/IlyaLisitsin",
+      "mentorGitName": "IlyaLisitsin",
       "studentsList": {
         "meller96": {
-          "gitLink": "https://github.com/meller96",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check"
         },
         "ogurez": {
-          "gitLink": "https://github.com/ogurez",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1399,7 +1562,6 @@
           "Presentation": "check"
         },
         "mrlapka": {
-          "gitLink": "https://github.com/mrlapka",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1411,7 +1573,6 @@
         "olexxxey": {},
         "xelson": {},
         "amoebiusss": {
-          "gitLink": "https://github.com/amoebiusss",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1427,19 +1588,17 @@
     {
       "mentorName": "Ekaterina Sanko",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/katya-sanko",
+      "mentorGitName": "katya-sanko",
       "studentsList": {
         "kyleshovbb": {},
         "yabeda79": {},
         "sergmi": {},
         "disa0808": {
-          "gitLink": "https://github.com/Disa0808",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "pulya10c": {
-          "gitLink": "https://github.com/Pulya10c",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1453,10 +1612,9 @@
     {
       "mentorName": "Yuliya Samuilik",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/yulia9",
+      "mentorGitName": "yulia9",
       "studentsList": {
         "prometei299": {
-          "gitLink": "https://github.com/prometei299",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1466,7 +1624,6 @@
         },
         "sergeypunko": {},
         "zurzur": {
-          "gitLink": "https://github.com/zurzur",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1480,11 +1637,10 @@
     {
       "mentorName": "Dzmitry Samuilik",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Sambl4",
+      "mentorGitName": "Sambl4",
       "studentsList": {
         "sches": {},
         "simaxa7": {
-          "gitLink": "https://github.com/Simaxa7",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1495,7 +1651,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "polinamoiseyenko": {
-          "gitLink": "https://github.com/polinamoiseyenko",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1510,16 +1665,14 @@
     {
       "mentorName": "Yauheni Rutkouski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/erutkovsky",
+      "mentorGitName": "erutkovsky",
       "studentsList": {
         "hecateenitharmon": {
-          "gitLink": "https://github.com/hecateenitharmon",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "mdgh": {
-          "gitLink": "https://github.com/mdgh",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1529,13 +1682,11 @@
         },
         "mggeroff": {},
         "soulos410": {
-          "gitLink": "https://github.com/soulos410",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "boshka0": {
-          "gitLink": "https://github.com/boshka0",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1549,12 +1700,11 @@
     {
       "mentorName": "Aliaksandr Rudzin",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/RudikAleksandr",
+      "mentorGitName": "RudikAleksandr",
       "studentsList": {
         "mrchester": {},
         "mxwoodie": {},
         "psevkin": {
-          "gitLink": "https://github.com/psevkin",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1562,7 +1712,6 @@
         },
         "alexeevadaria": {},
         "spiritforest": {
-          "gitLink": "https://github.com/SpiritForest",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1571,7 +1720,6 @@
           "Presentation": "check"
         },
         "chekni": {
-          "gitLink": "https://github.com/chekni",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1583,14 +1731,12 @@
     {
       "mentorName": "Mikita Rudy",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/NikitaRudy",
+      "mentorGitName": "NikitaRudy",
       "studentsList": {
         "sad4itananda": {
-          "gitLink": "https://github.com/sad4itananda",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "kalitamih": {
-          "gitLink": "https://github.com/kalitamih",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1601,7 +1747,6 @@
         },
         "evgenprushk": {},
         "mrstalon": {
-          "gitLink": "https://github.com/mrstalon",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1613,7 +1758,6 @@
         },
         "avaprin": {},
         "haspadarz-padmensku": {
-          "gitLink": "https://github.com/haspadarZ-padMensku",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1628,16 +1772,14 @@
     {
       "mentorName": "Andres Rios",
       "countStudent": 6,
-      "mentorGitName": "https://github.com/rianby64",
+      "mentorGitName": "rianby64",
       "studentsList": {
         "yaroslav-mig": {
-          "gitLink": "https://github.com/Yaroslav-Mig",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "novikovantony": {
-          "gitLink": "https://github.com/NovikovAntonY",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -1647,7 +1789,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "mayblackwood": {
-          "gitLink": "https://github.com/MayBlackwood",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1663,11 +1804,10 @@
     {
       "mentorName": "Dzianis Reznik",
       "countStudent": 6,
-      "mentorGitName": "http://github.com/dzianisreznik/",
+      "mentorGitName": "dzianisreznik",
       "studentsList": {
         "eugene3112": {},
         "heat98": {
-          "gitLink": "https://github.com/heat98",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1676,14 +1816,12 @@
         },
         "tanyamatesha": {},
         "egorgorbik": {
-          "gitLink": "https://github.com/EgorGorbik",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
         "vicrodzko": {
-          "gitLink": "https://github.com/vicrodzko",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1692,7 +1830,6 @@
           "YouTube": "check"
         },
         "ilyatrat": {
-          "gitLink": "https://github.com/ilyatrat",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
@@ -1700,7 +1837,6 @@
           "Presentation": "check"
         },
         "unbelievablysmart": {
-          "gitLink": "https://github.com/UnbelievablySmart",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check"
@@ -1711,11 +1847,10 @@
     {
       "mentorName": "Artsiom Reutovich",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Xelsoid",
+      "mentorGitName": "Xelsoid",
       "studentsList": {
         "ivanmatsur": {},
         "usermeme": {
-          "gitLink": "https://github.com/usermeme",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1726,7 +1861,6 @@
         },
         "virusss": {},
         "nikaz123": {
-          "gitLink": "https://github.com/nikaz123",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1739,7 +1873,7 @@
     {
       "mentorName": "Aliaksandr Razumovich",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/razumovich/",
+      "mentorGitName": "razumovich",
       "studentsList": {
         "kvatoferma": {},
         "vladagaravaya": {},
@@ -1750,12 +1884,11 @@
     {
       "mentorName": "Dzmitry Ramaniuk",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/DmitryRomaniuk",
+      "mentorGitName": "DmitryRomaniuk",
       "studentsList": {
         "andreikrivets": {},
         "lavazzakate": {},
         "2kevink": {
-          "gitLink": "https://github.com/2kevink",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -1766,7 +1899,6 @@
         },
         "vladislavrebko": {},
         "amoyt": {
-          "gitLink": "https://github.com/amoyT",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check"
@@ -1776,10 +1908,9 @@
     {
       "mentorName": "Yauheni Ralko",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/yralko",
+      "mentorGitName": "yralko",
       "studentsList": {
         "anna-pronovich": {
-          "gitLink": "https://github.com/Anna-Pronovich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
@@ -1789,18 +1920,26 @@
         "artemiusv": {},
         "nataliakazakevich": {},
         "kseniyasokolovskaya": {
-          "gitLink": "https://github.com/KseniyaSokolovskaya",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "zmichgen": {
-          "gitLink": "https://github.com/zmichgen",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Presentation": "check",
+          "Code Jam \"CoreJS\"": "check"
+        },
+        "mayinmarch": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Markup #1": "check"
+        },
+        "christina-ilyushonok": {
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check"
         }
       }
@@ -1808,22 +1947,22 @@
     {
       "mentorName": "Anastasiya Pryvalava",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/anastasiaprivalova",
+      "mentorGitName": "anastasiaprivalova",
       "studentsList": {
         "sergaunt": {
-          "gitLink": "https://github.com/sergaunt",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "brateckrolikstudent": {
-          "gitLink": "https://github.com/BratecKrolikStudent",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check"
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check",
+          "Presentation": "check"
         },
         "venomamd": {},
         "vetal11": {}
@@ -1832,11 +1971,10 @@
     {
       "mentorName": "Dzmitry Prudnikau",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/diprudnikov",
+      "mentorGitName": "diprudnikov",
       "studentsList": {
         "leshka98": {},
         "siarheikresik": {
-          "gitLink": "https://github.com/siarheikresik",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -1847,7 +1985,6 @@
         "tvj888": {},
         "alexkov90": {},
         "mpot7": {
-          "gitLink": "https://github.com/mpot7",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
@@ -1858,56 +1995,76 @@
     {
       "mentorName": "Hanna Pratasevich",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/Anik188",
+      "mentorGitName": "Anik188",
       "studentsList": {
         "horoshaya": {
-          "gitLink": "https://github.com/Horoshaya",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "RS Activist": "check",
           "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check",
-          "YouTube": "check"
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "martinkevichyana": {},
         "montik-pc": {},
         "jeka98": {
-          "gitLink": "https://github.com/jeka98",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check"
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
         },
         "renardby": {
-          "gitLink": "https://github.com/RenardBY",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "RS Activist": "check",
           "Markup #1": "check",
-          "Presentation": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "sergeyguchok": {
-          "gitLink": "https://github.com/sergeyguchok",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check",
-          "YouTube": "check"
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "aytsan": {
-          "gitLink": "https://github.com/aytsaN",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
-          "Markup #1": "check"
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "aliaksandrlosich": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "uivgray": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "helpthewalrus": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check"
         }
       }
     },
     {
       "mentorName": "Artsiom Piakhota",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/LithiumFallen",
+      "mentorGitName": "LithiumFallen",
       "studentsList": {
         "sunrisekovalevski": {
-          "gitLink": "https://github.com/SunriseKovalevski",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1916,19 +2073,16 @@
           "Presentation": "check"
         },
         "spacebrains": {
-          "gitLink": "https://github.com/spacebrains",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "pincherinka": {
-          "gitLink": "https://github.com/Pincherinka",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "victoriathebrave": {
-          "gitLink": "https://github.com/victoriathebrave",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1942,22 +2096,19 @@
     {
       "mentorName": "Yauheni Pasiukevich",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/pasyukevich",
+      "mentorGitName": "pasyukevich",
       "studentsList": {
         "yanachchchka": {},
         "yalovikea": {},
         "volhashy": {},
         "crunkagator": {
-          "gitLink": "https://github.com/crunkagator",
           "Code Jam \"CV\"": "check"
         },
         "alenabde": {
-          "gitLink": "https://github.com/AlenaBDE",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "maksimyakush": {
-          "gitLink": "https://github.com/maksimyakush",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -1965,51 +2116,93 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "boobaley": {}
+        "boobaley": {},
+        "zhecha": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        }
       }
     },
     {
       "mentorName": "Kiryl Panou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/kirillpanov",
+      "mentorGitName": "kirillpanov",
       "studentsList": {
         "helpthewalrus": {
-          "gitLink": "https://github.com/helpthewalrus",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "aliaksandrlosich": {
-          "gitLink": "https://github.com/Aliaksandrlosich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Presentation": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "dmsolov": {},
         "bogdanka": {},
         "srjkaa": {},
         "godofnoobs": {},
         "uivgray": {
-          "gitLink": "https://github.com/uivgray",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check"
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "jeka98": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
+        "horoshaya": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "RS Activist": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "sergeyguchok": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "renardby": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "RS Activist": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "aytsan": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
         }
       }
     },
     {
       "mentorName": "Dzmitry Panamarenka",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/dzmitrypanamarenka",
+      "mentorGitName": "dzmitrypanamarenka",
       "studentsList": {
         "stas4it": {
-          "gitLink": "https://github.com/stas4it",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "vladislavmakarevich": {},
         "juliankov": {
-          "gitLink": "https://github.com/JulianKov",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
@@ -2019,7 +2212,6 @@
           "Code Jam \"CV\"": "check"
         },
         "niksrakevich": {
-          "gitLink": "https://github.com/NiksRakevich",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check",
@@ -2033,11 +2225,10 @@
     {
       "mentorName": "Andrei Palchys",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/apalchys",
+      "mentorGitName": "apalchys",
       "studentsList": {
         "vladyaremeko": {},
         "ton9q": {
-          "gitLink": "https://github.com/ton9q",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
@@ -2046,26 +2237,29 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "nktvlkvch": {
-          "gitLink": "https://github.com/nktvlkvch",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "valentinlipai": {},
-        "mazhoranta": {}
+        "mazhoranta": {},
+        "unbelievablysmart": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check"
+        }
       }
     },
     {
       "mentorName": "Volha Paddubka",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/OlgaPoddubko",
+      "mentorGitName": "OlgaPoddubko",
       "studentsList": {
         "shet1990": {},
         "maksagit": {},
         "melk0sha": {},
         "tanyasamal": {
-          "gitLink": "https://github.com/TanyaSamal",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -2076,7 +2270,6 @@
         },
         "karsash": {},
         "dimadk24": {
-          "gitLink": "https://github.com/DimaDK24",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2090,13 +2283,12 @@
     {
       "mentorName": "Aliaksandr Novik",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/AlexNo",
+      "mentorGitName": "AlexNo",
       "studentsList": {
         "xlopec23": {},
         "odinrossy": {},
         "vlad0mag0": {},
         "kir-22": {
-          "gitLink": "https://github.com/kir-22",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2104,12 +2296,10 @@
           "YouTube": "check"
         },
         "snaiperlod": {
-          "gitLink": "https://github.com/SnaiperLoD",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "llitrixkod": {
-          "gitLink": "https://github.com/LLITRIXKOD",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2121,27 +2311,27 @@
     {
       "mentorName": "Yana Niaronskaya",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/YanaNeronskaya",
+      "mentorGitName": "YanaNeronskaya",
       "studentsList": {
         "ilyay95": {
-          "gitLink": "https://github.com/ilyay95/",
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check"
-        },
-        "allexblaze": {},
-        "dekim12": {
-          "gitLink": "https://github.com/dekim12",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
           "Presentation": "check",
-          "RS Activist": "check"
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "allexblaze": {},
+        "dekim12": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "dimamavrin": {},
         "vitalmizevich": {}
@@ -2150,13 +2340,12 @@
     {
       "mentorName": "Natalya Nekazakova",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/natashanekazakova",
+      "mentorGitName": "natashanekazakova",
       "studentsList": {
         "wladimirmihalev": {},
         "antoprokopovich": {},
         "iharpashkevich": {},
         "375291601334": {
-          "gitLink": "https://github.com/375291601334",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2169,19 +2358,17 @@
     {
       "mentorName": "Mikhail Naharayeu",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/MikhailLU",
+      "mentorGitName": "MikhailLU",
       "studentsList": {
         "elusiveway": {},
         "cirillius": {},
         "eugenepochenkov": {
-          "gitLink": "https://github.com/eugenepochenkov",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "lx-931203": {},
         "astravukh": {},
         "zetorby": {
-          "gitLink": "https://github.com/zetorby",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         }
@@ -2190,29 +2377,25 @@
     {
       "mentorName": "Maryia Nabzdorava",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Maryia-N-N",
+      "mentorGitName": "Maryia-N-N",
       "studentsList": {
         "crypto-kittensseller": {
-          "gitLink": "https://github.com/Crypto-kittensSeller",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Presentation": "check"
         },
         "dyadinmax": {
-          "gitLink": "https://github.com/DyadinMax",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "alexeynovomlinets": {
-          "gitLink": "https://github.com/AlexeyNovomlinets",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Presentation": "check"
         },
         "antonysawyer": {
-          "gitLink": "https://github.com/AntonySawyer",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2223,25 +2406,22 @@
     {
       "mentorName": "Arif Mustafazade",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/mustafazadeAR",
+      "mentorGitName": "mustafazadeAR",
       "studentsList": {
         "sobolevyuri": {},
         "credov": {
-          "gitLink": "https://github.com/credov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "clericus": {},
         "dbaceko": {
-          "gitLink": "https://github.com/dbaceko",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "frontsideman": {
-          "gitLink": "https://github.com/frontsideman",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2252,43 +2432,45 @@
     {
       "mentorName": "Barys Marukhin",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/barysmarukhin",
+      "mentorGitName": "barysmarukhin",
       "studentsList": {
         "denhock": {},
         "kirillgalimov": {
-          "gitLink": "https://github.com/kirillgalimov",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "igor-provotorov": {
-          "gitLink": "https://github.com/igor-provotorov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check"
         },
         "kamatozzzik": {
-          "gitLink": "https://github.com/kamatozzzik",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         }
       }
     },
     {
       "mentorName": "Andrei Markovich",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/themarkmarrone",
+      "mentorGitName": "themarkmarrone",
       "studentsList": {
         "ener9ettt": {},
         "petromath77": {},
         "barsolet": {},
         "yanrishbe": {},
         "juliamv": {
-          "gitLink": "https://github.com/JuliaMV",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2298,7 +2480,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "icebergnevercries": {
-          "gitLink": "https://github.com/icebergnevercries",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2310,24 +2491,21 @@
     {
       "mentorName": "Volha Mardvilka",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/olgamardvilko",
+      "mentorGitName": "olgamardvilko",
       "studentsList": {
         "vladsanko": {},
         "serzhanhelena": {},
         "georgyminsk": {
-          "gitLink": "https://github.com/georgyminsk",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "greg1996": {
-          "gitLink": "https://github.com/greg1996",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "goldenkit": {
-          "gitLink": "https://github.com/goldenkit",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2338,34 +2516,34 @@
     {
       "mentorName": "Aliaksandr Mamonenka",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/AliaksandrMamonenka",
+      "mentorGitName": "AliaksandrMamonenka",
       "studentsList": {
         "moluram": {},
         "cheeska": {},
         "nesteklo": {},
         "dasnein": {
-          "gitLink": "https://github.com/dasnein",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         }
       }
     },
     {
       "mentorName": "Aliaksei Makas",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Muskos",
+      "mentorGitName": "Muskos",
       "studentsList": {
         "vireah": {
-          "gitLink": "https://github.com/vireah",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "yarobei": {},
         "alexandrtichon": {
-          "gitLink": "https://github.com/AlexandrTichon",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2374,14 +2552,12 @@
           "YouTube": "check"
         },
         "yanyan155": {
-          "gitLink": "https://github.com/yanyan155",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "pkutsilina": {
-          "gitLink": "https://github.com/pkutsilina",
           "Code Jam \"CoreJS\"": "check"
         }
       }
@@ -2389,11 +2565,10 @@
     {
       "mentorName": "Artsiom Lykau",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/lykovartem",
+      "mentorGitName": "lykovartem",
       "studentsList": {
         "glebhleb": {},
         "segrey1989": {
-          "gitLink": "https://github.com/Segrey1989",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2410,10 +2585,9 @@
     {
       "mentorName": "Aleh Lipski",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/lipskiy-aleh",
+      "mentorGitName": "lipskiy-aleh",
       "studentsList": {
         "agentumbrella": {
-          "gitLink": "https://github.com/agentumbrella",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2423,43 +2597,46 @@
         "justforwebcoding": {},
         "anastasiaburlo": {},
         "devandscorp": {
-          "gitLink": "https://github.com/devandscorp",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
         "qucca": {},
         "lexbogos": {
-          "gitLink": "https://github.com/lexbogos",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
-        "zebabrat": {}
+        "zebabrat": {},
+        "aliaksandrarybak": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check"
+        }
       }
     },
     {
       "mentorName": "Andrei Liaukou",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/liaukou",
+      "mentorGitName": "liaukou",
       "studentsList": {
         "dimasquared": {
-          "gitLink": "https://github.com/dimasquared",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "smetaninpavel": {},
         "ol4ash": {
-          "gitLink": "https://github.com/ol4ash",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "kasper1999": {
-          "gitLink": "https://github.com/Kasper1999",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2471,15 +2648,13 @@
     {
       "mentorName": "Andrei Lenkou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/LenkouAndrei",
+      "mentorGitName": "LenkouAndrei",
       "studentsList": {
         "goner52": {
-          "gitLink": "https://github.com/goner52",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "poyuki": {
-          "gitLink": "https://github.com/poyuki",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2487,12 +2662,10 @@
         },
         "elmavis": {},
         "rafchillons": {
-          "gitLink": "https://github.com/rafchillons",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "kirylalexandrovich": {
-          "gitLink": "https://github.com/kirylalexandrovich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2507,10 +2680,9 @@
     {
       "mentorName": "Ron Lavit",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Lavitr",
+      "mentorGitName": "Lavitr",
       "studentsList": {
         "mrdemonrush": {
-          "gitLink": "https://github.com/MrDemonRush",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2518,14 +2690,12 @@
         },
         "h0qw010xz": {},
         "nikitaklepanosov": {
-          "gitLink": "https://github.com/NikitaKlepanosov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check"
         },
         "provedenceva": {
-          "gitLink": "https://github.com/provedenceva",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2537,10 +2707,9 @@
     {
       "mentorName": "Artsiom Latyshau",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/artemlatyshev",
+      "mentorGitName": "artemlatyshev",
       "studentsList": {
         "sergeiobolevich": {
-          "gitLink": "https://github.com/SergeiObolevich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
@@ -2548,7 +2717,6 @@
         "dimashcherbakov": {},
         "feulia": {},
         "magi-a": {
-          "gitLink": "https://github.com/Magi-a",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2556,7 +2724,6 @@
           "Presentation": "check"
         },
         "andrewyanushkevich": {
-          "gitLink": "https://github.com/andrewyanushkevich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
@@ -2566,17 +2733,15 @@
     {
       "mentorName": "Viachaslau Latushkin",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/viachaslau-latushkin",
+      "mentorGitName": "viachaslau-latushkin",
       "studentsList": {
         "alexandrasitnikova": {
-          "gitLink": "https://github.com/alexandrasitnikova",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check"
         },
         "vitalibrych333": {
-          "gitLink": "https://github.com/VitaliBrych333",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2593,10 +2758,9 @@
     {
       "mentorName": "Aliaksandr Kuzniatsou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/AliaksandrKuzniatsou",
+      "mentorGitName": "AliaksandrKuzniatsou",
       "studentsList": {
         "apivovarchik": {
-          "gitLink": "https://github.com/apivovarchik",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
@@ -2605,13 +2769,27 @@
         "iamhappy2day": {},
         "katiekruchko": {},
         "artser97": {},
-        "stasnegreev": {}
+        "stasnegreev": {},
+        "christopher-0118": {
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Code Jam \"CoreJS\"": "check"
+        },
+        "igorbyl": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check"
+        },
+        "maksyermak": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check"
+        }
       }
     },
     {
       "mentorName": "Pavel Kuzniatsou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/PavelKuzniatsou",
+      "mentorGitName": "PavelKuzniatsou",
       "studentsList": {
         "maxbrainygame": {},
         "oliver337": {},
@@ -2619,35 +2797,34 @@
         "akselatom": {},
         "maryiasiamenava": {},
         "kotcher1": {
-          "gitLink": "https://github.com/kotcher1",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "kirilltovpinets": {
-          "gitLink": "https://github.com/kirilltovpinets",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
         }
       }
     },
     {
       "mentorName": "Bahdan Kutas",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/AgentKB",
+      "mentorGitName": "AgentKB",
       "studentsList": {
         "litwin90": {},
         "dzmitrybabak": {
-          "gitLink": "https://github.com/DzmitryBabak",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "systemghost": {
-          "gitLink": "https://github.com/SystemGhost",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2657,20 +2834,17 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "eugenetime": {
-          "gitLink": "https://github.com/EugeneTime",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "alexnaidovich": {},
         "ivanchikovvalentin": {
-          "gitLink": "https://github.com/IvanchikovValentin",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "ewelai": {
-          "gitLink": "https://github.com/Ewelai",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2681,10 +2855,9 @@
     {
       "mentorName": "Viktar Kurbatski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Woozzone",
+      "mentorGitName": "Woozzone",
       "studentsList": {
         "bardashevich-matvei": {
-          "gitLink": "https://github.com/bardashevich-matvei",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2693,7 +2866,6 @@
         },
         "korbann": {},
         "yevgeniypy": {
-          "gitLink": "https://github.com/YevgeniyPy",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2701,7 +2873,6 @@
           "Presentation": "check"
         },
         "tatyana-andreichyk": {
-          "gitLink": "https://github.com/tatyana-andreichyk",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2715,36 +2886,39 @@
     {
       "mentorName": "Alexandra Kukolca",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/KukolcaAlexandra",
+      "mentorGitName": "KukolcaAlexandra",
       "studentsList": {
         "sxe2255": {},
         "vovair": {},
         "ingvaroldd": {
-          "gitLink": "https://github.com/IngvarOldd",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check"
         },
-        "bragodin": {},
+        "bragodin": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        },
         "fantom141": {
-          "gitLink": "https://github.com/fantom141",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check"
         },
         "samo-war": {
-          "gitLink": "https://github.com/samo-war",
           "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check"
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check"
         }
       }
     },
     {
       "mentorName": "artsiom kukharev",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/xeontem",
+      "mentorGitName": "xeontem",
       "studentsList": {
         "silichstudent": {},
         "vvikota": {
-          "gitLink": "https://github.com/vvikota",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2754,7 +2928,6 @@
         },
         "leonard1k": {},
         "mariakisel": {
-          "gitLink": "https://github.com/mariakisel",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2762,7 +2935,6 @@
           "Presentation": "check"
         },
         "qxfisher": {
-          "gitLink": "https://github.com/qxFisher",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2770,16 +2942,21 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "bulbazubr": {}
+        "bulbazubr": {},
+        "belkacraft": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        }
       }
     },
     {
       "mentorName": "Dzmitry Kudla",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Linus2228",
+      "mentorGitName": "Linus2228",
       "studentsList": {
         "sergeybaranovichi": {
-          "gitLink": "https://github.com/SergeyBaranovichi",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2787,7 +2964,6 @@
         },
         "karina198": {},
         "arturkudlo": {
-          "gitLink": "https://github.com/ArturKudlo",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2797,7 +2973,6 @@
           "Presentation": "check"
         },
         "dimasofff": {
-          "gitLink": "https://github.com/DimasOFFF",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2809,17 +2984,15 @@
     {
       "mentorName": "Denis Kravchenko",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/Shank111",
+      "mentorGitName": "Shank111",
       "studentsList": {
         "kirillfilipp": {
-          "gitLink": " https://github.com/KirillFilipp",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "gemsgame": {
-          "gitLink": "https://github.com/GemsGame",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -2828,7 +3001,6 @@
         "axissixa57": {},
         "maxstarovoitov": {},
         "nemkev": {
-          "gitLink": "https://github.com/Nemkev",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2841,10 +3013,9 @@
     {
       "mentorName": "ALIAKSEI KRAUCHANKA",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/aliakseikrauchanka",
+      "mentorGitName": "aliakseikrauchanka",
       "studentsList": {
         "latiertiw": {
-          "gitLink": "https://github.com/latiertiw",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2860,15 +3031,13 @@
     {
       "mentorName": "Vitali Krasnou",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/error404as/",
+      "mentorGitName": "error404as",
       "studentsList": {
         "robertiqk": {
-          "gitLink": "https://github.com/robertiqk",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "pozharitskiy": {
-          "gitLink": "https://github.com/Pozharitskiy",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2877,7 +3046,6 @@
         },
         "aliakseik19": {},
         "tarsupon": {
-          "gitLink": "https://github.com/Tarsupon",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2890,10 +3058,9 @@
     {
       "mentorName": "Aliaksandr Krasnou",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/aliaksandrkrasnou",
+      "mentorGitName": "aliaksandrkrasnou",
       "studentsList": {
         "andrey-lobach": {
-          "gitLink": "https://github.com/andrey-lobach",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2901,12 +3068,10 @@
         },
         "pitergtx": {},
         "alexandravlasenko": {
-          "gitLink": "https://github.com/AlexandraVlasenko",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "painincoming": {
-          "gitLink": "https://github.com/PainIncoming",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -2917,7 +3082,7 @@
     {
       "mentorName": "Vladislav Kovaliov",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/vladislavkovaliov/",
+      "mentorGitName": "vladislavkovaliov",
       "studentsList": {
         "roman-nareiko": {},
         "evilamany": {},
@@ -2928,7 +3093,7 @@
     {
       "mentorName": "Sergeh Korotkin",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/korotkin",
+      "mentorGitName": "korotkin",
       "studentsList": {
         "pavelsab": {},
         "ihartsykaka": {},
@@ -2942,7 +3107,7 @@
     {
       "mentorName": "Alena Korachkina",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Papialoushka",
+      "mentorGitName": "Papialoushka",
       "studentsList": {
         "dmitryduk3": {},
         "nikola2390": {},
@@ -2953,12 +3118,11 @@
     {
       "mentorName": "Viktoryia Klimenka",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/candentira",
+      "mentorGitName": "candentira",
       "studentsList": {
         "palessie": {},
         "ustilushka": {},
         "zzvipz": {
-          "gitLink": "https://github.com/zzVIPz",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2966,7 +3130,6 @@
           "Presentation": "check"
         },
         "dmitrylenko": {
-          "gitLink": "https://github.com/DmitryLenko",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2974,7 +3137,6 @@
           "Presentation": "check"
         },
         "underdoglzd": {
-          "gitLink": "https://github.com/underdoglzd",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -2985,10 +3147,9 @@
     {
       "mentorName": "Aliaksandr Kleshchukevich",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/sleepwalky",
+      "mentorGitName": "sleepwalky",
       "studentsList": {
         "noviceblunderer": {
-          "gitLink": "https://github.com/NoviceBlunderer",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
@@ -2996,21 +3157,18 @@
         "kristalys": {},
         "splin-shady": {},
         "katrin-kot": {
-          "gitLink": "https://github.com/katrin-kot",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
         "gattygamaun": {
-          "gitLink": "https://github.com/gattygamaun",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "mariyapolt": {
-          "gitLink": "https://github.com/MariyaPolt",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Presentation": "check",
@@ -3021,27 +3179,31 @@
     {
       "mentorName": "Aliaksei Khlebnikau",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/FallenBY1",
+      "mentorGitName": "FallenBY1",
       "studentsList": {
         "katepavlovich": {
-          "gitLink": "https://github.com/KatePavlovich",
           "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         },
         "youngbrick": {
-          "gitLink": "https://github.com/YoungBrick",
           "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         },
         "alekengineer": {
-          "gitLink": "https://github.com/AlekEngineer",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "kottt4": {
-          "gitLink": "https://github.com/kottt4",
           "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
         },
         "walkunderrain": {}
       }
@@ -3049,14 +3211,13 @@
     {
       "mentorName": "Artur Kazlouski",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/arturminsksum",
+      "mentorGitName": "arturminsksum",
       "studentsList": {
         "a-lika": {},
         "uniqkue": {},
         "sqwezzy": {},
         "nikaneider": {},
         "rebellix": {
-          "gitLink": "https://github.com/rebellix",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3069,17 +3230,15 @@
     {
       "mentorName": "Maryna Kavetskaya",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/shparkivozhyk",
+      "mentorGitName": "shparkivozhyk",
       "studentsList": {
         "sburnt": {
-          "gitLink": "https://github.com/SBurnt",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "tserekhivan": {
-          "gitLink": "https://github.com/tserekhivan",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3089,7 +3248,6 @@
           "Presentation": "check"
         },
         "presidentsboyfriend": {
-          "gitLink": "https://github.com/PresidentsBoyfriend",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check"
@@ -3100,25 +3258,22 @@
     {
       "mentorName": "Mikalai Kavaliou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/Nikkov17",
+      "mentorGitName": "Nikkov17",
       "studentsList": {
         "artichoks": {},
         "anastasiyanovikovag": {
-          "gitLink": "https://github.com/AnastasiyaNovikovaG",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "margaretmint": {
-          "gitLink": "https://github.com/MargaretMint",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "anastasiyamazura": {
-          "gitLink": "https://github.com/AnastasiyaMazura",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3129,7 +3284,6 @@
         },
         "dezman66": {},
         "exedystyle": {
-          "gitLink": "https://github.com/Exedystyle",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3137,7 +3291,6 @@
           "YouTube": "check"
         },
         "gaddyya": {
-          "gitLink": "https://github.com/gaddyya",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3151,10 +3304,9 @@
     {
       "mentorName": "Yana Karotkina",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/yanaSelin",
+      "mentorGitName": "yanaSelin",
       "studentsList": {
         "bsiropchik": {
-          "gitLink": "https://github.com/bsiropchik",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3164,7 +3316,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "scratchor": {
-          "gitLink": "https://github.com/scratchor",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3172,12 +3323,10 @@
           "YouTube": "check"
         },
         "montes5": {
-          "gitLink": "https://github.com/montes5",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "mrspunki": {
-          "gitLink": "https://github.com/mrspunki",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3189,16 +3338,14 @@
     {
       "mentorName": "Katsiaryna Karanets",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/katekaranets",
+      "mentorGitName": "katekaranets",
       "studentsList": {
         "kozelkoff": {
-          "gitLink": "https://github.com/kozelkoff",
           "Code Jam \"CV\"": "check"
         },
         "vladislavshyian": {},
         "gleb-kukobnikov": {},
         "sokol147": {
-          "gitLink": "https://github.com/sokol147",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3207,11 +3354,29 @@
         },
         "dantewitcher": {},
         "natiedei": {
-          "gitLink": "https://github.com/Natiedei",
           "Code Jam \"CV\"": "check"
         },
         "aliaksandrarybak": {
-          "gitLink": "https://github.com/aliaksandrarybak",
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check"
+        },
+        "lexbogos": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check"
+        },
+        "agentumbrella": {
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Presentation": "check"
+        },
+        "devandscorp": {
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3223,10 +3388,9 @@
     {
       "mentorName": "Elizaveta Ivashkova",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/ivashkovaliza",
+      "mentorGitName": "ivashkovaliza",
       "studentsList": {
         "stationtostation": {
-          "gitLink": "https://github.com/StationToStation",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3234,7 +3398,6 @@
           "Presentation": "check"
         },
         "tatsianacs": {
-          "gitLink": "https://github.com/Tatsianacs",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3245,7 +3408,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "kharuk": {
-          "gitLink": "https://github.com/kharuk",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3254,16 +3416,32 @@
           "Presentation": "check",
           "Code Jam \"Scoreboard\"": "check"
         },
-        "wald3": {}
+        "wald3": {},
+        "usermeme": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "nikaz123": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check",
+          "Presentation": "check"
+        }
       }
     },
     {
       "mentorName": "Alena Hrytsuk",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/HeleneGritsuk",
+      "mentorGitName": "HeleneGritsuk",
       "studentsList": {
         "devildummy": {
-          "gitLink": "https://github.com/devildummy",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3272,13 +3450,11 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "dzmitry-karachun-1987": {
-          "gitLink": "https://github.com/dzmitry-karachun-1987",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "serg8": {
-          "gitLink": "https://github.com/Serg8",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3294,19 +3470,17 @@
     {
       "mentorName": "Dzmitry Hrachou",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/falizyer",
+      "mentorGitName": "falizyer",
       "studentsList": {
         "bespodobno": {},
         "anastasia1627": {},
         "basch1727": {
-          "gitLink": "https://github.com/basch1727",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check"
         },
         "lizabredberry": {},
         "zartaich": {},
         "estel1591": {
-          "gitLink": "https://github.com/estel1591",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CV\"": "check",
@@ -3320,10 +3494,9 @@
     {
       "mentorName": "Hanna Hrabianiuk",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/AnnaGrebenyuk",
+      "mentorGitName": "AnnaGrebenyuk",
       "studentsList": {
         "yuliyahlukhatarenka": {
-          "gitLink": "https://github.com/YuliyaHlukhatarenka",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3333,7 +3506,6 @@
         },
         "lapa17": {},
         "dmitrylutskovich": {
-          "gitLink": "https://github.com/DmitryLutskovich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3346,10 +3518,9 @@
     {
       "mentorName": "Yauheni Hladki",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/evgladkiy",
+      "mentorGitName": "evgladkiy",
       "studentsList": {
         "evgenijkorob": {
-          "gitLink": "https://github.com/evgenijkorob",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3357,7 +3528,6 @@
         },
         "anxair": {},
         "siarohin": {
-          "gitLink": "https://github.com/siarohin",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3367,7 +3537,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "svyatlo": {
-          "gitLink": "https://github.com/svyatlo",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3382,10 +3551,9 @@
     {
       "mentorName": "Yauheni Harokh",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/EvgeniiGrh",
+      "mentorGitName": "EvgeniiGrh",
       "studentsList": {
         "antonprotas": {
-          "gitLink": "https://github.com/AntonProtas",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3393,12 +3561,10 @@
         },
         "mickbetch": {},
         "oconely": {
-          "gitLink": "https://github.com/oconely",
           "Code Jam \"CV\"": "check"
         },
         "natalianekrashevich": {},
         "iryna-mazura": {
-          "gitLink": "https://github.com/IRYNA-MAZURA",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3415,10 +3581,9 @@
     {
       "mentorName": "Ilya Hancharyk",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/AmsterGet",
+      "mentorGitName": "AmsterGet",
       "studentsList": {
         "tebeskashi": {
-          "gitLink": "https://github.com/TEBESKASHI",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Presentation": "check",
@@ -3426,7 +3591,6 @@
           "YouTube": "check"
         },
         "pinkrefugee": {
-          "gitLink": "https://github.com/pinkrefugee",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3439,12 +3603,10 @@
         "beetle23": {},
         "lynyx": {},
         "tomsssm": {
-          "gitLink": "https://github.com/TomSssM",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "colambus13": {
-          "gitLink": "https://github.com/Colambus13",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
@@ -3454,7 +3616,7 @@
     {
       "mentorName": "Yuliya Haluza",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/yuliaHope",
+      "mentorGitName": "yuliaHope",
       "studentsList": {
         "artyommakarov": {},
         "levsha87": {},
@@ -3468,17 +3630,15 @@
     {
       "mentorName": "Konstantin Grigorchuk",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/PredokMiF",
+      "mentorGitName": "PredokMiF",
       "studentsList": {
         "belkacraft": {
-          "gitLink": "https://github.com/belkacraft",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "kasatka660": {
-          "gitLink": "https://github.com/kasatka660",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3488,7 +3648,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "warryr": {
-          "gitLink": "https://github.com/warryr",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3504,10 +3663,9 @@
     {
       "mentorName": "Valeri Gorobets",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/valeraGorobets/",
+      "mentorGitName": "valeraGorobets",
       "studentsList": {
         "ivandubrouski": {
-          "gitLink": "https://github.com/ivandubrouski",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check"
         },
@@ -3515,7 +3673,6 @@
         "krisstets": {},
         "yuriy17": {},
         "olgakuksa": {
-          "gitLink": "https://github.com/OlgaKuksa/",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3529,26 +3686,22 @@
     {
       "mentorName": "Pavel Glebov",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/pavelglebov",
+      "mentorGitName": "pavelglebov",
       "studentsList": {
         "oaliona": {
-          "gitLink": "https://github.com/OAliona",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "feodorius": {
-          "gitLink": "https://github.com/Feodorius",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "ihar777": {
-          "gitLink": "https://github.com/Ihar777",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "dzianiskavalionak": {
-          "gitLink": "https://github.com/DzianisKavalionak",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3556,7 +3709,6 @@
         },
         "alexsmyk1992": {},
         "vbkoshak": {
-          "gitLink": "https://github.com/VbKoshak",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3567,17 +3719,16 @@
     {
       "mentorName": "Aliaksandr Fiodarau",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/aliaksandrfiodarau",
+      "mentorGitName": "aliaksandrfiodarau",
       "studentsList": {
         "burach0k": {
-          "gitLink": "https://github.com/burach0k",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         },
         "denyingthetruth": {
-          "gitLink": "https://github.com/denyingthetruth",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3585,7 +3736,6 @@
         },
         "invikto": {},
         "khaliulinroman": {
-          "gitLink": "https://github.com/khaliulinroman",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3596,12 +3746,11 @@
     {
       "mentorName": "Dzianis Dashkevich",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/DenisDashkevich",
+      "mentorGitName": "DenisDashkevich",
       "studentsList": {
         "yevganytyurin": {},
         "pofs": {},
         "alexeykuril0": {
-          "gitLink": "https://github.com/alexeykuril0",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3612,7 +3761,6 @@
         "gruzinskiiartem": {},
         "pivchenkosv": {},
         "andreisavelyev": {
-          "gitLink": "https://github.com/andreisavelyev",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3626,10 +3774,9 @@
     {
       "mentorName": "Siarhei Churylin",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Sergey-Churilin",
+      "mentorGitName": "Sergey-Churilin",
       "studentsList": {
         "gegorov": {
-          "gitLink": "https://github.com/gegorov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3638,7 +3785,6 @@
         },
         "ilyakabanov": {},
         "yurec0gurec": {
-          "gitLink": "https://github.com/yurec0gurec",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3648,7 +3794,6 @@
           "Presentation": "check"
         },
         "gubnich": {
-          "gitLink": "https://github.com/gubnich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3662,18 +3807,16 @@
     {
       "mentorName": "Dzmitry Chuchva",
       "countStudent": 1,
-      "mentorGitName": "https://github.com/dzmitry-chuchva",
+      "mentorGitName": "dzmitry-chuchva",
       "studentsList": {
         "modrix": {},
         "scarletcamomile": {
-          "gitLink": "https://github.com/scarletcamomile",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "tani4ik": {
-          "gitLink": "https://github.com/tani4ik",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3684,15 +3827,13 @@
     {
       "mentorName": "Yauhen Chaika",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/EugeneCh",
+      "mentorGitName": "EugeneCh",
       "studentsList": {
         "ivchenkopavel": {
-          "gitLink": "https://github.com/ivchenkoPavel",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "ruboscope": {
-          "gitLink": "https://github.com/ruboscope",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3701,14 +3842,12 @@
           "Presentation": "check"
         },
         "alesya-polovets": {
-          "gitLink": "https://github.com/alesya-polovets",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "geek10010": {
-          "gitLink": "https://github.com/geek10010",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3717,7 +3856,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "antonykor": {
-          "gitLink": "https://github.com/AntonyKor",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3727,7 +3865,6 @@
           "Presentation": "check"
         },
         "saniok017": {
-          "gitLink": "https://github.com/saniok017",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -3741,16 +3878,14 @@
     {
       "mentorName": "Viktoryia Budzionnaya",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/elkinny",
+      "mentorGitName": "elkinny",
       "studentsList": {
         "kottanakor": {
-          "gitLink": "https://github.com/kottanaKor",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
         },
         "daryazel": {},
         "alenakharytonchyk": {
-          "gitLink": "https://github.com/AlenaKharytonchyk",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
@@ -3760,20 +3895,43 @@
         },
         "drizzlman": {},
         "yonguksaram": {
-          "gitLink": "https://github.com/yonguksaram",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
+        },
+        "ankorbay": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"CV\"": "check"
+        },
+        "yurychajkou": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check"
+        },
+        "catrieona": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
+        },
+        "lesechka": {
+          "Code Jam \"CoreJS\"": "check",
+          "Markup #1": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "YouTube": "check"
         }
       }
     },
     {
       "mentorName": "Denis Bozhyk",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/den-bozhyk",
+      "mentorGitName": "den-bozhyk",
       "studentsList": {
         "mailikey": {},
         "vladesco": {
-          "gitLink": "https://github.com/vladesco",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -3783,7 +3941,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "drdiman": {
-          "gitLink": "https://github.com/DrDiman",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -3801,11 +3958,10 @@
     {
       "mentorName": "Katsiaryna Birulia",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/kbirulia",
+      "mentorGitName": "kbirulia",
       "studentsList": {
         "vergonini": {},
         "katiar": {
-          "gitLink": "https://github.com/katiar",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3821,21 +3977,18 @@
     {
       "mentorName": "Denis Bezak",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/BezakDenis",
+      "mentorGitName": "BezakDenis",
       "studentsList": {
         "aleks210219": {},
         "krlktv": {},
         "dsv-sergey": {
-          "gitLink": "https://github.com/dsv-sergey",
           "Code Jam \"CoreJS\"": "check"
         },
         "nadezhda-kotova": {},
         "alexalizurchik": {
-          "gitLink": "https://github.com/alexalizurchik",
           "Code Jam \"CV\"": "check"
         },
         "pavellyolya": {
-          "gitLink": "https://github.com/pavelLyolya",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3846,21 +3999,18 @@
     {
       "mentorName": "Anton Bely",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/ToshaBely",
+      "mentorGitName": "ToshaBely",
       "studentsList": {
         "arkhipenka": {
-          "gitLink": "https://github.com/arkhipenka",
           "Markup #1": "check",
           "YouTube": "check"
         },
         "abespolov": {
-          "gitLink": "https://github.com/ABespolov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "zzhiharevich": {},
         "dimaspivas": {
-          "gitLink": "https://github.com/DimasPivas",
           "Code Jam \"CoreJS\"": "check"
         },
         "maxkonopelko": {}
@@ -3869,10 +4019,9 @@
     {
       "mentorName": "Natallia Belavusava",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/belousova-natallia",
+      "mentorGitName": "belousova-natallia",
       "studentsList": {
         "garnich": {
-          "gitLink": "https://github.com/garnich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3883,7 +4032,6 @@
         },
         "altobeyk": {},
         "stigmatory15": {
-          "gitLink": "https://github.com/stigmatory15",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -3895,10 +4043,9 @@
     {
       "mentorName": "Vera Barysava",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/TomasSpring",
+      "mentorGitName": "TomasSpring",
       "studentsList": {
         "annakolesnikova": {
-          "gitLink": "https://github.com/annakolesnikova",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3906,7 +4053,6 @@
           "YouTube": "check"
         },
         "eliendil": {
-          "gitLink": "https://github.com/Eliendil",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -3920,16 +4066,14 @@
     {
       "mentorName": "Dmitri Bardt",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/ximet",
+      "mentorGitName": "ximet",
       "studentsList": {
         "dianatsevan": {},
         "christopher-0118": {
-          "gitLink": "https://github.com/christopher-0118",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "happy-mary": {
-          "gitLink": "https://github.com/happy-Mary",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -3937,37 +4081,39 @@
         },
         "onaker": {},
         "igorbyl": {
-          "gitLink": "https://github.com/IgorByl",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "maksyermak": {
-          "gitLink": "https://github.com/MaksYermak",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
-        "riba0017": {}
+        "riba0017": {},
+        "apivovarchik": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        }
       }
     },
     {
       "mentorName": "Tatsiana Bakhmatovich",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/Tanya-Bakhmatovich",
+      "mentorGitName": "Tanya-Bakhmatovich",
       "studentsList": {
         "fogfug1": {
-          "gitLink": "https://github.com/fogfug1",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check"
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
         },
         "yauhenilyin": {},
         "dmitrigorchanin": {
-          "gitLink": "https://github.com/dmitrigorchanin",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
-          "Code Jam \"CV\"": "check"
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
         },
         "soundmafi": {}
       }
@@ -3975,10 +4121,9 @@
     {
       "mentorName": "Dzmitry Bahachuk",
       "countStudent": 5,
-      "mentorGitName": "https://github.com/sintet",
+      "mentorGitName": "sintet",
       "studentsList": {
         "aspowerr": {
-          "gitLink": "https://github.com/aspowerr",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -3996,11 +4141,10 @@
     {
       "mentorName": "Palina Babrounik",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/PolinaBobrovnik",
+      "mentorGitName": "PolinaBobrovnik",
       "studentsList": {
         "wowprojeck": {},
         "andvikvin": {
-          "gitLink": "https://github.com/AndVikVin",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4010,7 +4154,6 @@
         },
         "alinkalu": {},
         "marry705": {
-          "gitLink": "https://github.com/marry705",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4019,7 +4162,6 @@
           "Presentation": "check"
         },
         "fursaleksey": {
-          "gitLink": "https://github.com/FursAleksey",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4033,10 +4175,9 @@
     {
       "mentorName": "Siarhei Ausianik",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/SergeyShatter",
+      "mentorGitName": "SergeyShatter",
       "studentsList": {
         "cuppake": {
-          "gitLink": "https://github.com/cuppake",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -4046,14 +4187,12 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "pirsfrommi6": {
-          "gitLink": "https://github.com/pirsfrommi6",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "RS Activist": "check",
           "Markup #1": "check"
         },
         "luffi2539": {
-          "gitLink": "https://github.com/luffi2539",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -4061,7 +4200,6 @@
           "RS Activist": "check"
         },
         "kirilltk": {
-          "gitLink": "https://github.com/KirillTK",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -4072,18 +4210,16 @@
     {
       "mentorName": "Aliaksei Astafyeu",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/tr3v3r",
+      "mentorGitName": "tr3v3r",
       "studentsList": {
         "bezchekera": {},
         "nadinaaa": {
-          "gitLink": "https://github.com/nadinaaa",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check"
         },
         "volunyshka": {},
         "grnkvch": {
-          "gitLink": "https://github.com/grnkvch",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
@@ -4098,13 +4234,12 @@
     {
       "mentorName": "Uladzimir Artsemenka",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/vinfinit",
+      "mentorGitName": "vinfinit",
       "studentsList": {
         "egoncharov": {},
         "elostryy": {},
         "eauheni": {},
         "mikhailnakanechny": {
-          "gitLink": "https://github.com/mikhailnakanechny",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Markup #1": "check",
           "Presentation": "check",
@@ -4116,10 +4251,9 @@
     {
       "mentorName": "Aliaksandr Amialkovich",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/amelk9n",
+      "mentorGitName": "amelk9n",
       "studentsList": {
         "vitalur": {
-          "gitLink": "https://github.com/vitalur",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4129,7 +4263,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "jrzlve": {
-          "gitLink": "https://github.com/jrzlve",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4138,7 +4271,6 @@
           "Presentation": "check"
         },
         "panikutysh": {
-          "gitLink": "https://github.com/panikutysh",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
@@ -4148,10 +4280,9 @@
     {
       "mentorName": "Dzmitry Aliaksandrau",
       "countStudent": 4,
-      "mentorGitName": "https://github.com/alidzm",
+      "mentorGitName": "alidzm",
       "studentsList": {
         "devbarden": {
-          "gitLink": "https://github.com/devbarden",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
@@ -4161,7 +4292,6 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "nicklevkovich": {
-          "gitLink": "https://github.com/nicklevkovich",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -4170,18 +4300,15 @@
           "Presentation": "check"
         },
         "poiskull": {
-          "gitLink": "https://github.com/PoiSkuLL",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "mrio1": {
-          "gitLink": "https://github.com/Mrio1",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
         "alexkashpor": {},
         "dmsomov": {
-          "gitLink": "https://github.com/dmsomov",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         }
@@ -4190,11 +4317,10 @@
     {
       "mentorName": "Yuliia Alaieva",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/JuliaAlaeva",
+      "mentorGitName": "JuliaAlaeva",
       "studentsList": {
         "mariannagarbuzova": {},
         "pytniza": {
-          "gitLink": "https://github.com/pytniza",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -4202,7 +4328,6 @@
           "YouTube": "check"
         },
         "ronavea": {
-          "gitLink": "https://github.com/ronavea",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -4217,23 +4342,24 @@
     {
       "mentorName": "Viktoryia Verasava",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/ViktoryiaVerasava",
+      "mentorGitName": "ViktoryiaVerasava",
       "studentsList": {
         "psychotheus": {},
         "lowershotower": {
-          "gitLink": "https://github.com/LowerShotower",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "bn1knb": {},
         "zerovers": {
-          "gitLink": "https://github.com/zerovers",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check"
+          "YouTube": "check",
+          "Presentation": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
         },
         "25kopek": {}
       }
@@ -4241,11 +4367,10 @@
     {
       "mentorName": "Tatsiana Stsepchanka",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/stsepchanka",
+      "mentorGitName": "stsepchanka",
       "studentsList": {
         "max-violent": {},
         "rick42morty": {
-          "gitLink": "https://github.com/rick42morty",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
@@ -4256,21 +4381,24 @@
         },
         "dloz": {},
         "scifsyh": {},
-        "tgfrey": {}
+        "tgfrey": {},
+        "lowershotower": {
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Code Jam \"DOM, DOM Events\"": "check"
+        }
       }
     },
     {
       "mentorName": "Aliaksandr Kazhamiaka",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/mkinitcpio",
+      "mentorGitName": "mkinitcpio",
       "studentsList": {
         "slayer110": {
-          "gitLink": "https://github.com/slayer110",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "quiquek007": {
-          "gitLink": "https://github.com/quiquek007",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CoreJS\"": "check",
@@ -4281,16 +4409,13 @@
           "Code Jam \"Scoreboard\"": "check"
         },
         "mohax-13": {
-          "gitLink": "https://github.com/MOHAX-13",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "ksenia-ok": {
-          "gitLink": "https://github.com/ksenia-ok",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "artsiom-zhuk": {
-          "gitLink": "https://github.com/Artsiom-Zhuk",
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         }
@@ -4299,7 +4424,7 @@
     {
       "mentorName": "Maksim Kantsavy",
       "countStudent": 2,
-      "mentorGitName": "https://github.com/clainatomi-zero",
+      "mentorGitName": "clainatomi-zero",
       "studentsList": {
         "alexandrshlyaeu": {},
         "nicalas93": {},
@@ -4310,13 +4435,26 @@
     {
       "mentorName": "Aliaksandr Famchankou",
       "countStudent": 3,
-      "mentorGitName": "https://github.com/famchankou",
+      "mentorGitName": "famchankou",
       "studentsList": {
         "vladimirdobrik": {},
         "tvorchud": {},
         "iharvypau": {},
         "vitalijsk": {},
-        "fcsm-andrei": {}
+        "fcsm-andrei": {},
+        "quiquek007": {
+          "Markup #1": "check",
+          "Code Jam \"DOM, DOM Events\"": "check",
+          "Code Jam \"CoreJS\"": "check",
+          "Code Jam \"CV\"": "check",
+          "Presentation": "check",
+          "YouTube": "check",
+          "RS Activist": "check",
+          "Code Jam \"Scoreboard\"": "check"
+        },
+        "mohax-13": {
+          "Code Jam \"DOM, DOM Events\"": "check"
+        }
       }
     }
   ]
