@@ -1,0 +1,707 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a table 1`] = `
+<table>
+  <thead>
+    <tr>
+      <th />
+      <th
+        key="0"
+      >
+        <a
+          href="https://github.com/elusiveway"
+        >
+          elusiveway
+        </a>
+      </th>
+      <th
+        key="1"
+      >
+        <a
+          href="https://github.com/cirillius"
+        >
+          cirillius
+        </a>
+      </th>
+      <th
+        key="2"
+      >
+        <a
+          href="https://github.com/eugenepochenkov"
+        >
+          eugenepochenkov
+        </a>
+      </th>
+      <th
+        key="3"
+      >
+        <a
+          href="https://github.com/lx-931203"
+        >
+          lx-931203
+        </a>
+      </th>
+      <th
+        key="4"
+      >
+        <a
+          href="https://github.com/astravukh"
+        >
+          astravukh
+        </a>
+      </th>
+      <th
+        key="5"
+      >
+        <a
+          href="https://github.com/zetorby"
+        >
+          zetorby
+        </a>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      key="0"
+    >
+      <td
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-cv.md"
+        >
+          Code Jam "CV"
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="1"
+    >
+      <td
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-corejs.md"
+        >
+          Code Jam "CoreJS"
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="2"
+    >
+      <td
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-notification.md"
+        >
+          Code Jam "DOM, DOM Events"
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="3"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/markup-2018q3.md"
+        >
+          Markup #1
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#2db91a",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="4"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/rs-school-activist.md"
+        >
+          RS Activist
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="5"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md"
+        >
+          YouTube
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="6"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-scoreboard.md"
+        >
+          Code Jam "Scoreboard"
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="7"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href="https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/game.md"
+        >
+          Game
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#ecce6c",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="8"
+    >
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href=""
+        >
+          Presentation
+        </a>
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#721d1d",
+          }
+        }
+      />
+    </tr>
+    <tr
+      key="9"
+    >
+      <td>
+        Course work
+      </td>
+      <td
+        key="0"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+      <td
+        key="1"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+      <td
+        key="2"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+      <td
+        key="3"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+      <td
+        key="4"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+      <td
+        key="5"
+        style={
+          Object {
+            "background": "#7a7979",
+          }
+        }
+      />
+    </tr>
+  </tbody>
+</table>
+`;

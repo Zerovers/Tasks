@@ -15,13 +15,13 @@ class DashBoard extends React.Component {
 
   selectMentor = (mentorName) => {
     localStorage.setItem('mentorName', mentorName);
+    this.setState({ inputValue: mentorName, find: true})
     localStorage.setItem('find', true);
-    this.setState({ inputValue: mentorName, find: 'true'})
   }
 
   render() {
     let table = null;
-    if (this.state.find === 'true') {
+    if (this.state.find === true) {
       table = <Table mentorName={this.state.inputValue}/>
     }
     return(
@@ -34,7 +34,7 @@ class DashBoard extends React.Component {
           getItemValue={(item) => item.name}
           shouldItemRender={matchStateToTerm}
           sortItems={sortStates}
-          onChange={(event, inputValue) => this.setState({ inputValue, find: '' })}
+          onChange={(event, inputValue) => this.setState({ inputValue, find: false })}
           onSelect={inputValue => { this.setState({ inputValue }); this.selectMentor(inputValue); }}
           renderMenu={children => (
             <div className="menu">

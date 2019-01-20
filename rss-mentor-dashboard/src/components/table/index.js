@@ -4,7 +4,6 @@ import data from '../../../data.json'
 
 const _ = require('lodash');
 
-console.log(data[0])
 export default class Table extends React.Component {
   getMentorData = () => {
     return _.find(data[1], {'mentorGitName': this.props.mentorName })

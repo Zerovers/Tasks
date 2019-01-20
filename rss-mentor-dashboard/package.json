@@ -12,10 +12,15 @@
     "server": "webpack-dev-server"
   },
   "jest": {
-    "setupFiles": ["./src/test/jestsetup.js"],
+    "setupFiles": [
+      "<rootDir>/src/test/setupTests.js"
+    ],
     "snapshotSerializers": [
-      "<rootDir>/node_modules/enzyme-to-json/serializer"
-    ]
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -38,7 +43,9 @@
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.0",
     "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.5.0",
     "react": "^16.7.0",
