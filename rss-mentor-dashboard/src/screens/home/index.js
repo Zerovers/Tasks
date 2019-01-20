@@ -10,19 +10,20 @@ const _ = require('lodash');
 class DashBoard extends React.Component {
   state = {
     inputValue: localStorage.getItem('mentorName'),
+    mentorName: localStorage.getItem('mentorName'),
     find: localStorage.getItem('find'),
   }
 
   selectMentor = (mentorName) => {
     localStorage.setItem('mentorName', mentorName);
-    this.setState({ inputValue: mentorName, find: true})
-    localStorage.setItem('find', true);
+    localStorage.setItem('find', 'true');
+    this.setState({ mentorName: mentorName, find: 'true'})
   }
 
   render() {
     let table = null;
-    if (this.state.find === true) {
-      table = <Table mentorName={this.state.inputValue}/>
+    if (this.state.find === 'true') {
+      table = <Table mentorName={this.state.mentorName}/>
     }
     return(
       <>
@@ -34,7 +35,7 @@ class DashBoard extends React.Component {
           getItemValue={(item) => item.name}
           shouldItemRender={matchStateToTerm}
           sortItems={sortStates}
-          onChange={(event, inputValue) => this.setState({ inputValue, find: false })}
+          onChange={(event, inputValue) => this.setState({ inputValue })}
           onSelect={inputValue => { this.setState({ inputValue }); this.selectMentor(inputValue); }}
           renderMenu={children => (
             <div className="menu">
