@@ -1,11 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import './index.css';
 import React from 'react';
 import { render } from 'react-dom';
-import Autocomplete from  'react-autocomplete';
+import Autocomplete from 'react-autocomplete';
 import { getStates, matchStateToTerm, sortStates } from '../../utils/utility';
 import Table from '../../components/table';
-
-const _ = require('lodash');
 
 class DashBoard extends React.Component {
   state = {
@@ -17,26 +16,29 @@ class DashBoard extends React.Component {
   selectMentor = (mentorName) => {
     localStorage.setItem('mentorName', mentorName);
     localStorage.setItem('find', 'true');
-    this.setState({ mentorName: mentorName, find: 'true'})
+    this.setState({ mentorName, find: 'true' });
   }
 
   render() {
     let table = null;
     if (this.state.find === 'true') {
-      table = <Table mentorName={this.state.mentorName}/>
+      table = <Table mentorName={this.state.mentorName} />;
     }
-    return(
+    return (
       <>
         <Autocomplete
           value={this.state.inputValue}
           inputProps={{ id: 'states-autocomplete' }}
           wrapperStyle={{ position: 'relative', display: 'inline-block' }}
           items={getStates()}
-          getItemValue={(item) => item.name}
+          getItemValue={item => item.name}
           shouldItemRender={matchStateToTerm}
           sortItems={sortStates}
           onChange={(event, inputValue) => this.setState({ inputValue })}
-          onSelect={inputValue => { this.setState({ inputValue }); this.selectMentor(inputValue); }}
+          onSelect={(inputValue) => {
+            this.setState({ inputValue });
+            this.selectMentor(inputValue);
+          }}
           renderMenu={children => (
             <div className="menu">
               {children}
@@ -46,12 +48,14 @@ class DashBoard extends React.Component {
             <div
               className={`item ${isHighlighted ? 'item-highlighted' : ''}`}
               key={item.count}
-            >{item.name}</div>
+            >
+              {item.name}
+            </div>
           )}
         />
-      {table}
+        {table}
       </>
-    )
+    );
   }
 }
 render(<DashBoard />, document.querySelector('.app-root'));
