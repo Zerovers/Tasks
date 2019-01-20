@@ -2,7 +2,6 @@ const XLSX = require('xlsx');
 const _ = require('lodash');
 const fs = require('fs');
 
-
 const taskList = XLSX.readFile('_data/Tasks.xlsx');
 const taskListSheet = taskList.Sheets.Sheet1;
 const taskListRow = [taskListSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];

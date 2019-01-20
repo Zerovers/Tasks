@@ -1,7 +1,6 @@
-const _ = require('lodash');
 const XLSX = require('xlsx');
 
-let { 
+const {
   getTasksList,
   getMentorList,
   getMentorStudentList,
@@ -12,52 +11,52 @@ let {
 
 test('test create data with Tasks name, link, status', () => {
   const taskList = XLSX.readFile('src/test/Tasks_test.xlsx');
-  const taskListSheet = taskList.Sheets['Sheet1'];
-  const taskListRow = [taskList.Sheets['Sheet1']['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
-  const taskListRowLength = parseInt(taskList.Sheets['Sheet1']['!ref'].replace(/[A-Z]/g, ' ').split(' ')[taskListRow], 10);
+  const taskListSheet = taskList.Sheets.Sheet1;
+  const taskListRow = [taskList.Sheets.Sheet1['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
+  const taskListRowLength = parseInt(taskList.Sheets.Sheet1['!ref'].replace(/[A-Z]/g, ' ').split(' ')[taskListRow], 10);
   const tasksMapping = {
-    'taskName': 'A',
-    'taskLink': 'B',
-    'taskStatus': 'C'
+    taskName: 'A',
+    taskLink: 'B',
+    taskStatus: 'C',
   };
   expect(getTasksList(taskListSheet, taskListRowLength, tasksMapping)).toEqual([{
     taskName: 'Code Jam "CV"',
     taskLink: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-cv.md',
     taskStatus: 'Checked',
-  }])
+  }]);
 });
 test('test create data with Mentor name, gitName, countStudents', () => {
   const testFile = XLSX.readFile('src/test/Mentor-students pairs_test.xlsx');
   const testFileSheet = testFile.Sheets['second_name-to_github_account'];
-  const testFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g,' ').split(' ').length - 1];
-  const testFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g,' ').split(' ')[testFileSheetRow],10);
-  const testFileMapping = {
-    'firstMentorName': 'A',
-    'secondMentorName': 'B',
-    'countStudent': 'D',
-    'mentorGitName': 'E',
-  };
-  expect(getMentorList(testFileSheet, testFileSheetLength, testFileMapping)).toEqual([{ 
-    mentorName: 'Sergey Maksimuk',
-    countStudent: 10,
-    mentorGitName: 'maximuk',
-    studentsList: {} 
-  }])
-});
-test('test create data with students name', () => {
-  const testFile = XLSX.readFile('src/test/Mentor-students pairs_test.xlsx');
-  const testFileSheet = testFile.Sheets['pairs'];
   const testFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
   const testFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[testFileSheetRow], 10);
   const testFileMapping = {
-    'mentorName': 'A',
-    'studentGitName': 'B',
+    firstMentorName: 'A',
+    secondMentorName: 'B',
+    countStudent: 'D',
+    mentorGitName: 'E',
+  };
+  expect(getMentorList(testFileSheet, testFileSheetLength, testFileMapping)).toEqual([{
+    mentorName: 'Sergey Maksimuk',
+    countStudent: 10,
+    mentorGitName: 'maximuk',
+    studentsList: {},
+  }]);
+});
+test('test create data with students name', () => {
+  const testFile = XLSX.readFile('src/test/Mentor-students pairs_test.xlsx');
+  const testFileSheet = testFile.Sheets.pairs;
+  const testFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
+  const testFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[testFileSheetRow], 10);
+  const testFileMapping = {
+    mentorName: 'A',
+    studentGitName: 'B',
   };
   const data = [{
     mentorName: 'Akiaksandr Zahorski',
     countStudent: 3,
     mentorGitName: 'AliaksandrZahorski',
-    studentsList: {}
+    studentsList: {},
   }];
   expect(getMentorStudentList(testFileSheet, testFileSheetLength, testFileMapping, data)).toEqual([{
     mentorName: 'Akiaksandr Zahorski',
@@ -68,8 +67,8 @@ test('test create data with students name', () => {
       bananovblu: {},
       bmvmarc: {},
       taukitianin: {},
-      deepenguin: {}
-    }
+      deepenguin: {},
+    },
   }]);
 });
 test('test create data with students task info', () => {
@@ -86,8 +85,8 @@ test('test create data with students task info', () => {
       bananovblu: {},
       bmvmarc: {},
       taukitianin: {},
-      deepenguin: {}
-    }
+      deepenguin: {},
+    },
   }];
   expect(getStudentTaskInfo(testFileSheet, testFileSheetLength, data)).toEqual([{
     mentorName: 'Akiaksandr Zahorski',
@@ -102,11 +101,11 @@ test('test create data with students task info', () => {
         'Code Jam "CV"': 'check',
         'Code Jam "DOM, DOM Events"': 'check',
         YouTube: 'check',
-        'Code Jam "Scoreboard"': 'check'
+        'Code Jam "Scoreboard"': 'check',
       },
       taukitianin: {},
-      deepenguin: {}
-    }
+      deepenguin: {},
+    },
   }]);
 });
 test('test update data with lost task', () => {
@@ -118,104 +117,104 @@ test('test update data with lost task', () => {
     taskName: 'Code Jam "CV"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-cv.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Code Jam "CoreJS"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-corejs.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Code Jam "DOM, DOM Events"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-notification.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Markup #1',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/markup-2018q3.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'RS Activist',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/rs-school-activist.md',
-    taskStatus: 'In Progress'
+    taskStatus: 'In Progress',
   },
   {
     taskName: 'YouTube',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'Code Jam "Scoreboard"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-scoreboard.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'Game',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/game.md',
-    taskStatus: 'In Progress'
+    taskStatus: 'In Progress',
   },
-  { taskName: 'Course work', taskLink: 'toDo', taskStatus: 'ToDo' }
+  { taskName: 'Course work', taskLink: 'toDo', taskStatus: 'ToDo' },
   ];
   expect(updateTasksList(testFileSheet, testFileSheetLength, data)).toEqual([{
     taskName: 'Code Jam "CV"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-cv.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Code Jam "CoreJS"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-corejs.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Code Jam "DOM, DOM Events"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-notification.md',
-    taskStatus: 'Checked'
+    taskStatus: 'Checked',
   },
   {
     taskName: 'Markup #1',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/markup-2018q3.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'RS Activist',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/rs-school-activist.md',
-    taskStatus: 'In Progress'
+    taskStatus: 'In Progress',
   },
   {
     taskName: 'YouTube',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'Code Jam "Scoreboard"',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-scoreboard.md',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   {
     taskName: 'Game',
     taskLink:
       'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/game.md',
-    taskStatus: 'In Progress'
+    taskStatus: 'In Progress',
   },
   {
     taskName: 'Presentation',
     taskLink: '',
-    taskStatus: 'Checking'
+    taskStatus: 'Checking',
   },
   { taskName: 'Course work', taskLink: 'toDo', taskStatus: 'ToDo' }]);
 });
@@ -238,8 +237,8 @@ test('test update data with lost students', () => {
       redgektor: {},
       alexdejko: {},
       alenashkr: {},
-      uniapi: {}
-    }
+      uniapi: {},
+    },
   }];
   expect(updateStudentList(testFileSheet, testFileSheetLength, data)).toEqual([{
     mentorName: 'Sergey Maksimuk',
@@ -258,7 +257,7 @@ test('test update data with lost students', () => {
       uniapi: {},
       remziq: {},
       temons: {},
-      sozonikoleg: {}
-    }
+      sozonikoleg: {},
+    },
   }]);
 });

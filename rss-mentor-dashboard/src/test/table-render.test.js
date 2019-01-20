@@ -4,7 +4,6 @@ import Table from '../components/table';
 
 it('should render a table', () => {
   const mentorName = 'MikhailLU';
-  const table = shallow(<Table mentorName={mentorName}/>);
+  const table = shallow(<Table mentorName={mentorName} />);
   expect(table).toMatchSnapshot();
 });
-
