@@ -1,5 +1,5 @@
-[
-  [
+{
+  "tasks": [
     {
       "taskName": "Code Jam \"CV\"",
       "taskLink": "https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/codejam-cv.md",
@@ -47,11 +47,11 @@
     },
     {
       "taskName": "Course work",
-      "taskLink": "toDo",
+      "taskLink": "",
       "taskStatus": "ToDo"
     }
   ],
-  [
+  "mentorStudents": [
     {
       "mentorName": "Sergey Maksimuk",
       "countStudent": 10,
@@ -532,11 +532,7 @@
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
-        "passhub": {},
-        "abespolov": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
-        }
+        "passhub": {}
       }
     },
     {
@@ -591,13 +587,6 @@
         "christina-ilyushonok": {
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
-          "Code Jam \"CoreJS\"": "check"
-        },
-        "anna-pronovich": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Markup #1": "check",
-          "Presentation": "check",
           "Code Jam \"CoreJS\"": "check"
         }
       }
@@ -790,14 +779,7 @@
           "Presentation": "check",
           "YouTube": "check"
         },
-        "misharsweb": {},
-        "aspowerr": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Presentation": "check",
-          "YouTube": "check"
-        }
+        "misharsweb": {}
       }
     },
     {
@@ -954,22 +936,6 @@
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"CV\"": "check"
-        },
-        "alenakharytonchyk": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check"
-        },
-        "lesechka": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check"
         }
       }
     },
@@ -1145,65 +1111,7 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "blackcat1397": {},
-        "victoriathebrave": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "greg1996": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check"
-        },
-        "alesya-polovets": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "goldenkit": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "cuppake": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "georgyminsk": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "kasatka660": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "warryr": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        }
+        "blackcat1397": {}
       }
     },
     {
@@ -1271,153 +1179,6 @@
           "Code Jam \"DOM, DOM Events\"": "check",
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
-        },
-        "aleksei-bulgak-study": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "sergey496": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "horoshaya": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "RS Activist": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "gegorov": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check"
-        },
-        "tatsianacs": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "RS Activist": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "antihero": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "RS Activist": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "daniil-loban": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Markup #1": "check",
-          "RS Activist": "check",
-          "Presentation": "check",
-          "YouTube": "check"
-        },
-        "mikhama": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "YouTube": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "zerovers": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "RS Activist": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "mrstalon": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check",
-          "Presentation": "check"
-        },
-        "luffi2539": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check"
-        },
-        "dekim12": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "RS Activist": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "quiquek007": {
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "RS Activist": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "alexshumansky": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "RS Activist": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "simaxa7": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "RS Activist": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "liodama": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check",
-          "Presentation": "check",
-          "RS Activist": "check"
         }
       }
     },
@@ -1487,15 +1248,6 @@
         "valeriyager": {
           "Code Jam \"CoreJS\"": "check",
           "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "victorbelikov": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "YouTube": "check",
@@ -1931,16 +1683,6 @@
           "Markup #1": "check",
           "Presentation": "check",
           "Code Jam \"CoreJS\"": "check"
-        },
-        "mayinmarch": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Markup #1": "check"
-        },
-        "christina-ilyushonok": {
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CoreJS\"": "check"
         }
       }
     },
@@ -2038,24 +1780,6 @@
           "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "aliaksandrlosich": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "uivgray": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "helpthewalrus": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
         }
       }
     },
@@ -2116,11 +1840,7 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "boobaley": {},
-        "zhecha": {
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        }
+        "boobaley": {}
       }
     },
     {
@@ -2147,46 +1867,6 @@
         "uivgray": {
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "jeka98": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        },
-        "horoshaya": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "RS Activist": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "sergeyguchok": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "renardby": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "RS Activist": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "aytsan": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check"
         }
@@ -2243,12 +1923,7 @@
           "Code Jam \"DOM, DOM Events\"": "check"
         },
         "valentinlipai": {},
-        "mazhoranta": {},
-        "unbelievablysmart": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check"
-        }
+        "mazhoranta": {}
       }
     },
     {
@@ -2610,14 +2285,7 @@
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
         },
-        "zebabrat": {},
-        "aliaksandrarybak": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check"
-        }
+        "zebabrat": {}
       }
     },
     {
@@ -2769,21 +2437,7 @@
         "iamhappy2day": {},
         "katiekruchko": {},
         "artser97": {},
-        "stasnegreev": {},
-        "christopher-0118": {
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Code Jam \"CoreJS\"": "check"
-        },
-        "igorbyl": {
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
-        },
-        "maksyermak": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check"
-        }
+        "stasnegreev": {}
       }
     },
     {
@@ -2942,13 +2596,7 @@
           "YouTube": "check",
           "Presentation": "check"
         },
-        "bulbazubr": {},
-        "belkacraft": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        }
+        "bulbazubr": {}
       }
     },
     {
@@ -3362,26 +3010,6 @@
           "Markup #1": "check",
           "Code Jam \"DOM, DOM Events\"": "check",
           "Presentation": "check"
-        },
-        "lexbogos": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check"
-        },
-        "agentumbrella": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check"
-        },
-        "devandscorp": {
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Presentation": "check"
         }
       }
     },
@@ -3416,24 +3044,7 @@
           "Presentation": "check",
           "Code Jam \"Scoreboard\"": "check"
         },
-        "wald3": {},
-        "usermeme": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "nikaz123": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check",
-          "Presentation": "check"
-        }
+        "wald3": {}
       }
     },
     {
@@ -3897,31 +3508,6 @@
         "yonguksaram": {
           "Code Jam \"CoreJS\"": "check",
           "Markup #1": "check"
-        },
-        "ankorbay": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CV\"": "check"
-        },
-        "yurychajkou": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check"
-        },
-        "catrieona": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check"
-        },
-        "lesechka": {
-          "Code Jam \"CoreJS\"": "check",
-          "Markup #1": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "YouTube": "check"
         }
       }
     },
@@ -4090,11 +3676,7 @@
           "Code Jam \"CV\"": "check",
           "Code Jam \"CoreJS\"": "check"
         },
-        "riba0017": {},
-        "apivovarchik": {
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        }
+        "riba0017": {}
       }
     },
     {
@@ -4381,12 +3963,7 @@
         },
         "dloz": {},
         "scifsyh": {},
-        "tgfrey": {},
-        "lowershotower": {
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Code Jam \"DOM, DOM Events\"": "check"
-        }
+        "tgfrey": {}
       }
     },
     {
@@ -4441,21 +4018,8 @@
         "tvorchud": {},
         "iharvypau": {},
         "vitalijsk": {},
-        "fcsm-andrei": {},
-        "quiquek007": {
-          "Markup #1": "check",
-          "Code Jam \"DOM, DOM Events\"": "check",
-          "Code Jam \"CoreJS\"": "check",
-          "Code Jam \"CV\"": "check",
-          "Presentation": "check",
-          "YouTube": "check",
-          "RS Activist": "check",
-          "Code Jam \"Scoreboard\"": "check"
-        },
-        "mohax-13": {
-          "Code Jam \"DOM, DOM Events\"": "check"
-        }
+        "fcsm-andrei": {}
       }
     }
   ]
-]
+}

@@ -1,24 +1,21 @@
-const XLSX = require('xlsx');
 const _ = require('lodash');
 const fs = require('fs');
+const constants = require('./config');
 
-const taskList = XLSX.readFile('_data/Tasks.xlsx');
-const taskListSheet = taskList.Sheets.Sheet1;
-const taskListRow = [taskListSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
-const taskListRowLength = parseInt(taskListSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[taskListRow], 10);
-const tasksMapping = {
-  taskName: 'A',
-  taskLink: 'B',
-  taskStatus: 'C',
-};
 const getTasksList = (sheet, len, map) => {
   const task = [];
   for (let i = 2; i <= len; i += 1) {
-    if (sheet[`A${i}`] !== undefined) {
-      if (i === len) {
+    if (sheet[`A${i}`] !== undefined && sheet[`C${i}`] !== undefined) {
+      if (sheet[`C${i}`].v === 'ToDo') {
+        let link;
+        if (sheet[map.taskLink + i] === undefined) {
+          link = '';
+        } else {
+          link = sheet[map.taskLink + i].v;
+        }
         task.push({
           taskName: sheet[map.taskName + i].v,
-          taskLink: 'toDo',
+          taskLink: link,
           taskStatus: sheet[map.taskStatus + i].v,
         });
       } else {
@@ -31,26 +28,6 @@ const getTasksList = (sheet, len, map) => {
     }
   }
   return task;
-};
-
-const mentorStudents = XLSX.readFile('_data/Mentor-students pairs.xlsx');
-
-const mentorStudentsSheetPairs = mentorStudents.Sheets.pairs;
-const mentorStudentsSheetPairsRow = [mentorStudents.Sheets.pairs['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
-const mentorStudentsSheetPairsLength = parseInt(mentorStudents.Sheets.pairs['!ref'].replace(/[A-Z]/g, ' ').split(' ')[mentorStudentsSheetPairsRow], 10);
-
-const mentorStudentsSheetMentorGit = mentorStudents.Sheets['second_name-to_github_account'];
-const mentorStudentsSheetMentorGitRow = [mentorStudentsSheetMentorGit['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
-const mentorStudentsSheetMentorGitLength = parseInt(mentorStudentsSheetMentorGit['!ref'].replace(/[A-Z]/g, ' ').split(' ')[mentorStudentsSheetMentorGitRow], 10);
-const mentorStudentsSheetPairsMapping = {
-  mentorName: 'A',
-  studentGitName: 'B',
-};
-const mentorStudentsSheetMentorGitMapping = {
-  firstMentorName: 'A',
-  secondMentorName: 'B',
-  countStudent: 'D',
-  mentorGitName: 'E',
 };
 const getMentorList = (sheet, len, mapping) => {
   const list = [];
@@ -80,14 +57,15 @@ const getMentorStudentList = (sheet, len, mapping, data) => {
   }
   return changeData;
 };
-const mentorScore = XLSX.readFile('_data/mentor score.xlsx');
-const mentorScoreSheet = mentorScore.Sheets['Form Responses 1'];
-const mentorScoreSheetRow = [mentorScore.Sheets['Form Responses 1']['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
-const mentorScoreSheetLength = parseInt(mentorScore.Sheets['Form Responses 1']['!ref'].replace(/[A-Z]/g, ' ').split(' ')[mentorScoreSheetRow], 10);
-
-const updateStudentList = (sheet, len, data) => {
+const updateStudentList = (sheet, len, data, sheetStud, sheetStudLen) => {
+  const studentsListing = [];
+  for (let k = 2; k < sheetStudLen; k += 1) {
+    if (sheetStud[`B${k}`] !== undefined) {
+      studentsListing.push(sheetStud[`B${k}`].v);
+    }
+  }
   const changeData = data;
-  for (let i = 0; i < data.length; i += 1) {
+  for (let i = 0; i < changeData.length; i += 1) {
     for (let j = 2; j < len; j += 1) {
       const mentorGitNameSheet = sheet[`B${j}`].v.replace(/[^-0-9a-zA-Z]/gim, ' ').trim().split(' ')[sheet[`B${j}`].v.replace(/[^-0-9a-zA-Z]/gim, ' ').trim().split(' ').length - 1];
       const studentList = _.keys(data[i].studentsList);
@@ -95,7 +73,9 @@ const updateStudentList = (sheet, len, data) => {
       const targetStudent = colStudName[colStudName.length - 1].replace(/-2018Q3/, '').toLowerCase();
       if (data[i].mentorGitName === mentorGitNameSheet
         && studentList.indexOf(targetStudent) === -1) {
-        changeData[i].studentsList[targetStudent] = {};
+        if (_.indexOf(studentsListing, targetStudent) === -1) {
+          changeData[i].studentsList[targetStudent] = {};
+        }
       }
     }
   }
@@ -136,31 +116,54 @@ const updateTasksList = (sheet, len, data) => {
     }
   }
 };
-let tasksList = getTasksList(taskListSheet, taskListRowLength, tasksMapping);
-tasksList = updateTasksList(mentorScoreSheet, mentorScoreSheetLength, tasksList);
+let tasksList = getTasksList(
+  constants.taskListSheet,
+  constants.taskListLength,
+  constants.tasksMapping,
+);
+tasksList = updateTasksList(
+  constants.mentorScoreSheet,
+  constants.mentorScoreSheetLength,
+  tasksList,
+);
 let mentorData = getMentorList(
-  mentorStudentsSheetMentorGit,
-  mentorStudentsSheetMentorGitLength,
-  mentorStudentsSheetMentorGitMapping,
+  constants.mentorStudentsSheetMentorGit,
+  constants.mentorStudentsSheetMentorGitLength,
+  constants.mentorStudentsSheetMentorGitMapping,
 );
 mentorData = getMentorStudentList(
-  mentorStudentsSheetPairs,
-  mentorStudentsSheetPairsLength,
-  mentorStudentsSheetPairsMapping,
+  constants.mentorStudentsSheetPairs,
+  constants.mentorStudentsSheetPairsLength,
+  constants.mentorStudentsSheetPairsMapping,
   mentorData,
 );
-mentorData = updateStudentList(mentorScoreSheet, mentorScoreSheetLength, mentorData);
-mentorData = getStudentTaskInfo(mentorScoreSheet, mentorScoreSheetLength, mentorData);
+mentorData = updateStudentList(
+  constants.mentorScoreSheet,
+  constants.mentorScoreSheetLength,
+  mentorData,
+  constants.mentorStudentsSheetPairs,
+  constants.mentorStudentsSheetPairsLength,
+);
+mentorData = getStudentTaskInfo(
+  constants.mentorScoreSheet,
+  constants.mentorScoreSheetLength,
+  mentorData,
+);
 // #############################################################################################
 // Создание общего файла
 // #############################################################################################
-const fullJSON = [];
-fullJSON.push(tasksList);
-fullJSON.push(mentorData);
-const outDataJSON = JSON.stringify(fullJSON, 0, 2);
-fs.writeFile('./data.json', outDataJSON, 'utf-8', () => {
-  console.log('write fullJSON');
-});
+const createJSON = (obj) => {
+  const fullJSON = {
+    tasks: obj.tasksList,
+    mentorStudents: obj.mentorData,
+  };
+  const outDataJSON = JSON.stringify(fullJSON, 0, 2);
+  fs.writeFile('./data.json', outDataJSON, 'utf-8', () => {
+    console.log('write fullJSON');
+  });
+};
+createJSON({ tasksList, mentorData });
+
 module.exports.getTasksList = getTasksList;
 module.exports.getMentorList = getMentorList;
 module.exports.getMentorStudentList = getMentorStudentList;

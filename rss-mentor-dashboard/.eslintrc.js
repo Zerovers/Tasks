@@ -14,6 +14,7 @@ module.exports = {
         "enabled",
         { "ignore": "ignore", "customValidators": "customValidator" }
       ],
-      "react/destructuring-assignment": ["enabled", 'never']
+      "react/destructuring-assignment": ["enabled", 'never'],
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
     },
   };

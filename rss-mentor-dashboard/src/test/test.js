@@ -7,7 +7,7 @@ const {
   getStudentTaskInfo,
   updateTasksList,
   updateStudentList,
-} = require('../../index');
+} = require('../lib/createJSON/index');
 
 test('test create data with Tasks name, link, status', () => {
   const taskList = XLSX.readFile('src/test/Tasks_test.xlsx');
@@ -223,6 +223,10 @@ test('test update data with lost students', () => {
   const testFileSheet = testFile.Sheets['Form Responses 1'];
   const testFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
   const testFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[testFileSheetRow], 10);
+  const testsFile = XLSX.readFile('src/test/Mentor-students pairs_test.xlsx');
+  const testsFileSheet = testsFile.Sheets.pairs;
+  const testsFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
+  const testsFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[testsFileSheetRow], 10);
   const data = [{
     mentorName: 'Sergey Maksimuk',
     countStudent: 10,
@@ -240,7 +244,12 @@ test('test update data with lost students', () => {
       uniapi: {},
     },
   }];
-  expect(updateStudentList(testFileSheet, testFileSheetLength, data)).toEqual([{
+  expect(updateStudentList(
+    testFileSheet,
+    testFileSheetLength,
+    data, testsFileSheet,
+    testsFileSheetLength,
+  )).toEqual([{
     mentorName: 'Sergey Maksimuk',
     countStudent: 10,
     mentorGitName: 'maximuk',

@@ -7,6 +7,11 @@ exports[`should render a table 1`] = `
       <th />
       <th
         key="elusiveway"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/elusiveway"
@@ -16,6 +21,11 @@ exports[`should render a table 1`] = `
       </th>
       <th
         key="cirillius"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/cirillius"
@@ -25,6 +35,11 @@ exports[`should render a table 1`] = `
       </th>
       <th
         key="eugenepochenkov"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/eugenepochenkov"
@@ -34,6 +49,11 @@ exports[`should render a table 1`] = `
       </th>
       <th
         key="lx-931203"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/lx-931203"
@@ -43,6 +63,11 @@ exports[`should render a table 1`] = `
       </th>
       <th
         key="astravukh"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/astravukh"
@@ -52,6 +77,11 @@ exports[`should render a table 1`] = `
       </th>
       <th
         key="zetorby"
+        style={
+          Object {
+            "background": "#4095bf",
+          }
+        }
       >
         <a
           href="https://github.com/zetorby"
@@ -263,7 +293,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#f06d6d",
           }
         }
       >
@@ -277,7 +307,7 @@ exports[`should render a table 1`] = `
         key="elusiveway"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -285,7 +315,7 @@ exports[`should render a table 1`] = `
         key="cirillius"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -301,7 +331,7 @@ exports[`should render a table 1`] = `
         key="lx-931203"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -309,7 +339,7 @@ exports[`should render a table 1`] = `
         key="astravukh"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -328,7 +358,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#ecce6c",
           }
         }
       >
@@ -393,7 +423,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#f06d6d",
           }
         }
       >
@@ -407,7 +437,7 @@ exports[`should render a table 1`] = `
         key="elusiveway"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -415,7 +445,7 @@ exports[`should render a table 1`] = `
         key="cirillius"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -423,7 +453,7 @@ exports[`should render a table 1`] = `
         key="eugenepochenkov"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -431,7 +461,7 @@ exports[`should render a table 1`] = `
         key="lx-931203"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -439,7 +469,7 @@ exports[`should render a table 1`] = `
         key="astravukh"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -447,7 +477,7 @@ exports[`should render a table 1`] = `
         key="zetorby"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -458,7 +488,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#f06d6d",
           }
         }
       >
@@ -472,7 +502,7 @@ exports[`should render a table 1`] = `
         key="elusiveway"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -480,7 +510,7 @@ exports[`should render a table 1`] = `
         key="cirillius"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -488,7 +518,7 @@ exports[`should render a table 1`] = `
         key="eugenepochenkov"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -496,7 +526,7 @@ exports[`should render a table 1`] = `
         key="lx-931203"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -504,7 +534,7 @@ exports[`should render a table 1`] = `
         key="astravukh"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -512,7 +542,7 @@ exports[`should render a table 1`] = `
         key="zetorby"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -523,7 +553,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#ecce6c",
           }
         }
       >
@@ -588,7 +618,7 @@ exports[`should render a table 1`] = `
       <td
         style={
           Object {
-            "background": "",
+            "background": "#f06d6d",
           }
         }
       >
@@ -602,7 +632,7 @@ exports[`should render a table 1`] = `
         key="elusiveway"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -610,7 +640,7 @@ exports[`should render a table 1`] = `
         key="cirillius"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -618,7 +648,7 @@ exports[`should render a table 1`] = `
         key="eugenepochenkov"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -626,7 +656,7 @@ exports[`should render a table 1`] = `
         key="lx-931203"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -634,7 +664,7 @@ exports[`should render a table 1`] = `
         key="astravukh"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -642,7 +672,7 @@ exports[`should render a table 1`] = `
         key="zetorby"
         style={
           Object {
-            "background": "#721d1d",
+            "background": "#f06d6d",
           }
         }
       />
@@ -650,8 +680,18 @@ exports[`should render a table 1`] = `
     <tr
       key="Course work"
     >
-      <td>
-        Course work
+      <td
+        style={
+          Object {
+            "background": "",
+          }
+        }
+      >
+        <a
+          href=""
+        >
+          Course work
+        </a>
       </td>
       <td
         key="elusiveway"
