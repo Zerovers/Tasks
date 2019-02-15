@@ -31,8 +31,10 @@ test('test create data with Mentor name, gitName, countStudents', () => {
   const testFileSheetRow = [testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ').length - 1];
   const testFileSheetLength = parseInt(testFileSheet['!ref'].replace(/[A-Z]/g, ' ').split(' ')[testFileSheetRow], 10);
   const testFileMapping = {
-    firstMentorName: 'A',
-    secondMentorName: 'B',
+    mentorName: {
+      firstMentorName: 'A',
+      secondMentorName: 'B',
+    },
     countStudent: 'D',
     mentorGitName: 'E',
   };

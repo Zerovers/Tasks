@@ -5,52 +5,54 @@ const constants = require('./config');
 const getTasksList = (sheet, len, map) => {
   const task = [];
   for (let i = 2; i <= len; i += 1) {
-    if (sheet[`A${i}`] !== undefined && sheet[`C${i}`] !== undefined) {
-      if (sheet[`C${i}`].v === 'ToDo') {
-        let link;
-        if (sheet[map.taskLink + i] === undefined) {
-          link = '';
-        } else {
-          link = sheet[map.taskLink + i].v;
+    if (sheet[`A${i}`] !== undefined) {
+      const obj = {};
+      _.keys(map).forEach((e) => {
+        if (sheet[map[e] + i] !== undefined) {
+          if (sheet[map[e] + i] === undefined) {
+            obj[e] = '';
+          } else {
+            obj[e] = sheet[map[e] + i].v.replace(/ -/g, '').trim().replace(/CodeJam/g, 'Code Jam');
+          }
         }
-        task.push({
-          taskName: sheet[map.taskName + i].v,
-          taskLink: link,
-          taskStatus: sheet[map.taskStatus + i].v,
-        });
-      } else {
-        task.push({
-          taskName: sheet[map.taskName + i].v.replace(/-/g, ' ').trim().replace(/CodeJam/g, 'Code Jam'),
-          taskLink: sheet[map.taskLink + i].v,
-          taskStatus: sheet[map.taskStatus + i].v,
-        });
-      }
+      });
+      task.push(obj);
     }
   }
   return task;
 };
-const getMentorList = (sheet, len, mapping) => {
+const getMentorList = (sheet, len, map) => {
   const list = [];
+  const mapping = map;
   for (let i = 2; i <= len; i += 1) {
     if (sheet[`A${i}`] !== undefined && sheet[`D${i}`].v !== 0) {
-      const mentorGit = sheet[mapping.mentorGitName + i].v.replace(/[^-0-9a-zA-Z]/gim, ' ').trim().split(' ');
-      list.push({
-        mentorName: `${sheet[mapping.firstMentorName + i].v} ${sheet[mapping.secondMentorName + i].v}`,
-        countStudent: sheet[mapping.countStudent + i].v,
-        mentorGitName: mentorGit[mentorGit.length - 1],
-        studentsList: {},
+      const obj = {};
+      let string = '';
+      _.keys(mapping).forEach((e) => {
+        if (_.has(map[e], 'firstMentorName')) {
+          _.keys(map[e]).forEach((value) => {
+            string += `${sheet[map[e][value] + i].v} `;
+          });
+          obj[e] = string.trim();
+        } else if (typeof sheet[map[e] + i].v !== 'number' && sheet[map[e] + i].v.indexOf('http') !== -1) {
+          obj[e] = sheet[map[e] + i].v.replace(/[/]$/gim, '').replace(/[^/]*[/]/gim, '').trim();
+        } else {
+          obj[e] = sheet[map[e] + i].v;
+        }
       });
+      obj.studentsList = {};
+      list.push(obj);
     }
   }
   return list;
 };
-const getMentorStudentList = (sheet, len, mapping, data) => {
+const getMentorStudentList = (sheet, len, map, data) => {
   const changeData = data;
   for (let i = 0; i < data.length; i += 1) {
     for (let j = 2; j <= len; j += 1) {
       if (sheet[`A${j}`] !== undefined) {
-        if (data[i].mentorName === sheet[mapping.mentorName + j].v) {
-          changeData[i].studentsList[sheet[mapping.studentGitName + j].v] = {};
+        if (data[i].mentorName === sheet[map.mentorName + j].v) {
+          changeData[i].studentsList[sheet[map.studentGitName + j].v] = {};
         }
       }
     }

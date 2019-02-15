@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import './index.css';
 import React from 'react';
 import data from '../../../data.json';

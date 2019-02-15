@@ -687,9 +687,7 @@ exports[`should render a table 1`] = `
           }
         }
       >
-        <a
-          href=""
-        >
+        <a>
           Course work
         </a>
       </td>
