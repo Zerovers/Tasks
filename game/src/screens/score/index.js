@@ -45,7 +45,7 @@ export default class TableScore {
     const config = {
       method: 'POST',
     };
-    fetch('http://localhost:8000/mainPage', config)
+    fetch('https://battlefortorezan.herokuapp.com/mainPage', config)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {
