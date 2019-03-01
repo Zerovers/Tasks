@@ -8,7 +8,8 @@
     "test": "jest",
     "build": "webpack --progress",
     "dev": "webpack -w",
-    "server": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "server": "node index.js"
   },
   "jest": {
     "transform": {
@@ -26,6 +27,7 @@
     "@babel/runtime": "^7.2.0",
     "babel7-jest": "^1.0.1",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",
     "html-loader": "^0.5.5",

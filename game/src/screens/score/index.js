@@ -12,7 +12,18 @@ export default class TableScore {
     htmlScore.find('#score__button__resetGame').css('visibility', 'visible');
     htmlScore.find('.score__content__close').css('visibility', 'hidden');
     htmlScore.find('#score__button__resetGame').click(() => { BattleArena.resetGame(); });
-    fetch(` https://battlefortorezan.herokuapp.com/?username=${data.username}&countMonster=${data.countMonster}`)
+    const body = {
+      username: `${data.username}`,
+      countMonster: `${data.countMonster}`,
+    };
+    const config = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    };
+    fetch('https://battlefortorezan.herokuapp.com/', config)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {
@@ -31,7 +42,10 @@ export default class TableScore {
     htmlScore.find('#score__button__resetGame').css('visibility', 'hidden');
     htmlScore.find('.score__content__close').css('visibility', 'visible');
     htmlScore.find('.score__content__close').on('click', () => { htmlScore.remove(); });
-    fetch(' https://battlefortorezan.herokuapp.com/mainPage/?')
+    const config = {
+      method: 'POST',
+    };
+    fetch('http://localhost:8000/mainPage', config)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {
