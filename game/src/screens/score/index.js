@@ -10,7 +10,11 @@ export default class TableScore extends React.Component {
   }
 
   renderScoreMainPage = () => {
-    fetch(' https://battlefortorezan.herokuapp.com/mainPage/?')
+    const config = {
+      crossDomain: true,
+      method: 'POST',
+    };
+    fetch(' https://battlefortorezan.herokuapp.com/mainPage/', config)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {
@@ -25,7 +29,19 @@ export default class TableScore extends React.Component {
 
   renderScoreAfterGameOver = () => {
     this.setState({ disable: ' disable', loading: true });
-    fetch(` https://battlefortorezan.herokuapp.com/?username=${this.props.playerName}&countMonster=${this.props.countMonsters}`)
+    const body = new FormData();
+    body.append('username', `${this.props.playerName}`);
+    body.append('countMonster', `${this.props.countMonsters}`);
+    const config = {
+      crossDomain: true,
+      method: 'POST',
+      mimeType: 'multipart/form-data',
+      contentType: false,
+      processData: false,
+      body,
+      dataType: 'json',
+    };
+    fetch('https://battlefortorezan.herokuapp.com/?', config)
       .then(res => res.text())
       .then((result) => { const info = JSON.parse(result); return info; })
       .then((info) => {

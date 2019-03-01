@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const fs = require('fs');
 
 module.exports = {
   entry: './src/screens/route/index.js',
@@ -66,12 +65,9 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    modules: [path.resolve(__dirname, './'), 'node_modules'],
-  },
   devServer: {
-    contentBase: path.join(__dirname, './'),
-    compress: true,
+    contentBase: path.join(__dirname, '/'),
+    historyApiFallback: true,
     port: 9000,
   },
   mode: 'development',
