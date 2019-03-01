@@ -8,7 +8,7 @@
     "test": "jest",
     "build": "webpack --progress",
     "dev": "webpack -w",
-    "server": "webpack-dev-server --history-api-fallback" 
+    "server": "webpack-dev-server --history-api-fallback"
   },
   "jest": {
     "transform": {
