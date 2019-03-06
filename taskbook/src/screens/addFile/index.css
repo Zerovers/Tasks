@@ -1,0 +1,14 @@
+.addFiles-content {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+}
+
+.addFiles-content input {
+  width: 200px;
+}
+
+.button-task {
+  width: 100px;
+  height: 25px;
+}

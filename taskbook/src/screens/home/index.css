@@ -1,0 +1,19 @@
+.sort-content {
+  max-width: 500px;
+  margin: auto;
+}
+
+.sort-content span {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.button_sort {
+  margin-left: 20px;
+}
+
+.pagination {
+  max-width: 340px;
+  margin: 10px auto;
+}
+

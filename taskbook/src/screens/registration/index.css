@@ -1,0 +1,12 @@
+.reg-content {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 40px;
+}
+
+.button_reg {
+  margin-top: 30px;
+  width: 200px;
+  height: 30px;
+}
