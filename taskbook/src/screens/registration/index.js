@@ -4,6 +4,7 @@ import './index.css';
 export default class RegPage extends React.Component {
   state = {
     name: '',
+    email: '',
     password: '',
   }
 
@@ -11,23 +12,24 @@ export default class RegPage extends React.Component {
     this.setState({ name: e.target.value });
   }
 
+  inputEmailOnChange = (e) => {
+    this.setState({ email: e.target.value });
+  }
+
   inputPasswordOnChange = (e) => {
     this.setState({ password: e.target.value });
   }
 
   sendNewUser = () => {
-    if (this.state.password.length > 0) {
-      fetch(`http://localhost:8000/registration?login=${this.state.name}&password=${this.state.password}`)
-        .then(res => res.text())
-        .then((result) => {
-          console.log(result);
-          if (result === 'true') {
-            this.props.history.push('/home');
-          }
-        });
-    } else {
-      console.log('password < 1');
-    }
+    // fetch('http://localhost:8000/registration?')
+    //   .then(res => res.text())
+    //   .then((result) => {
+    //     console.log(result);
+    //     if (result === 'true') {
+    //       this.props.history.push('/home');
+    //     }
+    //   });
+    this.props.history.push('/home');
   };
 
   render() {
@@ -38,6 +40,12 @@ export default class RegPage extends React.Component {
           className="input-name"
           value={this.state.name}
           onChange={this.inputNameOnChange}
+        />
+        <span>Email:</span>
+        <input
+          className="input-email"
+          value={this.state.email}
+          onChange={this.inputEmailOnChange}
         />
         <span>Password:</span>
         <input

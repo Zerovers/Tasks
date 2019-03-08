@@ -13,7 +13,7 @@ class ChangeFiles extends React.Component {
   onCheckboxChange = () => {
     this.setState({
       isChecked: !this.state.isChecked,
-    })
+    });
   }
 
   onInputChange = (e) => {
@@ -21,11 +21,15 @@ class ChangeFiles extends React.Component {
   }
 
   onChangeFile = () => {
+    let isCheckedNumber = '0';
+    if (this.state.isChecked) {
+      isCheckedNumber = '10';
+    }
     const encode = string => encodeURIComponent(string).replace(/[!'()*]/g, c => `%${c.charCodeAt(0).toString(16).toUpperCase()}`);
-    const paramsString = `${encode('status')}=${encode('10')}&${encode('text')}=${encode(this.state.inputValue)}&${encode('token')}=${encode('beejee')}`;
+    const paramsString = `${encode('status')}=${encode(isCheckedNumber)}&${encode('text')}=${encode(this.state.inputValue)}&${encode('token')}=${encode('beejee')}`;
     const hashParamsString = md5(paramsString);
     const body = new FormData();
-    body.append('status', '10');
+    body.append('status', isCheckedNumber);
     body.append('text', this.state.inputValue);
     body.append('token', 'beejee');
     body.append('signature', hashParamsString);
@@ -35,8 +39,7 @@ class ChangeFiles extends React.Component {
     };
     fetch(`https://uxcandy.com/~shapoval/test-task-backend/edit/${this.props.targetData.id}?developer=Zerover`, config)
       .then(res => res.text())
-      .then((result) => {
-        console.log(JSON.parse(result));
+      .then(() => {
         this.props.history.goBack();
       });
   }
@@ -54,7 +57,6 @@ class ChangeFiles extends React.Component {
   }
 
   render() {
-    console.log('edit', this.props);
     return (
       <>
         <div className="task-change">

@@ -1,3 +1,4 @@
+import './index.css';
 import React from 'react';
 import { render } from 'react-dom';
 import {
@@ -49,7 +50,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('appData:', this.state.checkbox);
     const auth = <Auth setAuthStatus={this.setAuthStatus} authStatus={this.state.authStatus} />;
     const props = {
       admin: this.state.admin,
@@ -62,7 +62,7 @@ class App extends React.Component {
     const homePage = mainPage(props);
     const changeTask = changeTasks(props);
     return (
-      <Router basename="/beejee-test-production.zzz.com.ua">
+      <Router basename="/taskbook">
         <>
           <div className="wrapper-nav">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -81,7 +81,7 @@ class App extends React.Component {
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                   <Link to="/home" className="nav-item nav-link">Home</Link>
-                  <Link to="/auth" className="nav-item nav-link">Reg</Link>
+                  <Link to="/registration" className="nav-item nav-link">Reg</Link>
                   <Link to="/addfiles" className="nav-item nav-link">Add Files</Link>
                 </div>
               </div>
@@ -93,7 +93,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={homePage} />
             <Route exact path="/home" component={homePage} />
-            <Route exact path="/auth" component={RegPage} />
+            <Route exact path="/registration" component={RegPage} />
             <Route exact path="/addfiles" component={AddFile} />
             <Route exact path="/edit" component={changeTask} />
           </Switch>

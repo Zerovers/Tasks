@@ -36,13 +36,13 @@ export default class AddFile extends React.Component {
     };
     fetch('https://uxcandy.com/~shapoval/test-task-backend/create?developer=Zerover', config)
       .then(res => res.text())
-      .then((result) => {
+      .then(() => {
         this.setState({
           valueLogin: '',
           valueEmail: '',
           valueText: '',
         });
-        console.log(JSON.parse(result));
+        this.props.history.push('/home');
       });
   }
 
@@ -50,30 +50,24 @@ export default class AddFile extends React.Component {
     return (
       <>
         <div className="addFiles-content">
-          <label>
-            Login:
-            <input
-              className="input-login"
-              value={this.state.valueLogin}
-              onChange={this.onChangeInputLogin}
-            />
-          </label>
-          <label>
-            Email:
-            <input
-              className="input-emal"
-              value={this.state.valueEmail}
-              onChange={this.onChangeInputEmail}
-            />
-          </label>
-          <label>
-            Text:
-            <textarea
-              className="input-text"
-              value={this.state.valueText}
-              onChange={this.onChangeInputText}
-            />
-          </label>
+          <span>Login:</span>
+          <input
+            className="input-login"
+            value={this.state.valueLogin}
+            onChange={this.onChangeInputLogin}
+          />
+          <span>Email:</span>
+          <input
+            className="input-emal"
+            value={this.state.valueEmail}
+            onChange={this.onChangeInputEmail}
+          />
+          <span>Text:</span>
+          <textarea
+            className="input-text"
+            value={this.state.valueText}
+            onChange={this.onChangeInputText}
+          />
           <button
             className="button-task"
             type="button"

@@ -26,7 +26,6 @@ class MainPage extends React.Component {
     fetch(`https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&sort_field=${this.state.sortValue}&sort_direction=${this.state.sortDirection}`)
       .then(res => res.text())
       .then((result) => {
-        console.log(JSON.parse(result));
         this.setState({ data: JSON.parse(result), sort: 'sort', load: 'false' });
       });
   }
@@ -50,7 +49,6 @@ class MainPage extends React.Component {
     fetch(url)
       .then(res => res.text())
       .then((result) => {
-        console.log('fetchtaskList', JSON.parse(result));
         this.setState({ data: JSON.parse(result), changePage: 'true', numberPage });
       });
   }
@@ -104,7 +102,7 @@ class MainPage extends React.Component {
       pages = this.getPagination(Math.ceil(this.state.data.message.total_task_count / 3));
     }
     return (
-      <div>
+      <div className="task-content">
         <div className="sort-content">
           <span>Sorting for:</span>
           <select value={this.state.sortValue} onChange={this.onChangeSortValue}>

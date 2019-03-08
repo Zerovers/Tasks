@@ -4,7 +4,6 @@ import './index.css';
 export default class TaskList extends React.Component {
   state = {
     taskData: '',
-    status: 'Не выполнено',
   }
 
   componentDidMount = () => {
@@ -25,31 +24,19 @@ export default class TaskList extends React.Component {
   }
 
   getTaskList = state => state.message.tasks.map((e) => {
-    let checkboxStatus = false;
-    let checkbox = null;
     let button = null;
-    let taskStatus = this.state.status;
+    let taskStatus = 'Не выполнено';
     if (e.status === 10) {
       taskStatus = 'Выполнено';
-      checkboxStatus = true;
     }
     if (this.props.admin === 'true') {
-      checkbox = <input key={e.username} type="checkbox" checked={checkboxStatus} onChange={this.onCheckboxChange} />;
-      button = <button
-      data-id={e.id}
-      className="button_task-change"
-      type="button"
-      onClick={() => { this.onChangeTask(e); }}
-    >
-    Изменить
-    </button>
+      button = <button data-id={e.id} className="button_task-change" type="button" onClick={() => { this.onChangeTask(e); }}>Изменить</button>;
     }
     return (
       <div className="task" key={e.username}>
         <span>{e.username}</span>
         <span>{e.email}</span>
         <span>{taskStatus}</span>
-        {checkbox}
         <p>{e.text}</p>
         {button}
       </div>
