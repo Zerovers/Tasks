@@ -4,13 +4,16 @@ import { render } from 'react-dom';
 import {
   BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import HomePageRoute from './screens/home';
-import RegPage from './screens/registration';
-import AddFile from './screens/addFile';
+import HomePageRoute from './screens/home/home';
+import RegPage from './screens/registration/registration';
+import AddFile from './screens/addFile/addFile';
 import Auth from './components/auth';
-import ChangeFilesRoute from './screens/changeTask';
+import ChangeFilesRoute from './screens/changeTask/changeTask';
+import store from './store';
+import loadData from './actions/loadData';
 
 const mainPage = props => () => (
   <HomePageRoute
@@ -49,6 +52,15 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount = () => {
+    const url = 'https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&page=1';
+    fetch(url)
+      .then(res => res.text())
+      .then((result) => {
+        store.dispatch(loadData(JSON.parse(result).message));
+      });
+  }
+
   render() {
     const auth = <Auth setAuthStatus={this.setAuthStatus} authStatus={this.state.authStatus} />;
     const props = {
@@ -62,7 +74,7 @@ class App extends React.Component {
     const homePage = mainPage(props);
     const changeTask = changeTasks(props);
     return (
-      <Router basename="/taskbook">
+      <Router>
         <>
           <div className="wrapper-nav">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -102,4 +114,4 @@ class App extends React.Component {
     );
   }
 }
-render(<App />, document.querySelector('.app-root'));
+render(<Provider store={store}><App /></Provider>, document.querySelector('.app-root'));

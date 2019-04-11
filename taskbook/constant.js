@@ -1,0 +1,11 @@
+export const LOAD_DATA = 'LOAD_DATA';
+export const FILTER_FIELD = 'FILTER_FIELD';
+export const FILTER_DIRECTION = 'FILTER_DIRECTION';
+export const FILTER_STATUS = 'FILTER_STATUS';
+
+export default {
+  LOAD_DATA,
+  FILTER_FIELD,
+  FILTER_DIRECTION,
+  FILTER_STATUS,
+};

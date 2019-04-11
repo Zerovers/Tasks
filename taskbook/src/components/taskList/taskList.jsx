@@ -1,21 +1,8 @@
 import React from 'react';
 import './index.css';
+import { connect } from 'react-redux';
 
-export default class TaskList extends React.Component {
-  state = {
-    taskData: '',
-  }
-
-  componentDidMount = () => {
-    fetch('https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover')
-      .then(res => res.text())
-      .then((result) => {
-        this.props.setLoadData(JSON.parse(result));
-        this.setState({ taskData: JSON.parse(result) });
-        this.props.setLoadStatus();
-      });
-  }
-
+class TaskList extends React.Component {
   onChangeTask = (param) => {
     if (this.props.admin === 'true') {
       this.props.history.push('/edit');
@@ -23,7 +10,7 @@ export default class TaskList extends React.Component {
     }
   }
 
-  getTaskList = state => state.message.tasks.map((e) => {
+  getTaskList = props => props.tasks.map((e) => {
     let button = null;
     let taskStatus = 'Не выполнено';
     if (e.status === 10) {
@@ -44,12 +31,9 @@ export default class TaskList extends React.Component {
   })
 
   render() {
+    console.log('taskList', this.props);
     let taskList = null;
-    if (this.props.load === 'load') {
-      taskList = this.getTaskList(this.state.taskData);
-    } else if (this.props.sort === 'sort') {
-      taskList = this.getTaskList(this.props.data);
-    } else if (this.props.changePage === 'true') {
+    if (this.props.data) {
       taskList = this.getTaskList(this.props.data);
     }
     return (
@@ -61,3 +45,8 @@ export default class TaskList extends React.Component {
     );
   }
 }
+
+
+export default connect(state => ({
+  data: state.data.data,
+}))(TaskList);
