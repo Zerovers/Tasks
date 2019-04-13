@@ -107,7 +107,7 @@ class App extends React.Component {
             <Route exact path="/home" component={homePage} />
             <Route exact path="/registration" component={RegPage} />
             <Route exact path="/addfiles" component={AddFile} />
-            <Route exact path="/edit" component={changeTask} />
+            <Route path="/edit" component={changeTask} />
           </Switch>
         </>
       </Router>

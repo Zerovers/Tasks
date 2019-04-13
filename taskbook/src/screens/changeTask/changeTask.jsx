@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import loadData from '../../actions/loadData';
 import './index.css';
 
 const md5 = require('js-md5');
 
 class ChangeFiles extends React.Component {
   state = {
-    inputValue: this.props.targetData.text,
+    data: '',
+    inputValue: '',
     isChecked: '',
   }
 
@@ -20,11 +23,12 @@ class ChangeFiles extends React.Component {
     this.setState({ inputValue: e.target.value });
   }
 
+  getBackToPage = () => {
+    this.props.history.goBack();
+  }
+
   onChangeFile = () => {
-    let isCheckedNumber = '0';
-    if (this.state.isChecked) {
-      isCheckedNumber = '10';
-    }
+    const isCheckedNumber = this.state.isChecked ? '10' : '0';
     const encode = string => encodeURIComponent(string).replace(/[!'()*]/g, c => `%${c.charCodeAt(0).toString(16).toUpperCase()}`);
     const paramsString = `${encode('status')}=${encode(isCheckedNumber)}&${encode('text')}=${encode(this.state.inputValue)}&${encode('token')}=${encode('beejee')}`;
     const hashParamsString = md5(paramsString);
@@ -37,26 +41,23 @@ class ChangeFiles extends React.Component {
       method: 'POST',
       body,
     };
-    fetch(`https://uxcandy.com/~shapoval/test-task-backend/edit/${this.props.targetData.id}?developer=Zerover`, config)
+    fetch(`https://uxcandy.com/~shapoval/test-task-backend/edit/${this.props.history.location.pathname.replace(/[^\d;]/g, '')}?developer=Zerover`, config)
       .then(res => res.text())
       .then(() => {
         this.props.history.goBack();
       });
   }
 
-  getBackToPage = () => {
-    this.props.history.goBack();
-  }
-
   componentDidMount = () => {
-    if (this.props.targetData.status === 0) {
-      this.setState({ isChecked: false });
-    } else {
-      this.setState({ isChecked: true });
-    }
+    this.setState({
+      data: { ...this.props.data.tasks.find(e => e.id == this.props.history.location.pathname.replace(/[^\d;]/g, '')) },
+      isChecked: this.props.data.status === 10,
+      inputValue: this.props.data.tasks.find(e => e.id == this.props.history.location.pathname.replace(/[^\d;]/g, '')).text,
+    });
   }
 
   render() {
+    console.log('changeTask', this.props, this.state);
     return (
       <>
         <div className="task-change">
@@ -86,4 +87,8 @@ class ChangeFiles extends React.Component {
   }
 }
 const ChangeFilesRoute = withRouter(ChangeFiles);
-export default ChangeFilesRoute;
+export default connect((state => ({
+  data: state.data.data,
+}), dispatch => ({
+  loadData: (...arg) => dispatch(loadData(...arg)),
+})))(ChangeFilesRoute);

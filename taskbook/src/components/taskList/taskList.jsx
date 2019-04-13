@@ -3,27 +3,20 @@ import './index.css';
 import { connect } from 'react-redux';
 
 class TaskList extends React.Component {
-  onChangeTask = (param) => {
-    if (this.props.admin === 'true') {
-      this.props.history.push('/edit');
-      this.props.getTargetData(param);
-    }
+  onChangeTask = () => {
+    this.props.history.push('/edit/');
   }
 
   getTaskList = props => props.tasks.map((e) => {
     let button = null;
-    let taskStatus = 'Не выполнено';
-    if (e.status === 10) {
-      taskStatus = 'Выполнено';
-    }
     if (this.props.admin === 'true') {
-      button = <button data-id={e.id} className="button_task-change" type="button" onClick={() => { this.onChangeTask(e); }}>Изменить</button>;
+      button = <button data-id={e.id} className="button_task-change" type="button" onClick={() => { this.props.history.push(`/edit/${e.id}`); }}>Изменить</button>;
     }
     return (
-      <div className="task" key={e.username}>
+      <div className="task" key={e.id}>
         <span>{e.username}</span>
         <span>{e.email}</span>
-        <span>{taskStatus}</span>
+        <span>{e.status === 10 ? 'Выполнено' : 'Не выполнено'}</span>
         <p>{e.text}</p>
         {button}
       </div>

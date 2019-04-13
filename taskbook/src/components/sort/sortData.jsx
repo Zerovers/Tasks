@@ -4,38 +4,34 @@ import changeDirection from '../../actions/changeDirection';
 import changeField from '../../actions/changeField';
 import loadData from '../../actions/loadData';
 import changeFilterStatus from '../../actions/chagneFilterStatus';
-import store from '../../store';
 
 class SortData extends React.Component {
-  onChangeSortValue = (e) => {
-    store.dispatch(changeField(e.target.value));
-  }
-
-  onChangeSortDirection = (e) => {
-    store.dispatch(changeDirection(e.target.value));
-  }
-
   onSortData = () => {
     fetch(`https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&sort_field=${this.props.filter.field}&sort_direction=${this.props.filter.direction}`)
       .then(res => res.text())
       .then((result) => {
-        store.dispatch(changeFilterStatus());
-        store.dispatch(loadData(JSON.parse(result).message));
+        this.props.changeFilterStatus();
+        this.props.loadData(JSON.parse(result).message);
       });
   }
 
   render() {
-    console.log('sort', this.props);
     return (
       <>
         <span>Sorting for:</span>
-        <select value={this.props.filter.field} onChange={this.onChangeSortValue}>
+        <select
+          value={this.props.filter.field}
+          onChange={(e) => { this.props.changeField(e.target.value); }}
+        >
           <option value="username">Login</option>
-          <option value="email ">Email</option>
+          <option value="email">Email</option>
           <option value="status">Status</option>
         </select>
         <span>and:</span>
-        <select value={this.props.filter.direction} onChange={this.onChangeSortDirection}>
+        <select
+          value={this.props.filter.direction}
+          onChange={(e) => { this.props.changeDirection(e.target.value); }}
+        >
           <option value="desc">descending</option>
           <option value="asc">ascending</option>
         </select>
@@ -51,9 +47,14 @@ class SortData extends React.Component {
   }
 }
 
-export default connect(state => ({
+export default connect((state => ({
   filter: {
     field: state.filter.filters.field,
     direction: state.filter.filters.direction,
   },
-}))(SortData);
+})), (dispatch => ({
+  changeFilterStatus: () => dispatch(changeFilterStatus()),
+  loadData: (...arg) => dispatch(loadData(...arg)),
+  changeField: (...arg) => dispatch(changeField(...arg)),
+  changeDirection: (...arg) => dispatch(changeDirection(...arg)),
+})))(SortData);

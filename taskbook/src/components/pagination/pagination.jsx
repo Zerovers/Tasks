@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import store from '../../store';
 import loadData from '../../actions/loadData';
 
 class Pagination extends React.Component {
@@ -19,7 +18,7 @@ class Pagination extends React.Component {
       .then(res => res.text())
       .then((result) => {
         this.setState({ numberPage });
-        store.dispatch(loadData(JSON.parse(result).message));
+        this.props.loadData(JSON.parse(result).message);
       });
   }
 
@@ -39,7 +38,7 @@ class Pagination extends React.Component {
       .then(res => res.text())
       .then((result) => {
         this.setState({ numberPage: numberPage + 1 });
-        store.dispatch(loadData(JSON.parse(result).message));
+        this.props.loadData(JSON.parse(result).message);
       });
   }
 
@@ -58,20 +57,18 @@ class Pagination extends React.Component {
       .then(res => res.text())
       .then((result) => {
         this.setState({ numberPage: numberPage <= 1 ? 1 : numberPage - 1 });
-        store.dispatch(loadData(JSON.parse(result).message));
+        this.props.loadData(JSON.parse(result).message);
       });
   }
 
   getPagination = data => new Array(Math.ceil(data.total_task_count / 3)).fill('').map((e, i) => (
-    <li className="page-item" key={i}><button type="button" className="page-link" onClick={() => { this.getFetchPage(i + 1); }}>{i + 1}</button></li>
+    <li className="page-item" key={`item${i + 1}`}><button type="button" className="page-link" onClick={() => { this.getFetchPage(i + 1); }}>{i + 1}</button></li>
   ))
 
   render() {
-    console.log('pagination', this.props);
     let pagination = null;
     if (this.props.data) {
       pagination = this.getPagination(this.props.data);
-      console.log(this.state.numberPage, this.props.data.tasks[0].id);
     }
     return (
       <>
@@ -103,11 +100,13 @@ class Pagination extends React.Component {
   }
 }
 
-export default connect(state => ({
+export default connect((state => ({
   filter: {
     field: state.filter.filters.field,
     direction: state.filter.filters.direction,
     status: state.filter.filters.status,
   },
   data: state.data.data,
-}))(Pagination);
+})), (dispatch => ({
+  loadData: (...arg) => dispatch(loadData(...arg)),
+})))(Pagination);
