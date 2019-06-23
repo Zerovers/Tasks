@@ -1,0 +1,5 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "prettier.eslintIntegration": true,
+  "editor.formatOnSave": true,
+}
