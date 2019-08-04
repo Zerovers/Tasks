@@ -28,26 +28,26 @@ import spellSoundHeal from './sounds/heal.wav';
 
 let MAGE_HEAD = 'mage-head activeHead';
 let MAGE_BODY = 'mage-body';
-let MAGE_RIGHT_LEG= 'mage-RightLeg';
-let MAGE_LEFT_LEG= 'mage-leftLeg';
-let MAGE_RIGHT_HAND= 'mage-rightHand';
-let MAGE_LEFT_HAND= 'mage-leftHand';
-let MAGE_LEFT_FINGER= 'mage-leftFinger';
+let MAGE_RIGHT_LEG = 'mage-RightLeg';
+let MAGE_LEFT_LEG = 'mage-leftLeg';
+let MAGE_RIGHT_HAND = 'mage-rightHand';
+let MAGE_LEFT_HAND = 'mage-leftHand';
+let MAGE_LEFT_FINGER = 'mage-leftFinger';
 let MAGE_WEAPON = 'mage-weapon';
 export default class Player extends React.Component {
   attackAnimation = async (spellName) => {
     MAGE_HEAD = 'mage-head mage-head_active';
     MAGE_BODY = 'mage-body mage-body_active';
-    MAGE_RIGHT_LEG= 'mage-RightLeg mage-RightLeg_active';
-    MAGE_LEFT_LEG= 'mage-leftLeg mage-leftLeg_active';
-    MAGE_RIGHT_HAND= 'mage-rightHand mage-rightHand_active';
-    MAGE_LEFT_HAND= 'mage-leftHand mage-leftHand_active';
-    MAGE_LEFT_FINGER= 'mage-leftFinger mage-leftFinger_active';
+    MAGE_RIGHT_LEG = 'mage-RightLeg mage-RightLeg_active';
+    MAGE_LEFT_LEG = 'mage-leftLeg mage-leftLeg_active';
+    MAGE_RIGHT_HAND = 'mage-rightHand mage-rightHand_active';
+    MAGE_LEFT_HAND = 'mage-leftHand mage-leftHand_active';
+    MAGE_LEFT_FINGER = 'mage-leftFinger mage-leftFinger_active';
     MAGE_WEAPON = 'mage-weapon mage-weapon_active';
     this.addSound(spellName);
     await pause(1000);
     this.props.resetResultBattle('');
-    switch(spellName) {
+    switch (spellName) {
       case 'frostbolt':
         $('.spell.frostbolt').css('visibility', 'visible');
         break;
@@ -74,9 +74,9 @@ export default class Player extends React.Component {
   }
 
   animationHealing = async () => {
-    MAGE_RIGHT_HAND= 'mage-rightHand mage-take-heal_rightHand';
-    MAGE_LEFT_HAND= 'mage-leftHand mage-take-heal_leftHand';
-    MAGE_LEFT_FINGER= 'mage-leftFinger mage-take-heal_leftFinger';
+    MAGE_RIGHT_HAND = 'mage-rightHand mage-take-heal_rightHand';
+    MAGE_LEFT_HAND = 'mage-leftHand mage-take-heal_leftHand';
+    MAGE_LEFT_FINGER = 'mage-leftFinger mage-take-heal_leftFinger';
     MAGE_WEAPON = 'mage-weapon mage-take-heal_weapon';
     this.addSound('heal');
     $('.heal').css('visibility', 'visible');
@@ -88,13 +88,13 @@ export default class Player extends React.Component {
   takeDamage = async () => {
     MAGE_HEAD = 'mage-head mage-take-damage_head';
     MAGE_BODY = 'mage-body mage-take-damage_body';
-    MAGE_RIGHT_LEG= 'mage-RightLeg mage-take-damage_rightLeg';
-    MAGE_LEFT_LEG= 'mage-leftLeg mage-take-damage_leftLeg';
-    MAGE_RIGHT_HAND= 'mage-rightHand mage-take-damage_rightHand';
-    MAGE_LEFT_HAND= 'mage-leftHand mage-take-damage_leftHand';
-    MAGE_LEFT_FINGER= 'mage-leftFinger mage-take-damage_leftFinger';
+    MAGE_RIGHT_LEG = 'mage-RightLeg mage-take-damage_rightLeg';
+    MAGE_LEFT_LEG = 'mage-leftLeg mage-take-damage_leftLeg';
+    MAGE_RIGHT_HAND = 'mage-rightHand mage-take-damage_rightHand';
+    MAGE_LEFT_HAND = 'mage-leftHand mage-take-damage_leftHand';
+    MAGE_LEFT_FINGER = 'mage-leftFinger mage-take-damage_leftFinger';
     MAGE_WEAPON = 'mage-weapon mage-take-damage_weapon';
-    this.addSound('takeDamage')
+    this.addSound('takeDamage');
     await pause(500);
     this.props.playerTakeDamage('', 50);
     this.props.resetResultBattle('');
@@ -104,12 +104,12 @@ export default class Player extends React.Component {
   resetAnimation = () => {
     MAGE_HEAD = 'mage-head activeHead';
     MAGE_BODY = 'mage-body';
-    MAGE_RIGHT_LEG= 'mage-RightLeg';
-    MAGE_LEFT_LEG= 'mage-leftLeg';
-    MAGE_RIGHT_HAND= 'mage-rightHand';
-    MAGE_LEFT_HAND= 'mage-leftHand';
-    MAGE_LEFT_FINGER= 'mage-leftFinger';
-    MAGE_WEAPON = 'mage-weapon'; 
+    MAGE_RIGHT_LEG = 'mage-RightLeg';
+    MAGE_LEFT_LEG = 'mage-leftLeg';
+    MAGE_RIGHT_HAND = 'mage-rightHand';
+    MAGE_LEFT_HAND = 'mage-leftHand';
+    MAGE_LEFT_FINGER = 'mage-leftFinger';
+    MAGE_WEAPON = 'mage-weapon';
   }
 
   addSound = (name) => {
@@ -155,7 +155,7 @@ export default class Player extends React.Component {
     if (this.props.resultBattle === 'playerAttack') {
       this.attackAnimation(this.props.spellName);
     } else if (this.props.resultBattle === 'playerHeal') {
-      this.animationHealing()
+      this.animationHealing();
     } else if (this.props.playerTakeDamageState === 'playerTakeDamage') {
       this.takeDamage();
     } else {
@@ -163,8 +163,8 @@ export default class Player extends React.Component {
     }
     return (
       <>
-        <div className='player-Model'>
-          <div className='conteiner'>
+        <div className="player-Model">
+          <div className="conteiner">
             <img src={playerBody} alt="mageBody" className={MAGE_BODY} />
             <img src={playerHead} alt="mageBody" className={MAGE_HEAD} />
             <img src={playerLeftLeg} alt="mageBody" className={MAGE_LEFT_LEG} />
@@ -182,6 +182,6 @@ export default class Player extends React.Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }

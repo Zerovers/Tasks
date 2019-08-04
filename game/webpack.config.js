@@ -51,6 +51,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: './images/[name].[ext]',
+            publicPath: '/',
           },
         }],
       },
@@ -60,6 +61,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: './sounds/[name].[ext]',
+            publicPath: '/',
           },
         }],
       },
