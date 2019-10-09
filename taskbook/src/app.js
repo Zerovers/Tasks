@@ -6,9 +6,9 @@ import { Provider } from 'react-redux';
 import { configureStore } from './store';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import HomePageRoute from './screens/home/home';
+import HomePage from './screens/home/home';
 import RegPage from './screens/registration/registration';
-import Auth from './components/auth';
+import Auth from './components/auth/containers/Auth';
 import ChangeFilesRoute from './screens/changeTask/changeTask';
 import loadData from './actions/loadData';
 
@@ -16,39 +16,7 @@ import CreateTaskPage from './components/createTask/containers/CreateTaskPage';
 
 const store = configureStore({}, history);
 
-const mainPage = props => () => (
-  <HomePageRoute
-    admin={props.admin}
-    load={props.load}
-    getTargetData={props.getTargetData}
-  />
-);
-
-const changeTasks = props => () => (
-  <ChangeFilesRoute admin={props.admin} targetData={props.targetData} />
-);
-
 class App extends React.Component {
-  state = {
-    authStatus: localStorage.getItem('authStatus') || '',
-    admin: localStorage.getItem('admin') || 'false',
-    appData: '',
-    load: '',
-    targetData: ''
-  };
-
-  getTargetData = data => {
-    this.setState({ targetData: data });
-  };
-
-  setAuthStatus = status => {
-    if (status === 'true') {
-      this.setState({ authStatus: 'login', admin: 'true' });
-    } else {
-      this.setState({ authStatus: 'logout', admin: 'false' });
-    }
-  };
-
   componentDidMount = () => {
     const url =
       'https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&page=1';
@@ -60,21 +28,6 @@ class App extends React.Component {
   };
 
   render() {
-    const auth = (
-      <Auth
-        setAuthStatus={this.setAuthStatus}
-        authStatus={this.state.authStatus}
-      />
-    );
-    const props = {
-      admin: this.state.admin,
-      appData: this.state.appData,
-      load: this.state.load,
-      getTargetData: this.getTargetData,
-      targetData: this.state.targetData
-    };
-    const homePage = mainPage(props);
-    const changeTask = changeTasks(props);
     return (
       <Router>
         <>
@@ -107,15 +60,15 @@ class App extends React.Component {
                   </Link>
                 </div>
               </div>
-              <div className="auth">{auth}</div>
+              <div className="auth">{<Auth />}</div>
             </nav>
           </div>
           <Switch>
-            <Route exact path="/" component={homePage} />
-            <Route exact path="/home" component={homePage} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
             <Route exact path="/registration" component={RegPage} />
             <Route exact path="/addfiles" component={CreateTaskPage} />
-            <Route path="/edit" component={changeTask} />
+            <Route path="/edit" component={ChangeFilesRoute} />
           </Switch>
         </>
       </Router>
