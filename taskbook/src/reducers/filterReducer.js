@@ -1,19 +1,20 @@
 import { FILTER_FIELD, FILTER_DIRECTION, FILTER_STATUS } from '../../constant';
 
-const filterReducer = (state = {
-  filters: {
+const filterReducer = (
+  state = {
     field: 'username',
     direction: 'desc',
-    status: false,
+    status: false
   },
-}, { type, field, direction }) => {
+  { type, field, direction }
+) => {
   switch (type) {
     case FILTER_FIELD:
-      return { ...state, filters: { ...state.filters, field } };
+      return { ...state, field };
     case FILTER_DIRECTION:
-      return { ...state, filters: { ...state.filters, direction } };
+      return { ...state, direction };
     case FILTER_STATUS:
-      return { ...state, filters: { ...state.filters, status: true } };
+      return { ...state, status: true };
     default:
       return state;
   }

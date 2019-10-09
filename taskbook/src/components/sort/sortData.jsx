@@ -8,7 +8,7 @@ import changeFilterStatus from '../../actions/chagneFilterStatus';
 class SortData extends React.Component {
   onSortData = () => {
     fetch(
-      `https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&sort_field=${this.props.filter.field}&sort_direction=${this.props.filter.direction}`
+      `https://uxcandy.com/~shapoval/test-task-backend/?developer=Zerover&sort_field=${this.props.field}&sort_direction=${this.props.direction}`
     )
       .then(res => res.text())
       .then(result => {
@@ -22,7 +22,7 @@ class SortData extends React.Component {
       <>
         <span>Sorting for:</span>
         <select
-          value={this.props.filter.field}
+          value={this.props.field}
           onChange={e => {
             this.props.changeField(e.target.value);
           }}
@@ -33,7 +33,7 @@ class SortData extends React.Component {
         </select>
         <span>and:</span>
         <select
-          value={this.props.filter.direction}
+          value={this.props.direction}
           onChange={e => {
             this.props.changeDirection(e.target.value);
           }}
@@ -49,17 +49,19 @@ class SortData extends React.Component {
   }
 }
 
+const mapStateToProps = ({ filter: { field, direction } }) => ({
+  field,
+  direction
+});
+
+const mapDispatchToProps = dispatch => ({
+  changeFilterStatus: () => dispatch(changeFilterStatus()),
+  loadData: (...arg) => dispatch(loadData(...arg)),
+  changeField: (...arg) => dispatch(changeField(...arg)),
+  changeDirection: (...arg) => dispatch(changeDirection(...arg))
+});
+
 export default connect(
-  state => ({
-    filter: {
-      field: state.filter.filters.field,
-      direction: state.filter.filters.direction
-    }
-  }),
-  dispatch => ({
-    changeFilterStatus: () => dispatch(changeFilterStatus()),
-    loadData: (...arg) => dispatch(loadData(...arg)),
-    changeField: (...arg) => dispatch(changeField(...arg)),
-    changeDirection: (...arg) => dispatch(changeDirection(...arg))
-  })
+  mapStateToProps,
+  mapDispatchToProps
 )(SortData);

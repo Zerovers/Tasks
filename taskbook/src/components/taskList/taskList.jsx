@@ -9,11 +9,11 @@ class TaskList extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    if (!data) return null;
+    const { tasksList } = this.props;
+    if (!tasksList) return null;
     return (
       <div className="task-list">
-        {data.tasks.map(task => (
+        {tasksList.map(task => (
           <Task {...task} key={task.id} />
         ))}
       </div>
@@ -21,8 +21,8 @@ class TaskList extends React.Component {
   }
 }
 
-const mapStateToProps = ({ data, auth: { authStatus, admin } }) => ({
-  data: data.data,
+const mapStateToProps = ({ data: { tasks }, auth: { authStatus, admin } }) => ({
+  tasksList: tasks,
   authStatus,
   admin
 });

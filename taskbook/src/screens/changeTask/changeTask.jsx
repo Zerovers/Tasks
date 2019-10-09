@@ -115,7 +115,7 @@ class ChangeFiles extends React.Component {
 const ChangeFilesRoute = withRouter(ChangeFiles);
 
 const mapStateToProps = ({ data, auth: { authStatus, admin } }) => ({
-  data: data.data,
+  data,
   authStatus,
   admin
 });

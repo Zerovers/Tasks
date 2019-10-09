@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Task from '../components/Task';
 
-const mapStateToProps = ({ data, auth: { authStatus, admin } }) => ({
-  data: data.data,
+const mapStateToProps = ({ auth: { authStatus, admin } }) => ({
   authStatus,
   admin
 });
