@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import loadData from '../../actions/loadData';
+import * as DataActions from '../../actions/loadData';
 import './index.css';
 
 const md5 = require('js-md5');
@@ -121,7 +121,7 @@ const mapStateToProps = ({ data, auth: { authStatus, admin } }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  loadData: (...arg) => dispatch(loadData(...arg))
+  loadData: (...arg) => dispatch(DataActions.loadData(...arg))
 });
 
 export default connect(

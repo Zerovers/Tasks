@@ -1,8 +1,6 @@
 import { LOAD_DATA } from '../../constant';
 
-const loadData = data => ({
+export const loadData = data => ({
   type: LOAD_DATA,
-  data,
+  data
 });
-
-export default loadData;

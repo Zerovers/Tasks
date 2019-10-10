@@ -10,7 +10,7 @@ import HomePage from './screens/home/home';
 import RegPage from './screens/registration/registration';
 import Auth from './components/auth/containers/Auth';
 import ChangeFilesRoute from './screens/changeTask/changeTask';
-import loadData from './actions/loadData';
+import * as DataActions from './actions/loadData';
 import CreateTaskPage from './components/createTask/containers/CreateTaskPage';
 
 const store = configureStore({}, history);
@@ -24,7 +24,7 @@ function App() {
       .then(res => res.text())
       .then(result => {
         const data = JSON.parse(result).message;
-        dispatch(loadData(data));
+        dispatch(DataActions.loadData(data));
       });
   }, []);
 
